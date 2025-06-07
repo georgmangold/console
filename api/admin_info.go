@@ -966,10 +966,10 @@ func unmarshalPrometheus(ctx context.Context, httpClnt *http.Client, endpoint st
 		return true
 	}
 
-	prometheusBearer := getPrometheusAuthToken()
-
-	if prometheusBearer != "" {
+	if prometheusBearer := getPrometheusAuthToken(); prometheusBearer != "" {
 		req.Header.Add("Authorization", fmt.Sprintf("Bearer %s", prometheusBearer))
+	} else if username, password, ok := getPrometheusAuthUserPass(); ok {
+		req.SetBasicAuth(username, password)
 	}
 
 	resp, err := httpClnt.Do(req)

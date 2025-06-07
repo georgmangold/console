@@ -266,6 +266,16 @@ func getPrometheusAuthToken() string {
 	return env.Get(PrometheusAuthToken, "")
 }
 
+func getPrometheusAuthUserPass() (string, string, bool) {
+	username := env.Get(PrometheusAuthUsername, "")
+	password := env.Get(PrometheusAuthPassword, "")
+	if username == "" && password == "" {
+		return "", "", false
+	}
+
+	return username, password, true
+}
+
 func getPrometheusJobID() string {
 	return env.Get(PrometheusJobID, "minio-job")
 }
