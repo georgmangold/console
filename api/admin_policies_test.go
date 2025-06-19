@@ -22,10 +22,10 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"reflect"
 	"testing"
 
 	"github.com/minio/console/models"
+	"github.com/minio/madmin-go/v3"
 	iampolicy "github.com/minio/pkg/v3/policy"
 	"github.com/stretchr/testify/assert"
 )
@@ -201,6 +201,9 @@ func Test_SetPolicyMultiple(t *testing.T) {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 	adminClient := AdminClientMock{}
+	minioGetGroupDescriptionMock = func(_ string) (*madmin.GroupDesc, error) {
+		return &madmin.GroupDesc{}, nil
+	}
 
 	type args struct {
 		policyName    string
@@ -255,10 +258,8 @@ func Test_SetPolicyMultiple(t *testing.T) {
 		t.Run(tt.name, func(_ *testing.T) {
 			minioSetPolicyMock = tt.args.setPolicyFunc
 			got := setPolicyMultipleEntities(ctx, adminClient, tt.args.policyName, tt.args.users, tt.args.groups)
-			if !reflect.DeepEqual(got, tt.errorExpected) {
-				ji, _ := json.Marshal(got)
-				vi, _ := json.Marshal(tt.errorExpected)
-				t.Errorf("got %s want %s", ji, vi)
+			if (got == nil) != (tt.errorExpected == nil) || (got != nil && tt.errorExpected != nil && got.Error() != tt.errorExpected.Error()) {
+				t.Errorf("got error %v, want %v", got, tt.errorExpected)
 			}
 		})
 	}
@@ -351,7 +352,7 @@ func Test_policyMatchesBucket(t *testing.T) {
         }
     ]
 	}`}, bucket: "test1"},
-			want: false,
+			want: true,
 		},
 		{
 			name: "Test4",

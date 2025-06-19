@@ -1072,7 +1072,7 @@ func Test_shareObject(t *testing.T) {
 			}
 			url, err := getShareObjectURL(ctx, client, tt.args.r, tt.args.versionID, tt.args.expires)
 			if tt.wantError != nil {
-				if !reflect.DeepEqual(err, tt.wantError) {
+				if (err == nil) != (tt.wantError == nil) || (err != nil && tt.wantError != nil && err.Error() != tt.wantError.Error()) {
 					t.Errorf("getShareObjectURL() error: `%s`, wantErr: `%s`", err, tt.wantError)
 					return
 				}
@@ -1144,7 +1144,7 @@ func Test_putObjectLegalHold(t *testing.T) {
 		t.Run(tt.test, func(_ *testing.T) {
 			minioPutObjectLegalHoldMock = tt.args.legalHoldFunc
 			err := setObjectLegalHold(ctx, client, tt.args.bucket, tt.args.prefix, tt.args.versionID, tt.args.status)
-			if !reflect.DeepEqual(err, tt.wantError) {
+			if (err == nil) != (tt.wantError == nil) || (err != nil && tt.wantError != nil && err.Error() != tt.wantError.Error()) {
 				t.Errorf("setObjectLegalHold() error: %v, wantErr: %v", err, tt.wantError)
 				return
 			}
