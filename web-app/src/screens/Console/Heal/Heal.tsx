@@ -16,7 +16,6 @@
 
 import React, { Fragment, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { IMessageEvent, w3cwebsocket as W3CWebSocket } from "websocket";
 import {
   Box,
   Button,
@@ -129,7 +128,7 @@ const Heal = () => {
       const baseUrl = baseLocation.pathname;
 
       const wsProt = wsProtocol(url.protocol);
-      const c = new W3CWebSocket(
+      const c = new WebSocket(
         `${wsProt}://${url.hostname}:${port}${baseUrl}ws/heal/${bucketName}?prefix=${prefix}&recursive=${recursive}&force-start=${forceStart}&force-stop=${forceStop}`,
       );
 
@@ -138,7 +137,7 @@ const Heal = () => {
           console.log("WebSocket Client Connected");
           c.send("ok");
         };
-        c.onmessage = (message: IMessageEvent) => {
+        c.onmessage = (message: MessageEvent) => {
           let m: HealStatus = JSON.parse(message.data.toString());
           // Store percentage per health color
           for (const [key, value] of Object.entries(m.healthAfterCols)) {

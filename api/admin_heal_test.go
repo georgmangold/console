@@ -143,14 +143,14 @@ func TestHeal(t *testing.T) {
 		ForceStop:  false,
 	}
 	// Test-1: startHeal send simple stream of data, no errors
-	minioHealMock = func(ctx context.Context, bucket, prefix string, healOpts madmin.HealOpts, clientToken string,
-		forceStart, forceStop bool,
+	minioHealMock = func(_ context.Context, _ string, _ string, _ madmin.HealOpts, _ string,
+		_ bool, _ bool,
 	) (healStart madmin.HealStartSuccess, healTaskStatus madmin.HealTaskStatus, err error) {
 		return healStart, mockHealTaskStatus, nil
 	}
 	writesCount := 1
 	// mock connection WriteMessage() no error
-	connWriteMessageMock = func(messageType int, data []byte) error {
+	connWriteMessageMock = func(_ int, data []byte) error {
 		// emulate that receiver gets the message written
 		var t healStatus
 		_ = json.Unmarshal(data, &t)
@@ -186,8 +186,8 @@ func TestHeal(t *testing.T) {
 	}
 
 	// Test-2: startHeal error on init
-	minioHealMock = func(ctx context.Context, bucket, prefix string, healOpts madmin.HealOpts, clientToken string,
-		forceStart, forceStop bool,
+	minioHealMock = func(_ context.Context, _, _ string, _ madmin.HealOpts, _ string,
+		_ bool, _ bool,
 	) (healStart madmin.HealStartSuccess, healTaskStatus madmin.HealTaskStatus, err error) {
 		return healStart, mockHealTaskStatus, errors.New("error")
 	}

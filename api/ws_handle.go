@@ -262,7 +262,7 @@ func serveWS(w http.ResponseWriter, req *http.Request) {
 			closeWsConn(conn)
 			return
 		}
-		wsAdminClient, err := newWebSocketAdminClient(conn, session)
+		wsAdminClient, err := newWebSocketAdminClient(conn, session, clientIP)
 		if err != nil {
 			ErrorWithContext(ctx, err)
 			closeWsConn(conn)

@@ -14,13 +14,13 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-export interface HealDriveInfo {
+interface HealDriveInfo {
   uuid: string;
   endpoint: string;
   state: string;
 }
 
-export interface MomentHealth {
+interface MomentHealth {
   color: string;
   offline: number;
   online: number;
@@ -29,7 +29,7 @@ export interface MomentHealth {
   drives: HealDriveInfo[];
 }
 
-export interface HealItemStatus {
+interface HealItemStatus {
   status: string;
   error: string;
   type: string;
