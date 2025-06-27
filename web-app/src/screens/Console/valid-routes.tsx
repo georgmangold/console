@@ -30,6 +30,7 @@ import {
   AuditLogsMenuIcon,
   BucketsMenuIcon,
   DocumentationIcon,
+  DrivesMenuIcon,
   GroupsMenuIcon,
   HealthMenuIcon,
   IdentityMenuIcon,
@@ -210,6 +211,12 @@ export const validRoutes = (features: string[] | null | undefined) => {
           id: "monitorWatch",
           icon: <WatchIcon />,
           path: IAM_PAGES.TOOLS_WATCH,
+        },
+        {
+          name: "Drives",
+          id: "monitorDrives",
+          path: IAM_PAGES.TOOLS_HEAL,
+          icon: <DrivesMenuIcon />,
         },
         {
           name: "Encryption",
