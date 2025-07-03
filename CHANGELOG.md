@@ -1,5 +1,39 @@
 # Changelog
 
+## Release v1.8.1
+
+Release focuses on debranding by dropping **MinIO®** from name and logo
+
+Features:
+- OIDC SSO Login support see [docs](./docs/OIDC.md)
+- Self-Update of binarys over Github Releases with `./console update`
+
+Deprecations:
+- Deprecates CONSOLE_ANIMATED_LOGIN animated Login video background 
+- Deprecates Inclusion of sourcemaps in Prod Releases of Web-App
+
+Build:
+- web-app frontend build size 28 MB to 9 MB
+- reduced binary size ~60 MB to ~45 MB
+
+Pictures see releases 
+
+## Release v1.8.0
+
+This release is bringing back long-deprecated features:
+
+- Undeprecated Lifecyle and Tierung UI (minio#3470)
+- Undeprecated Site Replication in UI (minio#3469)
+- Unremoved Tools support (minio#3467)
+    - Health Info
+    - Speedtest
+    - Profiling
+    - Inspect
+    - Trace
+    - Watch
+- Removed Subnet, Registration, Call Home Support after Revert
+- Small License and Login Page updated
+
 ## Release v1.7.8
 
 Bug Fix:
