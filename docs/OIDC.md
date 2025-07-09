@@ -21,13 +21,13 @@ This means you can use the same variables as you would set on the server and sha
 
 | Console Environment Variables | MinIO Server Environment Variables | Required | Example |
 | -- | -- | -- | -- |
-CONSOLE_IDP_DISPLAY_NAME | MINIO_IDENTITY_OPENID_DISPLAY_NAME | | "Login with OIDC"
-CONSOLE_IDP_URL | MINIO_IDENTITY_OPENID_CONFIG_URL | ✓ | https://provider/.well-known/openid-configuration"
-CONSOLE_IDP_CLIENT_ID | MINIO_IDENTITY_OPENID_CLIENT_ID | ✓ | minio-client-app
-CONSOLE_IDP_SECRET | MINIO_IDENTITY_OPENID_CLIENT_SECRET | ✓ | minio-client-app-secret
-CONSOLE_IDP_CALLBACK | MINIO_BROWSER_REDIRECT_URL | ✓ | https://console/oauth_callback" |
-CONSOLE_IDP_CALLBACK_DYNAMIC | MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC | | on / off |
-CONSOLE_IDP_SCOPES | MINIO_IDENTITY_OPENID_SCOPES | | "openid,profile,email" 
-CONSOLE_IDP_USERINFO | MINIO_IDENTITY_OPENID_CLAIM_USERINFO | |on / off |
-CONSOLE_IDP_ROLE_POLICY | MINIO_IDENTITY_OPENID_ROLE_POLICY | | "app-bucket-write,app-bucket-list" |
-CONSOLE_IDP_END_SESSION_ENDPOINT | | |
+| CONSOLE_IDP_DISPLAY_NAME | MINIO_IDENTITY_OPENID_DISPLAY_NAME | | "Login with OIDC" |
+| CONSOLE_IDP_URL | MINIO_IDENTITY_OPENID_CONFIG_URL | ✓ | https://provider/.well-known/openid-configuration" |
+| CONSOLE_IDP_CLIENT_ID | MINIO_IDENTITY_OPENID_CLIENT_ID | ✓ | minio-client-app |
+| CONSOLE_IDP_SECRET | MINIO_IDENTITY_OPENID_CLIENT_SECRET | ✓ | minio-client-app-secret |
+| CONSOLE_IDP_CALLBACK | MINIO_BROWSER_REDIRECT_URL | ✓ | https://console/oauth_callback" |
+| CONSOLE_IDP_CALLBACK_DYNAMIC | MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC | | on / off |
+| CONSOLE_IDP_SCOPES | MINIO_IDENTITY_OPENID_SCOPES | | "openid,profile,email" |
+| CONSOLE_IDP_USERINFO | MINIO_IDENTITY_OPENID_CLAIM_USERINFO | |on / off |
+| CONSOLE_IDP_ROLE_POLICY | MINIO_IDENTITY_OPENID_ROLE_POLICY | | "app-bucket-write,app-bucket-list" |
+| CONSOLE_IDP_END_SESSION_ENDPOINT | | |
