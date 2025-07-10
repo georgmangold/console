@@ -188,8 +188,8 @@ github.com/minio/kms-go/kes v0.3.1 h1:K3sPFAvFbJx33XlCTUBnQo8JRmSZyDvT6T2/MQ2iC3
 github.com/minio/kms-go/kes v0.3.1/go.mod h1:Q9Ct0KUAuN9dH0hSVa0eva45Jg99cahbZpPxeqR9rOQ=
 github.com/minio/madmin-go/v3 v3.0.110 h1:FIYekj7YPc430ffpXFWiUtyut3qBt/unIAcDzJn9H5M=
 github.com/minio/madmin-go/v3 v3.0.110/go.mod h1:WOe2kYmYl1OIlY2DSRHVQ8j1v4OItARQ6jGyQqcCud8=
-github.com/minio/mc v0.0.0-20250525050212-68f1d43f056a h1:JdK1b7QA+v1ijUfsM2lDQEozpXChx61rOPUFRQe1cr0=
-github.com/minio/mc v0.0.0-20250525050212-68f1d43f056a/go.mod h1:u2sfW0ODOs2EGYdRlh9YjVdJ6VjB4GwIYA82Bl/bmAU=
+github.com/minio/mc v0.0.0-20250313080218-cf909e1063a9 h1:6RyInOHKL6jz8zxcAar/h6rg/aJCxDP/uFuSNvYSuMI=
+github.com/minio/mc v0.0.0-20250313080218-cf909e1063a9/go.mod h1:h5UQZ+5Qfq6XV81E4iZSgStPZ6Hy+gMuHMkLkjq4Gys=
 github.com/minio/md5-simd v1.1.2 h1:Gdi1DZK69+ZVMoNHRXJyNcxrMA4dSxoYHZSQbirFg34=
 github.com/minio/md5-simd v1.1.2/go.mod h1:MzdKDxYpY2BT9XQFocsiZf/NKVtR7nkE4RoEpN+20RM=
 github.com/minio/minio-go/v7 v7.0.94 h1:1ZoksIKPyaSt64AVOyaQvhDOgVC3MfZsWM6mZXRUGtM=

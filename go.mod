@@ -4,7 +4,7 @@ go 1.24.2
 
 toolchain go1.24.4
 
-replace github.com/olekukonko/tablewriter => github.com/olekukonko/tablewriter v0.0.5 // needed for github.com/minio/mc
+//replace github.com/olekukonko/tablewriter => github.com/olekukonko/tablewriter v0.0.5 // needed for github.com/minio/mc
 
 require (
 	github.com/blang/semver/v4 v4.0.0
@@ -26,7 +26,7 @@ require (
 	github.com/minio/highwayhash v1.0.3
 	github.com/minio/kes v0.24.0
 	github.com/minio/madmin-go/v3 v3.0.110
-	github.com/minio/mc v0.0.0-20250525050212-68f1d43f056a
+	github.com/minio/mc v0.0.0-20250313080218-cf909e1063a9
 	github.com/minio/minio-go/v7 v7.0.94
 	github.com/minio/selfupdate v0.6.0
 	github.com/minio/websocket v1.6.0
@@ -115,7 +115,7 @@ require (
 	github.com/muesli/termenv v0.16.0 // indirect
 	github.com/munnerz/goautoneg v0.0.0-20191010083416-a7dc8b61c822 // indirect
 	github.com/oklog/ulid v1.3.1 // indirect
-	github.com/olekukonko/tablewriter v1.0.7 // indirect
+	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/philhofer/fwd v1.1.3-0.20240916144458-20a13a1f6b7c // indirect
 	github.com/pkg/xattr v0.4.11 // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
