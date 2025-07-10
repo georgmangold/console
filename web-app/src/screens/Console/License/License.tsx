@@ -38,13 +38,21 @@ const License = () => {
               <Fragment>
                 <p>
                   This is just a fork of the{" "}
-                  <a href="https://github.com/minio/object-browser">
+                  <a
+                    href="https://github.com/minio/object-browser"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     MinIO Console
                   </a>{" "}
                   for my own personal educational purposes, and therefore it
                   incorporates MinIO® source code. You may also want to look
                   for other maintained{" "}
-                  <a href="https://github.com/minio/object-browser/forks">
+                  <a
+                    href="https://github.com/minio/object-browser/forks"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     forks
                   </a>
                   .
@@ -97,7 +105,11 @@ const License = () => {
               }}
             >
               For more information, please refer to the license at{" "}
-              <a href="https://www.gnu.org/licenses/agpl-3.0.en.html">
+              <a
+                href="https://www.gnu.org/licenses/agpl-3.0.en.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 https://www.gnu.org/licenses/agpl-3.0.en.html
               </a>
               .
@@ -112,7 +124,8 @@ const License = () => {
               found here:{" "}
               <a
                 href={`https://www.gnu.org/licenses/agpl-3.0.html`}
-                rel="noopener"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={"link-text"}
               >
                 https://www.gnu.org/licenses/agpl-3.0.html.
