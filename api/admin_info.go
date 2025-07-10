@@ -962,7 +962,7 @@ func getUsageWidgetsForDeployment(ctx context.Context, prometheusURL string, adm
 func unmarshalPrometheus(ctx context.Context, httpClnt *http.Client, endpoint string, data interface{}) bool {
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, endpoint, nil)
 	if err != nil {
-		ErrorWithContext(ctx, fmt.Errorf("Unable to create the request to fetch labels from prometheus: %w", err))
+		ErrorWithContext(ctx, fmt.Errorf("unable to create the request to fetch labels from prometheus: %w", err))
 		return true
 	}
 
@@ -974,19 +974,19 @@ func unmarshalPrometheus(ctx context.Context, httpClnt *http.Client, endpoint st
 
 	resp, err := httpClnt.Do(req)
 	if err != nil {
-		ErrorWithContext(ctx, fmt.Errorf("Unable to fetch labels from prometheus: %w", err))
+		ErrorWithContext(ctx, fmt.Errorf("unable to fetch labels from prometheus: %w", err))
 		return true
 	}
 
 	defer resp.Body.Close()
 
 	if resp.StatusCode != http.StatusOK {
-		ErrorWithContext(ctx, fmt.Errorf("Unexpected status code from prometheus (%s)", resp.Status))
+		ErrorWithContext(ctx, fmt.Errorf("unexpected status code from prometheus (%s)", resp.Status))
 		return true
 	}
 
 	if err = json.NewDecoder(resp.Body).Decode(data); err != nil {
-		ErrorWithContext(ctx, fmt.Errorf("Unexpected error from prometheus: %w", err))
+		ErrorWithContext(ctx, fmt.Errorf("unexpected error from prometheus: %w", err))
 		return true
 	}
 

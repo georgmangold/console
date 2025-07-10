@@ -24,7 +24,6 @@ import (
 	"github.com/dustin/go-humanize"
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/minio/console/api/operations"
-	"github.com/minio/console/api/operations/tiering"
 	tieringApi "github.com/minio/console/api/operations/tiering"
 	"github.com/minio/console/models"
 	"github.com/minio/madmin-go/v3"
@@ -39,7 +38,7 @@ func registerAdminTiersHandlers(api *operations.ConsoleAPI) {
 		}
 		return tieringApi.NewTiersListOK().WithPayload(tierList)
 	})
-	api.TieringTiersListNamesHandler = tiering.TiersListNamesHandlerFunc(func(params tiering.TiersListNamesParams, session *models.Principal) middleware.Responder {
+	api.TieringTiersListNamesHandler = tieringApi.TiersListNamesHandlerFunc(func(params tieringApi.TiersListNamesParams, session *models.Principal) middleware.Responder {
 		tierList, err := getTiersNameResponse(session, params)
 		if err != nil {
 			return tieringApi.NewTiersListDefault(err.Code).WithPayload(err.APIError)

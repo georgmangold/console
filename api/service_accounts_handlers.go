@@ -19,7 +19,6 @@ package api
 import (
 	"context"
 	"encoding/json"
-	"errors"
 	"time"
 
 	"github.com/go-openapi/runtime/middleware"
@@ -229,7 +228,7 @@ func getCreateAUserServiceAccountCredsResponse(session *models.Principal, params
 	userAdminClient := AdminClient{Client: userAdmin}
 	serviceAccount := params.Body
 	if params.Name == serviceAccount.AccessKey {
-		return nil, ErrorWithContext(ctx, errors.New("Access Key already in use"))
+		return nil, ErrorWithContext(ctx, ErrNonUniqueAccessKey)
 	}
 	accounts, err := userAdminClient.listServiceAccounts(ctx, params.Name)
 	if err != nil {
@@ -237,7 +236,7 @@ func getCreateAUserServiceAccountCredsResponse(session *models.Principal, params
 	}
 	for i := 0; i < len(accounts.Accounts); i++ {
 		if accounts.Accounts[i].AccessKey == serviceAccount.AccessKey {
-			return nil, ErrorWithContext(ctx, errors.New("Access Key already in use"))
+			return nil, ErrorWithContext(ctx, ErrNonUniqueAccessKey)
 		}
 	}
 
@@ -269,7 +268,7 @@ func getCreateServiceAccountCredsResponse(session *models.Principal, params saAp
 	userAdminClient := AdminClient{Client: userAdmin}
 
 	if session.AccountAccessKey == serviceAccount.AccessKey {
-		return nil, ErrorWithContext(ctx, errors.New("Access Key already in use"))
+		return nil, ErrorWithContext(ctx, ErrNonUniqueAccessKey)
 	}
 
 	accounts, err := userAdminClient.listServiceAccounts(ctx, "")
@@ -279,7 +278,7 @@ func getCreateServiceAccountCredsResponse(session *models.Principal, params saAp
 
 	for i := 0; i < len(accounts.Accounts); i++ {
 		if accounts.Accounts[i].AccessKey == serviceAccount.AccessKey {
-			return nil, ErrorWithContext(ctx, errors.New("Access Key already in use"))
+			return nil, ErrorWithContext(ctx, ErrNonUniqueAccessKey)
 		}
 	}
 
