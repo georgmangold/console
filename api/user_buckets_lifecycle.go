@@ -365,7 +365,7 @@ func editBucketLifecycle(ctx context.Context, client MinioClient, params bucketA
 
 	err2 := ilm.ApplyRuleFields(rule, opts)
 	if err2.ToGoError() != nil {
-		return fmt.Errorf("Unable to generate new lifecycle rule: %v", err2.ToGoError())
+		return fmt.Errorf("unable to generate new lifecycle rule: %v", err2.ToGoError())
 	}
 
 	return client.setBucketLifecycle(ctx, params.BucketName, lfcCfg)

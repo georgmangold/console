@@ -226,7 +226,7 @@ func (ac AdminClient) addPolicy(ctx context.Context, name string, policy *iampol
 
 // implements madmin.SetPolicy()
 func (ac AdminClient) setPolicy(ctx context.Context, policyName, entityName string, isGroup bool) error {
-	// nolint:staticcheck // ignore SA1019
+	// nolint:staticcheck // ignore SA1019 // todo deprecated SetPolicy
 	return ac.Client.SetPolicy(ctx, policyName, entityName, isGroup)
 }
 

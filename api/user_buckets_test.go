@@ -307,12 +307,6 @@ func TestBucketInfo(t *testing.T) {
 		return mockPolicy, nil
 	}
 	bucketToSet = "csbucket"
-	outputExpected = &models.Bucket{
-		Name:         swag.String(bucketToSet),
-		Access:       models.NewBucketAccess(models.BucketAccessCUSTOM),
-		CreationDate: "",
-		Size:         0,
-	}
 	_, err = getBucketInfo(ctx, minClient, adminClient, bucketToSet)
 	if assert.Error(err) {
 		assert.Equal("invalid character 'p' looking for beginning of value", err.Error())

@@ -48,6 +48,8 @@ const (
 	ConsoleSecureExpectCTHeader                  = "CONSOLE_SECURE_EXPECT_CT_HEADER"
 	PrometheusURL                                = "CONSOLE_PROMETHEUS_URL"
 	PrometheusAuthToken                          = "CONSOLE_PROMETHEUS_AUTH_TOKEN"
+	PrometheusAuthUsername                       = "CONSOLE_PROMETHEUS_AUTH_USERNAME"
+	PrometheusAuthPassword                       = "CONSOLE_PROMETHEUS_AUTH_PASSWORD"
 	PrometheusJobID                              = "CONSOLE_PROMETHEUS_JOB_ID"
 	PrometheusExtraLabels                        = "CONSOLE_PROMETHEUS_EXTRA_LABELS"
 	ConsoleLogQueryURL                           = "CONSOLE_LOG_QUERY_URL"
