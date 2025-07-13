@@ -8,7 +8,7 @@ export CONSOLE_MINIO_SERVER="http://127.0.0.1:9000";
 export CONSOLE_IDP_URL="http://PROVIDER:5556/.well-known/openid-configuration";
 export CONSOLE_IDP_CLIENT_ID="minio-client-app";
 export CONSOLE_IDP_SECRET="minio-client-app-secret";
-export CONSOLE_IDP_CALLBACK="http://CONSOLE:9090/oauth_callback";
+export CONSOLE_IDP_CALLBACK="http://CONSOLE:9090";
 export CONSOLE_IDP_DISPLAY_NAME="Login with OIDC";
 
 ./console server
@@ -22,12 +22,14 @@ This means you can use the same variables as you would set on the server and sha
 | Console Environment Variables | MinIO Server Environment Variables | Required | Example |
 | -- | -- | -- | -- |
 | CONSOLE_IDP_DISPLAY_NAME | MINIO_IDENTITY_OPENID_DISPLAY_NAME | | "Login with OIDC" |
-| CONSOLE_IDP_URL | MINIO_IDENTITY_OPENID_CONFIG_URL | ✓ | https://provider/.well-known/openid-configuration" |
+| CONSOLE_IDP_URL | MINIO_IDENTITY_OPENID_CONFIG_URL | ✓ | "https://provider/.well-known/openid-configuration" |
 | CONSOLE_IDP_CLIENT_ID | MINIO_IDENTITY_OPENID_CLIENT_ID | ✓ | minio-client-app |
 | CONSOLE_IDP_SECRET | MINIO_IDENTITY_OPENID_CLIENT_SECRET | ✓ | minio-client-app-secret |
-| CONSOLE_IDP_CALLBACK | MINIO_BROWSER_REDIRECT_URL | ✓ | https://console/oauth_callback" |
+| CONSOLE_IDP_CALLBACK | MINIO_BROWSER_REDIRECT_URL | ✓ | "https://console" ***without*** /oauth_callback |
 | CONSOLE_IDP_CALLBACK_DYNAMIC | MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC | | on / off |
 | CONSOLE_IDP_SCOPES | MINIO_IDENTITY_OPENID_SCOPES | | "openid,profile,email" |
 | CONSOLE_IDP_USERINFO | MINIO_IDENTITY_OPENID_CLAIM_USERINFO | |on / off |
-| CONSOLE_IDP_ROLE_POLICY | MINIO_IDENTITY_OPENID_ROLE_POLICY | | "app-bucket-write,app-bucket-list" |
+| *(only set on MinIO Server Side)*| MINIO_IDENTITY_OPENID_CLAIM_NAME | | "name" exclusiv with ROLE_POLICY ↓
+| ↓ If set **NEEDS ARN** of Policy Role set on Console ↓  | MINIO_IDENTITY_OPENID_ROLE_POLICY | | "consoleAdmin" exclusiv with CLAIM_NAME ↑ |
+| CONSOLE_IDP_ROLE_ARN | ↑ If Role Policy set get Policy Role Arn from MinIO Startup Log ↑  looks like this example → | | "arn:minio:iam:::role/nOybJqMNzNmroqEKq5D0EUsRZw0" |
 | CONSOLE_IDP_END_SESSION_ENDPOINT | | |

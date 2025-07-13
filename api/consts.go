@@ -71,7 +71,7 @@ const (
 	ConsoleIDPCallbackURLDynamic = "CONSOLE_IDP_CALLBACK_DYNAMIC"
 	ConsoleIDPScopes             = "CONSOLE_IDP_SCOPES"
 	ConsoleIDPUserInfo           = "CONSOLE_IDP_USERINFO"
-	ConsoleIDPRolePolicy         = "CONSOLE_IDP_ROLE_POLICY"
+	ConsoleIDPRoleArn            = "CONSOLE_IDP_ROLE_ARN"
 	ConsoleIDPEndSessionEndpoint = "CONSOLE_IDP_END_SESSION_ENDPOINT"
 	// MinIO Server constants for OIDC
 	MinioIdentifyOpenIDDisplayName        = "MINIO_IDENTITY_OPENID_DISPLAY_NAME"
@@ -82,5 +82,4 @@ const (
 	MinioIdentifyOpenIDRedirectURIDynamic = "MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC"
 	MinioIdentifyOpenIDScopes             = "MINIO_IDENTITY_OPENID_SCOPES"
 	MinioIdentifyOpenIDClaimUserinfo      = "MINIO_IDENTITY_OPENID_CLAIM_USERINFO"
-	MinioIdentifyOpenIDRolePolicy         = "MINIO_IDENTITY_OPENID_ROLE_POLICY"
 )
