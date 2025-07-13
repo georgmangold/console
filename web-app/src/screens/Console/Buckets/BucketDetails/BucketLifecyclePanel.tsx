@@ -374,7 +374,7 @@ const BucketLifecyclePanel = () => {
                   a configured remote storage tier.
                   <br />
                   <br />
-                  You can learn more at our{" "}
+                  You can learn more at the{" "}
                   <a
                     href="https://min.io/docs/minio/linux/administration/object-management/object-lifecycle-management.html"
                     target="_blank"

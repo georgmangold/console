@@ -330,7 +330,7 @@ const Inspect = () => {
                         fontSize: "14px",
                       }}
                     >
-                      You can learn more at our{" "}
+                      You can learn more at the{" "}
                       <a
                         href="https://github.com/minio/minio/tree/master/docs/debugging"
                         target="_blank"

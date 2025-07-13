@@ -390,7 +390,7 @@ const BucketReplicationPanel = () => {
                 objects between source and destination buckets.
                 <br />
                 <br />
-                You can learn more at our{" "}
+                You can learn more at the{" "}
                 <a
                   href="https://min.io/docs/minio/linux/administration/bucket-replication.html"
                   target="_blank"

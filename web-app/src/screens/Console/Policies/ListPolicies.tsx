@@ -263,7 +263,7 @@ const ListPolicies = () => {
                   more complete documentation on AWS IAM-specific topics.
                   <br />
                   <br />
-                  You can learn more at our{" "}
+                  You can learn more at the{" "}
                   <a
                     href="https://min.io/docs/minio/linux/administration/identity-access-management.html#access-management"
                     target="_blank"

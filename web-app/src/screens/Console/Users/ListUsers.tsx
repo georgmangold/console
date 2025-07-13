@@ -385,7 +385,7 @@ const ListUsers = () => {
                         default.
                         <br />
                         <br />
-                        You can learn more at our{" "}
+                        You can learn more at the{" "}
                         <a
                           href="https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-user-management.html"
                           target="_blank"

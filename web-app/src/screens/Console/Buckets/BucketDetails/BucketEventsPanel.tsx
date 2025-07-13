@@ -241,7 +241,7 @@ const BucketEventsPanel = () => {
                   events similar to the Amazon S3 Event Notifications.
                   <br />
                   <br />
-                  You can learn more at our{" "}
+                  You can learn more at the{" "}
                   <a
                     href="https://min.io/docs/minio/linux/administration/monitoring/bucket-notifications.html"
                     target="_blank"

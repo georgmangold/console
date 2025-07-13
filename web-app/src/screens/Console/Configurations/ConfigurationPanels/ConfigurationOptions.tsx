@@ -166,7 +166,7 @@ const ConfigurationOptions = () => {
                 encryption, compression, region, notifications, etc.
                 <br />
                 <br />
-                You can learn more at our{" "}
+                You can learn more at the{" "}
                 <a
                   href="https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-config.html#id4"
                   target="_blank"

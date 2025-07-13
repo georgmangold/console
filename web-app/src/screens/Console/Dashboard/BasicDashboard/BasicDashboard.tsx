@@ -333,7 +333,7 @@ const BasicDashboard = ({ usage }: IDashboardProps) => {
                       fontSize: "14px",
                     }}
                   >
-                    MinIO Dashboard will display basic metrics as we couldn’t
+                    Console Dashboard will display basic metrics as we couldn’t
                     connect to Prometheus successfully. Please try again in a
                     few minutes. If the problem persists, you can review your
                     configuration and confirm that Prometheus server is up and
@@ -350,7 +350,7 @@ const BasicDashboard = ({ usage }: IDashboardProps) => {
                       target="_blank"
                       rel="noopener"
                     >
-                      Read more about Prometheus on our Docs site.
+                      Read more about Prometheus on the Docs site.
                     </a>
                   </Box>
                 </Box>
