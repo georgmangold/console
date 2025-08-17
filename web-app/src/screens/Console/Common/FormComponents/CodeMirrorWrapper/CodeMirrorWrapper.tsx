@@ -27,6 +27,8 @@ interface ICodeWrapper {
   onChange: (value: string) => any;
   editorHeight?: string | number;
   helptip?: any;
+  readOnly?: boolean;
+  disabled?: boolean;
 }
 
 const CodeMirrorWrapper = ({
@@ -37,6 +39,8 @@ const CodeMirrorWrapper = ({
   onChange,
   editorHeight = 250,
   helptip,
+  readOnly = false,
+  disabled = false,
 }: ICodeWrapper) => {
   return (
     <CodeEditor
@@ -46,6 +50,8 @@ const CodeMirrorWrapper = ({
       tooltip={tooltip}
       editorHeight={editorHeight}
       label={label}
+      readOnly={readOnly}
+      disabled={disabled}
       helpTools={
         <Fragment>
           <TooltipWrapper tooltip={"Copy to Clipboard"}>
