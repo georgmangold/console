@@ -38,6 +38,7 @@ import {
 import TestWrapper from "../Common/TestWrapper/TestWrapper";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
 import HelpMenu from "../HelpMenu";
+import HealthInfoResults from "./HealthInfoResults";
 
 const HealthInfo = () => {
   const dispatch = useAppDispatch();
@@ -57,6 +58,7 @@ const HealthInfo = () => {
   const [title, setTitle] = useState<string>("Health Report");
   const [diagFileContent, setDiagFileContent] = useState<string>("");
   const [subnetResponse, setSubnetResponse] = useState<string>("");
+  const [serverHealthInfo, setServerHealthInfo] = useState<HealthInfoMessage>();
 
   const download = () => {
     let element = document.createElement("a");
@@ -119,6 +121,7 @@ const HealthInfo = () => {
     if (startDiagnostic) {
       dispatch(healthInfoResetMessage());
       setDiagFileContent("");
+      setServerHealthInfo(undefined);
       const url = new URL(window.location.toString());
       const isDev = process.env.NODE_ENV === "development";
       const port = isDev ? "9090" : url.port;
@@ -149,6 +152,7 @@ const HealthInfo = () => {
           let m: ReportMessage = JSON.parse(message.data.toString());
           if (m.serverHealthInfo) {
             dispatch(healthInfoMessageReceived(m.serverHealthInfo));
+            setServerHealthInfo(m.serverHealthInfo);
           }
           if (m.encoded !== "") {
             setDiagFileContent(m.encoded);
@@ -303,15 +307,21 @@ const HealthInfo = () => {
         {!startDiagnostic && (
           <Fragment>
             <br />
-            <HelpBox
-              title={
-                "Cluster Health Report will be generated, you will be able to download the JSON File."
-              }
-              iconComponent={<InfoIcon />}
-              help={
-                "If the Health report cannot be generated at this time, please wait a moment and try again."
-              }
-            />
+            {serverHealthInfo === undefined ? (
+              <HelpBox
+                title={
+                  "Cluster Health Report will be generated, you will be able to download the JSON File."
+                }
+                iconComponent={<InfoIcon />}
+                help={
+                  "If the Health report cannot be generated at this time, please wait a moment and try again."
+                }
+              />
+            ) : (
+              <HealthInfoResults
+                serverHealthInfo={serverHealthInfo}
+              ></HealthInfoResults>
+            )}
           </Fragment>
         )}
       </PageLayout>

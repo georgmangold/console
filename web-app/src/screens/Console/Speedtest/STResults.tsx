@@ -132,6 +132,9 @@ const STResultsContainer = styled.div(({ theme }) => ({
     color: get(theme, `screenTitle.iconColor`, "#07193E"),
     marginRight: 20,
   },
+  "& .editorContainer": {
+    maxHeight: "none",
+  },
 }));
 
 interface ISTResults {
@@ -338,7 +341,11 @@ const STResults = ({ results, start }: ISTResults) => {
             <Grid container>
               {jsonView ? (
                 <Fragment>
-                  <CodeMirrorWrapper value={finalResJSON} onChange={() => {}} />
+                  <CodeMirrorWrapper
+                    value={finalResJSON}
+                    onChange={() => {}}
+                    readOnly={true}
+                  />
                 </Fragment>
               ) : (
                 <Fragment>
