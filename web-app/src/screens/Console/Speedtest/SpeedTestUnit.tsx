@@ -79,20 +79,22 @@ const SpeedTestUnit = ({
 
   return (
     <SpeedTestUnitBase>
-      <tr>
-        <td className={"objectGeneralTitle"}>{title}</td>
-        <td className={"iconTd"}>{icon}</td>
-      </tr>
-      <tr>
-        <td className={`metricValContainer testUnitRes`}>{total}</td>
-        <td className={`metricValContainer generalUnit`}>{unit}</td>
-      </tr>
-      <tr>
-        <td className={`metricValContainer objectsUnitRes`}>{objects}</td>
-        <td className={`metricValContainer objectsUnit`}>
-          {objects !== 0 && "Objs/S"}
-        </td>
-      </tr>
+      <tbody>
+        <tr>
+          <td className={"objectGeneralTitle"}>{title}</td>
+          <td className={"iconTd"}>{icon}</td>
+        </tr>
+        <tr>
+          <td className={`metricValContainer testUnitRes`}>{total}</td>
+          <td className={`metricValContainer generalUnit`}>{unit}</td>
+        </tr>
+        <tr>
+          <td className={`metricValContainer objectsUnitRes`}>{objects}</td>
+          <td className={`metricValContainer objectsUnit`}>
+            {objects !== 0 && "Objs/S"}
+          </td>
+        </tr>
+      </tbody>
     </SpeedTestUnitBase>
   );
 };

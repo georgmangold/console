@@ -120,6 +120,7 @@ interface infoMessage {
   services: services;
   backend: any;
   servers: serverProperties[];
+  metrics: any;
 }
 
 interface buckets {
@@ -186,11 +187,14 @@ interface disk {
 
 interface sysHealthInfo {
   cpus: serverCpuInfo[];
-  drives: serverDiskHwInfo[];
-  osinfos: serverOsInfo[];
-  meminfos: serverMemInfo[];
-  procinfos: serverProcInfo[];
-  error: string;
+  partitions: serverDiskHwInfo[];
+  osinfo: serverOsInfo[];
+  meminfo: serverMemInfo[];
+  procinfo: serverProcInfo[];
+  errors: string;
+  netinfo: any;
+  services: any;
+  config: any;
 }
 
 interface serverCpuInfo {
