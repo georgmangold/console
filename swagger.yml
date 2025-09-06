@@ -4008,6 +4008,8 @@ definitions:
           $ref: "#/definitions/redirectRule"
       isK8S:
         type: boolean
+      ldap_enabled:
+        type: boolean
   loginOauth2AuthRequest:
     type: object
     required:

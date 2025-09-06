@@ -6285,6 +6285,9 @@ func init() {
         "isK8S": {
           "type": "boolean"
         },
+        "ldap_enabled": {
+          "type": "boolean"
+        },
         "loginStrategy": {
           "type": "string",
           "enum": [
@@ -14837,6 +14840,9 @@ func init() {
       "type": "object",
       "properties": {
         "isK8S": {
+          "type": "boolean"
+        },
+        "ldap_enabled": {
           "type": "boolean"
         },
         "loginStrategy": {
