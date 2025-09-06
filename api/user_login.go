@@ -31,6 +31,7 @@ import (
 	"github.com/minio/console/models"
 	"github.com/minio/console/pkg/auth"
 	"github.com/minio/console/pkg/auth/idp/oauth2"
+	"github.com/minio/console/pkg/auth/ldap"
 	"github.com/minio/madmin-go/v3"
 	"github.com/minio/minio-go/v7/pkg/credentials"
 	"github.com/minio/pkg/v3/env"
@@ -242,6 +243,7 @@ func getLoginDetailsResponse(params authApi.LoginDetailParams, openIDProviders o
 		LoginStrategy: loginStrategy,
 		RedirectRules: redirectRules,
 		IsK8S:         isKubernetes(),
+		LdapEnabled:   ldap.GetLDAPEnabled(),
 	}
 
 	return loginDetails, nil

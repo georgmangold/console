@@ -504,6 +504,7 @@ export interface LoginDetails {
     | "redirect-service-account";
   redirectRules?: RedirectRule[];
   isK8S?: boolean;
+  ldap_enabled?: boolean;
 }
 
 export interface LoginOauth2AuthRequest {

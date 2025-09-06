@@ -29,6 +29,7 @@ interface LoginState {
   isK8S: boolean;
   navigateTo: string;
   ssoEmbeddedIDPDisplay: boolean;
+  ldap_enabled: boolean;
 }
 
 const initialState: LoginState = {
@@ -45,6 +46,7 @@ const initialState: LoginState = {
   isK8S: false,
   navigateTo: "",
   ssoEmbeddedIDPDisplay: false,
+  ldap_enabled: false,
 };
 
 const loginSlice = createSlice({
@@ -84,6 +86,7 @@ const loginSlice = createSlice({
         if (action.payload) {
           state.loginStrategy = action.payload;
           state.isK8S = !!action.payload.isK8S;
+          state.ldap_enabled = !!action.payload.ldap_enabled;
         }
       })
       .addCase(doLoginAsync.pending, (state, action) => {
