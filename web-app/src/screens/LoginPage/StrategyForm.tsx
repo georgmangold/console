@@ -20,12 +20,14 @@ import {
   Button,
   DropdownSelector,
   Grid,
+  IdentitiesMenuIcon,
   InputBox,
   LockFilledIcon,
   LogoutIcon,
   PasswordKeyIcon,
   ProgressBar,
   Select,
+  Tag,
   UserFilledIcon,
 } from "mds";
 import {
@@ -48,6 +50,10 @@ const StrategyForm = ({ redirectRules }: { redirectRules: RedirectRule[] }) => {
   const [anchorEl, setAnchorEl] = React.useState<
     (EventTarget & HTMLButtonElement) | null
   >(null);
+
+  const ldap_enabled = useSelector(
+    (state: AppState) => state.login.ldap_enabled,
+  );
 
   const accessKey = useSelector((state: AppState) => state.login.accessKey);
   const secretKey = useSelector((state: AppState) => state.login.secretKey);
@@ -169,6 +175,18 @@ const StrategyForm = ({ redirectRules }: { redirectRules: RedirectRule[] }) => {
                 marginTop: redirectRules.length > 0 ? 55 : 0,
               }}
             >
+              {ldap_enabled && (
+                <Tag
+                  color="ok"
+                  icon={<IdentitiesMenuIcon />}
+                  id="ldap-enabled-tag"
+                  label="LDAP Authentication"
+                  variant="outlined"
+                  sx={{
+                    marginBottom: 14,
+                  }}
+                ></Tag>
+              )}
               <Grid item xs={12} sx={{ marginBottom: 14 }}>
                 <InputBox
                   fullWidth
