@@ -40,6 +40,9 @@ type LoginDetails struct {
 	// is k8 s
 	IsK8S bool `json:"isK8S,omitempty"`
 
+	// ldap enabled
+	LdapEnabled bool `json:"ldap_enabled,omitempty"`
+
 	// login strategy
 	// Enum: ["form","redirect","service-account","redirect-service-account"]
 	LoginStrategy string `json:"loginStrategy,omitempty"`
