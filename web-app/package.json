@@ -11,7 +11,7 @@
     "kbar": "^0.1.0-beta.46",
     "local-storage-fallback": "^5.0.0",
     "lodash": "^4.17.21",
-    "luxon": "^3.7.1",
+    "luxon": "^3.7.2",
     "mds": "https://github.com/georgmangold/mds.git#v1.1.5.2",
     "react": "^18.3.1",
     "react-component-export-image": "^1.0.6",
@@ -62,8 +62,8 @@
   "proxy": "http://localhost:9090/",
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.27.1",
-    "@babel/runtime": "^7.28.2",
-    "@playwright/test": "^1.53.1",
+    "@babel/runtime": "^7.28.4",
+    "@playwright/test": "^1.55.0",
     "@types/jest": "^30.0.0",
     "@types/lodash": "^4.17.20",
     "@types/luxon": "^3.7.1",
@@ -78,9 +78,9 @@
     "@types/recharts": "^1.8.29",
     "@types/superagent": "^8.1.9",
     "@types/webpack-env": "^1.18.8",
-    "babel-plugin-istanbul": "^7.0.0",
+    "babel-plugin-istanbul": "^7.0.1",
     "customize-cra": "^1.0.0",
-    "knip": "^5.62.0",
+    "knip": "^5.63.1",
     "minio": "^8.0.5",
     "nyc": "^17.1.0",
     "prettier": "3.6.2",
@@ -100,12 +100,18 @@
     "ws": "^8.17.1",
     "rollup": "^4.24.0",
     "cookie": "^0.7.2",
-    "jspdf": "^3.0.1",
+    "jspdf": "^3.0.2",
     "@babel/runtime": "^7.26.10",
     "prebuilt-install": "^2.1.3",
     "tar-fs": "^2.1.3",
     "form-data": "^4.0.4"
   },
+  "overrides": {
+    "form-data": "^4.0.4",
+    "webpack-dev-server": "^5.2.1",
+    "tmp": "^0.2.4",
+    "on-headers": "^1.0.2"
+  },
   "main": "index.js",
-  "packageManager": "yarn@4.4.0"
+  "packageManager": "yarn@4.9.4"
 }
