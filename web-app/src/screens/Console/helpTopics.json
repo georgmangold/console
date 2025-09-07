@@ -6,7 +6,7 @@
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -27,25 +27,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Policy based access control",
-          "url": "https://min.io/docs/minio/linux/administration/identity-access-management/policy-based-access-control.html#",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#",
           "body": "Learn how Policy-Based Access Control (PBAC)  is used to define the authorized actions and resources  to which an authenticated user has access"
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -116,19 +116,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Versioning",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/object-versioning.html#minio-bucket-versioning",
           "body": "MinIO supports keeping multiple “versions” of an object in a single bucket. MinIO versioning protects from unintended overwrites and deletions while providing support for “undoing” a write operation."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Buckets",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets",
+          "url": "https://docs.min.io/community/minio-object-store/administration/console/managing-objects.html#buckets",
           "body": "Learn about using Console to create and manage Buckets with MinIO"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -199,19 +199,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Versioning",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/object-versioning.html#minio-bucket-versioning",
           "body": "Learn how versioning protects your data from unintended overwrites and deletions"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Buckets",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets",
+          "url": "https://docs.min.io/community/minio-object-store/administration/console/managing-objects.html#buckets",
           "body": "Learn how to create and manage Buckets"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -239,31 +239,31 @@
         {
           "img": "/minio-logo.svg",
           "title": "Policy Document Structure",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
           "body": "MinIO policy documents use the same schema as AWS IAM Policy documents. See policy templates and allowed S3 Policy actions and condition keys in our docs."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Access Keys",
-          "url": "https://min.io/docs/minio/linux/administration/console/security-and-access.html#minio-console-user-access-keys",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-user-management.html#access-keys",
           "body": "Access Keys support providing applications authentication credentials which inherit permissions from the “parent” user."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -310,55 +310,55 @@
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Policy Variables",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-variables",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#policy-variables",
           "body": "MinIO supports using policy variables for automatically substituting context from the authenticated user and/or the operation into the user’s assigned policy or policies."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Admin Policy Action Keys",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#mc-admin-policy-action-keys",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#mc-admin-policy-action-keys",
           "body": "See actions supported in defining policies for MinIO admin operations. These actions are only valid for MinIO deployments and are not intended for use with other S3-compatible services."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Admin Policy Condition Keys",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#mc-admin-policy-condition-keys",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#mc-admin-policy-condition-keys",
           "body": "See which conditions MinIO supports for use with defining policies for admin actions."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Supported S3 Policy Condition Keys",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys",
           "body": "MinIO policy documents support IAM conditional statements."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Supported S3 Policy Actions",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions",
           "body": "MinIO policy documents support a subset of IAM S3 Action keys."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Policy Document Structure",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
           "body": "MinIO policy documents use the same schema as AWS IAM Policy documents. See policy templates and allowed S3 Policy actions and condition keys in our docs."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -411,13 +411,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Versioning",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/object-versioning.html#minio-bucket-versioning",
           "body": "MinIO versioning protects from unintended overwrites and deletions while providing support for “undoing” a write operation."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -445,19 +445,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Creating a New Bucket in a Specific Region",
-          "url": "https://min.io/docs/minio/linux/reference/minio-mc/mc-mb.html#create-a-new-bucket-in-a-specific-region",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-mc/mc-mb.html#create-a-new-bucket-in-a-specific-region",
           "body": "A Bucket can be created in a specified region"
         },
         {
           "img": "/minio-logo.svg",
           "title": "What are Settings and Configurations?",
-          "url": "https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-server/settings.html#minio-console-settings",
           "body": "These configuration settings define runtime  behavior of the MinIO server process,  comparable to the mc admin config command"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -498,13 +498,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "What are Settings and Configurations?",
-          "url": "https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-server/settings.html#minio-console-settings",
           "body": "These configuration settings define runtime  behavior of the MinIO server process,  comparable to the mc admin config command"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -538,25 +538,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "How is failed replication handled?",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-replication-process",
+          "url": "https://docs.min.io/community/minio-object-store/administration/bucket-replication.html#minio-replication-process",
           "body": "MinIO queues failed replication operations and retries those operations until replication succeeds."
         },
         {
           "img": "/minio-logo.svg",
           "title": "What are Replication Workers?",
-          "url": "https://min.io/docs/minio/windows/administration/bucket-replication.html#minio-replication-process",
+          "url": "https://docs.min.io/community/minio-object-store/administration/bucket-replication.html#minio-replication-process",
           "body": "MinIO uses a replication queuing system with multiple concurrent replication workers operating on that queue."
         },
         {
           "img": "/minio-logo.svg",
           "title": "What are Settings and Configurations?",
-          "url": "https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-server/settings.html#minio-console-settings",
           "body": "These configuration settings define runtime behavior of the MinIO server process,  comparable to the mc admin config command"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -577,61 +577,62 @@
         {
           "img": "/minio-logo.svg",
           "title": "Where can I see current Heal status?",
-          "url": "https://min.io/docs/minio/windows/administration/console/managing-deployment.html#drives",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-server/settings.html#drives",
           "body": "Check under Monitoring/Drives on the left hand  menu to see Drive and Bucket Healing status"
         },
         {
           "img": "/minio-logo.svg",
           "title": "How is Erasure Coding used to Protect Data?",
-          "url": "https://min.io/docs/minio/macos/operations/install-deploy-manage/deploy-minio-multi-node-multi-drive.html#erasure-coding-parity",
+          "url": "https://docs.min.io/community/minio-object-store/operations/concepts/erasure-coding.html",
           "body": "MinIO erasure coding is a data redundancy and  availability feature that allows MinIO deployments to  automatically reconstruct objects on-the-fly despite  the loss of multiple drives or nodes in the cluster."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Recover After Hardware failure",
-          "url": "https://min.io/docs/minio/windows/operations/data-recovery.html#minio-restore-hardware-failure",
+          "url": "https://docs.min.io/community/minio-object-store/operations/data-recovery.html",
           "body": "Depending on the deployment topology and  selected erasure code parity, MinIO can tolerate loss  of up to half the drives or nodes in the deployment  while maintaining read access to objects."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Site Failure Recovery",
-          "url": "https://min.io/docs/minio/windows/operations/data-recovery/recover-after-site-failure.html#minio-restore-hardware-failure-site",
+          "url": "https://docs.min.io/community/minio-object-store/operations/data-recovery/recover-after-site-failure.html",
           "body": "MinIO can make the loss of an entire site, while  significant, a relatively minor incident. Site recovery depends on the replication option you use for the site."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Node Failure Recovery",
-          "url": "https://min.io/docs/minio/windows/operations/data-recovery/recover-after-node-failure.html#minio-restore-hardware-failure-node",
+          "url": "https://docs.min.io/community/minio-object-store/operations/data-recovery/recover-after-node-failure.html",
           "body": "If a MinIO node suffers complete hardware failure, the node begins healing operations once it rejoins the  deployment."
         },
         {
           "img": "/minio-logo.svg",
           "title": "What is MinIO Healing?",
-          "url": "https://min.io/docs/minio/windows/operations/concepts.html#minio-automatically-heals-corrupt-or-missing-data-on-the-fly",
+          "url": "https://docs.min.io/community/minio-object-store/operations/concepts.html#minio-automatically-heals-corrupt-or-missing-data-on-the-fly",
+          "url": "",
           "body": "Healing is MinIO\u2019s ability to restore data after some event causes data loss. Data loss can come from bit rot, drive loss, or node loss."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Understand MinIO Healing Using mc",
-          "url": "https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-heal.html#description",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-mc-admin/mc-admin-heal.html#description",
           "body": "The mc admin heal command scans for objects that are damaged or corrupted and heals those objects."
         },
         {
           "img": "/minio-logo.svg",
           "title": "What is Bit Rot?",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/glossary.html#term-bit-rot",
+          "url": "https://docs.min.io/community/minio-object-store/operations/concepts/erasure-coding.html#bit-rot-protection",
           "body": "Bit rot is data corruption that occurs without the user\u2019s knowledge. MinIO combats bit rot with hashing and erasure coding."
         },
         {
           "img": "/minio-logo.svg",
           "title": "What are Settings and Configurations?",
-          "url": "https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-server/settings.html#minio-console-settings",
           "body": "These configuration settings define runtime behavior of the MinIO server process, comparable to the mc admin config command"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -702,31 +703,31 @@
         {
           "img": "/minio-logo.svg",
           "title": "Object Scanner",
-          "url": "https://min.io/docs/minio/windows/administration/object-management/object-lifecycle-management.html#minio-lifecycle-management-scanner",
+          "url": "https://docs.min.io/community/minio-object-store/operations/concepts/scanner.html",
           "body": "Learn more about how the scanner checks Objects for transition and expiry based on lifecycle rules"
         },
         {
           "img": "/minio-logo.svg",
           "title": "What is the Scanner?",
-          "url": "https://min.io/docs/minio/linux/glossary.html#term-scanner",
+          "url": "https://docs.min.io/community/minio-object-store/glossary.html#term-scanner",
           "body": "One of several low-priority processes MinIO runs to check lifecycle management rules, bucket or site replication status, as well as object bit rot and healing"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Lifecycle Management Object Scanner Considerations",
-          "url": "https://min.io/docs/minio/windows/administration/object-management/transition-objects-to-gcs.html#lifecycle-management-object-scanner",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/object-lifecycle-management.html#lifecycle-management-object-scanner",
           "body": "MinIO uses a scanner process to check objects against all configured lifecycle management rules. High IO workloads or limited system resources may delay application of lifecycle management rules"
         },
         {
           "img": "/minio-logo.svg",
           "title": "What are Settings and Configurations?",
-          "url": "https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-server/settings.html#minio-console-settings",
           "body": "These configuration settings define runtime  behavior of the MinIO server process,  comparable to the mc admin config command"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -791,13 +792,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "What are Settings and Configurations?",
-          "url": "https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-server/settings.html#minio-console-settings",
           "body": "These configuration settings define runtime  behavior of the MinIO server process,  comparable to the mc admin config command"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -818,31 +819,31 @@
         {
           "img": "/minio-logo.svg",
           "title": "What is the logger_webhook Environment Variable?",
-          "url": "https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-config.html#minio-server-config-logging-logs",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-mc-admin/mc-admin-config.html#minio-server-config-logging-logs",
           "body": "The top-level configuration key for defining an  HTTP webhook target for publishing MinIO logs."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Publish Server Logs to HTTP Webhook",
-          "url": "https://min.io/docs/minio/linux/operations/monitoring/minio-logging.html#minio-logging-publish-server-logs",
+          "url": "https://docs.min.io/community/minio-object-store/operations/monitoring/minio-logging.html#minio-logging-publish-server-logs",
           "body": "You can configure a new HTTP webhook endpoint  to which MinIO publishes minio server logs using  either environment variables or by setting  runtime configuration settings."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Monitoring Logs",
-          "url": "https://min.io/docs/minio/linux/operations/monitoring.html#logging",
+          "url": "https://docs.min.io/community/minio-object-store/operations/monitoring.html#logging",
           "body": "MinIO supports publishing server logs  and audit logs to an HTTP webhook."
         },
         {
           "img": "/minio-logo.svg",
           "title": "What are Settings and Configurations?",
-          "url": "https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-server/settings.html#minio-console-settings",
           "body": "These configuration settings define runtime  behavior of the MinIO server process,  comparable to the mc admin config command"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -883,25 +884,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Publish Audit Logs to an HTTP webhook",
-          "url": "https://min.io/docs/minio/linux/reference/minio-server/minio-server.html#minio-sever-envvar-logging-audit",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-server/settings/metrics-and-logging.html#webhook-audit-logs",
           "body": "You can configure a new HTTP webhook endpoint  to which MinIO publishes audit logs using either  environment variables or by setting runtime  configuration settings"
         },
         {
           "img": "/minio-logo.svg",
           "title": "What are Settings and Configurations?",
-          "url": "https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-server/settings.html#minio-console-settings",
           "body": "These configuration settings define runtime  behavior of the MinIO server process,  comparable to the mc admin config command"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Publish Audit Logs to an External Service",
-          "url": "https://min.io/docs/minio/linux/operations/monitoring/minio-logging.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/monitoring/minio-logging.html",
           "body": "Audit logs are granular descriptions of each operation  on the MinIO deployment supporting security  standards and regulations which require  detailed tracking of operations."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -929,43 +930,43 @@
         {
           "img": "/minio-logo.svg",
           "title": "Publish Events to Kafka",
-          "url": "https://min.io/docs/minio/linux/administration/monitoring/publish-events-to-kafka.html",
-          "body": "MinIO supports publishing bucket notification  events to a Kafka service endpoint."
+          "url": "https://docs.min.io/community/minio-object-store/administration/monitoring/publish-events-to-kafka.html",
+          "body": "MinIO supports publishing bucket notification events to a Kafka service endpoint."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Kafka Service for Bucket Notifications",
-          "url": "https://min.io/docs/minio/linux/reference/minio-server/minio-server.html#minio-server-envvar-bucket-notification-kafka",
+          "url": "https://docs.min.io/community/minio-object-store/administration/monitoring/publish-events-to-kafka.html",
           "body": "Learn about environment variables for configuring a Kafka service as a target for Bucket Nofitications."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Kafka Service Configuration Settings",
-          "url": "https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-config.html#minio-server-config-bucket-notification-kafka",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-mc-admin/mc-admin-config.html#minio-server-config-bucket-notification-kafka",
           "body": "Learn about environment variables for configuring a Kafka service as a target for Bucket Nofitications."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Supported Bucket Notification Targets",
-          "url": "https://min.io/docs/minio/linux/administration/monitoring/bucket-notifications.html#supported-notification-targets",
+          "url": "https://docs.min.io/community/minio-object-store/administration/monitoring/bucket-notifications.html#supported-notification-targets",
           "body": "Learn which notification targets are supported by MinIO."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Notifications",
-          "url": "https://min.io/docs/minio/linux/administration/monitoring.html#bucket-notifications",
+          "url": "https://docs.min.io/community/minio-object-store/administration/monitoring/bucket-notifications.html",
           "body": "MinIO bucket notifications allow administrators to send notifications to supported external services on certain object or bucket events."
         },
         {
           "img": "/minio-logo.svg",
           "title": "What are Settings and Configurations?",
-          "url": "https://min.io/docs/minio/windows/administration/console/managing-deployment.html#minio-console-settings",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-server/settings.html#minio-console-settings",
           "body": "These configuration settings define runtime behavior of the MinIO server process, comparable to the mc admin config command"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help? Check out additional Troubleshooting options"
         }
       ]
@@ -1005,13 +1006,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Site Replication Prerequisite",
-          "url": "https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites",
+          "url": "https://docs.min.io/community/minio-object-store/operations/replication/multi-site-replication.html#prerequisites",
           "body": "Check that your setup meets the requirements to deploy Site Replication"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1076,26 +1077,26 @@
         {
           "img": "/minio-logo.svg",
           "title": "Site Replication Overview",
-          "url": "https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/replication/multi-site-replication.html",
           "body": "See what changes are and are NOT replicated between peer sites"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Site Replication Tutorial",
-          "url": "https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#tutorials",
+          "url": "https://docs.min.io/community/minio-object-store/operations/replication/multi-site-replication.html#tutorials",
           "body": "Learn how to set up site replication using Console and the MinIO client (mc)"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Site Replication Prerequisite",
-          "url": "https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites",
+          "url": "https://docs.min.io/community/minio-object-store/operations/replication/multi-site-replication.html#prerequisites",
           "body": "Check that your setup meets the requirements to deploy Site Replication"
         },
 
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1160,13 +1161,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Site Replication Prerequisite",
-          "url": "https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html#prerequisites",
+          "url": "https://docs.min.io/community/minio-object-store/operations/replication/multi-site-replication.html#prerequisites",
           "body": "Check that your setup meets the requirements to deploy Site Replication"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1231,38 +1232,38 @@
         {
           "img": "/minio-logo.svg",
           "title": "Transition from MinIO to Azure",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-azure.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-azure.html",
           "body": "See the procedure to create a new object lifecycle management rule that transition objects from a MinIO bucket to a remote storage tier on the Azure storage backend."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Transition from MinIO to GCS",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-gcs.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-gcs.html",
           "body": "See the procedure to create a new object lifecycle management rule that transitions objects from a MinIO bucket to a remote storage tier on the Google Cloud Storage backend."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Transition from MinIO to S3",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-s3.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-s3.html",
           "body": "See the procedure to create a new object lifecycle management rule that transitions objects from a MinIO bucket to a remote storage tier on the Amazon Web Services S3 storage backend or an S3-compatible service."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Transition to Remote MinIO Deployment",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-minio.html#minio-lifecycle-management-transition-to-minio",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-minio.html",
           "body": "See the procedure to create a new object lifecycle management rule that transitions objects from a bucket on a primary MinIO deployment to a bucket on a remote MinIO deployment. "
         },
         {
           "img": "/minio-logo.svg",
           "title": "Object Lifecycle Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-lifecycle-management.html#object-transition-tiering",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/object-lifecycle-management.html#object-transition-tiering",
           "body": "Use MinIO Object Lifecycle Management to create rules for time or date based automatic transition or expiry of objects."
         },
 
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1315,13 +1316,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Object Lifecycle Management",
-          "url": "https://min.io/docs/minio/linux/administration/object-management/object-lifecycle-management.html#",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/object-lifecycle-management.html",
           "body": "Use MinIO Object Lifecycle Management to create rules for time or date based automatic transition or expiry of objects."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1374,37 +1375,37 @@
         {
           "img": "/minio-logo.svg",
           "title": "Transition from MinIO to Azure",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-azure.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-azure.html",
           "body": "See the procedure to create a new object lifecycle management rule that transitions objects from a MinIO bucket to a remote storage tier on the Azure storage backend."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Transition from MinIO to GCS",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-gcs.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-gcs.html",
           "body": "See the procedure to create a new object lifecycle management rule that transitions objects from a MinIO bucket to a remote storage tier on the Google Cloud Storage backend."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Transition from MinIO to S3",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-s3.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-s3.html",
           "body": "See the procedure to create a new object lifecycle management rule that transitions objects from a MinIO bucket to a remote storage tier on the Amazon Web Services S3 storage backend or an S3-compatible service."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Transition to Remote MinIO Deployment",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-minio.html#minio-lifecycle-management-transition-to-minio",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-minio.html#minio-lifecycle-management-transition-to-minio",
           "body": "See the procedure to create a new object lifecycle management rule that transitions objects from a bucket on a primary MinIO deployment to a bucket on a remote MinIO deployment. "
         },
         {
           "img": "/minio-logo.svg",
           "title": "Object Lifecycle Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-lifecycle-management.html#object-transition-tiering",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/object-lifecycle-management.html#object-transition-tiering",
           "body": "Use MinIO Object Lifecycle Management to create rules for time or date based automatic transition or expiry of objects."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1450,7 +1451,7 @@
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1515,25 +1516,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Console Metrics Dashboard",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/metrics-and-alerts.html#minio-console-metrics-dashboard",
+          "url": "https://docs.min.io/community/minio-object-store/operations/monitoring/metrics-and-alerts.html#minio-console-metrics-dashboard",
           "body": "The MinIO Console provides a point-in-time metrics dashboard by default, and also supports displaying time-series and historical data by querying a Prometheus service configured to scrape data from the MinIO deployment."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Available Metrics",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/metrics-and-alerts.html#available-metrics",
+          "url": "https://docs.min.io/community/minio-object-store/operations/monitoring/metrics-and-alerts.html#available-metrics",
           "body": "Learn about the different Prometheus metrics published by MinIO server"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Metrics and Alerts",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/monitoring.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/monitoring.html",
           "body": "For historical metrics and analytics, MinIO publishes cluster and node metrics using the Prometheus Data Model."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1567,25 +1568,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "User Management",
-          "url": "https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-user-management.html#",
           "body": "Each user can have one or more assigned policies that explicitly list the actions and resources to which that user has access. Users can also inherit policies from the groups in which they have membership."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Group Management",
-          "url": "https://min.io/docs/minio/linux/administration/identity-access-management/minio-group-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-group-management.html",
           "body": "A group is a collection of users. Each group can have one or more assigned policies that explicitly list the actions and resources to which group members are allowed or denied access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1625,25 +1626,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Group Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-group-management.html",
           "body": "A group is a collection of users. Each group can have one or more assigned policies that explicitly list the actions and resources to which group members are allowed or denied access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "User Management",
-          "url": "https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-user-management.html#",
           "body": "Each user can have one or more assigned policies that explicitly list the actions and resources to which that user has access. Users can also inherit policies from the groups in which they have membership."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1702,31 +1703,31 @@
         {
           "img": "/minio-logo.svg",
           "title": "Drive Healing",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-deployment.html#drives",
+          "url": "https://docs.min.io/community/minio-object-store/operations/concepts/healing.html",
           "body": "The Drives section displays the healing status for a bucket."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Erasure Coding",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/concepts/erasure-coding.html#",
+          "url": "https://docs.min.io/community/minio-object-store/operations/concepts/erasure-coding.html",
           "body": "MinIO Erasure Coding is a data redundancy and availability feature that allows MinIO deployments to automatically reconstruct objects on-the-fly despite the loss of multiple drives or nodes in the cluster."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Site Healing",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/install-deploy-manage/multi-site-replication.html#site-healing",
+          "url": "https://docs.min.io/community/minio-object-store/operations/replication/multi-site-replication.html#site-healing",
           "body": "Any MinIO deployment in the site replication configuration can resynchronize damaged replica-eligible data from the peer with the most updated (“latest”) version of that data."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Healing",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/concepts.html#minio-automatically-heals-corrupt-or-missing-data-on-the-fly",
+          "url": "https://docs.min.io/community/minio-object-store/operations/concepts.html#minio-automatically-heals-corrupt-or-missing-data-on-the-fly",
           "body": "MinIO Automatically Heals Corrupt or Missing Data On-the-fly"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1803,19 +1804,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Health",
-          "url": "https://min.io/docs/minio/linux/administration/console/subnet-registration.html#health",
+          "url": "https://min.io/pricing?jmp=obj-browser",
           "body": "The health section provides an interface for running a health diagnostic for the MinIO Deployment. For clusters connected to the Internet, the report uploads automatically to SUBNET."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Healing",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/concepts.html#minio-automatically-heals-corrupt-or-missing-data-on-the-fly",
+          "url": "https://docs.min.io/community/minio-object-store/operations/concepts.html#minio-automatically-heals-corrupt-or-missing-data-on-the-fly",
           "body": "MinIO Automatically Heals Corrupt or Missing Data On-the-fly"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1855,43 +1856,43 @@
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "IDP Docs",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/external-iam.html",
           "body": "MinIO supports multiple external identity managers through OpenID Connect-Compatible Active Directory / LDAP"
         },
         {
           "img": "/minio-logo.svg",
           "title": "User Management",
-          "url": "https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-user-management.html#",
           "body": "Each user can have one or more assigned policies that explicitly list the actions and resources to which that user has access. Users can also inherit policies from the groups in which they have membership."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Built-in MinIO IDP",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-identity-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-identity-management.html",
           "body": "MinIO includes a built-in IDentity Provider (IDP) that provides core identity management functionality."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Active Directory / LDAP Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/ad-ldap-access-management.html",
           "body": "For identities managed by the external AD/LDAP provider, MinIO uses the user’s Distinguished Name and attempts to map it against an existing policy."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -1968,55 +1969,55 @@
         {
           "img": "/minio-logo.svg",
           "title": "Built-in MinIO IDP",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-identity-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-identity-management.html",
           "body": "MinIO includes a built-in IDentity Provider (IDP) that provides core identity management functionality."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "IDP Docs",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/external-iam.html",
           "body": "MinIO supports multiple external identity managers through OpenID Connect-Compatible Active Directory / LDAP"
         },
         {
           "img": "/minio-logo.svg",
           "title": "User Management",
-          "url": "https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-user-management.html#",
           "body": "Each user can have one or more assigned policies that explicitly list the actions and resources to which that user has access. Users can also inherit policies from the groups in which they have membership."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Active Directory / LDAP Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/ad-ldap-access-management.html",
           "body": "For identities managed by the external AD/LDAP provider, MinIO uses the user’s Distinguished Name and attempts to map it against an existing policy."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Keycloak configuration",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-keycloak-identity-management.html#minio-authenticate-using-keycloak",
+          "url": "https://docs.min.io/community/minio-object-store/operations/external-iam/configure-keycloak-identity-management.html",
           "body": "You can configure MinIO to use Keycloak as an external IDentity Provider (IDP) for authentication of users via the OpenID Connect (OIDC) protocol."
         },
         {
           "img": "/minio-logo.svg",
           "title": "LDAP Configuration",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-ad-ldap-external-identity-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/external-iam/configure-ad-ldap-external-identity-management.html",
           "body": "MinIO supports configuring a single Active Directory / LDAP Connect for external management of user identities."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2093,61 +2094,61 @@
         {
           "img": "/minio-logo.svg",
           "title": "Built-in MinIO IDP",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-identity-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-identity-management.html",
           "body": "MinIO includes a built-in IDentity Provider (IDP) that provides core identity management functionality."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "IDP Docs",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/external-iam.html",
           "body": "MinIO supports multiple external identity managers through OpenID Connect-Compatible Active Directory / LDAP"
         },
         {
           "img": "/minio-logo.svg",
           "title": "User Management",
-          "url": "https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-user-management.html#",
           "body": "Each user can have one or more assigned policies that explicitly list the actions and resources to which that user has access. Users can also inherit policies from the groups in which they have membership."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Active Directory / LDAP Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/ad-ldap-access-management.html",
           "body": "For identities managed by the external AD/LDAP provider, MinIO uses the user’s Distinguished Name and attempts to map it against an existing policy."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "LDAP Configuration",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-ad-ldap-external-identity-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/external-iam/configure-ad-ldap-external-identity-management.html",
           "body": "MinIO supports configuring a single Active Directory / LDAP Connect for external management of user identities."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Policy Variables",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-variables",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#policy-variables",
           "body": "MinIO supports using policy variables for automatically substituting context from the authenticated user and/or the operation into the user’s assigned policy or policies."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OIDC Configuration",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-openid-external-identity-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/external-iam/configure-openid-external-identity-management.html",
           "body": "MinIO supports using an OpenID Connect (OIDC) compatible IDentity Provider (IDP) such as Okta, KeyCloak, Dex, Google, or Facebook for external management of user identities."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2224,13 +2225,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2271,13 +2272,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2318,13 +2319,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2365,13 +2366,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2406,7 +2407,7 @@
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2427,13 +2428,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Audit Logs",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/monitoring/minio-logging.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/monitoring/minio-logging.html",
           "body": "You can configure an HTTP webhook endpoint to which MinIO publishes audit logs using either environment variables or by setting runtime configuration settings."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2454,7 +2455,7 @@
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2500,19 +2501,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Object Lambda",
-          "url": "https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html",
+          "url": "https://docs.min.io/community/minio-object-store/developers/transforms-with-object-lambda.html",
           "body": "MinIO’s Object Lambda enables developers to programmatically transform objects on demand."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Notifications",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/monitoring.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/monitoring.html",
           "body": "MinIO bucket notifications allow administrators to send notifications to supported external services on certain object or bucket events."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2589,19 +2590,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Object Lambda",
-          "url": "https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html",
+          "url": "https://docs.min.io/community/minio-object-store/developers/transforms-with-object-lambda.html",
           "body": "MinIO’s Object Lambda enables developers to programmatically transform objects on demand."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Notifications",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/monitoring.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/monitoring.html",
           "body": "MinIO bucket notifications allow administrators to send notifications to supported external services on certain object or bucket events."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2678,19 +2679,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Object Lambda",
-          "url": "https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html",
+          "url": "https://docs.min.io/community/minio-object-store/developers/transforms-with-object-lambda.html",
           "body": "MinIO’s Object Lambda enables developers to programmatically transform objects on demand."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Notifications",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/monitoring.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/monitoring.html",
           "body": "MinIO bucket notifications allow administrators to send notifications to supported external services on certain object or bucket events."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2767,19 +2768,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Object Management",
-          "url": "https://min.io/docs/minio/linux/administration/object-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management.html",
           "body": "Learn about Objects and how  MinIO allows you to manage them"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Managing Objects with the Object Browser",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#minio-console-managing-objects",
+          "url": "https://docs.min.io/community/minio-object-store/administration/console/managing-objects.html#minio-console-managing-objects",
           "body": "Learn how to use the Console Object Browser  to manage your Objects"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2844,37 +2845,37 @@
         {
           "img": "/minio-logo.svg",
           "title": "Supported S3 Policy Condition Keys",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys",
           "body": "MinIO policy documents support IAM conditional statements."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Supported S3 Policy Actions",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions",
           "body": "MinIO policy documents support a subset of IAM S3 Action keys."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Policy Document Structure",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
           "body": "MinIO policy documents use the same schema as AWS IAM Policy documents. See policy templates and allowed S3 Policy actions and condition keys in our docs."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -2933,37 +2934,37 @@
         {
           "img": "/minio-logo.svg",
           "title": "Supported S3 Policy Condition Keys",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys",
           "body": "MinIO policy documents support IAM conditional statements."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Supported S3 Policy Actions",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions",
           "body": "MinIO policy documents support a subset of IAM S3 Action keys."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Policy Document Structure",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
           "body": "MinIO policy documents use the same schema as AWS IAM Policy documents. See policy templates and allowed S3 Policy actions and condition keys in our docs."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3028,19 +3029,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3117,25 +3118,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Group Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-group-management.html",
           "body": "A group is a collection of users. Each group can have one or more assigned policies that explicitly list the actions and resources to which group members are allowed or denied access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3212,43 +3213,43 @@
         {
           "img": "/minio-logo.svg",
           "title": "Example Policy - Bucket Resource Access",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-openid-external-identity-management.html#assign-policies-to-oidc-users",
+          "url": "https://docs.min.io/community/minio-object-store/operations/external-iam/configure-openid-external-identity-management.html",
           "body": "An example policy demonstrating authorization  limited to a named bucket"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Supported S3 Policy Condition Keys",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys",
           "body": "MinIO policy documents support IAM conditional statements."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Supported S3 Policy Actions",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions",
           "body": "MinIO policy documents support a subset of IAM S3 Action keys."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Policy Document Structure",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
           "body": "MinIO policy documents use the same schema as AWS IAM Policy documents. See policy templates and allowed S3 Policy actions and condition keys in our docs."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3331,13 +3332,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Performance",
-          "url": "https://min.io/docs/minio/linux/administration/console/subnet-registration.html#performance",
+          "url": "https://min.io/pricing?jmp=obj-browser",
           "body": "The performance section provides an interface for running a performance test of the deployment."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3377,13 +3378,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Profile",
-          "url": "https://min.io/docs/minio/linux/administration/console/subnet-registration.html#profile",
+          "url": "https://min.io/pricing?jmp=obj-browser",
           "body": "The profile section provides an interface for running system profiling of the deployment. The results can provide insight into the MinIO server process running on a given node."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3404,19 +3405,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Inspect",
-          "url": "https://min.io/docs/minio/linux/administration/console/subnet-registration.html#inspect",
+          "url": "https://min.io/pricing?jmp=obj-browser",
           "body": "The inspect section provides an interface for capturing the erasure-coded metadata associated to an object or objects."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Encrypt Inspect Output",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/troubleshooting/encrypting-files.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting/encrypting-files.html",
           "body": "You can encrypt the output of the mc support inspect command for enhanced security when transmitting the files to MinIO SUBNET."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3437,13 +3438,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "What is Trace?",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-deployment.html#trace",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-mc-admin/mc-admin-trace.html",
           "body": "The trace section provides HTTP trace functionality for a bucket or buckets on the deployment."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3464,13 +3465,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3541,25 +3542,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Supported S3 Policy Condition Keys",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-condition-keys",
           "body": "MinIO policy documents support IAM conditional statements."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Supported S3 Policy Actions",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions",
           "body": "MinIO policy documents support a subset of IAM S3 Action keys."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Policy Document Structure",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
           "body": "MinIO policy documents use the same schema as AWS IAM Policy documents. See policy templates and allowed S3 Policy actions and condition keys in our docs."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3630,25 +3631,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Users",
-          "url": "https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-user-management.html#",
           "body": "Each user can have one or more assigned policies that explicitly list the actions and resources to which that user has access. Users can also inherit policies from the groups in which they have membership."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Identity and Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management.html",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3713,13 +3714,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "What is Watch?",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-deployment.html#watch",
+          "url": "https://docs.min.io/community/minio-object-store/reference/minio-mc/mc-watch.html",
           "body": "The Watch section displays S3 events as they occur on the selected bucket."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3740,19 +3741,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Group Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-group-management.html",
           "body": "A group is a collection of users. Each group can have one or more assigned policies that explicitly list the actions and resources to which group members are allowed or denied access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3829,25 +3830,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Supported S3 Policy Actions",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#supported-s3-policy-actions",
           "body": "MinIO policy documents support a subset of IAM S3 Action keys."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Policy Document Structure",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
           "body": "MinIO policy documents use the same schema as AWS IAM Policy documents. See policy templates and allowed S3 Policy actions and condition keys in our docs."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3887,19 +3888,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Access Managemnt",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions",
           "body": "Text snippet that will be relevant to the user will  go here  made to look nice in the helpitem size  on two-three lines"
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -3976,25 +3977,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Group Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-group-management.html",
           "body": "A group is a collection of users. Each group can have one or more assigned policies that explicitly list the actions and resources to which group members are allowed or denied access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Access Managemnt",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#minio-policy-actions",
           "body": "Text snippet that will be relevant to the user will  go here  made to look nice in the helpitem size  on two-three lines"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         }
       ]
@@ -4059,25 +4060,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Policy Document Structure",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#policy-document-structure",
           "body": "MinIO policy documents use the same schema as AWS IAM Policy documents. See policy templates and allowed S3 Policy actions and condition keys in our docs."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Group Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/minio-group-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-group-management.html",
           "body": "A group is a collection of users. Each group can have one or more assigned policies that explicitly list the actions and resources to which group members are allowed or denied access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "OpenID Connect Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/oidc-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/oidc-access-management.html",
           "body": "Learn more about connecting MinIO to OpenID for access management."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -4154,37 +4155,37 @@
         {
           "img": "/minio-logo.svg",
           "title": "Object Locking",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-retention.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/object-retention.html",
           "body": "MinIO Object Locking (“Object Retention”) enforces Write-Once Read-Many (WORM) immutability to protect versioned objects from deletion."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Encryption",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/server-side-encryption.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/server-side-encryption.html",
           "body": "MinIO Server-Side Encryption (SSE) protects objects as part of write operations, allowing clients to take advantage of server processing power to secure objects at the storage layer (encryption-at-rest)."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Versioning",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-versioning.html#minio-bucket-versioning",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/object-versioning.html#minio-bucket-versioning",
           "body": "MinIO versioning protects from unintended overwrites and deletions while providing support for “undoing” a write operation."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Buckets",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets",
+          "url": "https://docs.min.io/community/minio-object-store/administration/console/managing-objects.html#buckets",
           "body": "Learn how to use Console to manage Buckets"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Replication",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-bucket-replication-serverside",
+          "url": "https://docs.min.io/community/minio-object-store/administration/bucket-replication.html#minio-bucket-replication-serverside",
           "body": "MinIO server-side bucket replication is an automatic bucket-level configuration that synchronizes objects between a source and destination bucket."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -4297,25 +4298,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Object Lambda",
-          "url": "https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html",
+          "url": "https://docs.min.io/community/minio-object-store/developers/transforms-with-object-lambda.html",
           "body": "MinIO’s Object Lambda enables developers to programmatically transform objects on demand."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Notifications",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/monitoring/bucket-notifications.html#minio-bucket-notifications",
+          "url": "https://docs.min.io/community/minio-object-store/administration/monitoring/bucket-notifications.html",
           "body": "MinIO bucket notifications allow administrators to send notifications to supported external services on certain object or bucket events."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Buckets",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets",
+          "url": "https://docs.min.io/community/minio-object-store/administration/console/managing-objects.html#buckets",
           "body": "Learn how to use Console to manage Buckets"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -4392,25 +4393,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Replication Requirements",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication/bucket-replication-requirements.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/bucket-replication/bucket-replication-requirements.html",
           "body": "Check here to ensure you meet the prerequisites before setting up any replication configurations."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Replication",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-bucket-replication-serverside",
+          "url": "https://docs.min.io/community/minio-object-store/administration/bucket-replication.html#minio-bucket-replication-serverside",
           "body": "MinIO server-side bucket replication is an automatic bucket-level configuration that synchronizes objects between a source and destination bucket."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Buckets",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets",
+          "url": "https://docs.min.io/community/minio-object-store/administration/console/managing-objects.html#buckets",
           "body": "Learn how to use Console to manage Buckets"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -4469,19 +4470,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Object Lifecycle Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/object-management/object-lifecycle-management.html#minio-lifecycle-management",
+          "url": "https://docs.min.io/community/minio-object-store/administration/object-management/object-lifecycle-management.html#minio-lifecycle-management",
           "body": "Use MinIO Object Lifecycle Management to create rules for time or date based automatic transition or expiry of objects."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Buckets",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets",
+          "url": "https://docs.min.io/community/minio-object-store/administration/console/managing-objects.html#buckets",
           "body": "Learn how to use Console to manage Buckets"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -4522,25 +4523,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#minio-policy",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#minio-policy",
           "body": "MinIO uses Policy-Based Access Control (PBAC) to define the authorized actions and resources to which an authenticated user has access."
         },
         {
           "img": "/minio-logo.svg",
           "title": "User Management",
-          "url": "https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-user-management.html#",
           "body": "Each user can have one or more assigned policies that explicitly list the actions and resources to which that user has access. Users can also inherit policies from the groups in which they have membership."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Buckets",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets",
+          "url": "https://docs.min.io/community/minio-object-store/administration/console/managing-objects.html#buckets",
           "body": "Learn how to use Console to manage Buckets"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -4611,13 +4612,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Buckets",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/console/managing-objects.html#buckets",
+          "url": "https://docs.min.io/community/minio-object-store/administration/console/managing-objects.html#buckets",
           "body": "Learn how to use Console to manage Buckets"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -4638,13 +4639,13 @@
         {
           "img": "/minio-logo.svg",
           "title": "Object Lambda",
-          "url": "https://min.io/docs/minio/linux/developers/transforms-with-object-lambda.html",
+          "url": "https://docs.min.io/community/minio-object-store/developers/transforms-with-object-lambda.html",
           "body": "MinIO’s Object Lambda enables developers to programmatically transform objects on demand."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -4727,25 +4728,25 @@
         {
           "img": "/minio-logo.svg",
           "title": "Active Directory / LDAP Access Management",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/ad-ldap-access-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/identity-access-management/ad-ldap-access-management.html",
           "body": "For identities managed by the external AD/LDAP provider, MinIO uses the user’s Distinguished Name and attempts to map it against an existing policy."
         },
         {
           "img": "/minio-logo.svg",
           "title": "IDP Docs",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/external-iam.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/external-iam.html",
           "body": "MinIO supports multiple external identity managers through OpenID Connect-Compatible Active Directory / LDAP"
         },
         {
           "img": "/minio-logo.svg",
           "title": "LDAP Configuration",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/operations/external-iam/configure-ad-ldap-external-identity-management.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/external-iam/configure-ad-ldap-external-identity-management.html",
           "body": "MinIO supports configuring a single Active Directory / LDAP Connect for external management of user identities."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -4816,19 +4817,19 @@
         {
           "img": "/minio-logo.svg",
           "title": "Login help",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/minio-console.html#logging-in",
-          "body": "Text snippet that will be relevant to the user will  go here  made to look nice in the helpitem size  on two-three lines"
+          "url": "https://docs.min.io/community/minio-object-store/administration/minio-console.html#logging-in",
+          "body": "Text snippet that will be relevant to the user will go here made to look nice in the helpitem size on two-three lines"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Login help",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/minio-console.html#configuration",
+          "url": "https://docs.min.io/community/minio-object-store/administration/minio-console.html#configuration",
           "body": "Text snippet that will be relevant to the user will  go here  made to look nice in the helpitem size  on two-three lines"
         },
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -4849,27 +4850,27 @@
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Replication Requirements",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication/bucket-replication-requirements.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/bucket-replication/bucket-replication-requirements.html",
           "body": "Check here to ensure you meet the prerequisites before setting up any replication configurations."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Replication",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-bucket-replication-serverside",
+          "url": "https://docs.min.io/community/minio-object-store/administration/bucket-replication.html#minio-bucket-replication-serverside",
           "body": "MinIO server-side bucket replication is an automatic bucket-level configuration that synchronizes objects between a source and destination bucket."
         },
 
         {
           "img": "/minio-logo.svg",
           "title": "Replication Internals",
-          "url": "https://min.io/docs/minio/windows/administration/bucket-replication.html#minio-replication-process",
+          "url": "https://docs.min.io/community/minio-object-store/administration/bucket-replication.html#minio-replication-process",
           "body": "Learn details of the MinIO replication process."
         },
 
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]
@@ -4916,40 +4917,40 @@
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Replication Requirements",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication/bucket-replication-requirements.html",
+          "url": "https://docs.min.io/community/minio-object-store/administration/bucket-replication/bucket-replication-requirements.html",
           "body": "Check here to ensure you meet the prerequisites before setting up any replication configurations."
         },
         {
           "img": "/minio-logo.svg",
           "title": "One-way Bucket Replication",
-          "url": " https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication/enable-server-side-one-way-bucket-replication.html#",
+          "url": " https://docs.min.io/community/minio-object-store/administration/bucket-replication/enable-server-side-one-way-bucket-replication.html",
           "body": "Guidance on configuring one-way Bucket replication using MinIO Console."
         },
 
         {
           "img": "/minio-logo.svg",
           "title": "Two-way Bucket Replication",
-          "url": " https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication/enable-server-side-two-way-bucket-replication.html#minio-bucket-replication-serverside-twoway",
+          "url": " https://docs.min.io/community/minio-object-store/administration/bucket-replication/enable-server-side-two-way-bucket-replication.html",
           "body": "Guidance on configuring two-way (active-active) Bucket replication using MinIO Console."
         },
         {
           "img": "/minio-logo.svg",
           "title": "Bucket Replication",
-          "url": "https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html#minio-bucket-replication-serverside",
+          "url": "https://docs.min.io/community/minio-object-store/administration/bucket-replication.html#minio-bucket-replication-serverside",
           "body": "MinIO server-side bucket replication is an automatic bucket-level configuration that synchronizes objects between a source and destination bucket."
         },
 
         {
           "img": "/minio-logo.svg",
           "title": "Replication Internals",
-          "url": "https://min.io/docs/minio/windows/administration/bucket-replication.html#minio-replication-process",
+          "url": "https://docs.min.io/community/minio-object-store/administration/bucket-replication.html#minio-replication-process",
           "body": "Learn details of the MinIO replication process."
         },
 
         {
           "img": "/minio-logo.svg",
           "title": "Troubleshooting",
-          "url": "https://min.io/docs/minio/linux/operations/troubleshooting.html",
+          "url": "https://docs.min.io/community/minio-object-store/operations/troubleshooting.html",
           "body": "Need more help?  Check out additional Troubleshooting options"
         }
       ]

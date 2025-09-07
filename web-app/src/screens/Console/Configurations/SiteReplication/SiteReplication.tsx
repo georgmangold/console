@@ -225,7 +225,7 @@ const SiteReplication = () => {
                     <br />
                     You can learn more at the{" "}
                     <a
-                      href="https://min.io/docs/minio/linux/operations/install-deploy-manage/multi-site-replication.html"
+                      href="https://docs.min.io/community/minio-object-store/operations/replication/multi-site-replication.html"
                       target="_blank"
                       rel="noopener"
                     >

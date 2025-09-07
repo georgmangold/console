@@ -53,8 +53,6 @@ const Login = () => {
   );
   const navigateTo = useSelector((state: AppState) => state.login.navigateTo);
 
-  const isK8S = useSelector((state: AppState) => state.login.isK8S);
-
   useEffect(() => {
     if (navigateTo !== "") {
       dispatch(resetForm());
@@ -130,10 +128,7 @@ const Login = () => {
       );
   }
 
-  let docsURL = "https://min.io/docs/minio/linux/index.html";
-  if (isK8S) {
-    docsURL = "https://min.io/docs/minio/kubernetes/upstream/index.html";
-  }
+  let docsURL = "https://docs.min.io/community/minio-object-store/index.html";
 
   useEffect(() => {
     dispatch(setHelpName("login"));
@@ -159,7 +154,7 @@ const Login = () => {
             }}
           >
             <a href={docsURL} target="_blank" rel="noopener">
-              Documentation
+              MinIO Documentation
             </a>
             <span className={"separator"}>|</span>
             <a

@@ -79,7 +79,7 @@ const TierTypeSelector = () => {
                   <ul>
                     <li>
                       <a
-                        href="https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-s3.html#minio-lifecycle-management-transition-to-s3"
+                        href="https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-s3.html"
                         target="_blank"
                         rel="noopener"
                       >
@@ -88,7 +88,7 @@ const TierTypeSelector = () => {
                     </li>
                     <li>
                       <a
-                        href="https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-s3.html#minio-lifecycle-management-transition-to-s3"
+                        href="https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-s3.html"
                         target="_blank"
                         rel="noopener"
                       >
@@ -97,7 +97,7 @@ const TierTypeSelector = () => {
                     </li>
                     <li>
                       <a
-                        href="https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-gcs.html#minio-lifecycle-management-transition-to-gcs"
+                        href="https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-gcs.html"
                         target="_blank"
                         rel="noopener"
                       >
@@ -106,7 +106,7 @@ const TierTypeSelector = () => {
                     </li>
                     <li>
                       <a
-                        href="https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-azure.html#minio-lifecycle-management-transition-to-azure"
+                        href="https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-azure.html"
                         target="_blank"
                         rel="noopener"
                       >

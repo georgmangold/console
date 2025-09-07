@@ -317,7 +317,7 @@ const BucketReplicationPanel = () => {
               MinIO{" "}
               <a
                 target="blank"
-                href="https://min.io/docs/minio/kubernetes/upstream/administration/bucket-replication.html"
+                href="https://docs.min.io/community/minio-object-store/administration/bucket-replication.html"
               >
                 server-side bucket replication
               </a>{" "}
@@ -392,7 +392,7 @@ const BucketReplicationPanel = () => {
                 <br />
                 You can learn more at the{" "}
                 <a
-                  href="https://min.io/docs/minio/linux/administration/bucket-replication.html"
+                  href="https://docs.min.io/community/minio-object-store/administration/bucket-replication.html"
                   target="_blank"
                   rel="noopener"
                 >

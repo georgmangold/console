@@ -117,8 +117,8 @@ export const validRoutes = (features: string[] | null | undefined) => {
     },
     {
       group: "User",
-      path: "https://min.io/docs/minio/linux/index.html",
-      name: "Documentation",
+      path: "https://docs.min.io/community/minio-object-store/index.html",
+      name: "MinIO Documentation",
       icon: <DocumentationIcon />,
       forceDisplay: true,
     },

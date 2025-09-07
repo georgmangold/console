@@ -306,7 +306,7 @@ const Account = () => {
                   <br />
                   You can learn more at the{" "}
                   <a
-                    href="https://min.io/docs/minio/linux/administration/identity-access-management/minio-user-management.html#id3"
+                    href="https://docs.min.io/community/minio-object-store/administration/identity-access-management/minio-user-management.html#access-keys"
                     target="_blank"
                     rel="noopener"
                   >

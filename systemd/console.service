@@ -1,6 +1,6 @@
 [Unit]
 Description=Console UI for MinIO
-Documentation=https://min.io/docs/minio/linux/index.html
+Documentation=https://github.com/georgmangold/console
 Wants=network-online.target
 After=network-online.target
 AssertFileIsExecutable=/usr/local/bin/console
