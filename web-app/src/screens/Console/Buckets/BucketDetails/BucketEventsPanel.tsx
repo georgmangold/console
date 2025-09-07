@@ -183,7 +183,7 @@ const BucketEventsPanel = () => {
               MinIO{" "}
               <a
                 target="blank"
-                href="https://min.io/docs/minio/kubernetes/upstream/administration/monitoring.html"
+                href="https://docs.min.io/community/minio-object-store/administration/monitoring.html"
               >
                 bucket notifications
               </a>{" "}
@@ -243,7 +243,7 @@ const BucketEventsPanel = () => {
                   <br />
                   You can learn more at the{" "}
                   <a
-                    href="https://min.io/docs/minio/linux/administration/monitoring/bucket-notifications.html"
+                    href="https://docs.min.io/community/minio-object-store/administration/monitoring/bucket-notifications.html"
                     target="_blank"
                     rel="noopener"
                   >

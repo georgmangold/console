@@ -487,14 +487,14 @@ const BucketSummary = () => {
                       <Fragment>
                         MinIO supports enabling automatic{" "}
                         <a
-                          href="https://min.io/docs/minio/kubernetes/upstream/administration/server-side-encryption/server-side-encryption-sse-kms.html"
+                          href="https://docs.min.io/community/minio-object-store/administration/server-side-encryption/server-side-encryption-sse-kms.html"
                           target="blank"
                         >
                           SSE-KMS
                         </a>{" "}
                         and{" "}
                         <a
-                          href="https://min.io/docs/minio/kubernetes/upstream/administration/server-side-encryption/server-side-encryption-sse-s3.html"
+                          href="https://docs.min.io/community/minio-object-store/administration/server-side-encryption/server-side-encryption-sse-s3.html"
                           target="blank"
                         >
                           SSE-S3
@@ -570,7 +570,7 @@ const BucketSummary = () => {
                     <Fragment>
                       Setting a{" "}
                       <a
-                        href="https://min.io/docs/minio/linux/reference/minio-mc/mc-quota-set.html"
+                        href="https://docs.min.io/community/minio-object-store/reference/deprecated/mc-quota-set.html"
                         target="blank"
                       >
                         quota
@@ -676,7 +676,7 @@ const BucketSummary = () => {
                         MinIO{" "}
                         <a
                           target="blank"
-                          href="https://min.io/docs/minio/macos/administration/object-management.html#object-retention"
+                          href="https://docs.min.io/community/minio-object-store/administration/object-management.html#object-retention"
                         >
                           Object Locking
                         </a>{" "}

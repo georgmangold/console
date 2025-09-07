@@ -346,7 +346,7 @@ const BasicDashboard = ({ usage }: IDashboardProps) => {
                     }}
                   >
                     <a
-                      href="https://min.io/docs/minio/linux/operations/monitoring/collect-minio-metrics-using-prometheus.html"
+                      href="https://docs.min.io/community/minio-object-store/operations/monitoring/collect-minio-metrics-using-prometheus.html"
                       target="_blank"
                       rel="noopener"
                     >

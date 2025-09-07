@@ -243,21 +243,21 @@ const AddLifecycleModal = ({
                   Select{" "}
                   <a
                     target="blank"
-                    href="https://min.io/docs/minio/kubernetes/upstream/administration/object-management/create-lifecycle-management-expiration-rule.html"
+                    href="https://docs.min.io/community/minio-object-store/administration/object-management/create-lifecycle-management-expiration-rule.html"
                   >
                     Expiry
                   </a>{" "}
                   to delete Objects per this rule. Select{" "}
                   <a
                     target="blank"
-                    href="https://min.io/docs/minio/kubernetes/upstream/administration/object-management/transition-objects-to-minio.html"
+                    href="https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-minio.html"
                   >
                     Transition
                   </a>{" "}
                   to move Objects to a remote storage{" "}
                   <a
                     target="blank"
-                    href="https://min.io/docs/minio/windows/administration/object-management/transition-objects-to-minio.html#configure-the-remote-storage-tier"
+                    href="https://docs.min.io/community/minio-object-store/administration/object-management/transition-objects-to-minio.html#configure-the-remote-storage-tier"
                   >
                     Tier
                   </a>{" "}
@@ -285,7 +285,7 @@ const AddLifecycleModal = ({
                     Object
                     <a
                       target="blank"
-                      href="https://min.io/docs/minio/kubernetes/upstream/administration/object-management/create-lifecycle-management-expiration-rule.html#expire-versioned-objects"
+                      href="https://docs.min.io/community/minio-object-store/administration/object-management/create-lifecycle-management-expiration-rule.html#expire-versioned-objects"
                     >
                       {" "}
                       Versions

@@ -376,7 +376,7 @@ const BucketLifecyclePanel = () => {
                   <br />
                   You can learn more at the{" "}
                   <a
-                    href="https://min.io/docs/minio/linux/administration/object-management/object-lifecycle-management.html"
+                    href="https://docs.min.io/community/minio-object-store/administration/object-management/object-lifecycle-management.html"
                     target="_blank"
                     rel="noopener"
                   >

@@ -64,7 +64,7 @@ export const usageClarifyingContent = (
       Running{" "}
       <a
         target="_blank"
-        href="https://min.io/docs/minio/linux/reference/minio-mc/mc-du.html"
+        href="https://docs.min.io/community/minio-object-store/reference/minio-mc/mc-du.html"
       >
         mc du
       </a>{" "}

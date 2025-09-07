@@ -168,7 +168,7 @@ const ConfigurationOptions = () => {
                 <br />
                 You can learn more at the{" "}
                 <a
-                  href="https://min.io/docs/minio/linux/reference/minio-mc-admin/mc-admin-config.html#id4"
+                  href="https://docs.min.io/community/minio-object-store/reference/minio-server/settings.html#minio-server-configuration-settings"
                   target="_blank"
                   rel="noopener"
                 >

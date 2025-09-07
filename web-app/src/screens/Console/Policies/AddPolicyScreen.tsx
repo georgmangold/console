@@ -141,7 +141,7 @@ const AddPolicyScreen = () => {
                       <Fragment>
                         <a
                           target="blank"
-                          href="https://min.io/docs/minio/kubernetes/upstream/administration/identity-access-management/policy-based-access-control.html#policy-document-structure"
+                          href="https://docs.min.io/community/minio-object-store/administration/identity-access-management/policy-based-access-control.html#policy-document-structure"
                         >
                           Guide to access policy structure
                         </a>

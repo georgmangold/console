@@ -154,7 +154,7 @@ const Login = () => {
             }}
           >
             <a href={docsURL} target="_blank" rel="noopener">
-              Documentation
+              MinIO Documentation
             </a>
             <span className={"separator"}>|</span>
             <a
