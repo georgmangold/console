@@ -228,7 +228,7 @@ jobs:
           (CONSOLE_SUBPATH=/console/subpath ./console server ) & (make test-initialize-minio-nginx)
 
       - name: Install TestCafe
-        run: npm install testcafe@3.5.0
+        run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
         run: npx testcafe "firefox:headless" web-app/tests/subpath-nginx/ -q --skip-js-errors -c 3
@@ -282,7 +282,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Install TestCafe
-        run: npm install testcafe@3.5.0
+        run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
         run: npx testcafe "firefox:headless" web-app/tests/permissions-1/ -q --skip-js-errors -c 3
@@ -334,7 +334,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Install TestCafe
-        run: npm install testcafe@3.5.0
+        run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
         run: npx testcafe "firefox:headless" web-app/tests/permissions-2/ -q --skip-js-errors -c 3
@@ -386,7 +386,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Install TestCafe
-        run: npm install testcafe@3.5.0
+        run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
         run: npx testcafe "firefox:headless" web-app/tests/permissions-3/ -q --skip-js-errors -c 3
@@ -438,7 +438,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Install TestCafe
-        run: npm install testcafe@3.5.0
+        run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
         timeout-minutes: 10
@@ -486,7 +486,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Install TestCafe
-        run: npm install testcafe@3.5.0
+        run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
         timeout-minutes: 5
@@ -534,7 +534,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Install TestCafe
-        run: npm install testcafe@3.5.0
+        run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
         timeout-minutes: 5
@@ -547,7 +547,7 @@ jobs:
     runs-on: [ubuntu-latest]
     strategy:
       matrix:
-        go-version: [1.22.x]
+        go-version: [1.24.x]
         os: [ubuntu-latest]
     steps:
       - name: Check out code
@@ -581,7 +581,7 @@ jobs:
         run: |
           (./console server) & (make initialize-permissions)
       - name: Install TestCafe
-        run: npm install testcafe@3.5.0
+        run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
         timeout-minutes: 5
@@ -594,7 +594,7 @@ jobs:
     runs-on: [ubuntu-latest]
     strategy:
       matrix:
-        go-version: [1.22.x]
+        go-version: [1.24.x]
         os: [ubuntu-latest]
     steps:
       - name: Check out code
@@ -629,7 +629,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Install TestCafe
-        run: npm install testcafe@3.5.0
+        run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
         timeout-minutes: 5
@@ -677,7 +677,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Install TestCafe
-        run: npm install testcafe@3.5.0
+        run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
         run: npx testcafe "firefox:headless" web-app/tests/permissions-A/ --skip-js-errors -c 3
@@ -728,7 +728,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Install TestCafe
-        run: npm install testcafe@3.5.0
+        run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
         run: npx testcafe "firefox:headless" web-app/tests/permissions-B/ --skip-js-errors -c 3

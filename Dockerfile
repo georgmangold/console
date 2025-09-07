@@ -7,7 +7,7 @@ WORKDIR /app
 # Git is required for some dependencies pulled from repositories
 RUN apk add --no-cache git
 
-RUN corepack enable && corepack prepare yarn@4.4.0 --activate
+RUN corepack enable
 
 COPY ./web-app/package.json ./web-app/yarn.lock ./web-app/.yarnrc.yml ./
 
