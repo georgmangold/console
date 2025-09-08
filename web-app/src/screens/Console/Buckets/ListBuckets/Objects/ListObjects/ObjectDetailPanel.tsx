@@ -113,6 +113,10 @@ const ObjectDetailPanel = ({
     (state: AppState) => state.objectBrowser.loadingObjectInfo,
   );
 
+  const versionsLimit = useSelector(
+    (state: AppState) => state.objectBrowser.versionsLimit,
+  );
+
   const [shareFileModalOpen, setShareFileModalOpen] = useState<boolean>(false);
   const [retentionModalOpen, setRetentionModalOpen] = useState<boolean>(false);
   const [tagModalOpen, setTagModalOpen] = useState<boolean>(false);
@@ -125,6 +129,8 @@ const ObjectDetailPanel = ({
   const [deleteOpen, setDeleteOpen] = useState<boolean>(false);
   const [previewOpen, setPreviewOpen] = useState<boolean>(false);
   const [totalVersionsSize, setTotalVersionsSize] = useState<number>(0);
+  const [moreVersionsThanLimit, setMoreVersionsThanLimit] =
+    useState<boolean>(false);
   const [longFileOpen, setLongFileOpen] = useState<boolean>(false);
   const [metaData, setMetaData] = useState<any | null>(null);
   const [loadMetadata, setLoadingMetadata] = useState<boolean>(false);
@@ -165,10 +171,14 @@ const ObjectDetailPanel = ({
         .listObjects(bucketName, {
           prefix: internalPaths,
           with_versions: distributedSetup,
+          limit: versionsLimit + 1,
         })
         .then((res) => {
           const result: BucketObject[] = res.data.objects || [];
           if (distributedSetup) {
+            setMoreVersionsThanLimit(result.length > versionsLimit);
+            result.splice(versionsLimit);
+
             setAllInfoElements(result);
             setVersions(result);
 
@@ -208,6 +218,7 @@ const ObjectDetailPanel = ({
     dispatch,
     distributedSetup,
     selectedVersion,
+    versionsLimit,
   ]);
 
   useEffect(() => {
@@ -716,8 +727,11 @@ const ObjectDetailPanel = ({
               <Box className={"detailContainer"}>
                 <strong>Versions:</strong>
                 <br />
-                {versions.length} version{versions.length !== 1 ? "s" : ""},{" "}
+                {versions.length}
+                {moreVersionsThanLimit ? "+" : ""} version
+                {versions.length !== 1 ? "s" : ""},{" "}
                 {niceBytesInt(totalVersionsSize)}
+                {moreVersionsThanLimit ? "+" : ""}
               </Box>
             )}
           {selectedVersion === "" && (

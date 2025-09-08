@@ -242,7 +242,13 @@ const FileVersionItem = ({
           >
             <Grid item xs={12}>
               <Grid container>
-                <Grid item xs md={4} className={"versionContainer"}>
+                <Grid
+                  item
+                  xs
+                  md={4}
+                  className={"versionContainer"}
+                  sx={{ ".inputItem": { width: "auto" } }}
+                >
                   {checkable && (
                     <Checkbox
                       checked={isChecked}

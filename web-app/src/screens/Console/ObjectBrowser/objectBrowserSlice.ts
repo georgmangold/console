@@ -78,6 +78,7 @@ const initialState: ObjectBrowserState = {
   },
   longFileOpen: false,
   maxShareLinkExpTime: 0,
+  versionsLimit: 20,
 };
 
 const objectBrowserSlice = createSlice({
@@ -384,6 +385,9 @@ const objectBrowserSlice = createSlice({
         state.objectDetailsOpen = false;
       }
     },
+    setVersionsLimit: (state, action: PayloadAction<number>) => {
+      state.versionsLimit = action.payload;
+    },
   },
 });
 export const {
@@ -431,6 +435,7 @@ export const {
   setAnonymousAccessOpen,
   setMaxShareLinkExpTime,
   errorInConnection,
+  setVersionsLimit,
 } = objectBrowserSlice.actions;
 
 export const maxShareLinkExpTime = (state: AppState) =>

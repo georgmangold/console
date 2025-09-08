@@ -24,6 +24,7 @@ import {
   DeleteNonCurrentIcon,
   Grid,
   ProgressBar,
+  RefreshIcon,
   ScreenTitle,
   Select,
   SelectMultipleIcon,
@@ -48,6 +49,7 @@ import {
   setLoadingObjectInfo,
   setLoadingVersions,
   setSelectedVersion,
+  setVersionsLimit,
 } from "../../../../ObjectBrowser/objectBrowserSlice";
 import { List, ListRowProps } from "react-virtualized";
 import TooltipWrapper from "../../../../Common/TooltipWrapper/TooltipWrapper";
@@ -89,11 +91,17 @@ const VersionsNavigator = ({
     (state: AppState) => state.objectBrowser.selectedVersion,
   );
 
+  const versionsLimit = useSelector(
+    (state: AppState) => state.objectBrowser.versionsLimit,
+  );
+
   const distributedSetup = useSelector(selDistSet);
   const [shareFileModalOpen, setShareFileModalOpen] = useState<boolean>(false);
   const [actualInfo, setActualInfo] = useState<BucketObject | null>(null);
   const [objectToShare, setObjectToShare] = useState<BucketObject | null>(null);
   const [versions, setVersions] = useState<BucketObject[]>([]);
+  const [moreVersionsThanLimit, setMoreVersionsThanLimit] =
+    useState<boolean>(false);
   const [restoreVersionOpen, setRestoreVersionOpen] = useState<boolean>(false);
   const [restoreVersion, setRestoreVersion] = useState<BucketObject | null>(
     null,
@@ -124,9 +132,13 @@ const VersionsNavigator = ({
         .listObjects(bucketName, {
           prefix: internalPaths,
           with_versions: distributedSetup,
+          limit: versionsLimit + 1,
         })
         .then((res) => {
           const result = get(res.data, "objects", []);
+
+          setMoreVersionsThanLimit(result.length > versionsLimit);
+          result.splice(versionsLimit);
 
           // Filter the results prefixes as API can return more files than expected.
           const filteredPrefixes = result.filter(
@@ -151,7 +163,14 @@ const VersionsNavigator = ({
           dispatch(setLoadingVersions(false));
         });
     }
-  }, [loadingVersions, bucketName, internalPaths, dispatch, distributedSetup]);
+  }, [
+    loadingVersions,
+    bucketName,
+    internalPaths,
+    dispatch,
+    distributedSetup,
+    versionsLimit,
+  ]);
 
   const shareObject = () => {
     setShareFileModalOpen(true);
@@ -423,13 +442,32 @@ const VersionsNavigator = ({
                   <Fragment>
                     <span className={"detailsSpacer"}>
                       <strong>
-                        {versions.length} Version
+                        {versions.length}
+                        {moreVersionsThanLimit ? "+" : ""} Version
                         {versions.length === 1 ? "" : "s"}&nbsp;&nbsp;&nbsp;
                       </strong>
                     </span>
                     <span className={"detailsSpacer"}>
-                      <strong>{niceBytesInt(totalSpace)}</strong>
+                      <strong>
+                        {niceBytesInt(totalSpace)}
+                        {moreVersionsThanLimit ? "+" : ""}
+                      </strong>
                     </span>
+                    {moreVersionsThanLimit && (
+                      <TooltipWrapper tooltip={"Load more Versions"}>
+                        <Button
+                          label="Load more"
+                          id={"load-more-versions"}
+                          onClick={() => {
+                            dispatch(setVersionsLimit(versionsLimit + 10));
+                            closeSelectedVersions(true);
+                          }}
+                          icon={<RefreshIcon />}
+                          variant={"regular"}
+                          style={{ marginLeft: 50 }}
+                        />
+                      </TooltipWrapper>
+                    )}
                   </Fragment>
                 }
                 actions={
