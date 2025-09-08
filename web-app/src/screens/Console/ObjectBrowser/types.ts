@@ -58,6 +58,7 @@ export interface ObjectBrowserState {
   anonymousAccessOpen: boolean;
   connectionError: boolean;
   maxShareLinkExpTime: number;
+  versionsLimit: number;
 }
 
 interface ObjectManager {

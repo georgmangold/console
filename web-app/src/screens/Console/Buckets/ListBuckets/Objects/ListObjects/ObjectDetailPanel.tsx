@@ -113,6 +113,10 @@ const ObjectDetailPanel = ({
     (state: AppState) => state.objectBrowser.loadingObjectInfo,
   );
 
+  const versionsLimit = useSelector(
+    (state: AppState) => state.objectBrowser.versionsLimit,
+  );
+
   const [shareFileModalOpen, setShareFileModalOpen] = useState<boolean>(false);
   const [retentionModalOpen, setRetentionModalOpen] = useState<boolean>(false);
   const [tagModalOpen, setTagModalOpen] = useState<boolean>(false);
@@ -167,13 +171,13 @@ const ObjectDetailPanel = ({
         .listObjects(bucketName, {
           prefix: internalPaths,
           with_versions: distributedSetup,
-          limit: 21,
+          limit: versionsLimit + 1,
         })
         .then((res) => {
           const result: BucketObject[] = res.data.objects || [];
           if (distributedSetup) {
-            setMoreVersionsThanLimit(result.length > 20);
-            result.splice(20);
+            setMoreVersionsThanLimit(result.length > versionsLimit);
+            result.splice(versionsLimit);
 
             setAllInfoElements(result);
             setVersions(result);
@@ -214,6 +218,7 @@ const ObjectDetailPanel = ({
     dispatch,
     distributedSetup,
     selectedVersion,
+    versionsLimit,
   ]);
 
   useEffect(() => {
