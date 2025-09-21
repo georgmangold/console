@@ -26,6 +26,7 @@ const Logout = React.lazy(() => import("./screens/LogoutPage/LogoutPage"));
 const LoginCallback = React.lazy(
   () => import("./screens/LoginPage/LoginCallback"),
 );
+const SSOLogin = React.lazy(() => import("./screens/LoginPage/SSOLogin"));
 
 const MainRouter = () => {
   return (
@@ -52,6 +53,14 @@ const MainRouter = () => {
           element={
             <Suspense fallback={<LoadingComponent />}>
               <Login />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/sso"
+          element={
+            <Suspense fallback={<LoadingComponent />}>
+              <SSOLogin />
             </Suspense>
           }
         />
