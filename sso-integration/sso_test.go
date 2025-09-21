@@ -25,6 +25,7 @@ import (
 	"log"
 	"net/http"
 	"net/url"
+	"os"
 	"os/exec"
 	"strings"
 	"testing"
@@ -286,5 +287,183 @@ func TestBadLogin(t *testing.T) {
 	if err != nil {
 		log.Println(err)
 		assert.Nil(err)
+	}
+}
+
+func initConsoleServerEnv(consoleIDPURL string) (*api.Server, error) {
+	// Configure Console Server with vars to get the idp config from the container
+	os.Setenv("CONSOLE_IDP_URL", consoleIDPURL)
+	os.Setenv("CONSOLE_IDP_CLIENT_ID", "minio-client-app")
+	os.Setenv("CONSOLE_IDP_SECRET", "minio-client-app-secret")
+	os.Setenv("CONSOLE_IDP_CALLBACK", "http://127.0.0.1:9090")
+
+	swaggerSpec, err := loads.Embedded(api.SwaggerJSON, api.FlatSwaggerJSON)
+	if err != nil {
+		return nil, err
+	}
+
+	noLog := func(string, ...interface{}) {
+		// nothing to log
+	}
+
+	// Initialize MinIO loggers
+	api.LogInfo = noLog
+	api.LogError = noLog
+
+	consoleAPI := operations.NewConsoleAPI(swaggerSpec)
+	consoleAPI.Logger = noLog
+
+	api.GlobalMinIOConfig = api.MinIOConfig{
+		OpenIDProviders: api.BuildOpenIDConsoleConfig(),
+	}
+
+	server := api.NewServer(consoleAPI)
+	// register all APIs
+	server.ConfigureAPI()
+
+	server.Host = "0.0.0.0"
+	server.Port = 9090
+	api.Port = "9090"
+	api.Hostname = "0.0.0.0"
+
+	return server, nil
+}
+
+func TestEnv(t *testing.T) {
+	assert := assert.New(t)
+
+	// start console server
+	go func() {
+		fmt.Println("start server")
+		srv, err := initConsoleServerEnv("http://dex:5556/dex/.well-known/openid-configuration")
+		if err != nil {
+			log.Println(err)
+			log.Println("init fail")
+			return
+		}
+		srv.Serve()
+	}()
+
+	fmt.Println("sleeping")
+	time.Sleep(2 * time.Second)
+
+	client := &http.Client{
+		Timeout: 2 * time.Second,
+	}
+
+	// Let's move this API here to increment our coverage
+	getRequest, getError := http.NewRequest("GET", "http://localhost:9090/api/v1/login", nil)
+	if getError != nil {
+		log.Println(getError)
+		return
+	}
+	getRequest.Header.Add("Content-Type", "application/json")
+	getResponse, getErr := client.Do(getRequest)
+	// current value:
+	// {"loginStrategy":"form"}
+	// but we want our console server to provide loginStrategy = redirect for SSO
+	if getErr != nil {
+		log.Println(getErr)
+		return
+	}
+
+	body, err := io.ReadAll(getResponse.Body)
+	getResponse.Body.Close()
+	if getResponse.StatusCode > 299 {
+		log.Fatalf("Response failed with status code: %d and\nbody: %s\n", getResponse.StatusCode, body)
+	}
+	if err != nil {
+		log.Fatal(err)
+	}
+	var jsonMap models.LoginDetails
+
+	fmt.Println(body)
+
+	err = json.Unmarshal(body, &jsonMap)
+	if err != nil {
+		fmt.Printf("error JSON Unmarshal %s\n", err)
+	}
+
+	redirectRule := jsonMap.RedirectRules[0]
+	redirectAsString := fmt.Sprint(redirectRule.Redirect)
+	fmt.Println(redirectAsString)
+
+	// execute script to get the code and state
+	cmd, err := exec.Command("python3", "dex-requests.py", redirectAsString).Output()
+	if err != nil {
+		fmt.Printf("error %s\n", err)
+	}
+	urlOutput := string(cmd)
+	fmt.Println("url output:", urlOutput)
+	requestLoginBody := bytes.NewReader([]byte("login=dillon%40example.io&password=dillon"))
+
+	// parse url remove carriage return
+	temp2 := strings.Split(urlOutput, "\n")
+	fmt.Println("temp2: ", temp2)
+	urlOutput = temp2[0] // remove carriage return to avoid invalid control character in url
+
+	// validate url
+	urlParseResult, urlParseError := url.Parse(urlOutput)
+	if urlParseError != nil {
+		panic(urlParseError)
+	}
+	fmt.Println(urlParseResult)
+
+	// prepare for post
+	httpRequestLogin, newRequestError := http.NewRequest(
+		"POST",
+		urlOutput,
+		requestLoginBody,
+	)
+	if newRequestError != nil {
+		fmt.Println(newRequestError)
+	}
+	httpRequestLogin.Header.Add("Content-Type", "application/x-www-form-urlencoded")
+	responseLogin, errorLogin := client.Do(httpRequestLogin)
+	if errorLogin != nil {
+		log.Println(errorLogin)
+	}
+	rawQuery := responseLogin.Request.URL.RawQuery
+	fmt.Println(rawQuery)
+	splitRawQuery := strings.Split(rawQuery, "&state=")
+	codeValue := strings.ReplaceAll(splitRawQuery[0], "code=", "")
+	stateValue := splitRawQuery[1]
+	fmt.Println("stop", splitRawQuery, codeValue, stateValue)
+
+	// get login credentials
+	codeVarIable := strings.TrimSpace(codeValue)
+	stateVarIabl := strings.TrimSpace(stateValue)
+	requestData := map[string]string{
+		"code":  codeVarIable,
+		"state": stateVarIabl,
+	}
+	requestDataJSON, _ := json.Marshal(requestData)
+
+	requestDataBody := bytes.NewReader(requestDataJSON)
+
+	request, _ := http.NewRequest(
+		"POST",
+		"http://localhost:9090/api/v1/login/oauth2/auth",
+		requestDataBody,
+	)
+	request.Header.Add("Content-Type", "application/json")
+
+	response, err := client.Do(request)
+	if err != nil {
+		log.Println(err)
+	}
+	if response != nil {
+		for _, cookie := range response.Cookies() {
+			if cookie.Name == "token" {
+				token = cookie.Value
+				break
+			}
+		}
+	}
+	fmt.Println(response.Status)
+	if token == "" {
+		assert.Fail("authentication token not found in cookies response")
+	} else {
+		fmt.Println(token)
 	}
 }
