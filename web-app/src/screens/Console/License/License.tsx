@@ -37,27 +37,6 @@ const License = () => {
             help={
               <Fragment>
                 <p>
-                  This is just a fork of the{" "}
-                  <a
-                    href="https://github.com/minio/object-browser"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    MinIO Console
-                  </a>{" "}
-                  for my own personal educational purposes, and therefore it
-                  incorporates MinIO® source code. You may also want to look
-                  for other maintained{" "}
-                  <a
-                    href="https://github.com/minio/object-browser/forks"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    forks
-                  </a>
-                  .
-                </p>
-                <p>
                   It is important to note that <strong>MINIO</strong> is a
                   registered trademark of the MinIO Corporation. Consequently,
                   this project is not affiliated with or endorsed by the MinIO
