@@ -149,9 +149,9 @@ const LoginCallback = () => {
         }
         promoInfo={
           <span style={{ fontSize: 14, lineHeight: 1 }}>
-            <strong>MINIO</strong> is a registered
-            trademark of the MinIO Corporation. Consequently, this project is
-            not affiliated with or endorsed by the MinIO Corporation.
+            <strong>MINIO</strong> is a registered trademark of the MinIO
+            Corporation. Consequently, this project is not affiliated with or
+            endorsed by the MinIO Corporation.
           </span>
         }
       />
