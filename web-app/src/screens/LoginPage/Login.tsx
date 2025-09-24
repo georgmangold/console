@@ -175,7 +175,7 @@ const Login = () => {
           </Box>
         }
         promoHeader={
-          <
+          <span
             style={{
               fontSize: "clamp(6px, 6vw, 30px)",
               lineHeight: 1,
