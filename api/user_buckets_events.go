@@ -91,7 +91,7 @@ func listBucketEvents(client MinioClient, bucketName string) ([]*models.Notifica
 	// s3Client.ListNotificationConfigs()... to serialize configurations
 	getFilters := func(config notification.Config) (prefix, suffix string) {
 		if config.Filter == nil {
-			return
+			return prefix, suffix
 		}
 		for _, filter := range config.Filter.S3Key.FilterRules {
 			if strings.ToLower(filter.Name) == "prefix" {
