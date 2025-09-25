@@ -1320,7 +1320,7 @@ func getHost(authority string) (host string) {
 	i := strings.LastIndex(authority, "@")
 	if i >= 0 {
 		// TODO support, username@password style userinfo, useful for ftp support.
-		return
+		return host
 	}
 	return authority
 }
