@@ -4,8 +4,8 @@ GOPATH := $(shell go env GOPATH)
 BUILD_VERSION:=$(shell git describe --exact-match --tags $(git log -n1 --pretty='%h') 2>/dev/null || git rev-parse --abbrev-ref HEAD 2>/dev/null)
 BUILD_TIME:=$(shell date 2>/dev/null)
 TAG ?= "minio/console:$(BUILD_VERSION)-dev"
-#MINIO_VERSION ?= "quay.io/minio/minio:latest"
-MINIO_VERSION ?= "quay.io/minio/minio:RELEASE.2025-04-22T22-12-26Z"
+MINIO_VERSION ?= "quay.io/minio/minio:latest"
+#MINIO_VERSION ?= "quay.io/minio/minio:RELEASE.2025-04-22T22-12-26Z"
 
 TARGET_BUCKET ?= "target"
 NODE_VERSION := $(shell cat .nvmrc)

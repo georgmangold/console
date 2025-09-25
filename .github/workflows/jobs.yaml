@@ -808,8 +808,6 @@ jobs:
             ./api/coverage/
           key: ${{ runner.os }}-coverage-api-2-${{ github.run_id }}
   b-integration-tests:
-    # Disable this Action until its clear what it does
-    if: false
     name: Integration Tests with Latest Distributed MinIO
     needs:
       - lint-job
