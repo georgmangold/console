@@ -948,14 +948,6 @@ jobs:
             ./replication/coverage/
           key: ${{ runner.os }}-replication-coverage-2-${{ github.run_id }}
 
-      # To save our replication.out file into an artifact.
-      # By default, GitHub stores build logs and artifacts for 90 days.
-      - uses: actions/upload-artifact@v4
-        with:
-          name: replication-artifact
-          path: ./replication/coverage/replication.out
-          if-no-files-found: error
-
   sso-integration:
     name: SSO Integration Test
     needs:
@@ -1061,12 +1053,6 @@ jobs:
             ./pkg/coverage/
           key: ${{ runner.os }}-coverage-pkg-2-${{ github.run_id }}
 
-      # Get the replication.out file from the artifact since this is working for self host runner.
-      - uses: actions/download-artifact@v4
-        with:
-          name: replication-artifact
-          path: replication/coverage
-
       - name: Get coverage
         run: |
           echo "change directory to gocovmerge"
@@ -1079,6 +1065,13 @@ jobs:
           go build gocovmerge.go
           echo "put together the outs for final coverage resolution"
           ./gocovmerge ../integration/coverage/system.out ../replication/coverage/replication.out ../sso-integration/coverage/sso-system.out ../api/coverage/coverage.out ../pkg/coverage/coverage-pkg.out > all.out
+
+          go tool cover -html=all.out -o all-coverage.html
+          go tool cover -html=../integration/coverage/system.out -o system.html
+          go tool cover -html=../sso-integration/coverage/sso-system.out -o sso-system.html
+          go tool cover -html=../api/coverage/coverage.out -o coverage.html
+          go tool cover -html=../pkg/coverage/coverage-pkg.out -o coverage-pkg.html
+
           echo "grep to obtain the result"
           go tool cover -func=all.out | grep total > tmp2
           result=`cat tmp2 | awk 'END {print $3}'`
@@ -1092,6 +1085,16 @@ jobs:
             echo "It is smaller than threshold ($threshold%) value, failed!"
             exit 1
           fi
+
+      # To save our all.out and all-coverage.html file into an artifact.
+      # By default, GitHub stores build logs and artifacts for 90 days.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: coverage-artifact
+          path: |
+            ./all.out 
+            ./all-coverage.html
+          if-no-files-found: error
 
   ui-assets-istanbul-coverage:
     name: "Assets with Istanbul Plugin for coverage"
