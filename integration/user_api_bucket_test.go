@@ -3840,7 +3840,7 @@ func TestAddRemoteBucket(t *testing.T) {
 	if !setupBucketForEndpoint(targetBucket, true, map[string]interface{}{"enabled": true}, nil, nil, assert, 200, &targetEndpoint, &targetToken) {
 		log.Println("bucket already exists")
 	}
-	_, err := SetBucketVersioning(targetBucket, map[string]interface{}{"enabled": true}, &targetURL, &targetToken)
+	_, err := SetBucketVersioning(targetBucket, map[string]interface{}{"enabled": false}, &targetURL, &targetToken)
 	if err != nil {
 		log.Println("bucket already has versioning")
 	}
@@ -3899,7 +3899,7 @@ func TestDeleteRemoteBucket(t *testing.T) {
 	if !setupBucketForEndpoint(targetBucket, true, map[string]interface{}{"enabled": true}, nil, nil, assert, 200, &targetEndpoint, &targetToken) {
 		log.Println("bucket already exists")
 	}
-	_, err := SetBucketVersioning(targetBucket, map[string]interface{}{"enabled": true}, &targetURL, &targetToken)
+	_, err := SetBucketVersioning(targetBucket, map[string]interface{}{"enabled": false}, &targetURL, &targetToken)
 	if err != nil {
 		log.Println("bucket already has versioning")
 	}

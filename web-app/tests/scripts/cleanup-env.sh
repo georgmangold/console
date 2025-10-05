@@ -68,6 +68,7 @@ __init__() {
   export TIMESTAMP="$(cat web-app/tests/constants/timestamp.txt)"
   export GOPATH=/tmp/gopath
   export PATH=${PATH}:${GOPATH}/bin
+  export MC_UPDATE=off
 
   wget https://dl.min.io/client/mc/release/linux-amd64/mc
   chmod +x mc
