@@ -174,7 +174,13 @@ jobs:
         with:
           path: |
             ./minio
-          key: ${{ runner.os }}-minio-latest-${{ hashFiles('./minio_repository/go.sum') }}
+          key: ${{ runner.os }}-minio-latest-${{  github.run_id  }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: minio-console-binary
+          path: |
+            ./minio
 
   compile-binary:
     name: Compiles on Go ${{ matrix.go-version }} and ${{ matrix.os }}
@@ -1092,8 +1098,8 @@ jobs:
         with:
           name: coverage-artifact
           path: |
-            $GITHUB_WORKSPACE/all.out
-            $GITHUB_WORKSPACE/all-coverage.html
+            ./all.out
+            ./all-coverage.html
           if-no-files-found: error
 
   ui-assets-istanbul-coverage:
