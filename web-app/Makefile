@@ -1,5 +1,9 @@
 default: build-static
 
+yarn-dep:
+	@(corepack enable)
+	@(yarn install)
+
 build-static:
 	@echo "Building frontend static assets to 'build'"
 	@if [ -f "${NVM_DIR}/nvm.sh" ]; then \. "${NVM_DIR}/nvm.sh" && nvm install && nvm use; fi && \

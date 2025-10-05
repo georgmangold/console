@@ -150,7 +150,9 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE;
           echo "Create Console Frontend Webui Assets"
-          make assets
+          cd $GITHUB_WORKSPACE/web-app;
+          make yarn-dep
+          make build-static-release
 
           echo "Create minio binary";
           cd $GITHUB_WORKSPACE/minio_repository;
@@ -869,12 +871,12 @@ jobs:
           echo "The idea is to build console image from cached binary";
           cd $GITHUB_WORKSPACE;
 
-          TAG=georgmangold/console-dev
+          TAG="georgmangold/console-dev"
           echo "Create Console image: $TAG";
           docker build -q --no-cache -t $TAG . -f Dockerfile.release
 
           echo "We are going to use the latest minio image on test-integration";
-          MINIO_VERSION="minio/minio:latest;
+          MINIO_VERSION="minio/minio:latest";
           echo $MINIO_VERSION;
 
           make test-integration MINIO_VERSION=$MINIO_VERSION $TAG;
@@ -932,7 +934,7 @@ jobs:
       - name: Build on ${{ matrix.os }}
         run: |
           echo "We are going to use the latest minio image on test-integration";
-          MINIO_VERSION="minio/minio:latest;
+          MINIO_VERSION="minio/minio:latest";
           echo $MINIO_VERSION;
 
           make test-replication MINIO_VERSION=$MINIO_VERSION;
@@ -980,7 +982,7 @@ jobs:
 
 
           echo "We are going to use the latest minio image on test-integration";
-          MINIO_VERSION="minio/minio:latest;
+          MINIO_VERSION="minio/minio:latest";
           echo $MINIO_VERSION;
 
           make test-sso-integration MINIO_VERSION=$MINIO_VERSION;
