@@ -1066,11 +1066,11 @@ jobs:
           echo "put together the outs for final coverage resolution"
           ./gocovmerge ../integration/coverage/system.out ../replication/coverage/replication.out ../sso-integration/coverage/sso-system.out ../api/coverage/coverage.out ../pkg/coverage/coverage-pkg.out > all.out
 
-          go tool cover -html=all.out -o /all-coverage.html
-          go tool cover -html=../integration/coverage/system.out -o /system.html
-          go tool cover -html=../sso-integration/coverage/sso-system.out -o /sso-system.html
-          go tool cover -html=../api/coverage/coverage.out -o /coverage.html
-          go tool cover -html=../pkg/coverage/coverage-pkg.out -o /coverage-pkg.html
+          go tool cover -html=all.out -o $GITHUB_WORKSPACE/all-coverage.html
+          go tool cover -html=../integration/coverage/system.out -o $GITHUB_WORKSPACE/system.html
+          go tool cover -html=../sso-integration/coverage/sso-system.out -o $GITHUB_WORKSPACE/sso-system.html
+          go tool cover -html=../api/coverage/coverage.out -o $GITHUB_WORKSPACE/coverage.html
+          go tool cover -html=../pkg/coverage/coverage-pkg.out -o $GITHUB_WORKSPACE/coverage-pkg.html
 
           echo "grep to obtain the result"
           go tool cover -func=all.out | grep total > tmp2
@@ -1092,8 +1092,8 @@ jobs:
         with:
           name: coverage-artifact
           path: |
-            /all.out
-            /all-coverage.html
+            $GITHUB_WORKSPACE/all.out
+            $GITHUB_WORKSPACE/all-coverage.html
           if-no-files-found: error
 
   ui-assets-istanbul-coverage:
