@@ -3,8 +3,8 @@ GOPATH := $(shell go env GOPATH)
 # Sets the build version based on the output of the following command, if we are building for a tag, that's the build else it uses the current git branch as the build
 BUILD_VERSION:=$(shell git describe --exact-match --tags $(git log -n1 --pretty='%h') 2>/dev/null || git rev-parse --abbrev-ref HEAD 2>/dev/null)
 BUILD_TIME:=$(shell date 2>/dev/null)
-TAG ?= "georgmangold/console:$(BUILD_VERSION)-dev"
-#TAG ?= "georgmangold/console-dev"
+TAG ?= "ghcr.io/georgmangold/console:$(BUILD_VERSION)-dev"
+#TAG ?= "ghcr.io/georgmangold/console:dev"
 MINIO_VERSION ?= "quay.io/minio/minio:latest"
 #MINIO_VERSION ?= "quay.io/minio/minio:RELEASE.2025-04-22T22-12-26Z"
 

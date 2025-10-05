@@ -165,6 +165,9 @@ jobs:
 
           make build;
 
+          cd $GITHUB_WORKSPACE
+          cp $GITHUB_WORKSPACE/minio_repository/minio .
+
       - uses: actions/cache/save@v4
         id: minio-latest-cache
         name: MinIO Latest Cache
@@ -871,15 +874,15 @@ jobs:
           echo "The idea is to build console image from cached binary";
           cd $GITHUB_WORKSPACE;
 
-          TAG="georgmangold/console-dev"
+          TAG="ghcr.io/georgmangold/console:dev"
           echo "Create Console image: $TAG";
           docker build -q --no-cache -t $TAG . -f Dockerfile.release
 
           echo "We are going to use the latest minio image on test-integration";
-          MINIO_VERSION="minio/minio:latest";
+          MINIO_VERSION="quay.io/minio/minio:latest";
           echo $MINIO_VERSION;
 
-          make test-integration MINIO_VERSION=$MINIO_VERSION $TAG;
+          make test-integration MINIO_VERSION=$MINIO_VERSION TAG=$TAG;
 
       - uses: actions/cache@v4
         id: coverage-cache
@@ -930,11 +933,10 @@ jobs:
           go-version: ${{ matrix.go-version }}
         id: go
 
-
       - name: Build on ${{ matrix.os }}
         run: |
           echo "We are going to use the latest minio image on test-integration";
-          MINIO_VERSION="minio/minio:latest";
+          MINIO_VERSION="quay.io/minio/minio:latest";
           echo $MINIO_VERSION;
 
           make test-replication MINIO_VERSION=$MINIO_VERSION;
@@ -979,10 +981,8 @@ jobs:
 
       - name: Build on ${{ matrix.os }}
         run: |
-
-
           echo "We are going to use the latest minio image on test-integration";
-          MINIO_VERSION="minio/minio:latest";
+          MINIO_VERSION="quay.io/minio/minio:latest";
           echo $MINIO_VERSION;
 
           make test-sso-integration MINIO_VERSION=$MINIO_VERSION;
