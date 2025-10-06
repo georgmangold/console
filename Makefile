@@ -85,10 +85,10 @@ test-integration:
 	@echo "docker run with MinIO Version below:"
 	@echo $(MINIO_VERSION)
 	@echo "MinIO 1"
-	@(docker run -v /data1 -v /data2 -v /data3 -v /data4 --net=mynet123 --ip=173.18.0.2 -d --name minio --rm -p 9000:9000 -e MINIO_KMS_SECRET_KEY=my-minio-key:OSMM+vkKUTCvQs9YL/CVMIMt43HFhkUpqJxTmGl6rYw= -e MINIO_BROWSER=off $(MINIO_VERSION) server /data{1...4} --console-address ':9091' && sleep 5)
+	@(docker run -v /data1 -v /data2 -v /data3 -v /data4 --net=mynet123 --ip=173.18.0.2 -d --name minio --rm -p 9000:9000 -e MINIO_KMS_SECRET_KEY=my-minio-key:OSMM+vkKUTCvQs9YL/CVMIMt43HFhkUpqJxTmGl6rYw= -e MINIO_UPDATE=off -e MINIO_BROWSER=off $(MINIO_VERSION) server /data{1...4} --console-address ':9091' && sleep 5)
 	@(docker run -p 9091:9091 --net=mynet123 --ip=173.18.0.5 -e CONSOLE_MINIO_SERVER=http://173.18.0.2:9000 -e CONSOLE_PORT=9091 --rm -d --name console $(TAG) && sleep 5)
 	@echo "MinIO 2"
-	@(docker run -v /data1 -v /data2 -v /data3 -v /data4 --net=mynet123 --ip=173.18.0.3 -d --name minio2 --rm -p 9001:9001 -e MINIO_KMS_SECRET_KEY=my-minio-key:OSMM+vkKUTCvQs9YL/CVMIMt43HFhkUpqJxTmGl6rYw= -e MINIO_BROWSER=off $(MINIO_VERSION) server /data{1...4} --address ':9001' --console-address ':9092' && sleep 5)
+	@(docker run -v /data1 -v /data2 -v /data3 -v /data4 --net=mynet123 --ip=173.18.0.3 -d --name minio2 --rm -p 9001:9001 -e MINIO_KMS_SECRET_KEY=my-minio-key:OSMM+vkKUTCvQs9YL/CVMIMt43HFhkUpqJxTmGl6rYw= -e MINIO_UPDATE=off -e MINIO_BROWSER=off $(MINIO_VERSION) server /data{1...4} --address ':9001' --console-address ':9092' && sleep 5)
 	@(docker run -p 9092:9092 --net=mynet123 --ip=173.18.0.6 -e CONSOLE_MINIO_SERVER=http://173.18.0.3:9001 -e CONSOLE_PORT=9092 --rm -d --name console2 $(TAG) && sleep 5)
 	@echo "Postgres"
 	@(docker run --net=mynet123 --ip=173.18.0.4 --name pgsqlcontainer --rm -p 5432:5432 -e POSTGRES_PASSWORD=password -d postgres && sleep 5)
