@@ -20,6 +20,7 @@ __init__() {
   echo $TIMESTAMP >web-app/tests/constants/timestamp.txt
   export GOPATH=/tmp/gopath
   export PATH=${PATH}:${GOPATH}/bin
+  export MC_UPDATE=off
 
   ARCH="$(uname -m)"
   case $ARCH in

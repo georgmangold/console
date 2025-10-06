@@ -86,6 +86,7 @@ __init__() {
   echo "$TIMESTAMP" >web-app/tests/constants/timestamp.txt
   export GOPATH=/tmp/gopath
   export PATH=${PATH}:${GOPATH}/bin
+  export MC_UPDATE=off
 
   go install github.com/minio/mc@latest
 
