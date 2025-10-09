@@ -29,7 +29,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
@@ -52,7 +52,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out source code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Scanning code on ${{ matrix.os }}
         continue-on-error: false
         run: |
@@ -71,7 +71,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -199,7 +199,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
@@ -238,7 +238,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -292,7 +292,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -345,7 +345,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -397,7 +397,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -449,7 +449,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -497,7 +497,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -545,7 +545,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -593,7 +593,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -640,7 +640,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -688,7 +688,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -739,7 +739,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -792,7 +792,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
@@ -828,7 +828,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
@@ -866,7 +866,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
         with:
@@ -910,7 +910,7 @@ jobs:
       - semgrep-static-code-analysis
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: Enable Corepack
         run: corepack enable
       - name: Install modules
@@ -935,7 +935,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
@@ -973,7 +973,7 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
@@ -1011,14 +1011,14 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
         with:
           go-version: ${{ matrix.go-version }}
         id: go
       - name: Check out gocovmerge as a nested repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           repository: wadey/gocovmerge
           path: gocovmerge
@@ -1115,7 +1115,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
@@ -1157,7 +1157,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
@@ -1197,7 +1197,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
@@ -1225,7 +1225,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
         with:
@@ -1252,7 +1252,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
@@ -1280,7 +1280,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
@@ -1308,7 +1308,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
         uses: actions/setup-go@v5
@@ -1329,7 +1329,7 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v5
       - name: Enable Corepack
         run: corepack enable
       - uses: actions/setup-node@v4
