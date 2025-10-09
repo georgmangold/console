@@ -11706,9 +11706,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kbar@npm:^0.1.0-beta.46":
-  version: 0.1.0-beta.46
-  resolution: "kbar@npm:0.1.0-beta.46"
+"kbar@npm:^0.1.0-beta.48":
+  version: 0.1.0-beta.48
+  resolution: "kbar@npm:0.1.0-beta.48"
   dependencies:
     "@radix-ui/react-portal": "npm:^1.0.1"
     fast-equals: "npm:^2.0.3"
@@ -11718,7 +11718,7 @@ __metadata:
   peerDependencies:
     react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
     react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10c0/a217eb1a77cf6ee7c455b32a178c8308019be1fd15f5f6f3cd7cb66f9c35a8a163ffe855e1475a37baed88827b5992f6d13b929505dc3606deffe0277de8e77a
+  checksum: 10c0/9c897d933c24ac1db6806021f07b87ba55164db8cce6ff2fbb8b072d2b97b2ccd3e35ce20596b55242cc41ec4abd716657e83151b5eb901e88505b2f6544187f
   languageName: node
   linkType: hard
 
@@ -18990,7 +18990,7 @@ __metadata:
     clsx: "npm:^2.1.1"
     customize-cra: "npm:^1.0.0"
     http-status-codes: "npm:^2.3.0"
-    kbar: "npm:^0.1.0-beta.46"
+    kbar: "npm:^0.1.0-beta.48"
     knip: "npm:^5.63.1"
     local-storage-fallback: "npm:^5.0.0"
     lodash: "npm:^4.17.21"
