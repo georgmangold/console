@@ -42,7 +42,6 @@ func NewGetSAUserPolicyParams() GetSAUserPolicyParams {
 //
 // swagger:parameters GetSAUserPolicy
 type GetSAUserPolicyParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

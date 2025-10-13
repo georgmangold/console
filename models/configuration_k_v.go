@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -65,11 +66,15 @@ func (m *ConfigurationKV) validateEnvOverride(formats strfmt.Registry) error {
 
 	if m.EnvOverride != nil {
 		if err := m.EnvOverride.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("env_override")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("env_override")
 			}
+
 			return err
 		}
 	}
@@ -100,11 +105,15 @@ func (m *ConfigurationKV) contextValidateEnvOverride(ctx context.Context, format
 		}
 
 		if err := m.EnvOverride.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("env_override")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("env_override")
 			}
+
 			return err
 		}
 	}

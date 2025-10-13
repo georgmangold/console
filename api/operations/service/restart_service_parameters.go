@@ -41,7 +41,6 @@ func NewRestartServiceParams() RestartServiceParams {
 //
 // swagger:parameters RestartService
 type RestartServiceParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

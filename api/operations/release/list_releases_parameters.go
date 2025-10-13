@@ -44,7 +44,6 @@ func NewListReleasesParams() ListReleasesParams {
 //
 // swagger:parameters ListReleases
 type ListReleasesParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -52,15 +51,18 @@ type ListReleasesParams struct {
 	  In: query
 	*/
 	Current *string
+
 	/*filter releases
 	  In: query
 	*/
 	Filter *string
+
 	/*repo name
 	  Required: true
 	  In: query
 	*/
 	Repo string
+
 	/*search content
 	  In: query
 	*/
@@ -75,7 +77,6 @@ func (o *ListReleasesParams) BindRequest(r *http.Request, route *middleware.Matc
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qCurrent, qhkCurrent, _ := qs.GetOK("current")

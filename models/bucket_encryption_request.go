@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -62,11 +63,15 @@ func (m *BucketEncryptionRequest) validateEncType(formats strfmt.Registry) error
 
 	if m.EncType != nil {
 		if err := m.EncType.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("encType")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("encType")
 			}
+
 			return err
 		}
 	}
@@ -97,11 +102,15 @@ func (m *BucketEncryptionRequest) contextValidateEncType(ctx context.Context, fo
 		}
 
 		if err := m.EncType.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("encType")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("encType")
 			}
+
 			return err
 		}
 	}

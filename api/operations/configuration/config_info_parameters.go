@@ -42,7 +42,6 @@ func NewConfigInfoParams() ConfigInfoParams {
 //
 // swagger:parameters ConfigInfo
 type ConfigInfoParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

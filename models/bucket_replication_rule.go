@@ -24,6 +24,7 @@ package models
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -110,11 +111,15 @@ func (m *BucketReplicationRule) validateDestination(formats strfmt.Registry) err
 
 	if m.Destination != nil {
 		if err := m.Destination.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("destination")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("destination")
 			}
+
 			return err
 		}
 	}
@@ -122,7 +127,7 @@ func (m *BucketReplicationRule) validateDestination(formats strfmt.Registry) err
 	return nil
 }
 
-var bucketReplicationRuleTypeStatusPropEnum []interface{}
+var bucketReplicationRuleTypeStatusPropEnum []any
 
 func init() {
 	var res []string
@@ -164,7 +169,7 @@ func (m *BucketReplicationRule) validateStatus(formats strfmt.Registry) error {
 	return nil
 }
 
-var bucketReplicationRuleTypeSyncModePropEnum []interface{}
+var bucketReplicationRuleTypeSyncModePropEnum []any
 
 func init() {
 	var res []string
@@ -229,11 +234,15 @@ func (m *BucketReplicationRule) contextValidateDestination(ctx context.Context, 
 		}
 
 		if err := m.Destination.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("destination")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("destination")
 			}
+
 			return err
 		}
 	}

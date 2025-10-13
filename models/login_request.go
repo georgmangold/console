@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -68,11 +69,15 @@ func (m *LoginRequest) validateFeatures(formats strfmt.Registry) error {
 
 	if m.Features != nil {
 		if err := m.Features.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("features")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("features")
 			}
+
 			return err
 		}
 	}
@@ -103,11 +108,15 @@ func (m *LoginRequest) contextValidateFeatures(ctx context.Context, formats strf
 		}
 
 		if err := m.Features.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("features")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("features")
 			}
+
 			return err
 		}
 	}

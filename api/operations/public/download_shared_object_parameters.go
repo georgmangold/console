@@ -42,7 +42,6 @@ func NewDownloadSharedObjectParams() DownloadSharedObjectParams {
 //
 // swagger:parameters DownloadSharedObject
 type DownloadSharedObjectParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

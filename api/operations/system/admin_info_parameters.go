@@ -51,7 +51,6 @@ func NewAdminInfoParams() AdminInfoParams {
 //
 // swagger:parameters AdminInfo
 type AdminInfoParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -70,7 +69,6 @@ func (o *AdminInfoParams) BindRequest(r *http.Request, route *middleware.Matched
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qDefaultOnly, qhkDefaultOnly, _ := qs.GetOK("defaultOnly")

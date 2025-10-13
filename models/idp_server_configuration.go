@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -77,11 +78,15 @@ func (m *IdpServerConfiguration) validateInfo(formats strfmt.Registry) error {
 
 		if m.Info[i] != nil {
 			if err := m.Info[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("info" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("info" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -116,11 +121,15 @@ func (m *IdpServerConfiguration) contextValidateInfo(ctx context.Context, format
 			}
 
 			if err := m.Info[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("info" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("info" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

@@ -41,7 +41,6 @@ func NewLoginDetailParams() LoginDetailParams {
 //
 // swagger:parameters LoginDetail
 type LoginDetailParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

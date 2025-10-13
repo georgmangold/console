@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -65,11 +66,15 @@ func (m *NotifEndpointResponse) validateNotificationEndpoints(formats strfmt.Reg
 
 		if m.NotificationEndpoints[i] != nil {
 			if err := m.NotificationEndpoints[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("notification_endpoints" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("notification_endpoints" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -104,11 +109,15 @@ func (m *NotifEndpointResponse) contextValidateNotificationEndpoints(ctx context
 			}
 
 			if err := m.NotificationEndpoints[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("notification_endpoints" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("notification_endpoints" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

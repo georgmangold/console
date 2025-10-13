@@ -54,7 +54,6 @@ func NewListUsersWithAccessToBucketParams() ListUsersWithAccessToBucketParams {
 //
 // swagger:parameters ListUsersWithAccessToBucket
 type ListUsersWithAccessToBucketParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -63,11 +62,13 @@ type ListUsersWithAccessToBucketParams struct {
 	  In: path
 	*/
 	Bucket string
+
 	/*
 	  In: query
 	  Default: 20
 	*/
 	Limit *int32
+
 	/*
 	  In: query
 	  Default: 0
@@ -83,7 +84,6 @@ func (o *ListUsersWithAccessToBucketParams) BindRequest(r *http.Request, route *
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	rBucket, rhkBucket, _ := route.Params.GetOK("bucket")

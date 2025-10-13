@@ -34,13 +34,13 @@ import (
 type SiteReplicationStatusResponse struct {
 
 	// bucket stats
-	BucketStats interface{} `json:"bucketStats,omitempty"`
+	BucketStats any `json:"bucketStats,omitempty"`
 
 	// enabled
 	Enabled bool `json:"enabled,omitempty"`
 
 	// group stats
-	GroupStats interface{} `json:"groupStats,omitempty"`
+	GroupStats any `json:"groupStats,omitempty"`
 
 	// max buckets
 	MaxBuckets int64 `json:"maxBuckets,omitempty"`
@@ -55,16 +55,16 @@ type SiteReplicationStatusResponse struct {
 	MaxUsers int64 `json:"maxUsers,omitempty"`
 
 	// policy stats
-	PolicyStats interface{} `json:"policyStats,omitempty"`
+	PolicyStats any `json:"policyStats,omitempty"`
 
 	// sites
-	Sites interface{} `json:"sites,omitempty"`
+	Sites any `json:"sites,omitempty"`
 
 	// stats summary
-	StatsSummary interface{} `json:"statsSummary,omitempty"`
+	StatsSummary any `json:"statsSummary,omitempty"`
 
 	// user stats
-	UserStats interface{} `json:"userStats,omitempty"`
+	UserStats any `json:"userStats,omitempty"`
 }
 
 // Validate validates this site replication status response

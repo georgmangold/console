@@ -56,7 +56,6 @@ func NewDownloadObjectParams() DownloadObjectParams {
 //
 // swagger:parameters Download Object
 type DownloadObjectParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -65,21 +64,25 @@ type DownloadObjectParams struct {
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  In: query
 	  Default: ""
 	*/
 	OverrideFileName *string
+
 	/*
 	  Required: true
 	  In: query
 	*/
 	Prefix string
+
 	/*
 	  In: query
 	  Default: false
 	*/
 	Preview *bool
+
 	/*
 	  In: query
 	*/
@@ -94,7 +97,6 @@ func (o *DownloadObjectParams) BindRequest(r *http.Request, route *middleware.Ma
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	rBucketName, rhkBucketName, _ := route.Params.GetOK("bucket_name")

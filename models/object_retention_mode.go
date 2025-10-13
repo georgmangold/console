@@ -54,7 +54,7 @@ const (
 )
 
 // for schema
-var objectRetentionModeEnum []interface{}
+var objectRetentionModeEnum []any
 
 func init() {
 	var res []ObjectRetentionMode

@@ -41,7 +41,6 @@ func NewGetSiteReplicationInfoParams() GetSiteReplicationInfoParams {
 //
 // swagger:parameters GetSiteReplicationInfo
 type GetSiteReplicationInfoParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

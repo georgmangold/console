@@ -41,7 +41,6 @@ func NewArnListParams() ArnListParams {
 //
 // swagger:parameters ArnList
 type ArnListParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

@@ -61,7 +61,6 @@ func NewGetSiteReplicationStatusParams() GetSiteReplicationStatusParams {
 //
 // swagger:parameters GetSiteReplicationStatus
 type GetSiteReplicationStatusParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -70,24 +69,29 @@ type GetSiteReplicationStatusParams struct {
 	  Default: true
 	*/
 	Buckets *bool
+
 	/*Entity Type to lookup
 	  In: query
 	*/
 	EntityType *string
+
 	/*Entity Value to lookup
 	  In: query
 	*/
 	EntityValue *string
+
 	/*Include Group stats
 	  In: query
 	  Default: true
 	*/
 	Groups *bool
+
 	/*Include Policies stats
 	  In: query
 	  Default: true
 	*/
 	Policies *bool
+
 	/*Include Policies stats
 	  In: query
 	  Default: true
@@ -103,7 +107,6 @@ func (o *GetSiteReplicationStatusParams) BindRequest(r *http.Request, route *mid
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qBuckets, qhkBuckets, _ := qs.GetOK("buckets")

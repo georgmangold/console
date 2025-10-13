@@ -141,7 +141,7 @@ func (m *CreateRemoteBucket) validateSourceBucket(formats strfmt.Registry) error
 	return nil
 }
 
-var createRemoteBucketTypeSyncModePropEnum []interface{}
+var createRemoteBucketTypeSyncModePropEnum []any
 
 func init() {
 	var res []string

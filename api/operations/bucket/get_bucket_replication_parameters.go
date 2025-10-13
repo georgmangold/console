@@ -42,7 +42,6 @@ func NewGetBucketReplicationParams() GetBucketReplicationParams {
 //
 // swagger:parameters GetBucketReplication
 type GetBucketReplicationParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

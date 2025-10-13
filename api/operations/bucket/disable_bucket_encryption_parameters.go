@@ -42,7 +42,6 @@ func NewDisableBucketEncryptionParams() DisableBucketEncryptionParams {
 //
 // swagger:parameters DisableBucketEncryption
 type DisableBucketEncryptionParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

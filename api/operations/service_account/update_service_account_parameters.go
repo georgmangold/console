@@ -22,6 +22,7 @@ package service_account
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	stderrors "errors"
 	"io"
 	"net/http"
 
@@ -47,7 +48,6 @@ func NewUpdateServiceAccountParams() UpdateServiceAccountParams {
 //
 // swagger:parameters UpdateServiceAccount
 type UpdateServiceAccountParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -56,6 +56,7 @@ type UpdateServiceAccountParams struct {
 	  In: path
 	*/
 	AccessKey string
+
 	/*
 	  Required: true
 	  In: body
@@ -78,10 +79,12 @@ func (o *UpdateServiceAccountParams) BindRequest(r *http.Request, route *middlew
 	}
 
 	if runtime.HasBody(r) {
-		defer r.Body.Close()
+		defer func() {
+			_ = r.Body.Close()
+		}()
 		var body models.UpdateServiceAccountRequest
 		if err := route.Consumer.Consume(r.Body, &body); err != nil {
-			if err == io.EOF {
+			if stderrors.Is(err, io.EOF) {
 				res = append(res, errors.Required("body", "body", ""))
 			} else {
 				res = append(res, errors.NewParseError("body", "body", "", err))

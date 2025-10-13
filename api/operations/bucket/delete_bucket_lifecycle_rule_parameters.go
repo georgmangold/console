@@ -42,7 +42,6 @@ func NewDeleteBucketLifecycleRuleParams() DeleteBucketLifecycleRuleParams {
 //
 // swagger:parameters DeleteBucketLifecycleRule
 type DeleteBucketLifecycleRuleParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -51,6 +50,7 @@ type DeleteBucketLifecycleRuleParams struct {
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  Required: true
 	  In: path

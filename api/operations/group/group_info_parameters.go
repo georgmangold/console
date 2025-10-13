@@ -42,7 +42,6 @@ func NewGroupInfoParams() GroupInfoParams {
 //
 // swagger:parameters GroupInfo
 type GroupInfoParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

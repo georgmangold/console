@@ -63,14 +63,14 @@ func (o *GetBucketRewindURL) Build() (*url.URL, error) {
 
 	bucketName := o.BucketName
 	if bucketName != "" {
-		_path = strings.Replace(_path, "{bucket_name}", bucketName, -1)
+		_path = strings.ReplaceAll(_path, "{bucket_name}", bucketName)
 	} else {
 		return nil, errors.New("bucketName is required on GetBucketRewindURL")
 	}
 
 	date := o.Date
 	if date != "" {
-		_path = strings.Replace(_path, "{date}", date, -1)
+		_path = strings.ReplaceAll(_path, "{date}", date)
 	} else {
 		return nil, errors.New("date is required on GetBucketRewindURL")
 	}

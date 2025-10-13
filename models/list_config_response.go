@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -68,11 +69,15 @@ func (m *ListConfigResponse) validateConfigurations(formats strfmt.Registry) err
 
 		if m.Configurations[i] != nil {
 			if err := m.Configurations[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("configurations" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("configurations" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -107,11 +112,15 @@ func (m *ListConfigResponse) contextValidateConfigurations(ctx context.Context, 
 			}
 
 			if err := m.Configurations[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("configurations" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("configurations" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

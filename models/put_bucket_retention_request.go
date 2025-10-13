@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -82,11 +83,15 @@ func (m *PutBucketRetentionRequest) validateMode(formats strfmt.Registry) error 
 
 	if m.Mode != nil {
 		if err := m.Mode.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("mode")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("mode")
 			}
+
 			return err
 		}
 	}
@@ -106,11 +111,15 @@ func (m *PutBucketRetentionRequest) validateUnit(formats strfmt.Registry) error 
 
 	if m.Unit != nil {
 		if err := m.Unit.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("unit")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("unit")
 			}
+
 			return err
 		}
 	}
@@ -150,11 +159,15 @@ func (m *PutBucketRetentionRequest) contextValidateMode(ctx context.Context, for
 	if m.Mode != nil {
 
 		if err := m.Mode.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("mode")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("mode")
 			}
+
 			return err
 		}
 	}
@@ -167,11 +180,15 @@ func (m *PutBucketRetentionRequest) contextValidateUnit(ctx context.Context, for
 	if m.Unit != nil {
 
 		if err := m.Unit.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("unit")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("unit")
 			}
+
 			return err
 		}
 	}

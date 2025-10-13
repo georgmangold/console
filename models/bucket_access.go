@@ -57,7 +57,7 @@ const (
 )
 
 // for schema
-var bucketAccessEnum []interface{}
+var bucketAccessEnum []any
 
 func init() {
 	var res []BucketAccess

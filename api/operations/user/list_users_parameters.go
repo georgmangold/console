@@ -54,7 +54,6 @@ func NewListUsersParams() ListUsersParams {
 //
 // swagger:parameters ListUsers
 type ListUsersParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -63,6 +62,7 @@ type ListUsersParams struct {
 	  Default: 20
 	*/
 	Limit *int32
+
 	/*
 	  In: query
 	  Default: 0
@@ -78,7 +78,6 @@ func (o *ListUsersParams) BindRequest(r *http.Request, route *middleware.Matched
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qLimit, qhkLimit, _ := qs.GetOK("limit")

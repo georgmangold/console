@@ -22,6 +22,7 @@ package object
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	stderrors "errors"
 	"io"
 	"net/http"
 
@@ -47,7 +48,6 @@ func NewDeleteMultipleObjectsParams() DeleteMultipleObjectsParams {
 //
 // swagger:parameters DeleteMultipleObjects
 type DeleteMultipleObjectsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -55,15 +55,18 @@ type DeleteMultipleObjectsParams struct {
 	  In: query
 	*/
 	AllVersions *bool
+
 	/*
 	  Required: true
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  In: query
 	*/
 	Bypass *bool
+
 	/*
 	  Required: true
 	  In: body
@@ -79,7 +82,6 @@ func (o *DeleteMultipleObjectsParams) BindRequest(r *http.Request, route *middle
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qAllVersions, qhkAllVersions, _ := qs.GetOK("all_versions")
@@ -98,10 +100,12 @@ func (o *DeleteMultipleObjectsParams) BindRequest(r *http.Request, route *middle
 	}
 
 	if runtime.HasBody(r) {
-		defer r.Body.Close()
+		defer func() {
+			_ = r.Body.Close()
+		}()
 		var body []*models.DeleteFile
 		if err := route.Consumer.Consume(r.Body, &body); err != nil {
-			if err == io.EOF {
+			if stderrors.Is(err, io.EOF) {
 				res = append(res, errors.Required("files", "body", ""))
 			} else {
 				res = append(res, errors.NewParseError("files", "body", "", err))

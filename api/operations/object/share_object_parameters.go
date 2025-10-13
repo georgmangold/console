@@ -44,7 +44,6 @@ func NewShareObjectParams() ShareObjectParams {
 //
 // swagger:parameters ShareObject
 type ShareObjectParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -53,15 +52,18 @@ type ShareObjectParams struct {
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  In: query
 	*/
 	Expires *string
+
 	/*
 	  Required: true
 	  In: query
 	*/
 	Prefix string
+
 	/*
 	  Required: true
 	  In: query
@@ -77,7 +79,6 @@ func (o *ShareObjectParams) BindRequest(r *http.Request, route *middleware.Match
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	rBucketName, rhkBucketName, _ := route.Params.GetOK("bucket_name")

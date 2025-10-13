@@ -49,7 +49,7 @@ func NewDeleteServiceAccountNoContent() *DeleteServiceAccountNoContent {
 // WriteResponse to the client
 func (o *DeleteServiceAccountNoContent) WriteResponse(rw http.ResponseWriter, producer runtime.Producer) {
 
-	rw.Header().Del(runtime.HeaderContentType) //Remove Content-Type on empty responses
+	rw.Header().Del(runtime.HeaderContentType) // Remove Content-Type on empty responses
 
 	rw.WriteHeader(204)
 }

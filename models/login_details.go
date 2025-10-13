@@ -24,6 +24,7 @@ package models
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -69,7 +70,7 @@ func (m *LoginDetails) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var loginDetailsTypeLoginStrategyPropEnum []interface{}
+var loginDetailsTypeLoginStrategyPropEnum []any
 
 func init() {
 	var res []string
@@ -129,11 +130,15 @@ func (m *LoginDetails) validateRedirectRules(formats strfmt.Registry) error {
 
 		if m.RedirectRules[i] != nil {
 			if err := m.RedirectRules[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("redirectRules" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("redirectRules" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -168,11 +173,15 @@ func (m *LoginDetails) contextValidateRedirectRules(ctx context.Context, formats
 			}
 
 			if err := m.RedirectRules[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("redirectRules" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("redirectRules" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

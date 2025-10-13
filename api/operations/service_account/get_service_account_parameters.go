@@ -42,7 +42,6 @@ func NewGetServiceAccountParams() GetServiceAccountParams {
 //
 // swagger:parameters GetServiceAccount
 type GetServiceAccountParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

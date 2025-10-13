@@ -42,7 +42,6 @@ func NewGetBucketRetentionConfigParams() GetBucketRetentionConfigParams {
 //
 // swagger:parameters GetBucketRetentionConfig
 type GetBucketRetentionConfigParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

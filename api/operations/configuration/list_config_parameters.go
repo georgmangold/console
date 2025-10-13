@@ -54,7 +54,6 @@ func NewListConfigParams() ListConfigParams {
 //
 // swagger:parameters ListConfig
 type ListConfigParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -63,6 +62,7 @@ type ListConfigParams struct {
 	  Default: 20
 	*/
 	Limit *int32
+
 	/*
 	  In: query
 	  Default: 0
@@ -78,7 +78,6 @@ func (o *ListConfigParams) BindRequest(r *http.Request, route *middleware.Matche
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qLimit, qhkLimit, _ := qs.GetOK("limit")

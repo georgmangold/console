@@ -22,6 +22,7 @@ package group
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	stderrors "errors"
 	"io"
 	"net/http"
 
@@ -47,7 +48,6 @@ func NewUpdateGroupParams() UpdateGroupParams {
 //
 // swagger:parameters UpdateGroup
 type UpdateGroupParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -56,6 +56,7 @@ type UpdateGroupParams struct {
 	  In: body
 	*/
 	Body *models.UpdateGroupRequest
+
 	/*
 	  Required: true
 	  In: path
@@ -73,10 +74,12 @@ func (o *UpdateGroupParams) BindRequest(r *http.Request, route *middleware.Match
 	o.HTTPRequest = r
 
 	if runtime.HasBody(r) {
-		defer r.Body.Close()
+		defer func() {
+			_ = r.Body.Close()
+		}()
 		var body models.UpdateGroupRequest
 		if err := route.Consumer.Consume(r.Body, &body); err != nil {
-			if err == io.EOF {
+			if stderrors.Is(err, io.EOF) {
 				res = append(res, errors.Required("body", "body", ""))
 			} else {
 				res = append(res, errors.NewParseError("body", "body", "", err))

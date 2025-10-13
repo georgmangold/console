@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -83,11 +84,15 @@ func (m *ObjectBucketLifecycle) validateExpiration(formats strfmt.Registry) erro
 
 	if m.Expiration != nil {
 		if err := m.Expiration.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("expiration")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("expiration")
 			}
+
 			return err
 		}
 	}
@@ -107,11 +112,15 @@ func (m *ObjectBucketLifecycle) validateTags(formats strfmt.Registry) error {
 
 		if m.Tags[i] != nil {
 			if err := m.Tags[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -128,11 +137,15 @@ func (m *ObjectBucketLifecycle) validateTransition(formats strfmt.Registry) erro
 
 	if m.Transition != nil {
 		if err := m.Transition.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("transition")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("transition")
 			}
+
 			return err
 		}
 	}
@@ -171,11 +184,15 @@ func (m *ObjectBucketLifecycle) contextValidateExpiration(ctx context.Context, f
 		}
 
 		if err := m.Expiration.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("expiration")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("expiration")
 			}
+
 			return err
 		}
 	}
@@ -194,11 +211,15 @@ func (m *ObjectBucketLifecycle) contextValidateTags(ctx context.Context, formats
 			}
 
 			if err := m.Tags[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("tags" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("tags" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -217,11 +238,15 @@ func (m *ObjectBucketLifecycle) contextValidateTransition(ctx context.Context, f
 		}
 
 		if err := m.Transition.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("transition")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("transition")
 			}
+
 			return err
 		}
 	}

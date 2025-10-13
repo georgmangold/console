@@ -44,7 +44,6 @@ func NewPutObjectRestoreParams() PutObjectRestoreParams {
 //
 // swagger:parameters PutObjectRestore
 type PutObjectRestoreParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -53,11 +52,13 @@ type PutObjectRestoreParams struct {
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  Required: true
 	  In: query
 	*/
 	Prefix string
+
 	/*
 	  Required: true
 	  In: query
@@ -73,7 +74,6 @@ func (o *PutObjectRestoreParams) BindRequest(r *http.Request, route *middleware.
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	rBucketName, rhkBucketName, _ := route.Params.GetOK("bucket_name")

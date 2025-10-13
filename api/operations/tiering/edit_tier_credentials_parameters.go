@@ -22,6 +22,7 @@ package tiering
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	stderrors "errors"
 	"io"
 	"net/http"
 
@@ -47,7 +48,6 @@ func NewEditTierCredentialsParams() EditTierCredentialsParams {
 //
 // swagger:parameters EditTierCredentials
 type EditTierCredentialsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -56,11 +56,13 @@ type EditTierCredentialsParams struct {
 	  In: body
 	*/
 	Body *models.TierCredentialsRequest
+
 	/*
 	  Required: true
 	  In: path
 	*/
 	Name string
+
 	/*
 	  Required: true
 	  In: path
@@ -78,10 +80,12 @@ func (o *EditTierCredentialsParams) BindRequest(r *http.Request, route *middlewa
 	o.HTTPRequest = r
 
 	if runtime.HasBody(r) {
-		defer r.Body.Close()
+		defer func() {
+			_ = r.Body.Close()
+		}()
 		var body models.TierCredentialsRequest
 		if err := route.Consumer.Consume(r.Body, &body); err != nil {
-			if err == io.EOF {
+			if stderrors.Is(err, io.EOF) {
 				res = append(res, errors.Required("body", "body", ""))
 			} else {
 				res = append(res, errors.NewParseError("body", "body", "", err))
@@ -152,10 +156,10 @@ func (o *EditTierCredentialsParams) bindType(rawData []string, hasKey bool, form
 	return nil
 }
 
-// validateType carries on validations for parameter Type
+// validateType carries out validations for parameter Type
 func (o *EditTierCredentialsParams) validateType(formats strfmt.Registry) error {
 
-	if err := validate.EnumCase("type", "path", o.Type, []interface{}{"s3", "gcs", "azure", "minio"}, true); err != nil {
+	if err := validate.EnumCase("type", "path", o.Type, []any{"s3", "gcs", "azure", "minio"}, true); err != nil {
 		return err
 	}
 

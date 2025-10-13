@@ -41,7 +41,6 @@ func NewListRemoteBucketsParams() ListRemoteBucketsParams {
 //
 // swagger:parameters ListRemoteBuckets
 type ListRemoteBucketsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

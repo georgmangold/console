@@ -22,6 +22,7 @@ package object
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	stderrors "errors"
 	"io"
 	"net/http"
 
@@ -47,7 +48,6 @@ func NewPutObjectRetentionParams() PutObjectRetentionParams {
 //
 // swagger:parameters PutObjectRetention
 type PutObjectRetentionParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -56,16 +56,19 @@ type PutObjectRetentionParams struct {
 	  In: body
 	*/
 	Body *models.PutObjectRetentionRequest
+
 	/*
 	  Required: true
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  Required: true
 	  In: query
 	*/
 	Prefix string
+
 	/*
 	  Required: true
 	  In: query
@@ -81,14 +84,15 @@ func (o *PutObjectRetentionParams) BindRequest(r *http.Request, route *middlewar
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	if runtime.HasBody(r) {
-		defer r.Body.Close()
+		defer func() {
+			_ = r.Body.Close()
+		}()
 		var body models.PutObjectRetentionRequest
 		if err := route.Consumer.Consume(r.Body, &body); err != nil {
-			if err == io.EOF {
+			if stderrors.Is(err, io.EOF) {
 				res = append(res, errors.Required("body", "body", ""))
 			} else {
 				res = append(res, errors.NewParseError("body", "body", "", err))
