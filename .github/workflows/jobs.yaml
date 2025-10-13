@@ -143,15 +143,20 @@ jobs:
         continue-on-error: false
         run: |
           yarn install --immutable
-
+      - name: Install go-swagger
+        run: |
+          go install github.com/go-swagger/go-swagger/cmd/swagger@latest
+          swagger version
+      - name: Validate swagger.yml
+        run: swagger validate ./swagger.yml
       - name: Run Swagger Codegen
         run: make swagger-gen
 
       - name: Check for uncommitted changes
         id: git-status
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "::error::Codegen modified files. Please run "make swagger-gen" and commit the changes:"
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Codegen modified files. Please run "make swagger-gen" and commit the changes first:"
             git status --porcelain
             echo "##### Git Diff: #####"
             git --no-pager diff
@@ -1203,6 +1208,7 @@ jobs:
       - lint-job
       - ui-assets-istanbul-coverage
       - semgrep-static-code-analysis
+      - compile-binary
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
