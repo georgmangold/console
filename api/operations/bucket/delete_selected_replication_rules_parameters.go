@@ -22,6 +22,7 @@ package bucket
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	stderrors "errors"
 	"io"
 	"net/http"
 
@@ -47,7 +48,6 @@ func NewDeleteSelectedReplicationRulesParams() DeleteSelectedReplicationRulesPar
 //
 // swagger:parameters DeleteSelectedReplicationRules
 type DeleteSelectedReplicationRulesParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -56,6 +56,7 @@ type DeleteSelectedReplicationRulesParams struct {
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  Required: true
 	  In: body
@@ -78,10 +79,12 @@ func (o *DeleteSelectedReplicationRulesParams) BindRequest(r *http.Request, rout
 	}
 
 	if runtime.HasBody(r) {
-		defer r.Body.Close()
+		defer func() {
+			_ = r.Body.Close()
+		}()
 		var body models.BucketReplicationRuleList
 		if err := route.Consumer.Consume(r.Body, &body); err != nil {
-			if err == io.EOF {
+			if stderrors.Is(err, io.EOF) {
 				res = append(res, errors.Required("rules", "body", ""))
 			} else {
 				res = append(res, errors.NewParseError("rules", "body", "", err))

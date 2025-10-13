@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -74,11 +75,15 @@ func (m *BucketVersioningResponse) validateExcludedPrefixes(formats strfmt.Regis
 
 		if m.ExcludedPrefixes[i] != nil {
 			if err := m.ExcludedPrefixes[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("excludedPrefixes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("excludedPrefixes" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -113,11 +118,15 @@ func (m *BucketVersioningResponse) contextValidateExcludedPrefixes(ctx context.C
 			}
 
 			if err := m.ExcludedPrefixes[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("excludedPrefixes" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("excludedPrefixes" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

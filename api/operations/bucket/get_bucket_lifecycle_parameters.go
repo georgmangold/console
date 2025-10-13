@@ -42,7 +42,6 @@ func NewGetBucketLifecycleParams() GetBucketLifecycleParams {
 //
 // swagger:parameters GetBucketLifecycle
 type GetBucketLifecycleParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

@@ -41,7 +41,6 @@ func NewTiersListParams() TiersListParams {
 //
 // swagger:parameters TiersList
 type TiersListParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

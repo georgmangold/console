@@ -42,7 +42,6 @@ func NewPolicyInfoParams() PolicyInfoParams {
 //
 // swagger:parameters PolicyInfo
 type PolicyInfoParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

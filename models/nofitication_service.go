@@ -78,7 +78,7 @@ const (
 )
 
 // for schema
-var nofiticationServiceEnum []interface{}
+var nofiticationServiceEnum []any
 
 func init() {
 	var res []NofiticationService

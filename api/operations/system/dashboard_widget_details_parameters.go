@@ -44,7 +44,6 @@ func NewDashboardWidgetDetailsParams() DashboardWidgetDetailsParams {
 //
 // swagger:parameters DashboardWidgetDetails
 type DashboardWidgetDetailsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -52,14 +51,17 @@ type DashboardWidgetDetailsParams struct {
 	  In: query
 	*/
 	End *int64
+
 	/*
 	  In: query
 	*/
 	Start *int64
+
 	/*
 	  In: query
 	*/
 	Step *int32
+
 	/*
 	  Required: true
 	  In: path
@@ -75,7 +77,6 @@ func (o *DashboardWidgetDetailsParams) BindRequest(r *http.Request, route *middl
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qEnd, qhkEnd, _ := qs.GetOK("end")

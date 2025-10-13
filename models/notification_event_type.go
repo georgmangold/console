@@ -66,7 +66,7 @@ const (
 )
 
 // for schema
-var notificationEventTypeEnum []interface{}
+var notificationEventTypeEnum []any
 
 func init() {
 	var res []NotificationEventType

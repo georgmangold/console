@@ -60,7 +60,7 @@ func (o *ListUsersForPolicyURL) Build() (*url.URL, error) {
 
 	policy := o.Policy
 	if policy != "" {
-		_path = strings.Replace(_path, "{policy}", policy, -1)
+		_path = strings.ReplaceAll(_path, "{policy}", policy)
 	} else {
 		return nil, errors.New("policy is required on ListUsersForPolicyURL")
 	}

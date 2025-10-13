@@ -42,7 +42,6 @@ func NewListGroupsForPolicyParams() ListGroupsForPolicyParams {
 //
 // swagger:parameters ListGroupsForPolicy
 type ListGroupsForPolicyParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

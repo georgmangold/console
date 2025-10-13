@@ -45,7 +45,6 @@ func NewInspectParams() InspectParams {
 //
 // swagger:parameters Inspect
 type InspectParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -53,11 +52,13 @@ type InspectParams struct {
 	  In: query
 	*/
 	Encrypt *bool
+
 	/*
 	  Required: true
 	  In: query
 	*/
 	File string
+
 	/*
 	  Required: true
 	  In: query
@@ -73,7 +74,6 @@ func (o *InspectParams) BindRequest(r *http.Request, route *middleware.MatchedRo
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qEncrypt, qhkEncrypt, _ := qs.GetOK("encrypt")

@@ -61,14 +61,14 @@ func (o *DeleteBucketEventURL) Build() (*url.URL, error) {
 
 	arn := o.Arn
 	if arn != "" {
-		_path = strings.Replace(_path, "{arn}", arn, -1)
+		_path = strings.ReplaceAll(_path, "{arn}", arn)
 	} else {
 		return nil, errors.New("arn is required on DeleteBucketEventURL")
 	}
 
 	bucketName := o.BucketName
 	if bucketName != "" {
-		_path = strings.Replace(_path, "{bucket_name}", bucketName, -1)
+		_path = strings.ReplaceAll(_path, "{bucket_name}", bucketName)
 	} else {
 		return nil, errors.New("bucketName is required on DeleteBucketEventURL")
 	}

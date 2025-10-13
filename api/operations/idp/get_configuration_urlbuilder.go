@@ -61,14 +61,14 @@ func (o *GetConfigurationURL) Build() (*url.URL, error) {
 
 	name := o.Name
 	if name != "" {
-		_path = strings.Replace(_path, "{name}", name, -1)
+		_path = strings.ReplaceAll(_path, "{name}", name)
 	} else {
 		return nil, errors.New("name is required on GetConfigurationURL")
 	}
 
 	typeVar := o.Type
 	if typeVar != "" {
-		_path = strings.Replace(_path, "{type}", typeVar, -1)
+		_path = strings.ReplaceAll(_path, "{type}", typeVar)
 	} else {
 		return nil, errors.New("type is required on GetConfigurationURL")
 	}

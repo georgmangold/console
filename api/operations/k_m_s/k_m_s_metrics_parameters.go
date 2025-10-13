@@ -41,7 +41,6 @@ func NewKMSMetricsParams() KMSMetricsParams {
 //
 // swagger:parameters KMSMetrics
 type KMSMetricsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

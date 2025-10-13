@@ -42,7 +42,6 @@ func NewDeleteAllReplicationRulesParams() DeleteAllReplicationRulesParams {
 //
 // swagger:parameters DeleteAllReplicationRules
 type DeleteAllReplicationRulesParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

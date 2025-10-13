@@ -42,7 +42,6 @@ func NewDeleteBucketParams() DeleteBucketParams {
 //
 // swagger:parameters DeleteBucket
 type DeleteBucketParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

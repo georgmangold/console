@@ -42,7 +42,6 @@ func NewDeleteConfigurationParams() DeleteConfigurationParams {
 //
 // swagger:parameters DeleteConfiguration
 type DeleteConfigurationParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -51,6 +50,7 @@ type DeleteConfigurationParams struct {
 	  In: path
 	*/
 	Name string
+
 	/*IDP Configuration Type
 	  Required: true
 	  In: path

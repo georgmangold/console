@@ -42,7 +42,6 @@ func NewGetBucketQuotaParams() GetBucketQuotaParams {
 //
 // swagger:parameters GetBucketQuota
 type GetBucketQuotaParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

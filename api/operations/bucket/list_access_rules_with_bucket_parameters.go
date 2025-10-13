@@ -54,7 +54,6 @@ func NewListAccessRulesWithBucketParams() ListAccessRulesWithBucketParams {
 //
 // swagger:parameters ListAccessRulesWithBucket
 type ListAccessRulesWithBucketParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -63,11 +62,13 @@ type ListAccessRulesWithBucketParams struct {
 	  In: path
 	*/
 	Bucket string
+
 	/*
 	  In: query
 	  Default: 20
 	*/
 	Limit *int32
+
 	/*
 	  In: query
 	  Default: 0
@@ -83,7 +84,6 @@ func (o *ListAccessRulesWithBucketParams) BindRequest(r *http.Request, route *mi
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	rBucket, rhkBucket, _ := route.Params.GetOK("bucket")

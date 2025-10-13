@@ -60,7 +60,7 @@ func (o *DownloadSharedObjectURL) Build() (*url.URL, error) {
 
 	url := o.URL
 	if url != "" {
-		_path = strings.Replace(_path, "{url}", url, -1)
+		_path = strings.ReplaceAll(_path, "{url}", url)
 	} else {
 		return nil, errors.New("url is required on DownloadSharedObjectURL")
 	}

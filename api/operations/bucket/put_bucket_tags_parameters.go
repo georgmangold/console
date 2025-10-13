@@ -22,6 +22,7 @@ package bucket
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	stderrors "errors"
 	"io"
 	"net/http"
 
@@ -47,7 +48,6 @@ func NewPutBucketTagsParams() PutBucketTagsParams {
 //
 // swagger:parameters PutBucketTags
 type PutBucketTagsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -56,6 +56,7 @@ type PutBucketTagsParams struct {
 	  In: body
 	*/
 	Body *models.PutBucketTagsRequest
+
 	/*
 	  Required: true
 	  In: path
@@ -73,10 +74,12 @@ func (o *PutBucketTagsParams) BindRequest(r *http.Request, route *middleware.Mat
 	o.HTTPRequest = r
 
 	if runtime.HasBody(r) {
-		defer r.Body.Close()
+		defer func() {
+			_ = r.Body.Close()
+		}()
 		var body models.PutBucketTagsRequest
 		if err := route.Consumer.Consume(r.Body, &body); err != nil {
-			if err == io.EOF {
+			if stderrors.Is(err, io.EOF) {
 				res = append(res, errors.Required("body", "body", ""))
 			} else {
 				res = append(res, errors.NewParseError("body", "body", "", err))

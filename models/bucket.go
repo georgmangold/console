@@ -24,6 +24,7 @@ package models
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -96,11 +97,15 @@ func (m *Bucket) validateAccess(formats strfmt.Registry) error {
 
 	if m.Access != nil {
 		if err := m.Access.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("access")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("access")
 			}
+
 			return err
 		}
 	}
@@ -115,11 +120,15 @@ func (m *Bucket) validateDetails(formats strfmt.Registry) error {
 
 	if m.Details != nil {
 		if err := m.Details.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("details")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("details")
 			}
+
 			return err
 		}
 	}
@@ -147,11 +156,15 @@ func (m *Bucket) validateRwAccess(formats strfmt.Registry) error {
 
 	if m.RwAccess != nil {
 		if err := m.RwAccess.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("rw_access")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("rw_access")
 			}
+
 			return err
 		}
 	}
@@ -190,11 +203,15 @@ func (m *Bucket) contextValidateAccess(ctx context.Context, formats strfmt.Regis
 		}
 
 		if err := m.Access.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("access")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("access")
 			}
+
 			return err
 		}
 	}
@@ -211,11 +228,15 @@ func (m *Bucket) contextValidateDetails(ctx context.Context, formats strfmt.Regi
 		}
 
 		if err := m.Details.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("details")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("details")
 			}
+
 			return err
 		}
 	}
@@ -232,11 +253,15 @@ func (m *Bucket) contextValidateRwAccess(ctx context.Context, formats strfmt.Reg
 		}
 
 		if err := m.RwAccess.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("rw_access")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("rw_access")
 			}
+
 			return err
 		}
 	}
@@ -307,11 +332,15 @@ func (m *BucketDetails) validateQuota(formats strfmt.Registry) error {
 
 	if m.Quota != nil {
 		if err := m.Quota.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("details" + "." + "quota")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("details" + "." + "quota")
 			}
+
 			return err
 		}
 	}
@@ -342,11 +371,15 @@ func (m *BucketDetails) contextValidateQuota(ctx context.Context, formats strfmt
 		}
 
 		if err := m.Quota.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("details" + "." + "quota")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("details" + "." + "quota")
 			}
+
 			return err
 		}
 	}
@@ -399,7 +432,7 @@ func (m *BucketDetailsQuota) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var bucketDetailsQuotaTypeTypePropEnum []interface{}
+var bucketDetailsQuotaTypeTypePropEnum []any
 
 func init() {
 	var res []string

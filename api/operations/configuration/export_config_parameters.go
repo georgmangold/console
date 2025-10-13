@@ -41,7 +41,6 @@ func NewExportConfigParams() ExportConfigParams {
 //
 // swagger:parameters ExportConfig
 type ExportConfigParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

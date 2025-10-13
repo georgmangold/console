@@ -42,7 +42,6 @@ func NewGetBucketObjectLockingStatusParams() GetBucketObjectLockingStatusParams 
 //
 // swagger:parameters GetBucketObjectLockingStatus
 type GetBucketObjectLockingStatusParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

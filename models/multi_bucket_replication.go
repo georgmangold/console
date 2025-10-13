@@ -24,6 +24,7 @@ package models
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -149,11 +150,15 @@ func (m *MultiBucketReplication) validateBucketsRelation(formats strfmt.Registry
 
 		if m.BucketsRelation[i] != nil {
 			if err := m.BucketsRelation[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("bucketsRelation" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("bucketsRelation" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -176,7 +181,7 @@ func (m *MultiBucketReplication) validateSecretKey(formats strfmt.Registry) erro
 	return nil
 }
 
-var multiBucketReplicationTypeSyncModePropEnum []interface{}
+var multiBucketReplicationTypeSyncModePropEnum []any
 
 func init() {
 	var res []string
@@ -252,11 +257,15 @@ func (m *MultiBucketReplication) contextValidateBucketsRelation(ctx context.Cont
 			}
 
 			if err := m.BucketsRelation[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("bucketsRelation" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("bucketsRelation" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

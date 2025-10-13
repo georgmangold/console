@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -71,11 +72,15 @@ func (m *SetPolicyMultipleNameRequest) validateGroups(formats strfmt.Registry) e
 	for i := 0; i < len(m.Groups); i++ {
 
 		if err := m.Groups[i].Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("groups" + "." + strconv.Itoa(i))
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("groups" + "." + strconv.Itoa(i))
 			}
+
 			return err
 		}
 
@@ -92,11 +97,15 @@ func (m *SetPolicyMultipleNameRequest) validateUsers(formats strfmt.Registry) er
 	for i := 0; i < len(m.Users); i++ {
 
 		if err := m.Users[i].Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("users" + "." + strconv.Itoa(i))
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("users" + "." + strconv.Itoa(i))
 			}
+
 			return err
 		}
 
@@ -132,11 +141,15 @@ func (m *SetPolicyMultipleNameRequest) contextValidateGroups(ctx context.Context
 		}
 
 		if err := m.Groups[i].ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("groups" + "." + strconv.Itoa(i))
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("groups" + "." + strconv.Itoa(i))
 			}
+
 			return err
 		}
 
@@ -154,11 +167,15 @@ func (m *SetPolicyMultipleNameRequest) contextValidateUsers(ctx context.Context,
 		}
 
 		if err := m.Users[i].ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("users" + "." + strconv.Itoa(i))
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("users" + "." + strconv.Itoa(i))
 			}
+
 			return err
 		}
 

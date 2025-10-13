@@ -66,7 +66,7 @@ func (o *DashboardWidgetDetailsURL) Build() (*url.URL, error) {
 
 	widgetID := swag.FormatInt32(o.WidgetID)
 	if widgetID != "" {
-		_path = strings.Replace(_path, "{widgetId}", widgetID, -1)
+		_path = strings.ReplaceAll(_path, "{widgetId}", widgetID)
 	} else {
 		return nil, errors.New("widgetId is required on DashboardWidgetDetailsURL")
 	}

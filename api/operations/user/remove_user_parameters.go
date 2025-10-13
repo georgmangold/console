@@ -42,7 +42,6 @@ func NewRemoveUserParams() RemoveUserParams {
 //
 // swagger:parameters RemoveUser
 type RemoveUserParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

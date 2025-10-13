@@ -103,7 +103,7 @@ func (m *AddMultiBucketLifecycle) validateBuckets(formats strfmt.Registry) error
 	return nil
 }
 
-var addMultiBucketLifecycleTypeTypePropEnum []interface{}
+var addMultiBucketLifecycleTypeTypePropEnum []any
 
 func init() {
 	var res []string

@@ -43,7 +43,6 @@ func NewGetTierParams() GetTierParams {
 //
 // swagger:parameters GetTier
 type GetTierParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -52,6 +51,7 @@ type GetTierParams struct {
 	  In: path
 	*/
 	Name string
+
 	/*
 	  Required: true
 	  In: path
@@ -115,10 +115,10 @@ func (o *GetTierParams) bindType(rawData []string, hasKey bool, formats strfmt.R
 	return nil
 }
 
-// validateType carries on validations for parameter Type
+// validateType carries out validations for parameter Type
 func (o *GetTierParams) validateType(formats strfmt.Registry) error {
 
-	if err := validate.EnumCase("type", "path", o.Type, []interface{}{"s3", "gcs", "azure", "minio"}, true); err != nil {
+	if err := validate.EnumCase("type", "path", o.Type, []any{"s3", "gcs", "azure", "minio"}, true); err != nil {
 		return err
 	}
 

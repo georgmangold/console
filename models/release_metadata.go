@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -104,11 +105,15 @@ func (m *ReleaseMetadata) validateAuthor(formats strfmt.Registry) error {
 
 	if m.Author != nil {
 		if err := m.Author.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("author")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("author")
 			}
+
 			return err
 		}
 	}
@@ -139,11 +144,15 @@ func (m *ReleaseMetadata) contextValidateAuthor(ctx context.Context, formats str
 		}
 
 		if err := m.Author.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("author")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("author")
 			}
+
 			return err
 		}
 	}

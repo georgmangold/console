@@ -89,7 +89,7 @@ func (m *UpdateBucketLifecycle) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var updateBucketLifecycleTypeTypePropEnum []interface{}
+var updateBucketLifecycleTypeTypePropEnum []any
 
 func init() {
 	var res []string

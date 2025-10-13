@@ -37,7 +37,7 @@ type IamPolicyStatement struct {
 	Action []string `json:"action"`
 
 	// condition
-	Condition map[string]interface{} `json:"condition,omitempty"`
+	Condition map[string]any `json:"condition,omitempty"`
 
 	// effect
 	Effect string `json:"effect,omitempty"`

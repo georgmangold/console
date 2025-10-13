@@ -54,7 +54,6 @@ func NewListPoliciesWithBucketParams() ListPoliciesWithBucketParams {
 //
 // swagger:parameters ListPoliciesWithBucket
 type ListPoliciesWithBucketParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -63,11 +62,13 @@ type ListPoliciesWithBucketParams struct {
 	  In: path
 	*/
 	Bucket string
+
 	/*
 	  In: query
 	  Default: 20
 	*/
 	Limit *int32
+
 	/*
 	  In: query
 	  Default: 0
@@ -83,7 +84,6 @@ func (o *ListPoliciesWithBucketParams) BindRequest(r *http.Request, route *middl
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	rBucket, rhkBucket, _ := route.Params.GetOK("bucket")

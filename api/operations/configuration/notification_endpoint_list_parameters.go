@@ -41,7 +41,6 @@ func NewNotificationEndpointListParams() NotificationEndpointListParams {
 //
 // swagger:parameters NotificationEndpointList
 type NotificationEndpointListParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

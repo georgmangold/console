@@ -80,435 +80,994 @@ func NewConsoleAPI(spec *loads.Document) *ConsoleAPI {
 		JSONConsumer:          runtime.JSONConsumer(),
 		MultipartformConsumer: runtime.DiscardConsumer,
 
-		ApplicationZipProducer: runtime.ProducerFunc(func(w io.Writer, data interface{}) error {
+		ApplicationZipProducer: runtime.ProducerFunc(func(w io.Writer, data any) error {
+			_ = w
+			_ = data
+
 			return errors.NotImplemented("applicationZip producer has not yet been implemented")
 		}),
 		BinProducer:  runtime.ByteStreamProducer(),
 		JSONProducer: runtime.JSONProducer(),
 
 		AccountAccountChangePasswordHandler: account.AccountChangePasswordHandlerFunc(func(params account.AccountChangePasswordParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation account.AccountChangePassword has not yet been implemented")
 		}),
+
 		BucketAddBucketLifecycleHandler: bucket.AddBucketLifecycleHandlerFunc(func(params bucket.AddBucketLifecycleParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.AddBucketLifecycle has not yet been implemented")
 		}),
+
 		GroupAddGroupHandler: group.AddGroupHandlerFunc(func(params group.AddGroupParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation group.AddGroup has not yet been implemented")
 		}),
+
 		BucketAddMultiBucketLifecycleHandler: bucket.AddMultiBucketLifecycleHandlerFunc(func(params bucket.AddMultiBucketLifecycleParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.AddMultiBucketLifecycle has not yet been implemented")
 		}),
+
 		ConfigurationAddNotificationEndpointHandler: configuration.AddNotificationEndpointHandlerFunc(func(params configuration.AddNotificationEndpointParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation configuration.AddNotificationEndpoint has not yet been implemented")
 		}),
+
 		PolicyAddPolicyHandler: policy.AddPolicyHandlerFunc(func(params policy.AddPolicyParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation policy.AddPolicy has not yet been implemented")
 		}),
+
 		BucketAddRemoteBucketHandler: bucket.AddRemoteBucketHandlerFunc(func(params bucket.AddRemoteBucketParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.AddRemoteBucket has not yet been implemented")
 		}),
+
 		TieringAddTierHandler: tiering.AddTierHandlerFunc(func(params tiering.AddTierParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation tiering.AddTier has not yet been implemented")
 		}),
+
 		UserAddUserHandler: user.AddUserHandlerFunc(func(params user.AddUserParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation user.AddUser has not yet been implemented")
 		}),
+
 		SystemAdminInfoHandler: system.AdminInfoHandlerFunc(func(params system.AdminInfoParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation system.AdminInfo has not yet been implemented")
 		}),
+
 		SystemArnListHandler: system.ArnListHandlerFunc(func(params system.ArnListParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation system.ArnList has not yet been implemented")
 		}),
+
 		BucketBucketInfoHandler: bucket.BucketInfoHandlerFunc(func(params bucket.BucketInfoParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.BucketInfo has not yet been implemented")
 		}),
+
 		BucketBucketSetPolicyHandler: bucket.BucketSetPolicyHandlerFunc(func(params bucket.BucketSetPolicyParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.BucketSetPolicy has not yet been implemented")
 		}),
+
 		UserBulkUpdateUsersGroupsHandler: user.BulkUpdateUsersGroupsHandlerFunc(func(params user.BulkUpdateUsersGroupsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation user.BulkUpdateUsersGroups has not yet been implemented")
 		}),
+
 		AccountChangeUserPasswordHandler: account.ChangeUserPasswordHandlerFunc(func(params account.ChangeUserPasswordParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation account.ChangeUserPassword has not yet been implemented")
 		}),
+
 		UserCheckUserServiceAccountsHandler: user.CheckUserServiceAccountsHandlerFunc(func(params user.CheckUserServiceAccountsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation user.CheckUserServiceAccounts has not yet been implemented")
 		}),
+
 		ConfigurationConfigInfoHandler: configuration.ConfigInfoHandlerFunc(func(params configuration.ConfigInfoParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation configuration.ConfigInfo has not yet been implemented")
 		}),
+
 		UserCreateAUserServiceAccountHandler: user.CreateAUserServiceAccountHandlerFunc(func(params user.CreateAUserServiceAccountParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation user.CreateAUserServiceAccount has not yet been implemented")
 		}),
+
 		BucketCreateBucketEventHandler: bucket.CreateBucketEventHandlerFunc(func(params bucket.CreateBucketEventParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.CreateBucketEvent has not yet been implemented")
 		}),
+
 		IdpCreateConfigurationHandler: idp.CreateConfigurationHandlerFunc(func(params idp.CreateConfigurationParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation idp.CreateConfiguration has not yet been implemented")
 		}),
+
 		ServiceAccountCreateServiceAccountHandler: service_account.CreateServiceAccountHandlerFunc(func(params service_account.CreateServiceAccountParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation service_account.CreateServiceAccount has not yet been implemented")
 		}),
+
 		UserCreateServiceAccountCredentialsHandler: user.CreateServiceAccountCredentialsHandlerFunc(func(params user.CreateServiceAccountCredentialsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation user.CreateServiceAccountCredentials has not yet been implemented")
 		}),
+
 		ServiceAccountCreateServiceAccountCredsHandler: service_account.CreateServiceAccountCredsHandlerFunc(func(params service_account.CreateServiceAccountCredsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation service_account.CreateServiceAccountCreds has not yet been implemented")
 		}),
+
 		SystemDashboardWidgetDetailsHandler: system.DashboardWidgetDetailsHandlerFunc(func(params system.DashboardWidgetDetailsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation system.DashboardWidgetDetails has not yet been implemented")
 		}),
+
 		BucketDeleteAccessRuleWithBucketHandler: bucket.DeleteAccessRuleWithBucketHandlerFunc(func(params bucket.DeleteAccessRuleWithBucketParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.DeleteAccessRuleWithBucket has not yet been implemented")
 		}),
+
 		BucketDeleteAllReplicationRulesHandler: bucket.DeleteAllReplicationRulesHandlerFunc(func(params bucket.DeleteAllReplicationRulesParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.DeleteAllReplicationRules has not yet been implemented")
 		}),
+
 		BucketDeleteBucketHandler: bucket.DeleteBucketHandlerFunc(func(params bucket.DeleteBucketParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.DeleteBucket has not yet been implemented")
 		}),
+
 		BucketDeleteBucketEventHandler: bucket.DeleteBucketEventHandlerFunc(func(params bucket.DeleteBucketEventParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.DeleteBucketEvent has not yet been implemented")
 		}),
+
 		BucketDeleteBucketLifecycleRuleHandler: bucket.DeleteBucketLifecycleRuleHandlerFunc(func(params bucket.DeleteBucketLifecycleRuleParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.DeleteBucketLifecycleRule has not yet been implemented")
 		}),
+
 		BucketDeleteBucketReplicationRuleHandler: bucket.DeleteBucketReplicationRuleHandlerFunc(func(params bucket.DeleteBucketReplicationRuleParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.DeleteBucketReplicationRule has not yet been implemented")
 		}),
+
 		IdpDeleteConfigurationHandler: idp.DeleteConfigurationHandlerFunc(func(params idp.DeleteConfigurationParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation idp.DeleteConfiguration has not yet been implemented")
 		}),
+
 		ObjectDeleteMultipleObjectsHandler: object.DeleteMultipleObjectsHandlerFunc(func(params object.DeleteMultipleObjectsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.DeleteMultipleObjects has not yet been implemented")
 		}),
+
 		ServiceAccountDeleteMultipleServiceAccountsHandler: service_account.DeleteMultipleServiceAccountsHandlerFunc(func(params service_account.DeleteMultipleServiceAccountsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation service_account.DeleteMultipleServiceAccounts has not yet been implemented")
 		}),
+
 		ObjectDeleteObjectHandler: object.DeleteObjectHandlerFunc(func(params object.DeleteObjectParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.DeleteObject has not yet been implemented")
 		}),
+
 		ObjectDeleteObjectRetentionHandler: object.DeleteObjectRetentionHandlerFunc(func(params object.DeleteObjectRetentionParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.DeleteObjectRetention has not yet been implemented")
 		}),
+
 		BucketDeleteRemoteBucketHandler: bucket.DeleteRemoteBucketHandlerFunc(func(params bucket.DeleteRemoteBucketParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.DeleteRemoteBucket has not yet been implemented")
 		}),
+
 		BucketDeleteSelectedReplicationRulesHandler: bucket.DeleteSelectedReplicationRulesHandlerFunc(func(params bucket.DeleteSelectedReplicationRulesParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.DeleteSelectedReplicationRules has not yet been implemented")
 		}),
+
 		ServiceAccountDeleteServiceAccountHandler: service_account.DeleteServiceAccountHandlerFunc(func(params service_account.DeleteServiceAccountParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation service_account.DeleteServiceAccount has not yet been implemented")
 		}),
+
 		BucketDisableBucketEncryptionHandler: bucket.DisableBucketEncryptionHandlerFunc(func(params bucket.DisableBucketEncryptionParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.DisableBucketEncryption has not yet been implemented")
 		}),
+
 		ObjectDownloadObjectHandler: object.DownloadObjectHandlerFunc(func(params object.DownloadObjectParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.DownloadObject has not yet been implemented")
 		}),
+
 		ObjectDownloadMultipleObjectsHandler: object.DownloadMultipleObjectsHandlerFunc(func(params object.DownloadMultipleObjectsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.DownloadMultipleObjects has not yet been implemented")
 		}),
+
 		PublicDownloadSharedObjectHandler: public.DownloadSharedObjectHandlerFunc(func(params public.DownloadSharedObjectParams) middleware.Responder {
+			_ = params
+
 			return middleware.NotImplemented("operation public.DownloadSharedObject has not yet been implemented")
 		}),
+
 		TieringEditTierCredentialsHandler: tiering.EditTierCredentialsHandlerFunc(func(params tiering.EditTierCredentialsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation tiering.EditTierCredentials has not yet been implemented")
 		}),
+
 		BucketEnableBucketEncryptionHandler: bucket.EnableBucketEncryptionHandlerFunc(func(params bucket.EnableBucketEncryptionParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.EnableBucketEncryption has not yet been implemented")
 		}),
+
 		ConfigurationExportConfigHandler: configuration.ExportConfigHandlerFunc(func(params configuration.ExportConfigParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation configuration.ExportConfig has not yet been implemented")
 		}),
+
 		BucketGetBucketEncryptionInfoHandler: bucket.GetBucketEncryptionInfoHandlerFunc(func(params bucket.GetBucketEncryptionInfoParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.GetBucketEncryptionInfo has not yet been implemented")
 		}),
+
 		BucketGetBucketLifecycleHandler: bucket.GetBucketLifecycleHandlerFunc(func(params bucket.GetBucketLifecycleParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.GetBucketLifecycle has not yet been implemented")
 		}),
+
 		BucketGetBucketObjectLockingStatusHandler: bucket.GetBucketObjectLockingStatusHandlerFunc(func(params bucket.GetBucketObjectLockingStatusParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.GetBucketObjectLockingStatus has not yet been implemented")
 		}),
+
 		BucketGetBucketQuotaHandler: bucket.GetBucketQuotaHandlerFunc(func(params bucket.GetBucketQuotaParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.GetBucketQuota has not yet been implemented")
 		}),
+
 		BucketGetBucketReplicationHandler: bucket.GetBucketReplicationHandlerFunc(func(params bucket.GetBucketReplicationParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.GetBucketReplication has not yet been implemented")
 		}),
+
 		BucketGetBucketReplicationRuleHandler: bucket.GetBucketReplicationRuleHandlerFunc(func(params bucket.GetBucketReplicationRuleParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.GetBucketReplicationRule has not yet been implemented")
 		}),
+
 		BucketGetBucketRetentionConfigHandler: bucket.GetBucketRetentionConfigHandlerFunc(func(params bucket.GetBucketRetentionConfigParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.GetBucketRetentionConfig has not yet been implemented")
 		}),
+
 		BucketGetBucketRewindHandler: bucket.GetBucketRewindHandlerFunc(func(params bucket.GetBucketRewindParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.GetBucketRewind has not yet been implemented")
 		}),
+
 		BucketGetBucketVersioningHandler: bucket.GetBucketVersioningHandlerFunc(func(params bucket.GetBucketVersioningParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.GetBucketVersioning has not yet been implemented")
 		}),
+
 		IdpGetConfigurationHandler: idp.GetConfigurationHandlerFunc(func(params idp.GetConfigurationParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation idp.GetConfiguration has not yet been implemented")
 		}),
+
 		IdpGetLDAPEntitiesHandler: idp.GetLDAPEntitiesHandlerFunc(func(params idp.GetLDAPEntitiesParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation idp.GetLDAPEntities has not yet been implemented")
 		}),
+
 		BucketGetMaxShareLinkExpHandler: bucket.GetMaxShareLinkExpHandlerFunc(func(params bucket.GetMaxShareLinkExpParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.GetMaxShareLinkExp has not yet been implemented")
 		}),
+
 		ObjectGetObjectMetadataHandler: object.GetObjectMetadataHandlerFunc(func(params object.GetObjectMetadataParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.GetObjectMetadata has not yet been implemented")
 		}),
+
 		PolicyGetSAUserPolicyHandler: policy.GetSAUserPolicyHandlerFunc(func(params policy.GetSAUserPolicyParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation policy.GetSAUserPolicy has not yet been implemented")
 		}),
+
 		ServiceAccountGetServiceAccountHandler: service_account.GetServiceAccountHandlerFunc(func(params service_account.GetServiceAccountParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation service_account.GetServiceAccount has not yet been implemented")
 		}),
+
 		SiteReplicationGetSiteReplicationInfoHandler: site_replication.GetSiteReplicationInfoHandlerFunc(func(params site_replication.GetSiteReplicationInfoParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation site_replication.GetSiteReplicationInfo has not yet been implemented")
 		}),
+
 		SiteReplicationGetSiteReplicationStatusHandler: site_replication.GetSiteReplicationStatusHandlerFunc(func(params site_replication.GetSiteReplicationStatusParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation site_replication.GetSiteReplicationStatus has not yet been implemented")
 		}),
+
 		TieringGetTierHandler: tiering.GetTierHandlerFunc(func(params tiering.GetTierParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation tiering.GetTier has not yet been implemented")
 		}),
+
 		UserGetUserInfoHandler: user.GetUserInfoHandlerFunc(func(params user.GetUserInfoParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation user.GetUserInfo has not yet been implemented")
 		}),
+
 		PolicyGetUserPolicyHandler: policy.GetUserPolicyHandlerFunc(func(params policy.GetUserPolicyParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation policy.GetUserPolicy has not yet been implemented")
 		}),
+
 		GroupGroupInfoHandler: group.GroupInfoHandlerFunc(func(params group.GroupInfoParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation group.GroupInfo has not yet been implemented")
 		}),
+
 		InspectInspectHandler: inspect.InspectHandlerFunc(func(params inspect.InspectParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation inspect.Inspect has not yet been implemented")
 		}),
+
 		KmsKMSAPIsHandler: k_m_s.KMSAPIsHandlerFunc(func(params k_m_s.KMSAPIsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation k_m_s.KMSAPIs has not yet been implemented")
 		}),
+
 		KmsKMSCreateKeyHandler: k_m_s.KMSCreateKeyHandlerFunc(func(params k_m_s.KMSCreateKeyParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation k_m_s.KMSCreateKey has not yet been implemented")
 		}),
+
 		KmsKMSKeyStatusHandler: k_m_s.KMSKeyStatusHandlerFunc(func(params k_m_s.KMSKeyStatusParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation k_m_s.KMSKeyStatus has not yet been implemented")
 		}),
+
 		KmsKMSListKeysHandler: k_m_s.KMSListKeysHandlerFunc(func(params k_m_s.KMSListKeysParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation k_m_s.KMSListKeys has not yet been implemented")
 		}),
+
 		KmsKMSMetricsHandler: k_m_s.KMSMetricsHandlerFunc(func(params k_m_s.KMSMetricsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation k_m_s.KMSMetrics has not yet been implemented")
 		}),
+
 		KmsKMSStatusHandler: k_m_s.KMSStatusHandlerFunc(func(params k_m_s.KMSStatusParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation k_m_s.KMSStatus has not yet been implemented")
 		}),
+
 		KmsKMSVersionHandler: k_m_s.KMSVersionHandlerFunc(func(params k_m_s.KMSVersionParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation k_m_s.KMSVersion has not yet been implemented")
 		}),
+
 		UserListAUserServiceAccountsHandler: user.ListAUserServiceAccountsHandlerFunc(func(params user.ListAUserServiceAccountsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation user.ListAUserServiceAccounts has not yet been implemented")
 		}),
+
 		BucketListAccessRulesWithBucketHandler: bucket.ListAccessRulesWithBucketHandlerFunc(func(params bucket.ListAccessRulesWithBucketParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.ListAccessRulesWithBucket has not yet been implemented")
 		}),
+
 		BucketListBucketEventsHandler: bucket.ListBucketEventsHandlerFunc(func(params bucket.ListBucketEventsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.ListBucketEvents has not yet been implemented")
 		}),
+
 		BucketListBucketsHandler: bucket.ListBucketsHandlerFunc(func(params bucket.ListBucketsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.ListBuckets has not yet been implemented")
 		}),
+
 		ConfigurationListConfigHandler: configuration.ListConfigHandlerFunc(func(params configuration.ListConfigParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation configuration.ListConfig has not yet been implemented")
 		}),
+
 		IdpListConfigurationsHandler: idp.ListConfigurationsHandlerFunc(func(params idp.ListConfigurationsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation idp.ListConfigurations has not yet been implemented")
 		}),
+
 		BucketListExternalBucketsHandler: bucket.ListExternalBucketsHandlerFunc(func(params bucket.ListExternalBucketsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.ListExternalBuckets has not yet been implemented")
 		}),
+
 		GroupListGroupsHandler: group.ListGroupsHandlerFunc(func(params group.ListGroupsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation group.ListGroups has not yet been implemented")
 		}),
+
 		PolicyListGroupsForPolicyHandler: policy.ListGroupsForPolicyHandlerFunc(func(params policy.ListGroupsForPolicyParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation policy.ListGroupsForPolicy has not yet been implemented")
 		}),
+
 		SystemListNodesHandler: system.ListNodesHandlerFunc(func(params system.ListNodesParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation system.ListNodes has not yet been implemented")
 		}),
+
 		ObjectListObjectsHandler: object.ListObjectsHandlerFunc(func(params object.ListObjectsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.ListObjects has not yet been implemented")
 		}),
+
 		PolicyListPoliciesHandler: policy.ListPoliciesHandlerFunc(func(params policy.ListPoliciesParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation policy.ListPolicies has not yet been implemented")
 		}),
+
 		BucketListPoliciesWithBucketHandler: bucket.ListPoliciesWithBucketHandlerFunc(func(params bucket.ListPoliciesWithBucketParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.ListPoliciesWithBucket has not yet been implemented")
 		}),
+
 		ReleaseListReleasesHandler: release.ListReleasesHandlerFunc(func(params release.ListReleasesParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation release.ListReleases has not yet been implemented")
 		}),
+
 		BucketListRemoteBucketsHandler: bucket.ListRemoteBucketsHandlerFunc(func(params bucket.ListRemoteBucketsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.ListRemoteBuckets has not yet been implemented")
 		}),
+
 		ServiceAccountListUserServiceAccountsHandler: service_account.ListUserServiceAccountsHandlerFunc(func(params service_account.ListUserServiceAccountsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation service_account.ListUserServiceAccounts has not yet been implemented")
 		}),
+
 		UserListUsersHandler: user.ListUsersHandlerFunc(func(params user.ListUsersParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation user.ListUsers has not yet been implemented")
 		}),
+
 		PolicyListUsersForPolicyHandler: policy.ListUsersForPolicyHandlerFunc(func(params policy.ListUsersForPolicyParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation policy.ListUsersForPolicy has not yet been implemented")
 		}),
+
 		BucketListUsersWithAccessToBucketHandler: bucket.ListUsersWithAccessToBucketHandlerFunc(func(params bucket.ListUsersWithAccessToBucketParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.ListUsersWithAccessToBucket has not yet been implemented")
 		}),
+
 		LoggingLogSearchHandler: logging.LogSearchHandlerFunc(func(params logging.LogSearchParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation logging.LogSearch has not yet been implemented")
 		}),
+
 		AuthLoginHandler: auth.LoginHandlerFunc(func(params auth.LoginParams) middleware.Responder {
+			_ = params
+
 			return middleware.NotImplemented("operation auth.Login has not yet been implemented")
 		}),
+
 		AuthLoginDetailHandler: auth.LoginDetailHandlerFunc(func(params auth.LoginDetailParams) middleware.Responder {
+			_ = params
+
 			return middleware.NotImplemented("operation auth.LoginDetail has not yet been implemented")
 		}),
+
 		AuthLoginOauth2AuthHandler: auth.LoginOauth2AuthHandlerFunc(func(params auth.LoginOauth2AuthParams) middleware.Responder {
+			_ = params
+
 			return middleware.NotImplemented("operation auth.LoginOauth2Auth has not yet been implemented")
 		}),
+
 		AuthLogoutHandler: auth.LogoutHandlerFunc(func(params auth.LogoutParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation auth.Logout has not yet been implemented")
 		}),
+
 		BucketMakeBucketHandler: bucket.MakeBucketHandlerFunc(func(params bucket.MakeBucketParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.MakeBucket has not yet been implemented")
 		}),
+
 		ConfigurationNotificationEndpointListHandler: configuration.NotificationEndpointListHandlerFunc(func(params configuration.NotificationEndpointListParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation configuration.NotificationEndpointList has not yet been implemented")
 		}),
+
 		PolicyPolicyInfoHandler: policy.PolicyInfoHandlerFunc(func(params policy.PolicyInfoParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation policy.PolicyInfo has not yet been implemented")
 		}),
+
 		ObjectPostBucketsBucketNameObjectsUploadHandler: object.PostBucketsBucketNameObjectsUploadHandlerFunc(func(params object.PostBucketsBucketNameObjectsUploadParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.PostBucketsBucketNameObjectsUpload has not yet been implemented")
 		}),
+
 		ConfigurationPostConfigsImportHandler: configuration.PostConfigsImportHandlerFunc(func(params configuration.PostConfigsImportParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation configuration.PostConfigsImport has not yet been implemented")
 		}),
+
 		ProfileProfilingStartHandler: profile.ProfilingStartHandlerFunc(func(params profile.ProfilingStartParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation profile.ProfilingStart has not yet been implemented")
 		}),
+
 		ProfileProfilingStopHandler: profile.ProfilingStopHandlerFunc(func(params profile.ProfilingStopParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation profile.ProfilingStop has not yet been implemented")
 		}),
+
 		BucketPutBucketTagsHandler: bucket.PutBucketTagsHandlerFunc(func(params bucket.PutBucketTagsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.PutBucketTags has not yet been implemented")
 		}),
+
 		ObjectPutObjectLegalHoldHandler: object.PutObjectLegalHoldHandlerFunc(func(params object.PutObjectLegalHoldParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.PutObjectLegalHold has not yet been implemented")
 		}),
+
 		ObjectPutObjectRestoreHandler: object.PutObjectRestoreHandlerFunc(func(params object.PutObjectRestoreParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.PutObjectRestore has not yet been implemented")
 		}),
+
 		ObjectPutObjectRetentionHandler: object.PutObjectRetentionHandlerFunc(func(params object.PutObjectRetentionParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.PutObjectRetention has not yet been implemented")
 		}),
+
 		ObjectPutObjectTagsHandler: object.PutObjectTagsHandlerFunc(func(params object.PutObjectTagsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.PutObjectTags has not yet been implemented")
 		}),
+
 		BucketRemoteBucketDetailsHandler: bucket.RemoteBucketDetailsHandlerFunc(func(params bucket.RemoteBucketDetailsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.RemoteBucketDetails has not yet been implemented")
 		}),
+
 		GroupRemoveGroupHandler: group.RemoveGroupHandlerFunc(func(params group.RemoveGroupParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation group.RemoveGroup has not yet been implemented")
 		}),
+
 		PolicyRemovePolicyHandler: policy.RemovePolicyHandlerFunc(func(params policy.RemovePolicyParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation policy.RemovePolicy has not yet been implemented")
 		}),
+
 		TieringRemoveTierHandler: tiering.RemoveTierHandlerFunc(func(params tiering.RemoveTierParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation tiering.RemoveTier has not yet been implemented")
 		}),
+
 		UserRemoveUserHandler: user.RemoveUserHandlerFunc(func(params user.RemoveUserParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation user.RemoveUser has not yet been implemented")
 		}),
+
 		ConfigurationResetConfigHandler: configuration.ResetConfigHandlerFunc(func(params configuration.ResetConfigParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation configuration.ResetConfig has not yet been implemented")
 		}),
+
 		ServiceRestartServiceHandler: service.RestartServiceHandlerFunc(func(params service.RestartServiceParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation service.RestartService has not yet been implemented")
 		}),
+
 		AuthSessionCheckHandler: auth.SessionCheckHandlerFunc(func(params auth.SessionCheckParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation auth.SessionCheck has not yet been implemented")
 		}),
+
 		BucketSetAccessRuleWithBucketHandler: bucket.SetAccessRuleWithBucketHandlerFunc(func(params bucket.SetAccessRuleWithBucketParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.SetAccessRuleWithBucket has not yet been implemented")
 		}),
+
 		BucketSetBucketQuotaHandler: bucket.SetBucketQuotaHandlerFunc(func(params bucket.SetBucketQuotaParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.SetBucketQuota has not yet been implemented")
 		}),
+
 		BucketSetBucketRetentionConfigHandler: bucket.SetBucketRetentionConfigHandlerFunc(func(params bucket.SetBucketRetentionConfigParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.SetBucketRetentionConfig has not yet been implemented")
 		}),
+
 		BucketSetBucketVersioningHandler: bucket.SetBucketVersioningHandlerFunc(func(params bucket.SetBucketVersioningParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.SetBucketVersioning has not yet been implemented")
 		}),
+
 		ConfigurationSetConfigHandler: configuration.SetConfigHandlerFunc(func(params configuration.SetConfigParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation configuration.SetConfig has not yet been implemented")
 		}),
+
 		BucketSetMultiBucketReplicationHandler: bucket.SetMultiBucketReplicationHandlerFunc(func(params bucket.SetMultiBucketReplicationParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.SetMultiBucketReplication has not yet been implemented")
 		}),
+
 		PolicySetPolicyHandler: policy.SetPolicyHandlerFunc(func(params policy.SetPolicyParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation policy.SetPolicy has not yet been implemented")
 		}),
+
 		PolicySetPolicyMultipleHandler: policy.SetPolicyMultipleHandlerFunc(func(params policy.SetPolicyMultipleParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation policy.SetPolicyMultiple has not yet been implemented")
 		}),
+
 		ObjectShareObjectHandler: object.ShareObjectHandlerFunc(func(params object.ShareObjectParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation object.ShareObject has not yet been implemented")
 		}),
+
 		SiteReplicationSiteReplicationEditHandler: site_replication.SiteReplicationEditHandlerFunc(func(params site_replication.SiteReplicationEditParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation site_replication.SiteReplicationEdit has not yet been implemented")
 		}),
+
 		SiteReplicationSiteReplicationInfoAddHandler: site_replication.SiteReplicationInfoAddHandlerFunc(func(params site_replication.SiteReplicationInfoAddParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation site_replication.SiteReplicationInfoAdd has not yet been implemented")
 		}),
+
 		SiteReplicationSiteReplicationRemoveHandler: site_replication.SiteReplicationRemoveHandlerFunc(func(params site_replication.SiteReplicationRemoveParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation site_replication.SiteReplicationRemove has not yet been implemented")
 		}),
+
 		TieringTiersListHandler: tiering.TiersListHandlerFunc(func(params tiering.TiersListParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation tiering.TiersList has not yet been implemented")
 		}),
+
 		TieringTiersListNamesHandler: tiering.TiersListNamesHandlerFunc(func(params tiering.TiersListNamesParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation tiering.TiersListNames has not yet been implemented")
 		}),
+
 		BucketUpdateBucketLifecycleHandler: bucket.UpdateBucketLifecycleHandlerFunc(func(params bucket.UpdateBucketLifecycleParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.UpdateBucketLifecycle has not yet been implemented")
 		}),
+
 		IdpUpdateConfigurationHandler: idp.UpdateConfigurationHandlerFunc(func(params idp.UpdateConfigurationParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation idp.UpdateConfiguration has not yet been implemented")
 		}),
+
 		GroupUpdateGroupHandler: group.UpdateGroupHandlerFunc(func(params group.UpdateGroupParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation group.UpdateGroup has not yet been implemented")
 		}),
+
 		BucketUpdateMultiBucketReplicationHandler: bucket.UpdateMultiBucketReplicationHandlerFunc(func(params bucket.UpdateMultiBucketReplicationParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation bucket.UpdateMultiBucketReplication has not yet been implemented")
 		}),
+
 		ServiceAccountUpdateServiceAccountHandler: service_account.UpdateServiceAccountHandlerFunc(func(params service_account.UpdateServiceAccountParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation service_account.UpdateServiceAccount has not yet been implemented")
 		}),
+
 		UserUpdateUserGroupsHandler: user.UpdateUserGroupsHandlerFunc(func(params user.UpdateUserGroupsParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation user.UpdateUserGroups has not yet been implemented")
 		}),
+
 		UserUpdateUserInfoHandler: user.UpdateUserInfoHandlerFunc(func(params user.UpdateUserInfoParams, principal *models.Principal) middleware.Responder {
+			_ = params
+			_ = principal
+
 			return middleware.NotImplemented("operation user.UpdateUserInfo has not yet been implemented")
 		}),
 
 		// Applies when the "X-Anonymous" header is set
 		AnonymousAuth: func(token string) (*models.Principal, error) {
+			_ = token
+
 			return nil, errors.NotImplemented("api key auth (anonymous) X-Anonymous from header param [X-Anonymous] has not yet been implemented")
 		},
 		KeyAuth: func(token string, scopes []string) (*models.Principal, error) {
+			_ = token
+			_ = scopes
+
 			return nil, errors.NotImplemented("oauth2 bearer auth (key) has not yet been implemented")
 		},
 		// default authorizer is authorized meaning no requests are blocked
@@ -864,7 +1423,7 @@ type ConsoleAPI struct {
 	CommandLineOptionsGroups []swag.CommandLineOptionsGroup
 
 	// User defined logger function.
-	Logger func(string, ...interface{})
+	Logger func(string, ...any)
 }
 
 // UseRedoc for documentation at /docs
@@ -1377,17 +1936,18 @@ func (o *ConsoleAPI) AuthenticatorsFor(schemes map[string]spec.SecurityScheme) m
 		switch name {
 		case "anonymous":
 			scheme := schemes[name]
-			result[name] = o.APIKeyAuthenticator(scheme.Name, scheme.In, func(token string) (interface{}, error) {
+			result[name] = o.APIKeyAuthenticator(scheme.Name, scheme.In, func(token string) (any, error) {
 				return o.AnonymousAuth(token)
 			})
 
 		case "key":
-			result[name] = o.BearerAuthenticator(name, func(token string, scopes []string) (interface{}, error) {
+			result[name] = o.BearerAuthenticator(name, func(token string, scopes []string) (any, error) {
 				return o.KeyAuth(token, scopes)
 			})
 
 		}
 	}
+
 	return result
 }
 
@@ -1397,6 +1957,7 @@ func (o *ConsoleAPI) Authorizer() runtime.Authorizer {
 }
 
 // ConsumersFor gets the consumers for the specified media types.
+//
 // MIME type parameters are ignored here.
 func (o *ConsoleAPI) ConsumersFor(mediaTypes []string) map[string]runtime.Consumer {
 	result := make(map[string]runtime.Consumer, len(mediaTypes))
@@ -1412,10 +1973,12 @@ func (o *ConsoleAPI) ConsumersFor(mediaTypes []string) map[string]runtime.Consum
 			result[mt] = c
 		}
 	}
+
 	return result
 }
 
 // ProducersFor gets the producers for the specified media types.
+//
 // MIME type parameters are ignored here.
 func (o *ConsoleAPI) ProducersFor(mediaTypes []string) map[string]runtime.Producer {
 	result := make(map[string]runtime.Producer, len(mediaTypes))
@@ -1433,6 +1996,7 @@ func (o *ConsoleAPI) ProducersFor(mediaTypes []string) map[string]runtime.Produc
 			result[mt] = p
 		}
 	}
+
 	return result
 }
 

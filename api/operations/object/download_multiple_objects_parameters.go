@@ -22,6 +22,7 @@ package object
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	stderrors "errors"
 	"io"
 	"net/http"
 
@@ -44,7 +45,6 @@ func NewDownloadMultipleObjectsParams() DownloadMultipleObjectsParams {
 //
 // swagger:parameters DownloadMultipleObjects
 type DownloadMultipleObjectsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -53,6 +53,7 @@ type DownloadMultipleObjectsParams struct {
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  Required: true
 	  In: body
@@ -75,10 +76,12 @@ func (o *DownloadMultipleObjectsParams) BindRequest(r *http.Request, route *midd
 	}
 
 	if runtime.HasBody(r) {
-		defer r.Body.Close()
+		defer func() {
+			_ = r.Body.Close()
+		}()
 		var body []string
 		if err := route.Consumer.Consume(r.Body, &body); err != nil {
-			if err == io.EOF {
+			if stderrors.Is(err, io.EOF) {
 				res = append(res, errors.Required("objectList", "body", ""))
 			} else {
 				res = append(res, errors.NewParseError("objectList", "body", "", err))

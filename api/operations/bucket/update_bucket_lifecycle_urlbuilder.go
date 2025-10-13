@@ -61,14 +61,14 @@ func (o *UpdateBucketLifecycleURL) Build() (*url.URL, error) {
 
 	bucketName := o.BucketName
 	if bucketName != "" {
-		_path = strings.Replace(_path, "{bucket_name}", bucketName, -1)
+		_path = strings.ReplaceAll(_path, "{bucket_name}", bucketName)
 	} else {
 		return nil, errors.New("bucketName is required on UpdateBucketLifecycleURL")
 	}
 
 	lifecycleID := o.LifecycleID
 	if lifecycleID != "" {
-		_path = strings.Replace(_path, "{lifecycle_id}", lifecycleID, -1)
+		_path = strings.ReplaceAll(_path, "{lifecycle_id}", lifecycleID)
 	} else {
 		return nil, errors.New("lifecycleId is required on UpdateBucketLifecycleURL")
 	}

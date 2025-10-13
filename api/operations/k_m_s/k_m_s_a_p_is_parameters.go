@@ -41,7 +41,6 @@ func NewKMSAPIsParams() KMSAPIsParams {
 //
 // swagger:parameters KMSAPIs
 type KMSAPIsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

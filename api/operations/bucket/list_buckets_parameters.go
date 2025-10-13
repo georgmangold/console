@@ -41,7 +41,6 @@ func NewListBucketsParams() ListBucketsParams {
 //
 // swagger:parameters ListBuckets
 type ListBucketsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

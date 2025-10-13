@@ -75,7 +75,7 @@ func (m *SetBucketQuota) validateEnabled(formats strfmt.Registry) error {
 	return nil
 }
 
-var setBucketQuotaTypeQuotaTypePropEnum []interface{}
+var setBucketQuotaTypeQuotaTypePropEnum []any
 
 func init() {
 	var res []string

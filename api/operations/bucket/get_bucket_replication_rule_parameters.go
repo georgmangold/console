@@ -42,7 +42,6 @@ func NewGetBucketReplicationRuleParams() GetBucketReplicationRuleParams {
 //
 // swagger:parameters GetBucketReplicationRule
 type GetBucketReplicationRuleParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -51,6 +50,7 @@ type GetBucketReplicationRuleParams struct {
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  Required: true
 	  In: path
