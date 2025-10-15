@@ -72,7 +72,7 @@
     "@types/react-copy-to-clipboard": "^5.0.7",
     "@types/react-dom": "18.3.7",
     "@types/react-redux": "^7.1.34",
-    "@types/react-virtualized": "^9.22.2",
+    "@types/react-virtualized": "^9.22.3",
     "@types/react-window": "^1.8.8",
     "@types/react-window-infinite-loader": "^1.0.9",
     "@types/recharts": "^1.8.29",
