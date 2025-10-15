@@ -89,7 +89,7 @@
     "react-scripts": "5.0.1",
     "swagger-typescript-api": "13.2.15",
     "testcafe": "3.7.2",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   },
   "resolutions": {
     "nth-check": "^2.0.1",
