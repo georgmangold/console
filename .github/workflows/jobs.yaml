@@ -305,6 +305,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
       - name: Install MinIO JS
         working-directory: ./
         continue-on-error: false
@@ -359,6 +361,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
       - name: Install MinIO JS
         working-directory: ./
         continue-on-error: false
@@ -412,6 +416,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
       - name: Install MinIO JS
         working-directory: ./
         continue-on-error: false
@@ -464,6 +470,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
       - name: Install MinIO JS
         working-directory: ./
         continue-on-error: false
@@ -516,6 +524,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
       - name: Install MinIO JS
         working-directory: ./
         continue-on-error: false
@@ -564,6 +574,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
       - name: Install MinIO JS
         working-directory: ./
         continue-on-error: false
@@ -612,6 +624,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
       - name: Install MinIO JS
         working-directory: ./
         continue-on-error: false
@@ -660,6 +674,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
       - name: Install MinIO JS
         working-directory: ./
         continue-on-error: false
@@ -707,6 +723,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
       - name: Install MinIO JS
         working-directory: ./
         continue-on-error: false
@@ -755,6 +773,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
       - name: Install MinIO JS
         working-directory: ./
         continue-on-error: false
@@ -806,6 +826,8 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
       - name: Install MinIO JS
         working-directory: ./
         continue-on-error: false
@@ -1389,11 +1411,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+      - name: Read .nvmrc
+        id: node_version
+        run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
       - name: Enable Corepack
         run: corepack enable
       - uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
 
       - name: Install dependencies
         run: |
