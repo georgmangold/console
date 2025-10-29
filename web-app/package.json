@@ -81,7 +81,7 @@
     "babel-plugin-istanbul": "^7.0.1",
     "customize-cra": "^1.0.0",
     "knip": "^5.66.4",
-    "minio": "^8.0.5",
+    "minio": "^8.0.6",
     "nyc": "^17.1.0",
     "prettier": "3.6.2",
     "react-app-rewire-hot-loader": "^2.0.1",
