@@ -1782,10 +1782,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@biomejs/wasm-nodejs@npm:2.2.5":
-  version: 2.2.5
-  resolution: "@biomejs/wasm-nodejs@npm:2.2.5"
-  checksum: 10c0/cda18324f31b99ce41b0d724e63dbc9d08308e5a0a4d393ba6a7e350370289f847e8c42ce67467481efc4b1726dcaa172ef7af20ac51957b7646579c74ed54cf
+"@biomejs/wasm-nodejs@npm:2.2.6":
+  version: 2.2.6
+  resolution: "@biomejs/wasm-nodejs@npm:2.2.6"
+  checksum: 10c0/f58c1f2c21fc7df30f851adc50582fa1b403330959c0aff665272bb12bc9811fbe80803488f1596018f39319e6ad0399c290e143daf3b872c0c1c62c5812e4fc
   languageName: node
   linkType: hard
 
@@ -8358,10 +8358,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eta@npm:^4.0.1":
-  version: 4.0.1
-  resolution: "eta@npm:4.0.1"
-  checksum: 10c0/a7dc8641705a01373393aba6d0998f7571735c4f5444aa9c3375b2574a93ef3be80cfd5c7d1f8d6f0e56a83a14a7db451195ed3ceeab145f23492bb5b41d1ece
+"eta@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "eta@npm:3.5.0"
+  checksum: 10c0/28ffc23658e3d77c1ab2660d0158b979688457659fc190d0edca26c186ab34039bec9d6745d975e5f0543981e285cd757bff85b47ea2374ab11444e2b7271dd0
   languageName: node
   linkType: hard
 
@@ -17532,18 +17532,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swagger-typescript-api@npm:13.2.15":
-  version: 13.2.15
-  resolution: "swagger-typescript-api@npm:13.2.15"
+"swagger-typescript-api@npm:13.2.16":
+  version: 13.2.16
+  resolution: "swagger-typescript-api@npm:13.2.16"
   dependencies:
     "@biomejs/js-api": "npm:3.0.0"
-    "@biomejs/wasm-nodejs": "npm:2.2.5"
+    "@biomejs/wasm-nodejs": "npm:2.2.6"
     "@types/lodash": "npm:^4.17.20"
     "@types/swagger-schema-official": "npm:^2.0.25"
     c12: "npm:^3.3.0"
     citty: "npm:^0.1.6"
     consola: "npm:^3.4.2"
-    eta: "npm:^4.0.1"
+    eta: "npm:^3.5.0"
     lodash: "npm:^4.17.21"
     nanoid: "npm:^5.1.6"
     openapi-types: "npm:^12.1.3"
@@ -17554,7 +17554,7 @@ __metadata:
   bin:
     sta: ./dist/cli.js
     swagger-typescript-api: ./dist/cli.js
-  checksum: 10c0/dee67be9b16311d4a39496fdb146508dfa2b7d5739b306dceead01b096778ff7aa634e6945f0ad46f98bbfaa7b791a7695106552a988dbf59b91ff4c4414b806
+  checksum: 10c0/20ff4c9d84960e55661400548a9df36f74822fc4b9867660cc722bfe8f7874d272b179f3600afe1ce71c1b2b9b2fa9ca0c623e27b46df1e1ec7773859d222727
   languageName: node
   linkType: hard
 
@@ -19026,7 +19026,7 @@ __metadata:
     recharts: "npm:^3.1.2"
     styled-components: "npm:6.1.19"
     superagent: "npm:^10.2.3"
-    swagger-typescript-api: "npm:13.2.15"
+    swagger-typescript-api: "npm:13.2.16"
     testcafe: "npm:3.7.2"
     tinycolor2: "npm:^1.6.0"
     typescript: "npm:^5.9.3"
