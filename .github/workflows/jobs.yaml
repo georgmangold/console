@@ -19,6 +19,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref }}
   cancel-in-progress: true
 
+env:
+  FIREFOX_VERSION: 143.0.3
+
 jobs:
   lint-job:
     name: Checking Lint
@@ -329,6 +332,12 @@ jobs:
         run: |
           (CONSOLE_SUBPATH=/console/subpath ./console server ) & (make test-initialize-minio-nginx)
 
+      - name: Setup firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: ${{ env.FIREFOX_VERSION }}
+
       - name: Install TestCafe
         run: npm install testcafe@3.7.2
 
@@ -385,6 +394,12 @@ jobs:
         run: |
           (./console server) & (make initialize-permissions)
 
+      - name: Setup firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: ${{ env.FIREFOX_VERSION }}
+
       - name: Install TestCafe
         run: npm install testcafe@3.7.2
 
@@ -438,6 +453,12 @@ jobs:
       - name: Start Console, front-end app and initialize users/policies
         run: |
           (./console server) & (make initialize-permissions)
+
+      - name: Setup firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
         run: npm install testcafe@3.7.2
@@ -493,11 +514,17 @@ jobs:
         run: |
           (./console server) & (make initialize-permissions)
 
+      - name: Setup firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: ${{ env.FIREFOX_VERSION }}
+
       - name: Install TestCafe
         run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
-        run: npx testcafe "firefox:headless" web-app/tests/permissions-3/ -q --skip-js-errors -c 3
+        run: npx testcafe "firefox:headless" web-app/tests/permissions-3/ -q --skip-js-errors -c 1
 
       - name: Clean up users & policies
         run: |
@@ -546,6 +573,12 @@ jobs:
       - name: Start Console, front-end app and initialize users/policies
         run: |
           (./console server) & (make initialize-permissions)
+
+      - name: Setup firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
         run: npm install testcafe@3.7.2
@@ -597,6 +630,12 @@ jobs:
         run: |
           (./console server) & (make initialize-permissions)
 
+      - name: Setup firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: ${{ env.FIREFOX_VERSION }}
+        
       - name: Install TestCafe
         run: npm install testcafe@3.7.2
 
@@ -647,6 +686,12 @@ jobs:
         run: |
           (./console server) & (make initialize-permissions)
 
+      - name: Setup firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: ${{ env.FIREFOX_VERSION }}
+
       - name: Install TestCafe
         run: npm install testcafe@3.7.2
 
@@ -696,12 +741,19 @@ jobs:
       - name: Start Console, front-end app and initialize users/policies
         run: |
           (./console server) & (make initialize-permissions)
+
+      - name: Setup firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: ${{ env.FIREFOX_VERSION }}
+
       - name: Install TestCafe
         run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
         timeout-minutes: 5
-        run: npx testcafe "firefox:headless" web-app/tests/permissions-7/ --skip-js-errors
+        run: npx testcafe "firefox:headless" web-app/tests/permissions-7/ --skip-js-errors -c 1
 
   all-permissions-8:
     name: Permissions Tests Part 8
@@ -745,6 +797,12 @@ jobs:
       - name: Start Console, front-end app and initialize users/policies
         run: |
           (./console server) & (make initialize-permissions)
+
+      - name: Setup firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
         run: npm install testcafe@3.7.2
@@ -796,11 +854,17 @@ jobs:
         run: |
           (./console server) & (make initialize-permissions)
 
+      - name: Setup firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: ${{ env.FIREFOX_VERSION }}
+
       - name: Install TestCafe
         run: npm install testcafe@3.7.2
 
       - name: Run TestCafe Tests
-        run: npx testcafe "firefox:headless" web-app/tests/permissions-A/ --skip-js-errors -c 3
+        run: npx testcafe "firefox:headless" web-app/tests/permissions-A/ --skip-js-errors -c 1
 
       - name: Clean up users & policies
         run: |
@@ -848,6 +912,12 @@ jobs:
       - name: Start Console, front-end app and initialize users/policies
         run: |
           (./console server) & (make initialize-permissions)
+
+      - name: Setup firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+        with:
+          firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
         run: npm install testcafe@3.7.2
