@@ -635,7 +635,7 @@ jobs:
         uses: browser-actions/setup-firefox@v1
         with:
           firefox-version: ${{ env.FIREFOX_VERSION }}
-        
+
       - name: Install TestCafe
         run: npm install testcafe@3.7.2
 
