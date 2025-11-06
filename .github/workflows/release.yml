@@ -13,7 +13,7 @@ permissions:
 env:
   REGISTRY: ghcr.io
   IMAGE: minio-console
-  NODE_VERSION: 18
+  NODE_VERSION: 24
 
 jobs:
   release:
