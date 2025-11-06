@@ -80,7 +80,7 @@
     "@types/webpack-env": "^1.18.8",
     "babel-plugin-istanbul": "^7.0.1",
     "customize-cra": "^1.0.0",
-    "knip": "^5.66.4",
+    "knip": "^5.67.1",
     "minio": "^8.0.6",
     "nyc": "^17.1.0",
     "prettier": "3.6.2",
