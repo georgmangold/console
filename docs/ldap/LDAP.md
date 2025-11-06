@@ -1,6 +1,26 @@
 # LDAP authentication with Console
 
-## Setup
+## Setup Console
+On Console you only need to set the Environment Variable `CONSOLE_LDAP_ENABLED=on`
+```
+export CONSOLE_LDAP_ENABLED=on
+./console server
+```
+If this variable is set, a green icon will be displayed on the login screen. However, this does not indicate that the backend is accessible or correctly configured.
+
+## Setup MinIO
+```
+export MINIO_ACCESS_KEY=minio
+export MINIO_SECRET_KEY=minio123
+export MINIO_IDENTITY_LDAP_SERVER_ADDR='localhost:389'
+export MINIO_IDENTITY_LDAP_USERNAME_FORMAT='uid=%s,dc=example,dc=org'
+export MINIO_IDENTITY_LDAP_USERNAME_SEARCH_FILTER='(|(objectclass=posixAccount)(uid=%s))'
+export MINIO_IDENTITY_LDAP_TLS_SKIP_VERIFY=on
+export MINIO_IDENTITY_LDAP_SERVER_INSECURE=on
+./minio server ~/Data
+```
+
+## Example Setup with openLDAP
 
 Run openLDAP with docker.
 
@@ -70,24 +90,4 @@ $ cat > consoleAdmin.json << EOF
 EOF
 $ mc admin policy create myminio consoleAdmin consoleAdmin.json
 $ mc admin policy attach myminio consoleAdmin --user="uid=billy,dc=example,dc=org"
-```
-
-## Run MinIO
-
-```
-export MINIO_ACCESS_KEY=minio
-export MINIO_SECRET_KEY=minio123
-export MINIO_IDENTITY_LDAP_SERVER_ADDR='localhost:389'
-export MINIO_IDENTITY_LDAP_USERNAME_FORMAT='uid=%s,dc=example,dc=org'
-export MINIO_IDENTITY_LDAP_USERNAME_SEARCH_FILTER='(|(objectclass=posixAccount)(uid=%s))'
-export MINIO_IDENTITY_LDAP_TLS_SKIP_VERIFY=on
-export MINIO_IDENTITY_LDAP_SERVER_INSECURE=on
-./minio server ~/Data
-```
-
-## Run Console
-
-```
-export CONSOLE_LDAP_ENABLED=on
-./console server
 ```

@@ -1,14 +1,14 @@
-> [!NOTE]
-> This is just a fork of the [MinIO Console](https://github.com/minio/object-browser) for my own personal educational purposes, and therefore it incorporates MinIO® source code. You may also want to look for other maintained [forks](https://github.com/minio/object-browser/forks).
-
-> [!NOTE]
-> It is important to note that **MINIO** is a registered trademark of the MinIO Corporation. Consequently, this project is not affiliated with or endorsed by the MinIO Corporation.
-
 # Console
 
-![Workflow](https://github.com/georgmangold/console/actions/workflows/jobs.yaml/badge.svg) ![license](https://img.shields.io/badge/license-AGPL%20V3-blue)
+![Workflow](https://github.com/georgmangold/console/actions/workflows/jobs.yaml/badge.svg) ![license](https://img.shields.io/badge/license-AGPL%20V3-blue) ![binarydownloads](https://img.shields.io/github/downloads/georgmangold/console/total?label=GitHub%20Release%20Downloads) ![ghcr](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fghcr-badge.elias.eu.org%2Fapi%2Fgeorgmangold%2Fconsole%2Fconsole&query=downloadCount&logo=refinedgithub&label=ghcr.io%20Container%20Pulls&color=9E95B7)
 
-A graphical admin management browser user interface for [MinIO® Server](https://github.com/minio/minio)
+Console is a graphical admin management browser user interface for [MinIO® Server](https://github.com/minio/minio)
+
+> [!NOTE]
+> Console is a fork of the old [MinIO Console](https://github.com/minio/object-browser) for my own personal educational purposes, and therefore it incorporates MinIO® source code. You may also want to look for other maintained [forks](https://github.com/minio/object-browser/forks).
+
+> [!IMPORTANT]
+>  **MINIO** is a registered trademark of the MinIO Corporation. Consequently, this project is not affiliated with or endorsed by the MinIO Corporation.
 
 | Login                                    | Metrics                                             | Object Browser                         |
 |------------------------------------------|-----------------------------------------------------|----------------------------------------|
@@ -46,8 +46,10 @@ A graphical admin management browser user interface for [MinIO® Server](https:/
 |  Apple  |  arm64  |    [darwin-amd64](https://github.com/georgmangold/console/releases/latest/download/console-darwin-arm64)    |
 | Windows |  amd64  | [windows-amd64](https://github.com/georgmangold/console/releases/latest/download/console-windows-amd64.exe) |
 
+For Checksums, DEB and RPM Packages visit latest [Release Page](https://github.com/georgmangold/console/releases/latest/).
+
 ### Docker
-Pull the latest release via: [Github Packages](https://github.com/georgmangold/console/pkgs/container/console)
+Pull the latest release via: [Github Packages](https://github.com/georgmangold/console/pkgs/container/console) ![ghcr](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fghcr-badge.elias.eu.org%2Fapi%2Fgeorgmangold%2Fconsole%2Fconsole&query=downloadCount&logo=refinedgithub&label=ghcr.io%20Container%20Pulls&color=9E95B7)
 ```
 docker pull ghcr.io/georgmangold/console
 ```
@@ -55,6 +57,8 @@ Run it with and replace `YOUR_MINIO_SERVER_URL` with your own MinIO Server URL
 ```
 docker run -p 127.0.0.1:9090:9090 -e CONSOLE_MINIO_SERVER=https://YOUR_MINIO_SERVER_URL ghcr.io/georgmangold/console
 ```
+> [!NOTE]
+> If you have changed the region on your MinIO Server from the default `us-east-1` you need to set the Environment Variable `CONSOLE_MINIO_REGION=` as well.
 
 ### Build from source
 > [!NOTE]
@@ -187,7 +191,7 @@ By default `console` runs on port `9090` this can be changed with `--port` of yo
 
 ## Documentation
 
-See [documentation](docs/README.md) for more information.
+See [documentation](docs/README.md) and [FAQ](docs/README.md#faq) for more information.
 
 ## Contribute to console Project
 
@@ -196,4 +200,11 @@ Please follow console [Contributor's Guide](./CONTRIBUTING.md)
 
 ## License
 
-- Console is licensed under the [GNU AGPLv3](LICENSE).
+Console is licensed under the [GNU AGPLv3](LICENSE).
+
+## Star History
+<picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=georgmangold/console&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=georgmangold/console&type=date&legend=top-left" />
+   <img alt="Console Star History Chart" src="https://api.star-history.com/svg?repos=georgmangold/console&type=date&legend=top-left" />
+ </picture>

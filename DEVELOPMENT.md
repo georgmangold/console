@@ -2,8 +2,16 @@
 
 Console requires the [MinIO® Server](https://github.com/minio/minio). For development purposes, you also need
 to run both the Console web app and the Console server.
-> [!NOTE]
-> It is important to note that **MINIO** is a registered trademark of the MinIO Corporation. Consequently, this project is not affiliated with or endorsed by the MinIO Corporation.
+> [!IMPORTANT]
+> **MINIO** is a registered trademark of the MinIO Corporation. Consequently, this project is not affiliated with or endorsed by the MinIO Corporation.
+## Console Architecture Overview
+```mermaid
+graph TD;
+    A(User Browser) -- HTTPS/HTTP --> B["Console<br>Frontend Application<br>(React/TypeScript)"];
+    B -- REST API Calls --> D["Console<br>Backend Server<br>(Go)"];
+    D -- "HTTPS/HTTP<br>Admin Operations" --> E["MinIO Server<br>Object Storage"];
+    E@{ shape: cyl}
+```
 
 ## Running Console server
 
