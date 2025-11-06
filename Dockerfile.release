@@ -4,7 +4,7 @@ ARG TAG
 ARG SOURCE
 
 LABEL name="Console" \
-      maintainer="Georg Mangold" \
+      maintainer="Computomics" \
       version="${TAG}" \
       release="${TAG}" \
       summary="A graphical user interface for MinIO" \
