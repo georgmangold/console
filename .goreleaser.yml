@@ -29,22 +29,18 @@ builds:
         goarch: arm64
       - goos: windows
         goarch: arm
-
     env:
       - CGO_ENABLED=0
-
     main: ./cmd/console/
-
     flags:
       - -trimpath
       - --tags=kqueue,operator
-
     ldflags:
       - -s -w -X github.com/minio/console/pkg.ReleaseTag={{.Tag}} -X github.com/minio/console/pkg.CommitID={{.FullCommit}} -X github.com/minio/console/pkg.Version={{.Version}} -X github.com/minio/console/pkg.ShortCommitID={{.ShortCommit}} -X github.com/minio/console/pkg.ReleaseTime={{.Date}}
 
 archives:
   - name_template: "{{ .ProjectName }}-{{ .Os }}-{{ .Arch }}"
-    formats: [ 'binary' ]
+    formats: ["binary"]
 
 snapshot:
   version_template: SNAPSHOT@{{.ShortCommit}}
@@ -67,31 +63,43 @@ nfpms:
       - src: systemd/console.service
         dst: /etc/systemd/system/minio-console.service
 
-dockers:
-  - image_templates:
-      - "ghcr.io/georgmangold/console:{{ .Tag }}-amd64"
-    use: buildx
-    goarch: amd64
-    dockerfile: Dockerfile.release
-    build_flag_templates:
-      - "--platform=linux/amd64"
-      - "--build-arg=TAG={{ .Tag }}"
-  - image_templates:
-      - "ghcr.io/georgmangold/console:{{ .Tag }}-arm64"
-    use: buildx
-    goarch: arm64
-    goos: linux
-    dockerfile: Dockerfile.release
-    build_flag_templates:
-      - "--platform=linux/arm64"
-      - "--build-arg=TAG={{ .Tag }}"
-docker_manifests:
-  - name_template: ghcr.io/georgmangold/console:{{ .Tag }}
-    image_templates:
-      - ghcr.io/georgmangold/console:{{ .Tag }}-amd64
-      - ghcr.io/georgmangold/console:{{ .Tag }}-arm64
-  - name_template: ghcr.io/georgmangold/console:latest
-    image_templates:
-      - ghcr.io/georgmangold/console:{{ .Tag }}-amd64
-      - ghcr.io/georgmangold/console:{{ .Tag }}-arm64
-
+dockers_v2:
+  - dockerfile: Dockerfile.goreleaser
+    images:
+      - "ghcr.io/georgmangold/console"
+    platforms:
+      - linux/amd64
+      - linux/arm64
+    tags:
+      - "{{ .Tag }}"
+      - "latest"
+    build_args:
+      TAG: "{{ .Tag }}"
+    labels:
+      "org.opencontainers.image.authors": "Georg Mangold"
+      "org.opencontainers.image.vendor": "Georg Mangold"
+      "org.opencontainers.image.name": "{{.ProjectName}}"
+      "org.opencontainers.image.title": "{{.ProjectName}}"
+      "org.opencontainers.image.description": "A graphical user interface for MinIO®"
+      "org.opencontainers.image.created": "{{.Date}}"
+      "org.opencontainers.image.revision": "{{.FullCommit}}"
+      "org.opencontainers.image.version": "{{.Tag}}"
+      "org.opencontainers.image.url": "{{.GitURL}}"
+      "org.opencontainers.image.documentation": "{{.GitURL}}"
+      "org.opencontainers.image.source": "{{.GitURL}}"
+      "org.opencontainers.image.licenses": "AGPL-3.0-or-later"
+      "org.opencontainers.image.base.name": "scratch"
+    annotations:
+      "org.opencontainers.image.authors": "Georg Mangold"
+      "org.opencontainers.image.vendor": "Georg Mangold"
+      "org.opencontainers.image.name": "{{.ProjectName}}"
+      "org.opencontainers.image.title": "{{.ProjectName}}"
+      "org.opencontainers.image.description": "A graphical user interface for MinIO®"
+      "org.opencontainers.image.created": "{{.Date}}"
+      "org.opencontainers.image.revision": "{{.FullCommit}}"
+      "org.opencontainers.image.version": "{{.Tag}}"
+      "org.opencontainers.image.url": "{{.GitURL}}"
+      "org.opencontainers.image.documentation": "{{.GitURL}}"
+      "org.opencontainers.image.source": "{{.GitURL}}"
+      "org.opencontainers.image.licenses": "AGPL-3.0-or-later"
+      "org.opencontainers.image.base.name": "scratch"
