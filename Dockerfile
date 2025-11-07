@@ -41,5 +41,6 @@ EXPOSE 9090
 
 COPY --from=golayer /console/console .
 
+USER 1000:1000
 ENTRYPOINT ["/console"]
 CMD [ "server"]

@@ -42,7 +42,6 @@ func NewBucketInfoParams() BucketInfoParams {
 //
 // swagger:parameters BucketInfo
 type BucketInfoParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

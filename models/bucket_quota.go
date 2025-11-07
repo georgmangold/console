@@ -58,7 +58,7 @@ func (m *BucketQuota) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var bucketQuotaTypeTypePropEnum []interface{}
+var bucketQuotaTypeTypePropEnum []any
 
 func init() {
 	var res []string

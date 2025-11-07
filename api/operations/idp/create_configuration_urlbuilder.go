@@ -60,7 +60,7 @@ func (o *CreateConfigurationURL) Build() (*url.URL, error) {
 
 	typeVar := o.Type
 	if typeVar != "" {
-		_path = strings.Replace(_path, "{type}", typeVar, -1)
+		_path = strings.ReplaceAll(_path, "{type}", typeVar)
 	} else {
 		return nil, errors.New("type is required on CreateConfigurationURL")
 	}

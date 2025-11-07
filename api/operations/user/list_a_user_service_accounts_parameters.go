@@ -42,7 +42,6 @@ func NewListAUserServiceAccountsParams() ListAUserServiceAccountsParams {
 //
 // swagger:parameters ListAUserServiceAccounts
 type ListAUserServiceAccountsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

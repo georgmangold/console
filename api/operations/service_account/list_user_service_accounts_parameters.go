@@ -54,7 +54,6 @@ func NewListUserServiceAccountsParams() ListUserServiceAccountsParams {
 //
 // swagger:parameters ListUserServiceAccounts
 type ListUserServiceAccountsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -63,6 +62,7 @@ type ListUserServiceAccountsParams struct {
 	  Default: 20
 	*/
 	Limit *int32
+
 	/*
 	  In: query
 	  Default: 0
@@ -78,7 +78,6 @@ func (o *ListUserServiceAccountsParams) BindRequest(r *http.Request, route *midd
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qLimit, qhkLimit, _ := qs.GetOK("limit")

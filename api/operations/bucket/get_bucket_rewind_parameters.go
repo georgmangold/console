@@ -43,7 +43,6 @@ func NewGetBucketRewindParams() GetBucketRewindParams {
 //
 // swagger:parameters GetBucketRewind
 type GetBucketRewindParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -52,11 +51,13 @@ type GetBucketRewindParams struct {
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  Required: true
 	  In: path
 	*/
 	Date string
+
 	/*
 	  In: query
 	*/
@@ -71,7 +72,6 @@ func (o *GetBucketRewindParams) BindRequest(r *http.Request, route *middleware.M
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	rBucketName, rhkBucketName, _ := route.Params.GetOK("bucket_name")

@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -76,11 +77,15 @@ func (m *WidgetDetails) validateOptions(formats strfmt.Registry) error {
 
 	if m.Options != nil {
 		if err := m.Options.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("options")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("options")
 			}
+
 			return err
 		}
 	}
@@ -100,11 +105,15 @@ func (m *WidgetDetails) validateTargets(formats strfmt.Registry) error {
 
 		if m.Targets[i] != nil {
 			if err := m.Targets[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("targets" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("targets" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -141,11 +150,15 @@ func (m *WidgetDetails) contextValidateOptions(ctx context.Context, formats strf
 		}
 
 		if err := m.Options.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("options")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("options")
 			}
+
 			return err
 		}
 	}
@@ -164,11 +177,15 @@ func (m *WidgetDetails) contextValidateTargets(ctx context.Context, formats strf
 			}
 
 			if err := m.Targets[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("targets" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("targets" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -226,11 +243,15 @@ func (m *WidgetDetailsOptions) validateReduceOptions(formats strfmt.Registry) er
 
 	if m.ReduceOptions != nil {
 		if err := m.ReduceOptions.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("options" + "." + "reduceOptions")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("options" + "." + "reduceOptions")
 			}
+
 			return err
 		}
 	}
@@ -261,11 +282,15 @@ func (m *WidgetDetailsOptions) contextValidateReduceOptions(ctx context.Context,
 		}
 
 		if err := m.ReduceOptions.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("options" + "." + "reduceOptions")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("options" + "." + "reduceOptions")
 			}
+
 			return err
 		}
 	}

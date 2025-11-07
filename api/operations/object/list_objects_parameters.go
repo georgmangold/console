@@ -51,7 +51,6 @@ func NewListObjectsParams() ListObjectsParams {
 //
 // swagger:parameters ListObjects
 type ListObjectsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -60,23 +59,28 @@ type ListObjectsParams struct {
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  In: query
 	  Default: 20
 	*/
 	Limit *int32
+
 	/*
 	  In: query
 	*/
 	Prefix *string
+
 	/*
 	  In: query
 	*/
 	Recursive *bool
+
 	/*
 	  In: query
 	*/
 	WithMetadata *bool
+
 	/*
 	  In: query
 	*/
@@ -91,7 +95,6 @@ func (o *ListObjectsParams) BindRequest(r *http.Request, route *middleware.Match
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	rBucketName, rhkBucketName, _ := route.Params.GetOK("bucket_name")

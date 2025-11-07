@@ -42,7 +42,6 @@ func NewGetConfigurationParams() GetConfigurationParams {
 //
 // swagger:parameters GetConfiguration
 type GetConfigurationParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -51,6 +50,7 @@ type GetConfigurationParams struct {
 	  In: path
 	*/
 	Name string
+
 	/*IDP Configuration Type
 	  Required: true
 	  In: path

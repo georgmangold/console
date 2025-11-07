@@ -37,7 +37,7 @@ type WidgetResult struct {
 	Metric map[string]string `json:"metric,omitempty"`
 
 	// values
-	Values []interface{} `json:"values"`
+	Values []any `json:"values"`
 }
 
 // Validate validates this widget result

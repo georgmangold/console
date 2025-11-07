@@ -24,6 +24,7 @@ package models
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -93,11 +94,15 @@ func (m *Tier) validateAzure(formats strfmt.Registry) error {
 
 	if m.Azure != nil {
 		if err := m.Azure.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("azure")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("azure")
 			}
+
 			return err
 		}
 	}
@@ -112,11 +117,15 @@ func (m *Tier) validateGcs(formats strfmt.Registry) error {
 
 	if m.Gcs != nil {
 		if err := m.Gcs.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("gcs")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("gcs")
 			}
+
 			return err
 		}
 	}
@@ -131,11 +140,15 @@ func (m *Tier) validateMinio(formats strfmt.Registry) error {
 
 	if m.Minio != nil {
 		if err := m.Minio.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("minio")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("minio")
 			}
+
 			return err
 		}
 	}
@@ -150,11 +163,15 @@ func (m *Tier) validateS3(formats strfmt.Registry) error {
 
 	if m.S3 != nil {
 		if err := m.S3.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("s3")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("s3")
 			}
+
 			return err
 		}
 	}
@@ -162,7 +179,7 @@ func (m *Tier) validateS3(formats strfmt.Registry) error {
 	return nil
 }
 
-var tierTypeTypePropEnum []interface{}
+var tierTypeTypePropEnum []any
 
 func init() {
 	var res []string
@@ -248,11 +265,15 @@ func (m *Tier) contextValidateAzure(ctx context.Context, formats strfmt.Registry
 		}
 
 		if err := m.Azure.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("azure")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("azure")
 			}
+
 			return err
 		}
 	}
@@ -269,11 +290,15 @@ func (m *Tier) contextValidateGcs(ctx context.Context, formats strfmt.Registry) 
 		}
 
 		if err := m.Gcs.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("gcs")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("gcs")
 			}
+
 			return err
 		}
 	}
@@ -290,11 +315,15 @@ func (m *Tier) contextValidateMinio(ctx context.Context, formats strfmt.Registry
 		}
 
 		if err := m.Minio.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("minio")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("minio")
 			}
+
 			return err
 		}
 	}
@@ -311,11 +340,15 @@ func (m *Tier) contextValidateS3(ctx context.Context, formats strfmt.Registry) e
 		}
 
 		if err := m.S3.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("s3")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("s3")
 			}
+
 			return err
 		}
 	}

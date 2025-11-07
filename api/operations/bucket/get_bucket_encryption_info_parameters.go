@@ -42,7 +42,6 @@ func NewGetBucketEncryptionInfoParams() GetBucketEncryptionInfoParams {
 //
 // swagger:parameters GetBucketEncryptionInfo
 type GetBucketEncryptionInfoParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

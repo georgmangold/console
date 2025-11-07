@@ -19,20 +19,23 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref }}
   cancel-in-progress: true
 
+env:
+  FIREFOX_VERSION: 143.0.3
+
 jobs:
   lint-job:
     name: Checking Lint
     runs-on: [ubuntu-latest]
     strategy:
       matrix:
-        go-version: [ 1.24.x ]
-        os: [ ubuntu-latest ]
+        go-version: [1.24.x]
+        os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: ${{ matrix.go-version }}
         id: go
@@ -52,7 +55,7 @@ jobs:
         os: [ubuntu-latest]
     steps:
       - name: Check out source code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Scanning code on ${{ matrix.os }}
         continue-on-error: false
         run: |
@@ -67,17 +70,17 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go-version: [ 1.24.x ]
-        os: [ ubuntu-latest ]
+        go-version: [1.24.x]
+        os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Read .nvmrc
         id: node_version
         run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
       - name: Enable Corepack
         run: corepack enable
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NVMRC }}
           cache: "yarn"
@@ -110,23 +113,85 @@ jobs:
         run: |
           ./check-deadcode.sh
 
+  swagger-codegen:
+    name: "Check for uncommitted changes through Swagger Codegen Changes."
+    needs:
+      - lint-job
+      - ui-assets
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go-version: [1.24.x]
+        os: [ubuntu-latest]
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v5
+      - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
+        uses: actions/setup-go@v6
+        with:
+          go-version: ${{ matrix.go-version }}
+      - name: Read .nvmrc
+        id: node_version
+        run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
+      - name: Enable Corepack
+        run: corepack enable
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
+      - name: Install NPM Dependencies
+        working-directory: ./web-app
+        continue-on-error: false
+        run: |
+          yarn install --immutable
+      - name: Install go-swagger
+        run: |
+          go install github.com/go-swagger/go-swagger/cmd/swagger@latest
+          swagger version
+      - name: Validate swagger.yml
+        run: swagger validate ./swagger.yml
+      - name: Run Swagger Codegen
+        run: make swagger-gen
+
+      - name: Check for uncommitted changes
+        id: git-status
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Codegen modified files. Please run "make swagger-gen" and commit the changes first:"
+            git status --porcelain
+            echo "##### Git Diff: #####"
+            git --no-pager diff
+            exit 1
+          else
+            echo "No changes detected after codegen."
+          fi
+
   latest-minio:
-    name: Build latest MinIO
+    name: Test Build latest MinIO with Console
+    needs:
+      - swagger-codegen
     runs-on: [ubuntu-latest]
     strategy:
       matrix:
-        go-version: [ 1.24.x ]
+        go-version: [1.24.x]
     steps:
+      # Clone Console Repo
+      - name: Check out code
+        uses: actions/checkout@v5
       # To build minio image, we need to clone the repository first
       - name: Clone github.com/minio/minio
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
         with:
           repository: minio/minio
+          path: "minio_repository"
       - name: Check-out matching MinIO branch
         env:
           GH_BRANCH: ${{ github.head_ref || github.ref_name }}
           GH_PR_REPO: ${{ github.event.pull_request.head.repo.full_name }}
         run: |
+          cd $GITHUB_WORKSPACE/minio_repository; 
           GH_PR_ACCOUNT=`echo $GH_PR_REPO | sed "s/\\/.*//"`
           if [ ! -z "$GH_PR_ACCOUNT" ] && [ ! "$GH_PR_ACCOUNT" = "minio" ]; then
             ALTREPO="https://github.com/$GH_PR_ACCOUNT/minio.git"
@@ -134,33 +199,71 @@ jobs:
             git remote add alt $ALTREPO
             (git fetch alt && git checkout "alt/$GH_BRANCH") || echo "$ALTREPO ($GH_BRANCH) not available, so keeping default repository/branch"
           fi
+          cd $GITHUB_WORKSPACE;
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: ${{ matrix.go-version }}
         id: go-minio
       - name: Build on ${{ matrix.os }}
         if: steps.minio-latest-cache.outputs.cache-hit != 'true'
         run: |
+          cd $GITHUB_WORKSPACE;
+          echo "Create Console Frontend Webui Assets"
+          cd $GITHUB_WORKSPACE/web-app;
+          make yarn-dep
+          make build-static-release
+
           echo "Create minio binary";
+          cd $GITHUB_WORKSPACE/minio_repository;
+
+          echo "Replace Console with local repo"
+          echo "replace github.com/minio/console => ../" >> go.mod
+
+          echo "updates to go.mod needed; to update it: go mod tidy"
+          go mod tidy
+
           make build;
+
+          cd $GITHUB_WORKSPACE
+          cp $GITHUB_WORKSPACE/minio_repository/minio .
+
+      - uses: actions/cache/save@v4
+        # skip minio binary cache
+        if: false
+        id: minio-latest-cache
+        name: MinIO Latest Cache
+        with:
+          path: |
+            ./minio
+          key: ${{ runner.os }}-minio-latest-${{  github.run_id  }}
+
+      - uses: actions/upload-artifact@v5
+        # skip minio binary upload
+        if: false
+        with:
+          name: minio-console-binary
+          path: |
+            ./minio
+
   compile-binary:
     name: Compiles on Go ${{ matrix.go-version }} and ${{ matrix.os }}
     needs:
       - lint-job
       - ui-assets
       - semgrep-static-code-analysis
+      - swagger-codegen
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        go-version: [ 1.24.x ]
-        os: [ ubuntu-latest ]
+        go-version: [1.24.x]
+        os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: ${{ matrix.go-version }}
         id: go
@@ -193,14 +296,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        go-version: [ 1.24.x ]
-        os: [ ubuntu-latest ]
+        go-version: [1.24.x]
+        os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: ${{ matrix.go-version }}
         id: go
@@ -221,13 +324,13 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        go-version: [ 1.24.x ]
-        os: [ ubuntu-latest ]
+        go-version: [1.24.x]
+        os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: ${{ matrix.go-version }}
         id: go
@@ -248,14 +351,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        go-version: [ 1.24.x ]
-        os: [ ubuntu-latest ]
+        go-version: [1.24.x]
+        os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: ${{ matrix.go-version }}
         id: go
@@ -276,14 +379,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        go-version: [ 1.24.x ]
-        os: [ ubuntu-latest ]
+        go-version: [1.24.x]
+        os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: ${{ matrix.go-version }}
         id: go
@@ -304,14 +407,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        go-version: [ 1.24.x ]
-        os: [ ubuntu-latest ]
+        go-version: [1.24.x]
+        os: [ubuntu-latest]
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Set up Go ${{ matrix.go-version }} on ${{ matrix.os }}
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           go-version: ${{ matrix.go-version }}
         id: go
@@ -322,3 +425,57 @@ jobs:
           GOOS: linux
         run: |
           make crosscompile arg1="'linux/386 netbsd/amd64'"
+
+  playwright:
+    needs:
+      - compile-binary-istanbul-coverage
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Read .nvmrc
+        id: node_version
+        run: echo "$(cat .nvmrc)" && echo "NVMRC=$(cat .nvmrc)" >> $GITHUB_ENV
+      - name: Enable Corepack
+        run: corepack enable
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NVMRC }}
+          cache: "yarn"
+          cache-dependency-path: web-app/yarn.lock
+
+      - name: Install dependencies
+        run: |
+          echo "Install dependencies"
+          cd $GITHUB_WORKSPACE/web-app
+          yarn init -y
+          yarn add -D playwright babel-plugin-istanbul nyc react-app-rewired create-react-app @playwright/test
+          echo "yarn install"
+          yarn install --no-immutable
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - uses: actions/cache@v4
+        name: Console Binary Cache Istanbul Coverage
+        with:
+          path: |
+            ./console
+          key: ${{ runner.os }}-binary-istanbul-coverage-${{ github.run_id }}
+
+      - name: Start Console, front-end app and initialize users/policies
+        run: |
+          (./console server) & (make initialize-permissions)
+
+      - name: Run Playwright tests
+        run: |
+          echo "Run tests under playwright folder only"
+          cd $GITHUB_WORKSPACE/web-app
+          yarn remove playwright
+          yarn add --dev @playwright/test
+          echo "npx playwright test"
+          npx playwright test # To run the tests
+          echo "npx nyc report"
+          npx nyc report # To see report printed in logs as text
+          echo "npx nyc report --reporter=html"
+          npx playwright test --reporter github # To run the tests

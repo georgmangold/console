@@ -54,7 +54,7 @@ const (
 )
 
 // for schema
-var objectLegalHoldStatusEnum []interface{}
+var objectLegalHoldStatusEnum []any
 
 func init() {
 	var res []ObjectLegalHoldStatus

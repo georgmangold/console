@@ -4,9 +4,10 @@ Systemd script for Console.
 
 ## Installation
 
-- Systemd script is configured to run the binary from /usr/local/bin/.
+- Systemd script is configured to run the binary from `/usr/local/bin/`.
 - Systemd script is configured to run the binary as `console-user`, make sure you create this user prior using service script.
-- Download the binary. Find the relevant links for the binary https://github.com/georgmangold/console#binary-releases.
+- Download the binary. Find the relevant links for the binary in the [README](https://github.com/georgmangold/console#binary-releases) or latest [Release Page](https://github.com/georgmangold/console/releases/latest/)..
+- DEB and RPM Packages will install the systemd service file to `/etc/systemd/system/minio-console.service`.
 
 ## Create the Environment configuration file
 

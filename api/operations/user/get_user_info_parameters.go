@@ -42,7 +42,6 @@ func NewGetUserInfoParams() GetUserInfoParams {
 //
 // swagger:parameters GetUserInfo
 type GetUserInfoParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

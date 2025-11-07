@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -65,11 +66,15 @@ func (m *MultiBucketResponseState) validateReplicationState(formats strfmt.Regis
 
 		if m.ReplicationState[i] != nil {
 			if err := m.ReplicationState[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("replicationState" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("replicationState" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -104,11 +109,15 @@ func (m *MultiBucketResponseState) contextValidateReplicationState(ctx context.C
 			}
 
 			if err := m.ReplicationState[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("replicationState" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("replicationState" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

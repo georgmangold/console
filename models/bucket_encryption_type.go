@@ -54,7 +54,7 @@ const (
 )
 
 // for schema
-var bucketEncryptionTypeEnum []interface{}
+var bucketEncryptionTypeEnum []any
 
 func init() {
 	var res []BucketEncryptionType

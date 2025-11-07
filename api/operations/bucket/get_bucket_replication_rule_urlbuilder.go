@@ -61,14 +61,14 @@ func (o *GetBucketReplicationRuleURL) Build() (*url.URL, error) {
 
 	bucketName := o.BucketName
 	if bucketName != "" {
-		_path = strings.Replace(_path, "{bucket_name}", bucketName, -1)
+		_path = strings.ReplaceAll(_path, "{bucket_name}", bucketName)
 	} else {
 		return nil, errors.New("bucketName is required on GetBucketReplicationRuleURL")
 	}
 
 	ruleID := o.RuleID
 	if ruleID != "" {
-		_path = strings.Replace(_path, "{rule_id}", ruleID, -1)
+		_path = strings.ReplaceAll(_path, "{rule_id}", ruleID)
 	} else {
 		return nil, errors.New("ruleId is required on GetBucketReplicationRuleURL")
 	}

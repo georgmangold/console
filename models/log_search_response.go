@@ -34,7 +34,7 @@ import (
 type LogSearchResponse struct {
 
 	// list of log search responses
-	Results interface{} `json:"results,omitempty"`
+	Results any `json:"results,omitempty"`
 }
 
 // Validate validates this log search response

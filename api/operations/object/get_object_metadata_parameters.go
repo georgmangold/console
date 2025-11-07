@@ -44,7 +44,6 @@ func NewGetObjectMetadataParams() GetObjectMetadataParams {
 //
 // swagger:parameters GetObjectMetadata
 type GetObjectMetadataParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -53,11 +52,13 @@ type GetObjectMetadataParams struct {
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  Required: true
 	  In: query
 	*/
 	Prefix string
+
 	/*
 	  In: query
 	*/
@@ -72,7 +73,6 @@ func (o *GetObjectMetadataParams) BindRequest(r *http.Request, route *middleware
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	rBucketName, rhkBucketName, _ := route.Params.GetOK("bucket_name")

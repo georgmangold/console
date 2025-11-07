@@ -43,7 +43,6 @@ func NewKMSListKeysParams() KMSListKeysParams {
 //
 // swagger:parameters KMSListKeys
 type KMSListKeysParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -61,7 +60,6 @@ func (o *KMSListKeysParams) BindRequest(r *http.Request, route *middleware.Match
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qPattern, qhkPattern, _ := qs.GetOK("pattern")

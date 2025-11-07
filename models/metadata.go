@@ -34,7 +34,7 @@ import (
 type Metadata struct {
 
 	// object metadata
-	ObjectMetadata interface{} `json:"objectMetadata,omitempty"`
+	ObjectMetadata any `json:"objectMetadata,omitempty"`
 }
 
 // Validate validates this metadata

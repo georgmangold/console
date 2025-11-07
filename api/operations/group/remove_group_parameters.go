@@ -42,7 +42,6 @@ func NewRemoveGroupParams() RemoveGroupParams {
 //
 // swagger:parameters RemoveGroup
 type RemoveGroupParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

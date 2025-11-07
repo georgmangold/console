@@ -42,7 +42,6 @@ func NewRemoveTierParams() RemoveTierParams {
 //
 // swagger:parameters RemoveTier
 type RemoveTierParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

@@ -42,7 +42,6 @@ func NewRemovePolicyParams() RemovePolicyParams {
 //
 // swagger:parameters RemovePolicy
 type RemovePolicyParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

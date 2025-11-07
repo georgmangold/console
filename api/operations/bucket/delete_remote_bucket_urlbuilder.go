@@ -61,14 +61,14 @@ func (o *DeleteRemoteBucketURL) Build() (*url.URL, error) {
 
 	arn := o.Arn
 	if arn != "" {
-		_path = strings.Replace(_path, "{arn}", arn, -1)
+		_path = strings.ReplaceAll(_path, "{arn}", arn)
 	} else {
 		return nil, errors.New("arn is required on DeleteRemoteBucketURL")
 	}
 
 	sourceBucketName := o.SourceBucketName
 	if sourceBucketName != "" {
-		_path = strings.Replace(_path, "{source_bucket_name}", sourceBucketName, -1)
+		_path = strings.ReplaceAll(_path, "{source_bucket_name}", sourceBucketName)
 	} else {
 		return nil, errors.New("sourceBucketName is required on DeleteRemoteBucketURL")
 	}

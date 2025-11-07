@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -68,11 +69,15 @@ func (m *StartProfilingList) validateStartResults(formats strfmt.Registry) error
 
 		if m.StartResults[i] != nil {
 			if err := m.StartResults[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("startResults" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("startResults" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -107,11 +112,15 @@ func (m *StartProfilingList) contextValidateStartResults(ctx context.Context, fo
 			}
 
 			if err := m.StartResults[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("startResults" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("startResults" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

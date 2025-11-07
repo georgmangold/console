@@ -65,7 +65,7 @@ func (o *DeleteMultipleObjectsURL) Build() (*url.URL, error) {
 
 	bucketName := o.BucketName
 	if bucketName != "" {
-		_path = strings.Replace(_path, "{bucket_name}", bucketName, -1)
+		_path = strings.ReplaceAll(_path, "{bucket_name}", bucketName)
 	} else {
 		return nil, errors.New("bucketName is required on DeleteMultipleObjectsURL")
 	}

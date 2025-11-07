@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -68,11 +69,15 @@ func (m *Configuration) validateKeyValues(formats strfmt.Registry) error {
 
 		if m.KeyValues[i] != nil {
 			if err := m.KeyValues[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("key_values" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("key_values" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -107,11 +112,15 @@ func (m *Configuration) contextValidateKeyValues(ctx context.Context, formats st
 			}
 
 			if err := m.KeyValues[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("key_values" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("key_values" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

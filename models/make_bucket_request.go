@@ -23,6 +23,7 @@ package models
 
 import (
 	"context"
+	stderrors "errors"
 
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
@@ -94,11 +95,15 @@ func (m *MakeBucketRequest) validateQuota(formats strfmt.Registry) error {
 
 	if m.Quota != nil {
 		if err := m.Quota.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("quota")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("quota")
 			}
+
 			return err
 		}
 	}
@@ -113,11 +118,15 @@ func (m *MakeBucketRequest) validateRetention(formats strfmt.Registry) error {
 
 	if m.Retention != nil {
 		if err := m.Retention.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("retention")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("retention")
 			}
+
 			return err
 		}
 	}
@@ -132,11 +141,15 @@ func (m *MakeBucketRequest) validateVersioning(formats strfmt.Registry) error {
 
 	if m.Versioning != nil {
 		if err := m.Versioning.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("versioning")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("versioning")
 			}
+
 			return err
 		}
 	}
@@ -175,11 +188,15 @@ func (m *MakeBucketRequest) contextValidateQuota(ctx context.Context, formats st
 		}
 
 		if err := m.Quota.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("quota")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("quota")
 			}
+
 			return err
 		}
 	}
@@ -196,11 +213,15 @@ func (m *MakeBucketRequest) contextValidateRetention(ctx context.Context, format
 		}
 
 		if err := m.Retention.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("retention")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("retention")
 			}
+
 			return err
 		}
 	}
@@ -217,11 +238,15 @@ func (m *MakeBucketRequest) contextValidateVersioning(ctx context.Context, forma
 		}
 
 		if err := m.Versioning.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("versioning")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("versioning")
 			}
+
 			return err
 		}
 	}

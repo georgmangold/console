@@ -22,6 +22,7 @@ package bucket
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	stderrors "errors"
 	"io"
 	"net/http"
 
@@ -47,7 +48,6 @@ func NewAddBucketLifecycleParams() AddBucketLifecycleParams {
 //
 // swagger:parameters AddBucketLifecycle
 type AddBucketLifecycleParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -56,6 +56,7 @@ type AddBucketLifecycleParams struct {
 	  In: body
 	*/
 	Body *models.AddBucketLifecycle
+
 	/*
 	  Required: true
 	  In: path
@@ -73,10 +74,12 @@ func (o *AddBucketLifecycleParams) BindRequest(r *http.Request, route *middlewar
 	o.HTTPRequest = r
 
 	if runtime.HasBody(r) {
-		defer r.Body.Close()
+		defer func() {
+			_ = r.Body.Close()
+		}()
 		var body models.AddBucketLifecycle
 		if err := route.Consumer.Consume(r.Body, &body); err != nil {
-			if err == io.EOF {
+			if stderrors.Is(err, io.EOF) {
 				res = append(res, errors.Required("body", "body", ""))
 			} else {
 				res = append(res, errors.NewParseError("body", "body", "", err))

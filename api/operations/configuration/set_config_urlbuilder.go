@@ -60,7 +60,7 @@ func (o *SetConfigURL) Build() (*url.URL, error) {
 
 	name := o.Name
 	if name != "" {
-		_path = strings.Replace(_path, "{name}", name, -1)
+		_path = strings.ReplaceAll(_path, "{name}", name)
 	} else {
 		return nil, errors.New("name is required on SetConfigURL")
 	}

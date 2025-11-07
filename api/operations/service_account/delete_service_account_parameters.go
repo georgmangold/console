@@ -42,7 +42,6 @@ func NewDeleteServiceAccountParams() DeleteServiceAccountParams {
 //
 // swagger:parameters DeleteServiceAccount
 type DeleteServiceAccountParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

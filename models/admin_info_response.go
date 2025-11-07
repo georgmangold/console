@@ -24,6 +24,7 @@ package models
 import (
 	"context"
 	"encoding/json"
+	stderrors "errors"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -86,7 +87,7 @@ func (m *AdminInfoResponse) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-var adminInfoResponseTypeAdvancedMetricsStatusPropEnum []interface{}
+var adminInfoResponseTypeAdvancedMetricsStatusPropEnum []any
 
 func init() {
 	var res []string
@@ -138,11 +139,15 @@ func (m *AdminInfoResponse) validateBackend(formats strfmt.Registry) error {
 
 	if m.Backend != nil {
 		if err := m.Backend.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("backend")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("backend")
 			}
+
 			return err
 		}
 	}
@@ -162,11 +167,15 @@ func (m *AdminInfoResponse) validateServers(formats strfmt.Registry) error {
 
 		if m.Servers[i] != nil {
 			if err := m.Servers[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("servers" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("servers" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -188,11 +197,15 @@ func (m *AdminInfoResponse) validateWidgets(formats strfmt.Registry) error {
 
 		if m.Widgets[i] != nil {
 			if err := m.Widgets[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("widgets" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("widgets" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -233,11 +246,15 @@ func (m *AdminInfoResponse) contextValidateBackend(ctx context.Context, formats 
 		}
 
 		if err := m.Backend.ContextValidate(ctx, formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
+			ve := new(errors.Validation)
+			if stderrors.As(err, &ve) {
 				return ve.ValidateName("backend")
-			} else if ce, ok := err.(*errors.CompositeError); ok {
+			}
+			ce := new(errors.CompositeError)
+			if stderrors.As(err, &ce) {
 				return ce.ValidateName("backend")
 			}
+
 			return err
 		}
 	}
@@ -256,11 +273,15 @@ func (m *AdminInfoResponse) contextValidateServers(ctx context.Context, formats 
 			}
 
 			if err := m.Servers[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("servers" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("servers" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}
@@ -281,11 +302,15 @@ func (m *AdminInfoResponse) contextValidateWidgets(ctx context.Context, formats 
 			}
 
 			if err := m.Widgets[i].ContextValidate(ctx, formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
+				ve := new(errors.Validation)
+				if stderrors.As(err, &ve) {
 					return ve.ValidateName("widgets" + "." + strconv.Itoa(i))
-				} else if ce, ok := err.(*errors.CompositeError); ok {
+				}
+				ce := new(errors.CompositeError)
+				if stderrors.As(err, &ce) {
 					return ce.ValidateName("widgets" + "." + strconv.Itoa(i))
 				}
+
 				return err
 			}
 		}

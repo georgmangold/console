@@ -42,7 +42,6 @@ func NewResetConfigParams() ResetConfigParams {
 //
 // swagger:parameters ResetConfig
 type ResetConfigParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

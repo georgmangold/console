@@ -60,7 +60,7 @@ func (o *UpdateServiceAccountURL) Build() (*url.URL, error) {
 
 	accessKey := o.AccessKey
 	if accessKey != "" {
-		_path = strings.Replace(_path, "{access_key}", accessKey, -1)
+		_path = strings.ReplaceAll(_path, "{access_key}", accessKey)
 	} else {
 		return nil, errors.New("accessKey is required on UpdateServiceAccountURL")
 	}

@@ -3,11 +3,11 @@
 | Env | |
 | --- | -- |
 | `CONSOLE_MINIO_SERVER` | "http://localhost:9000" |
-| `CONSOLE_SUBNET_PROXY` | |
 | `CONSOLE_MINIO_REGION` | "us-east-1" |
 | `CONSOLE_HOSTNAME` | "" |
 | `CONSOLE_PORT` | 9090 |
 | `CONSOLE_TLS_PORT` | 9443 |
+| `CONSOLE_SUBPATH` | i.e. /console |
 | `CONSOLE_DEBUG_LOGLEVEL` | 0 - 6
 | `CONSOLE_SECURE_ALLOWED_HOSTS` | "" |
 | `CONSOLE_SECURE_ALLOWED_HOSTS_ARE_REGEX` | "off" |
@@ -71,4 +71,3 @@
 | `CONSOLE_AUDIT_WEBHOOK_CLIENT_CERT` |
 | `CONSOLE_AUDIT_WEBHOOK_CLIENT_KEY` |
 | `CONSOLE_AUDIT_WEBHOOK_QUEUE_SIZE` |
-| `RELEASE_SERVICE_HOST` | https://enterprise-updates.ic.min.dev ? |

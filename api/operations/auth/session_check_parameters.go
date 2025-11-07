@@ -41,7 +41,6 @@ func NewSessionCheckParams() SessionCheckParams {
 //
 // swagger:parameters SessionCheck
 type SessionCheckParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

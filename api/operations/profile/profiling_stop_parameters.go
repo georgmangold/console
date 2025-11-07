@@ -41,7 +41,6 @@ func NewProfilingStopParams() ProfilingStopParams {
 //
 // swagger:parameters ProfilingStop
 type ProfilingStopParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

@@ -11,11 +11,12 @@ LABEL name="Console" \
       description="See Github for more information https://github.com/Computomics/console-ctx" \
       org.opencontainers.image.source="https://github.com/Computomics/console-ctx" \
       org.opencontainers.image.description="A graphical user interface for MinIO" \
-      org.opencontainers.image.licenses="AGPL-3.0-only"
+      org.opencontainers.image.licenses="AGPL-3.0-or-later"
 
 COPY console /console
 
 EXPOSE 9090
 
+USER 1000:1000
 ENTRYPOINT ["/console"]
 CMD [ "server"]

@@ -54,7 +54,6 @@ func NewListBucketEventsParams() ListBucketEventsParams {
 //
 // swagger:parameters ListBucketEvents
 type ListBucketEventsParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -63,11 +62,13 @@ type ListBucketEventsParams struct {
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  In: query
 	  Default: 20
 	*/
 	Limit *int32
+
 	/*
 	  In: query
 	  Default: 0
@@ -83,7 +84,6 @@ func (o *ListBucketEventsParams) BindRequest(r *http.Request, route *middleware.
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	rBucketName, rhkBucketName, _ := route.Params.GetOK("bucket_name")

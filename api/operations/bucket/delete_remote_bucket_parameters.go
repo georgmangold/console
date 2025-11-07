@@ -42,7 +42,6 @@ func NewDeleteRemoteBucketParams() DeleteRemoteBucketParams {
 //
 // swagger:parameters DeleteRemoteBucket
 type DeleteRemoteBucketParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -51,6 +50,7 @@ type DeleteRemoteBucketParams struct {
 	  In: path
 	*/
 	Arn string
+
 	/*
 	  Required: true
 	  In: path

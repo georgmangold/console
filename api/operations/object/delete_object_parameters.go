@@ -45,7 +45,6 @@ func NewDeleteObjectParams() DeleteObjectParams {
 //
 // swagger:parameters DeleteObject
 type DeleteObjectParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -53,28 +52,34 @@ type DeleteObjectParams struct {
 	  In: query
 	*/
 	AllVersions *bool
+
 	/*
 	  Required: true
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  In: query
 	*/
 	Bypass *bool
+
 	/*
 	  In: query
 	*/
 	NonCurrentVersions *bool
+
 	/*
 	  Required: true
 	  In: query
 	*/
 	Prefix string
+
 	/*
 	  In: query
 	*/
 	Recursive *bool
+
 	/*
 	  In: query
 	*/
@@ -89,7 +94,6 @@ func (o *DeleteObjectParams) BindRequest(r *http.Request, route *middleware.Matc
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qAllVersions, qhkAllVersions, _ := qs.GetOK("all_versions")

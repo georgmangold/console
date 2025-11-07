@@ -11,6 +11,8 @@
 # # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+export MC_UPDATE=off
+
 add_alias() {
   for i in $(seq 1 4); do
     echo "... attempting to add alias $i"

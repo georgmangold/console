@@ -65,7 +65,7 @@ func (o *ListUsersWithAccessToBucketURL) Build() (*url.URL, error) {
 
 	bucket := o.Bucket
 	if bucket != "" {
-		_path = strings.Replace(_path, "{bucket}", bucket, -1)
+		_path = strings.ReplaceAll(_path, "{bucket}", bucket)
 	} else {
 		return nil, errors.New("bucket is required on ListUsersWithAccessToBucketURL")
 	}

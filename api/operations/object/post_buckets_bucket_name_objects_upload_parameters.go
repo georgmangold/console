@@ -43,7 +43,6 @@ func NewPostBucketsBucketNameObjectsUploadParams() PostBucketsBucketNameObjectsU
 //
 // swagger:parameters PostBucketsBucketNameObjectsUpload
 type PostBucketsBucketNameObjectsUploadParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -52,6 +51,7 @@ type PostBucketsBucketNameObjectsUploadParams struct {
 	  In: path
 	*/
 	BucketName string
+
 	/*
 	  In: query
 	*/
@@ -66,7 +66,6 @@ func (o *PostBucketsBucketNameObjectsUploadParams) BindRequest(r *http.Request, 
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	rBucketName, rhkBucketName, _ := route.Params.GetOK("bucket_name")

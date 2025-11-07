@@ -53,6 +53,7 @@ nfpms:
     maintainer: "Computomics"
     description: Console UI for MinIO Server (Computomics branded)
     license: GNU Affero General Public License v3.0
+    bindir: /usr/local/bin
     formats:
       - deb
       - rpm

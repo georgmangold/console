@@ -41,7 +41,6 @@ func NewListNodesParams() ListNodesParams {
 //
 // swagger:parameters ListNodes
 type ListNodesParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

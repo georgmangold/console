@@ -58,7 +58,6 @@ func NewLogSearchParams() LogSearchParams {
 //
 // swagger:parameters LogSearch
 type LogSearchParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -67,25 +66,30 @@ type LogSearchParams struct {
 	  Collection Format: multi
 	*/
 	Fp []string
+
 	/*
 	  In: query
 	  Default: "timeDesc"
 	*/
 	Order *string
+
 	/*
 	  In: query
 	  Default: 0
 	*/
 	PageNo *int32
+
 	/*
 	  In: query
 	  Default: 10
 	*/
 	PageSize *int32
+
 	/*
 	  In: query
 	*/
 	TimeEnd *string
+
 	/*
 	  In: query
 	*/
@@ -100,7 +104,6 @@ func (o *LogSearchParams) BindRequest(r *http.Request, route *middleware.Matched
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qFp, qhkFp, _ := qs.GetOK("fp")
@@ -183,10 +186,10 @@ func (o *LogSearchParams) bindOrder(rawData []string, hasKey bool, formats strfm
 	return nil
 }
 
-// validateOrder carries on validations for parameter Order
+// validateOrder carries out validations for parameter Order
 func (o *LogSearchParams) validateOrder(formats strfmt.Registry) error {
 
-	if err := validate.EnumCase("order", "query", *o.Order, []interface{}{"timeDesc", "timeAsc"}, true); err != nil {
+	if err := validate.EnumCase("order", "query", *o.Order, []any{"timeDesc", "timeAsc"}, true); err != nil {
 		return err
 	}
 

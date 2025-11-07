@@ -41,7 +41,6 @@ func NewKMSVersionParams() KMSVersionParams {
 //
 // swagger:parameters KMSVersion
 type KMSVersionParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }

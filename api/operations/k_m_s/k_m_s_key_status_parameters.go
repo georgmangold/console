@@ -42,7 +42,6 @@ func NewKMSKeyStatusParams() KMSKeyStatusParams {
 //
 // swagger:parameters KMSKeyStatus
 type KMSKeyStatusParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 

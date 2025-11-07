@@ -54,7 +54,6 @@ func NewListPoliciesParams() ListPoliciesParams {
 //
 // swagger:parameters ListPolicies
 type ListPoliciesParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 
@@ -63,6 +62,7 @@ type ListPoliciesParams struct {
 	  Default: 20
 	*/
 	Limit *int32
+
 	/*
 	  In: query
 	  Default: 0
@@ -78,7 +78,6 @@ func (o *ListPoliciesParams) BindRequest(r *http.Request, route *middleware.Matc
 	var res []error
 
 	o.HTTPRequest = r
-
 	qs := runtime.Values(r.URL.Query())
 
 	qLimit, qhkLimit, _ := qs.GetOK("limit")

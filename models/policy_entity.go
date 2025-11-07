@@ -54,7 +54,7 @@ const (
 )
 
 // for schema
-var policyEntityEnum []interface{}
+var policyEntityEnum []any
 
 func init() {
 	var res []PolicyEntity

@@ -140,7 +140,7 @@ func (m *RemoteBucket) validateSecretKey(formats strfmt.Registry) error {
 	return nil
 }
 
-var remoteBucketTypeServicePropEnum []interface{}
+var remoteBucketTypeServicePropEnum []any
 
 func init() {
 	var res []string

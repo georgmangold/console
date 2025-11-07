@@ -41,7 +41,6 @@ func NewGetMaxShareLinkExpParams() GetMaxShareLinkExpParams {
 //
 // swagger:parameters GetMaxShareLinkExp
 type GetMaxShareLinkExpParams struct {
-
 	// HTTP Request Object
 	HTTPRequest *http.Request `json:"-"`
 }
