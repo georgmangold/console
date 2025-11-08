@@ -188,7 +188,10 @@ const HelpMenu = () => {
       )}
       {helpItems &&
         helpItems.map((aHelpItem, idx) => (
-          <Box className={"helpItemBlock"} key={`help-item-${aHelpItem}`}>
+          <Box
+            className={"helpItemBlock"}
+            key={`help-item-${aHelpItem.title.toLowerCase().replace(" ", "-")}`}
+          >
             <HelpItem item={aHelpItem} displayImage={false} />
           </Box>
         ))}
@@ -214,7 +217,10 @@ const HelpMenu = () => {
       )}
       {helpItemsVideo &&
         helpItemsVideo.map((aHelpItem, idx) => (
-          <Box className={"helpItemBlock"} key={`help-item-${aHelpItem}`}>
+          <Box
+            className={"helpItemBlock"}
+            key={`help-item-${aHelpItem.title.toLowerCase().replace(" ", "-")}`}
+          >
             <HelpItem item={aHelpItem} />
           </Box>
         ))}
@@ -240,7 +246,10 @@ const HelpMenu = () => {
       )}
       {helpItemsBlog &&
         helpItemsBlog.map((aHelpItem, idx) => (
-          <Box className={"helpItemBlock"} key={`help-item-${aHelpItem}`}>
+          <Box
+            className={"helpItemBlock"}
+            key={`help-item-${aHelpItem.title.toLowerCase().replace(" ", "-")}`}
+          >
             <HelpItem item={aHelpItem} />
           </Box>
         ))}
