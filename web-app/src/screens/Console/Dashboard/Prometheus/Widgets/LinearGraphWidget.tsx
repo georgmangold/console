@@ -22,7 +22,6 @@ import {
   Area,
   AreaChart,
   CartesianGrid,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
@@ -267,108 +266,108 @@ const LinearGraphWidget = ({
             {!loading && (
               <Fragment>
                 <Box className={zoomActivated ? "zoomChartCont" : "chartCont"}>
-                  <ResponsiveContainer width="99%">
-                    <AreaChart
-                      data={data}
-                      margin={{
-                        top: 5,
-                        right: 20,
-                        left: hideYAxis ? 20 : 5,
-                        bottom: 0,
-                      }}
-                    >
-                      {areaWidget && (
-                        <defs>
-                          <linearGradient
-                            id="colorUv"
-                            x1="0"
-                            y1="0"
-                            x2="0"
-                            y2="1"
-                          >
-                            <stop
-                              offset="0%"
-                              stopColor="#2781B0"
-                              stopOpacity={1}
-                            />
-                            <stop
-                              offset="100%"
-                              stopColor="#ffffff"
-                              stopOpacity={0}
-                            />
+                  <AreaChart
+                    responsive
+                    width="99%"
+                    data={data}
+                    margin={{
+                      top: 5,
+                      right: 20,
+                      left: hideYAxis ? 20 : 5,
+                      bottom: 0,
+                    }}
+                  >
+                    {areaWidget && (
+                      <defs>
+                        <linearGradient
+                          id="colorUv"
+                          x1="0"
+                          y1="0"
+                          x2="0"
+                          y2="1"
+                        >
+                          <stop
+                            offset="0%"
+                            stopColor="#2781B0"
+                            stopOpacity={1}
+                          />
+                          <stop
+                            offset="100%"
+                            stopColor="#ffffff"
+                            stopOpacity={0}
+                          />
 
-                            <stop
-                              offset="95%"
-                              stopColor="#ffffff"
-                              stopOpacity={0.8}
-                            />
-                          </linearGradient>
-                        </defs>
-                      )}
-                      <CartesianGrid
-                        strokeDasharray={areaWidget ? "2 2" : "5 5"}
-                        strokeWidth={1}
-                        strokeOpacity={1}
-                        stroke={"#eee0e0"}
-                        vertical={!areaWidget}
-                      />
-                      <XAxis
-                        dataKey="name"
-                        tickFormatter={(value: any) =>
-                          xAxisFormatter(value, dspLongDate, true)
-                        }
-                        interval={intervalCount}
-                        tick={{
-                          fontSize: "68%",
-                          fontWeight: "normal",
-                          color: "#404143",
-                        }}
-                        tickCount={10}
-                        stroke={"#082045"}
-                      />
-                      <YAxis
-                        type={"number"}
-                        domain={[0, dataMax * 1.1]}
-                        hide={hideYAxis}
-                        tickFormatter={(value: any) => yAxisFormatter(value)}
-                        tick={{
-                          fontSize: "68%",
-                          fontWeight: "normal",
-                          color: "#404143",
-                        }}
-                        stroke={"#082045"}
-                      />
-                      {linearConfiguration.map((section, index) => {
-                        return (
-                          <Area
-                            key={`area-${section.dataKey}-${index.toString()}`}
-                            type="monotone"
-                            dataKey={section.dataKey}
-                            isAnimationActive={false}
-                            stroke={!areaWidget ? section.lineColor : "#D7E5F8"}
-                            fill={
-                              areaWidget ? "url(#colorUv)" : section.fillColor
-                            }
-                            fillOpacity={areaWidget ? 0.65 : 0}
-                            strokeWidth={!areaWidget ? 3 : 0}
-                            strokeLinecap={"round"}
-                            dot={areaWidget ? <CustomizedDot /> : false}
+                          <stop
+                            offset="95%"
+                            stopColor="#ffffff"
+                            stopOpacity={0.8}
                           />
-                        );
-                      })}
-                      <Tooltip
-                        content={
-                          <LineChartTooltip
-                            linearConfiguration={linearConfiguration}
-                            yAxisFormatter={yAxisFormatter}
-                          />
-                        }
-                        wrapperStyle={{
-                          zIndex: 5000,
-                        }}
-                      />
-                    </AreaChart>
-                  </ResponsiveContainer>
+                        </linearGradient>
+                      </defs>
+                    )}
+                    <CartesianGrid
+                      strokeDasharray={areaWidget ? "2 2" : "5 5"}
+                      strokeWidth={1}
+                      strokeOpacity={1}
+                      stroke={"#eee0e0"}
+                      vertical={!areaWidget}
+                    />
+                    <XAxis
+                      dataKey="name"
+                      tickFormatter={(value: any) =>
+                        xAxisFormatter(value, dspLongDate, true)
+                      }
+                      interval={intervalCount}
+                      tick={{
+                        fontSize: "68%",
+                        fontWeight: "normal",
+                        color: "#404143",
+                      }}
+                      tickCount={10}
+                      stroke={"#082045"}
+                    />
+                    <YAxis
+                      type={"number"}
+                      domain={[0, dataMax * 1.1]}
+                      hide={hideYAxis}
+                      tickFormatter={(value: any) => yAxisFormatter(value)}
+                      tick={{
+                        fontSize: "68%",
+                        fontWeight: "normal",
+                        color: "#404143",
+                      }}
+                      stroke={"#082045"}
+                    />
+                    {linearConfiguration.map((section, index) => {
+                      return (
+                        <Area
+                          key={`area-${section.dataKey}-${index.toString()}`}
+                          type="monotone"
+                          dataKey={section.dataKey}
+                          isAnimationActive={false}
+                          stroke={!areaWidget ? section.lineColor : "#D7E5F8"}
+                          fill={
+                            areaWidget ? "url(#colorUv)" : section.fillColor
+                          }
+                          fillOpacity={areaWidget ? 0.65 : 0}
+                          strokeWidth={!areaWidget ? 3 : 0}
+                          strokeLinecap={"round"}
+                          dot={areaWidget ? <CustomizedDot /> : false}
+                        />
+                      );
+                    })}
+                    <Tooltip
+                      content={
+                        <LineChartTooltip
+                          linearConfiguration={linearConfiguration}
+                          yAxisFormatter={yAxisFormatter}
+                        />
+                      }
+                      wrapperStyle={{
+                        zIndex: 5000,
+                      }}
+                    />
+                  </AreaChart>
                 </Box>
                 {!areaWidget && (
                   <Fragment>
