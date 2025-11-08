@@ -3787,17 +3787,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/hoist-non-react-statics@npm:*":
-  version: 3.3.7
-  resolution: "@types/hoist-non-react-statics@npm:3.3.7"
-  dependencies:
-    hoist-non-react-statics: "npm:^3.3.0"
-  peerDependencies:
-    "@types/react": "*"
-  checksum: 10c0/ed8f4e88338f7d021d0f956adf6089d2a12b2e254a03c05292324f2e986d2376eb9efdb8a4f04596823e8fca88c9d06361d20dab4a2a00dc935fb36ac911de55
-  languageName: node
-  linkType: hard
-
 "@types/hoist-non-react-statics@npm:^3.3.0, @types/hoist-non-react-statics@npm:^3.3.1":
   version: 3.3.6
   resolution: "@types/hoist-non-react-statics@npm:3.3.6"
@@ -4181,17 +4170,6 @@ __metadata:
   version: 2.0.3
   resolution: "@types/stack-utils@npm:2.0.3"
   checksum: 10c0/1f4658385ae936330581bcb8aa3a066df03867d90281cdf89cc356d404bd6579be0f11902304e1f775d92df22c6dd761d4451c804b0a4fba973e06211e9bd77c
-  languageName: node
-  linkType: hard
-
-"@types/styled-components@npm:^5.1.34":
-  version: 5.1.34
-  resolution: "@types/styled-components@npm:5.1.34"
-  dependencies:
-    "@types/hoist-non-react-statics": "npm:*"
-    "@types/react": "npm:*"
-    csstype: "npm:^3.0.2"
-  checksum: 10c0/5bce93ea2c6161fc45daaf863eefdc20672e839ae486597c40b95e7978e249c160c1bc9706f56cb5152a7ef63cf485d15a9502889169ef945281f511e4b2d5a0
   languageName: node
   linkType: hard
 
@@ -12214,17 +12192,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mds@https://github.com/georgmangold/mds.git#v1.1.5.3":
-  version: 1.1.5.2
-  resolution: "mds@https://github.com/georgmangold/mds.git#commit=8f58cba654bb80b3b86c27c34f27142800f6c86c"
+"mds@https://github.com/georgmangold/mds.git#v1.1.5.4":
+  version: 1.1.5.4
+  resolution: "mds@https://github.com/georgmangold/mds.git#commit=430d04aa0242362d77bf6d1377ef4b21291d5616"
   dependencies:
-    "@types/styled-components": "npm:^5.1.34"
     "@uiw/react-textarea-code-editor": "npm:^3.1.1"
     luxon: "npm:^3.7.1"
     react-calendar: "npm:^6.0.0"
     react-virtualized: "npm:^9.22.6"
     styled-components: "npm:^6.1.19"
-  checksum: 10c0/2c36fd2f981e5a143c00551703c2f4123a626ba05b21799f34867de3bfcc9fcaef479ca7eecc017dbbd42dbde7333a179918aaa426d64998ba4b45fbcbbe47c1
+  checksum: 10c0/4d669cf9bc68180d4abe6810c1368e17c0016a8d9292e05d4d186deb61284de3bf4221fbdb54966c373d39869a30b6dae61fe90c7d2aa4dd95dd8a94ae934d4e
   languageName: node
   linkType: hard
 
@@ -18802,7 +18779,7 @@ __metadata:
     local-storage-fallback: "npm:^5.0.0"
     lodash: "npm:^4.17.21"
     luxon: "npm:^3.7.2"
-    mds: "https://github.com/georgmangold/mds.git#v1.1.5.3"
+    mds: "https://github.com/georgmangold/mds.git#v1.1.5.4"
     minio: "npm:^8.0.6"
     nyc: "npm:^17.1.0"
     prettier: "npm:3.6.2"
