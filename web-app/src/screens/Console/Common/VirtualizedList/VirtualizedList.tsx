@@ -14,10 +14,9 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import React, { Fragment, ReactElement } from "react";
-import { FixedSizeList as List } from "react-window";
-import InfiniteLoader from "react-window-infinite-loader";
-import { AutoSizer } from "react-virtualized";
+import React, { Fragment, ReactElement, useCallback } from "react";
+import { List } from "react-window";
+import { useInfiniteLoader } from "react-window-infinite-loader";
 
 interface IVirtualizedList {
   rowRenderFunction: (index: number) => ReactElement | null;
@@ -34,49 +33,40 @@ const VirtualizedList = ({
   totalItems,
   defaultHeight,
 }: IVirtualizedList) => {
-  const isItemLoaded = (index: any) => !!itemStatusMap[index];
+  let rowCount = totalItems;
+  const isRowLoaded = (index: number) => !!itemStatusMap[index];
 
-  const loadMoreItems = (startIndex: number, stopIndex: number) => {
+  const loadMoreRows = useCallback((startIndex: number, stopIndex: number) => {
     for (let index = startIndex; index <= stopIndex; index++) {
       itemStatusMap[index] = LOADING;
     }
-
     for (let index = startIndex; index <= stopIndex; index++) {
       itemStatusMap[index] = LOADED;
     }
-  };
+    return new Promise<void>((resolve) => () => {
+      resolve();
+    });
+  }, []);
 
   const RenderItemLine = ({ index, style }: any) => {
     return <div style={style}>{rowRenderFunction(index)}</div>;
   };
 
+  const onRowsRendered = useInfiniteLoader({
+    isRowLoaded,
+    loadMoreRows,
+    rowCount,
+  });
+
   return (
     <Fragment>
-      <InfiniteLoader
-        isItemLoaded={isItemLoaded}
-        loadMoreItems={loadMoreItems}
-        itemCount={totalItems}
-      >
-        {({ onItemsRendered, ref }) => (
-          // @ts-ignore
-          <AutoSizer>
-            {({ width, height }) => {
-              return (
-                <List
-                  itemSize={defaultHeight || 220}
-                  height={height}
-                  itemCount={totalItems}
-                  width={width}
-                  ref={ref}
-                  onItemsRendered={onItemsRendered}
-                >
-                  {RenderItemLine}
-                </List>
-              );
-            }}
-          </AutoSizer>
-        )}
-      </InfiniteLoader>
+      <List
+        rowHeight={defaultHeight || 220}
+        rowCount={rowCount}
+        onRowsRendered={onRowsRendered}
+        rowComponent={RenderItemLine}
+        rowProps={{}}
+      />
     </Fragment>
   );
 };

@@ -4066,34 +4066,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-window-infinite-loader@npm:^1.0.9":
-  version: 1.0.9
-  resolution: "@types/react-window-infinite-loader@npm:1.0.9"
-  dependencies:
-    "@types/react": "npm:*"
-    "@types/react-window": "npm:*"
-  checksum: 10c0/d4f0b1c36cbca7d01c50740c942275f3e6dadb13b0aa563c266e8ecdfbaa338fdb623cc59635fcbb7e37938dc295cb6d2949e9f9aff6098faf2089d2e3752da6
-  languageName: node
-  linkType: hard
-
-"@types/react-window@npm:*":
-  version: 1.8.8
-  resolution: "@types/react-window@npm:1.8.8"
-  dependencies:
-    "@types/react": "npm:*"
-  checksum: 10c0/2170a3957752603e8b994840c5d31b72ddf94c427c0f42b0175b343cc54f50fe66161d8871e11786ec7a59906bd33861945579a3a8f745455a3744268ec1069f
-  languageName: node
-  linkType: hard
-
-"@types/react-window@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "@types/react-window@npm:2.0.0"
-  dependencies:
-    react-window: "npm:*"
-  checksum: 10c0/4de05bf54c3947a68878f1ddcc019db27811d2390aae2e4eb1ab83bff134d6a2f20318555e06b891234df946528470d7c01e43dff759209ec75c54cbda034acf
-  languageName: node
-  linkType: hard
-
 "@types/react@npm:*, @types/react@npm:19.1.8":
   version: 19.1.8
   resolution: "@types/react@npm:19.1.8"
@@ -15492,17 +15464,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-window-infinite-loader@npm:^1.0.10":
-  version: 1.0.10
-  resolution: "react-window-infinite-loader@npm:1.0.10"
+"react-window-infinite-loader@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "react-window-infinite-loader@npm:2.0.0"
   peerDependencies:
-    react: ^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0 || ^19.0.0
-    react-dom: ^15.3.0 || ^16.0.0-alpha || ^17.0.0 || ^18.0.0 || ^19.0.0
-  checksum: 10c0/26283f0c4ac347d355948d54fba8629935563560f4d114ee701555a7d6251f80271edbcfa994bcc16f15f56637141c503963662f5cdbe51fad946793d2645a76
+    react: ^18.0.0 || ^19.0.0
+    react-dom: ^18.0.0 || ^19.0.0
+  checksum: 10c0/db50ef6febe91a3ef6a11b0dc3b682aa2721591dd42772229de9955b6c0492599b6bfe2592ec9f03986ab7b7e28627d36f8f4fd39f4fe724a9d84abd78b8b98f
   languageName: node
   linkType: hard
 
-"react-window@npm:*, react-window@npm:^2.2.3":
+"react-window@npm:^2.2.3":
   version: 2.2.3
   resolution: "react-window@npm:2.2.3"
   peerDependencies:
@@ -18764,8 +18736,6 @@ __metadata:
     "@types/react-dom": "npm:18.3.7"
     "@types/react-redux": "npm:^7.1.34"
     "@types/react-virtualized": "npm:^9.22.3"
-    "@types/react-window": "npm:^2.0.0"
-    "@types/react-window-infinite-loader": "npm:^1.0.9"
     "@types/recharts": "npm:^1.8.29"
     "@types/superagent": "npm:^8.1.9"
     "@types/webpack-env": "npm:^1.18.8"
@@ -18797,7 +18767,7 @@ __metadata:
     react-use-websocket: "npm:^4.13.0"
     react-virtualized: "npm:^9.22.6"
     react-window: "npm:^2.2.3"
-    react-window-infinite-loader: "npm:^1.0.10"
+    react-window-infinite-loader: "npm:^2.0.0"
     recharts: "npm:^3.3.0"
     styled-components: "npm:6.1.19"
     superagent: "npm:^10.2.3"
