@@ -172,6 +172,7 @@ jobs:
     name: Test Build latest MinIO with Console
     needs:
       - swagger-codegen
+      - ui-assets
     runs-on: [ubuntu-latest]
     strategy:
       matrix:
@@ -205,15 +206,16 @@ jobs:
         with:
           go-version: ${{ matrix.go-version }}
         id: go-minio
+      - uses: actions/cache@v4
+        id: assets-cache
+        name: Assets Cache
+        with:
+          path: |
+            ./web-app/build/
+          key: ${{ runner.os }}-assets-${{ github.run_id }}
       - name: Build on ${{ matrix.os }}
         if: steps.minio-latest-cache.outputs.cache-hit != 'true'
         run: |
-          cd $GITHUB_WORKSPACE;
-          echo "Create Console Frontend Webui Assets"
-          cd $GITHUB_WORKSPACE/web-app;
-          make yarn-dep
-          make build-static-release
-
           echo "Create minio binary";
           cd $GITHUB_WORKSPACE/minio_repository;
 
