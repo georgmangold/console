@@ -18,7 +18,15 @@ import React, { Fragment, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Box, breakPoints, Grid, Loader } from "mds";
 import { useSelector } from "react-redux";
-import { Bar, BarChart, Cell, Tooltip, XAxis, YAxis } from "recharts";
+import {
+  Bar,
+  BarChart,
+  Cell,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 import { IBarChartConfiguration } from "./types";
 import { widgetCommon } from "../../../Common/FormComponents/common/styleLibrary";
 import { IDashboardPanel } from "../types";
@@ -213,61 +221,61 @@ const BarChartWidget = ({
             ref={componentRef as React.RefObject<HTMLDivElement>}
             className={zoomActivated ? "zoomChartCont" : "contentContainer"}
           >
-            <BarChart
-              responsive
-              width="99%"
-              data={data as object[]}
-              layout={"vertical"}
-              barCategoryGap={1}
-            >
-              <XAxis type="number" hide />
-              <YAxis
-                dataKey="name"
-                type="category"
-                interval={0}
-                tick={<CustomizedAxisTick />}
-                tickLine={false}
-                axisLine={false}
-                width={150}
-                hide={!biggerThanMd}
-                style={{
-                  fontSize: "12px",
-                  fontWeight: 100,
-                }}
-              />
-              {barChartConfiguration.map((bar) => (
-                <Bar
-                  key={`bar-${bar.dataKey}`}
-                  dataKey={bar.dataKey}
-                  fill={bar.color}
-                  background={bar.background}
-                  barSize={zoomActivated ? 25 : 12}
-                >
-                  {barChartConfiguration.length === 1 ? (
-                    <Fragment>
-                      {data.map((_: any, index: number) => (
-                        <Cell
-                          key={`chart-bar-${index.toString()}`}
-                          fill={
-                            index === greatestIndex
-                              ? bar.greatestColor
-                              : bar.color
-                          }
-                        />
-                      ))}
-                    </Fragment>
-                  ) : null}
-                </Bar>
-              ))}
-              <Tooltip
-                cursor={{ fill: "rgba(255, 255, 255, 0.3)" }}
-                content={
-                  <BarChartTooltip
-                    barChartConfiguration={barChartConfiguration}
-                  />
-                }
-              />
-            </BarChart>
+            <ResponsiveContainer width="99%">
+              <BarChart
+                data={data as object[]}
+                layout={"vertical"}
+                barCategoryGap={1}
+              >
+                <XAxis type="number" hide />
+                <YAxis
+                  dataKey="name"
+                  type="category"
+                  interval={0}
+                  tick={<CustomizedAxisTick />}
+                  tickLine={false}
+                  axisLine={false}
+                  width={150}
+                  hide={!biggerThanMd}
+                  style={{
+                    fontSize: "12px",
+                    fontWeight: 100,
+                  }}
+                />
+                {barChartConfiguration.map((bar) => (
+                  <Bar
+                    key={`bar-${bar.dataKey}`}
+                    dataKey={bar.dataKey}
+                    fill={bar.color}
+                    background={bar.background}
+                    barSize={zoomActivated ? 25 : 12}
+                  >
+                    {barChartConfiguration.length === 1 ? (
+                      <Fragment>
+                        {data.map((_: any, index: number) => (
+                          <Cell
+                            key={`chart-bar-${index.toString()}`}
+                            fill={
+                              index === greatestIndex
+                                ? bar.greatestColor
+                                : bar.color
+                            }
+                          />
+                        ))}
+                      </Fragment>
+                    ) : null}
+                  </Bar>
+                ))}
+                <Tooltip
+                  cursor={{ fill: "rgba(255, 255, 255, 0.3)" }}
+                  content={
+                    <BarChartTooltip
+                      barChartConfiguration={barChartConfiguration}
+                    />
+                  }
+                />
+              </BarChart>
+            </ResponsiveContainer>
           </div>
         )}
       </Box>
