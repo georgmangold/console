@@ -267,7 +267,10 @@ const LinearGraphWidget = ({
             {!loading && (
               <Fragment>
                 <Box className={zoomActivated ? "zoomChartCont" : "chartCont"}>
-                  <ResponsiveContainer width="99%">
+                  <ResponsiveContainer
+                    width="99%"
+                    initialDimension={{ width: 820, height: 140 }}
+                  >
                     <AreaChart
                       data={data}
                       margin={{

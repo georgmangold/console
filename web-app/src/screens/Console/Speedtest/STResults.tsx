@@ -256,7 +256,10 @@ const STResults = ({ results, start }: ISTResults) => {
           </Grid>
         </Grid>
         <Grid item xs={12} md={6} lg={6}>
-          <ResponsiveContainer width="99%">
+          <ResponsiveContainer
+            width="99%"
+            initialDimension={{ width: 784, height: 161 }}
+          >
             <AreaChart data={clnMetrics}>
               <defs>
                 <linearGradient id="colorPut" x1="0" y1="0" x2="0" y2="1">

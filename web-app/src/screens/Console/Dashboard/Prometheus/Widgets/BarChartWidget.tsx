@@ -221,7 +221,10 @@ const BarChartWidget = ({
             ref={componentRef as React.RefObject<HTMLDivElement>}
             className={zoomActivated ? "zoomChartCont" : "contentContainer"}
           >
-            <ResponsiveContainer width="99%">
+            <ResponsiveContainer
+              width="99%"
+              initialDimension={{ width: 820, height: 140 }}
+            >
               <BarChart
                 data={data as object[]}
                 layout={"vertical"}
