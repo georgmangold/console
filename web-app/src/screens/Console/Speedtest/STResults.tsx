@@ -30,7 +30,7 @@ import {
 } from "mds";
 import { IndvServerMetric, SpeedTestResponse, STServer } from "./types";
 import { calculateBytes, prettyNumber } from "../../../common/utils";
-import { Area, AreaChart, CartesianGrid } from "recharts";
+import { Area, AreaChart, CartesianGrid, ResponsiveContainer } from "recharts";
 import { cleanMetrics } from "./utils";
 import CodeMirrorWrapper from "../Common/FormComponents/CodeMirrorWrapper/CodeMirrorWrapper";
 import SpeedTestUnit from "./SpeedTestUnit";
@@ -256,45 +256,50 @@ const STResults = ({ results, start }: ISTResults) => {
           </Grid>
         </Grid>
         <Grid item xs={12} md={6} lg={6}>
-          <AreaChart responsive width="99%" data={clnMetrics}>
-            <defs>
-              <linearGradient id="colorPut" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#2781B0" stopOpacity={0.9} />
-                <stop offset="95%" stopColor="#fff" stopOpacity={0} />
-              </linearGradient>
-              <linearGradient id="colorGet" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#4CCB92" stopOpacity={0.9} />
-                <stop offset="95%" stopColor="#fff" stopOpacity={0} />
-              </linearGradient>
-            </defs>
+          <ResponsiveContainer
+            width="99%"
+            initialDimension={{ width: 784, height: 161 }}
+          >
+            <AreaChart data={clnMetrics}>
+              <defs>
+                <linearGradient id="colorPut" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#2781B0" stopOpacity={0.9} />
+                  <stop offset="95%" stopColor="#fff" stopOpacity={0} />
+                </linearGradient>
+                <linearGradient id="colorGet" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#4CCB92" stopOpacity={0.9} />
+                  <stop offset="95%" stopColor="#fff" stopOpacity={0} />
+                </linearGradient>
+              </defs>
 
-            <CartesianGrid
-              strokeDasharray={"0 0"}
-              strokeWidth={1}
-              strokeOpacity={0.5}
-              stroke={"#F1F1F1"}
-              vertical={false}
-            />
+              <CartesianGrid
+                strokeDasharray={"0 0"}
+                strokeWidth={1}
+                strokeOpacity={0.5}
+                stroke={"#F1F1F1"}
+                vertical={false}
+              />
 
-            <Area
-              type="monotone"
-              dataKey={"get"}
-              stroke={"#4CCB92"}
-              fill={"url(#colorGet)"}
-              fillOpacity={0.3}
-              strokeWidth={2}
-              dot={false}
-            />
-            <Area
-              type="monotone"
-              dataKey={"put"}
-              stroke={"#2781B0"}
-              fill={"url(#colorPut)"}
-              fillOpacity={0.3}
-              strokeWidth={2}
-              dot={false}
-            />
-          </AreaChart>
+              <Area
+                type="monotone"
+                dataKey={"get"}
+                stroke={"#4CCB92"}
+                fill={"url(#colorGet)"}
+                fillOpacity={0.3}
+                strokeWidth={2}
+                dot={false}
+              />
+              <Area
+                type="monotone"
+                dataKey={"put"}
+                stroke={"#2781B0"}
+                fill={"url(#colorPut)"}
+                fillOpacity={0.3}
+                strokeWidth={2}
+                dot={false}
+              />
+            </AreaChart>
+          </ResponsiveContainer>
         </Grid>
       </Grid>
       <br />
