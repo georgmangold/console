@@ -139,7 +139,7 @@ export const panelsConfiguration: IDashboardPanel[] = [
     customStructure: [
       { originTag: "LESS_THAN_1024_B", displayTag: "Less than 1024B" },
       {
-        originTag: "BETWEEN_1024_B_AND_1_MB",
+        originTag: "BETWEEN_1024B_AND_1_MB",
         displayTag: "Between 1024B and 1MB",
       },
       {
