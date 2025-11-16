@@ -33,7 +33,7 @@
   },
   "scripts": {
     "start": "PORT=5005 react-scripts start",
-    "build": "react-scripts build",
+    "build": "npx genversion --esm --semi --double src/version.tsx && react-scripts build",
     "buildistanbulcoverage": "PORT=9090 USE_BABEL_PLUGIN_ISTANBUL=1 react-app-rewired build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -78,6 +78,7 @@
     "@types/webpack-env": "^1.18.8",
     "babel-plugin-istanbul": "^7.0.1",
     "customize-cra": "^1.0.0",
+    "genversion": "^3.2.0",
     "knip": "^5.69.1",
     "minio": "^8.0.6",
     "nyc": "^17.1.0",
