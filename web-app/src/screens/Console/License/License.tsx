@@ -17,6 +17,7 @@
 import React, { Fragment } from "react";
 import {
   AGPLV3DarkLogo,
+  ApplicationLogo,
   Box,
   Grid,
   HelpBox,
@@ -24,6 +25,7 @@ import {
   PageLayout,
 } from "mds";
 import PageHeaderWrapper from "../Common/PageHeaderWrapper/PageHeaderWrapper";
+import { version } from "version";
 
 const License = () => {
   return (
@@ -74,13 +76,54 @@ const License = () => {
                 color: "#2781B0",
                 fontWeight: 600,
               },
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <Box
               sx={{
+                marginTop: "30px",
+                marginBottom: "30px",
+                width: "350px",
+              }}
+            >
+              <ApplicationLogo applicationName="console" subVariant="AGPL" />
+            </Box>
+            <Box
+              sx={{
+                marginBottom: "30px",
+                fontSize: "30px",
+              }}
+            >
+              Version: v{version}
+            </Box>
+            <Box
+              sx={{
+                marginBottom: "10px",
+              }}
+            >
+              Source code:{" "}
+              <a
+                href="https://github.com/georgmangold/console"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://github.com/georgmangold/console
+              </a>
+            </Box>
+            <Box
+              sx={{
+                marginBottom: "20px",
+              }}
+            >
+              Console is licensed under the GNU Affero General Public License
+              (AGPL) Version 3.0.
+            </Box>
+            <Box
+              sx={{
                 display: "flex",
                 alignItems: "center",
-                marginBottom: "40px",
+                marginBottom: "20px",
                 justifyContent: "center",
                 "& .min-icon": {
                   fill: "blue",
@@ -91,17 +134,10 @@ const License = () => {
             >
               <AGPLV3DarkLogo />
             </Box>
+
             <Box
               sx={{
-                marginBottom: "27px",
-              }}
-            >
-              Console is licensed under the GNU Affero General Public License
-              (AGPL) Version 3.0.
-            </Box>
-            <Box
-              sx={{
-                paddingBottom: "23px",
+                paddingBottom: "30px",
               }}
             >
               For more information, please refer to the license at{" "}
