@@ -1,5 +1,35 @@
 # Changelog
 
+## Release v1.9.0
+
+Breaking Change:
+
+- ODIC: `CONSOLE_IDP_CALLBACK` and `MINIO_BROWSER_REDIRECT_URL` now expect the Console URL without `/oauth_callback` at the end
+
+Features:
+
+- Supports Prometheus basic auth
+- ReadOnly and disabled feature for CodeEditor, SpeedtestResult Json
+- Adds View to see Health Info Report Results as JSON Preview
+- New SSO URL `/sso` for auto redirect to OIDC Provider
+- Shows and option to load more than 20 versions
+- Login page shows an indicator that LDAP is enabled
+- Use Quota Size field instead of the deprecated Quota field
+- Console container now runs rootless as user 1000:1000
+- Show console package version on license page
+
+Bug Fix:
+
+- Some OIDC confussion around ROLE_POLICY vs. ROLE_ARN
+- Fix download option in file preview
+- Set goreleaser bindir for linux packages to /usr/local/bin
+- Fix tag retrieval in ObjectDetailPanel component
+- Fix metrics display for objects sizes between 1024B and 1MB
+
+Additional Changes:
+
+- Alot of dependencies updates
+
 ## Release v1.8.1
 
 Release focuses on debranding by dropping **MinIO®** from names and logos
