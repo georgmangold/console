@@ -102,7 +102,6 @@
     "jspdf": "^3.0.2",
     "@babel/runtime": "^7.26.10",
     "prebuilt-install": "^2.1.3",
-    "tar-fs": "^2.1.3",
     "form-data": "^4.0.4"
   },
   "overrides": {
@@ -111,6 +110,5 @@
     "tmp": "^0.2.4",
     "on-headers": "^1.0.2"
   },
-  "main": "index.js",
   "packageManager": "yarn@4.9.4"
 }

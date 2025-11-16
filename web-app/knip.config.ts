@@ -1,12 +1,12 @@
 import type { KnipConfig } from "knip";
 
 export default {
-  entry: ["src/**/{index,main}.{ts,tsx}", "e2e/**/*.ts", "test/**/*.ts"],
+  entry: ["src/**/{index,main}.{ts,tsx}", "e2e/**/*.ts", "tests/**/*.ts"],
   project: [
     "src/**/*.{ts,tsx}",
     "!src/api/**/*",
     "e2e/**/*.{ts,tsx}",
-    "test/**/*.ts",
+    "tests/**/*.ts",
   ],
   rules: {
     binaries: "error",

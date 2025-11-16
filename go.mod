@@ -1,6 +1,6 @@
 module github.com/minio/console
 
-go 1.24.9
+go 1.24.10
 
 replace github.com/olekukonko/tablewriter => github.com/olekukonko/tablewriter v0.0.5 // needed for github.com/minio/mc
 
