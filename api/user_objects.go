@@ -1032,6 +1032,10 @@ func getShareObjectURL(ctx context.Context, client MCClient, r *http.Request, ve
 		return nil, pErr.Cause
 	}
 
+	if !getConsoleUseProxyForSharedURL() {
+		return &minioURL, nil
+	}
+
 	requestURL := getRequestURLWithScheme(r)
 	encodedURL := base64.RawURLEncoding.EncodeToString([]byte(minioURL))
 
