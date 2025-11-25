@@ -1062,6 +1062,25 @@ func Test_shareObject(t *testing.T) {
 			wantError: nil,
 			expected:  "http://proxy-url.com:9012/console/subpath/api/v1/download-shared-object/aHR0cDovL3NvbWV1cmw",
 		},
+		{
+			test: "returns directly url with share link if use proxy for shared url env variable is off",
+			setEnvVars: func() {
+				t.Setenv(ConsoleUseProxyForSharedURL, "off")
+			},
+			args: args{
+				r: &http.Request{
+					TLS:  nil,
+					Host: "localhost:9090",
+				},
+				versionID: "2121434",
+				expires:   "30s",
+				shareFunc: func(_ context.Context, _ string, _ time.Duration) (string, *probe.Error) {
+					return "http://someurl", nil
+				},
+			},
+			wantError: nil,
+			expected:  "http://someurl",
+		},
 	}
 
 	for _, tt := range tests {
