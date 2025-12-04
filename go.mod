@@ -19,7 +19,7 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.5.2
 	github.com/google/uuid v1.6.0
 	github.com/jessevdk/go-flags v1.6.1
-	github.com/klauspost/compress v1.18.1
+	github.com/klauspost/compress v1.18.2
 	github.com/minio/cli v1.24.2
 	github.com/minio/highwayhash v1.0.3
 	github.com/minio/kes v0.24.0
