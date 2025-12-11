@@ -9,7 +9,7 @@ require (
 	github.com/cheggaaa/pb/v3 v3.1.7
 	github.com/dustin/go-humanize v1.0.1
 	github.com/fatih/color v1.18.0
-	github.com/go-openapi/errors v0.22.4
+	github.com/go-openapi/errors v0.22.5
 	github.com/go-openapi/loads v0.23.2
 	github.com/go-openapi/runtime v0.29.2
 	github.com/go-openapi/spec v0.22.1
