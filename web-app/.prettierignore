@@ -2,3 +2,4 @@ build
 coverage
 .nyc_output
 public/scripts/pdf.worker.min.mjs
+/src/api/consoleApi.ts
