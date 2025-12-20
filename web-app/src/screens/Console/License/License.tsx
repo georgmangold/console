@@ -48,8 +48,8 @@ const License = () => {
                     MinIO Console
                   </a>{" "}
                   for my own personal educational purposes, and therefore it
-                  incorporates MinIO® source code. You may also want to look
-                  for other maintained{" "}
+                  incorporates MinIO® source code. You may also want to look for
+                  other maintained{" "}
                   <a
                     href="https://github.com/minio/object-browser/forks"
                     target="_blank"
