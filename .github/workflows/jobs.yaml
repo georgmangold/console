@@ -240,7 +240,7 @@ jobs:
             ./minio
           key: ${{ runner.os }}-minio-latest-${{  github.run_id  }}
 
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         # skip minio binary upload
         if: false
         with:
@@ -1250,7 +1250,7 @@ jobs:
 
       # To save our all.out and all-coverage.html file into an artifact.
       # By default, GitHub stores build logs and artifacts for 90 days.
-      - uses: actions/upload-artifact@v5
+      - uses: actions/upload-artifact@v6
         with:
           name: coverage-artifact
           path: |
