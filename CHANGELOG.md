@@ -1,5 +1,12 @@
 # Changelog
 
+## Release v1.9.1
+
+Bug Fix:
+
+- Updated project dependencies
+- Updated go version from 1.24.10 to 1.24.11 to fix Security vulnerability
+
 ## Release v1.9.0
 
 Breaking Change:
