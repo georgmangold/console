@@ -85,7 +85,7 @@ jobs:
           node-version: ${{ env.NVMRC }}
           cache: "yarn"
           cache-dependency-path: web-app/yarn.lock
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: assets-cache
         name: Assets Cache
         with:
@@ -206,7 +206,7 @@ jobs:
         with:
           go-version: ${{ matrix.go-version }}
         id: go-minio
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: assets-cache
         name: Assets Cache
         with:
@@ -230,7 +230,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           cp $GITHUB_WORKSPACE/minio_repository/minio .
 
-      - uses: actions/cache/save@v4
+      - uses: actions/cache/save@v5
         # skip minio binary cache
         if: false
         id: minio-latest-cache
@@ -269,13 +269,13 @@ jobs:
         with:
           go-version: ${{ matrix.go-version }}
         id: go
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
             ./console
           key: ${{ runner.os }}-binary-${{ github.run_id }}
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: assets-cache
         name: Assets Cache
         with:
@@ -318,7 +318,7 @@ jobs:
         run: |
           yarn add minio
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
@@ -380,7 +380,7 @@ jobs:
         run: |
           yarn add minio
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
@@ -440,7 +440,7 @@ jobs:
         continue-on-error: false
         run: |
           yarn add minio
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
@@ -500,7 +500,7 @@ jobs:
         continue-on-error: false
         run: |
           yarn add minio
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
@@ -560,7 +560,7 @@ jobs:
         continue-on-error: false
         run: |
           yarn add minio
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
@@ -616,7 +616,7 @@ jobs:
         continue-on-error: false
         run: |
           yarn add minio
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
@@ -672,7 +672,7 @@ jobs:
         continue-on-error: false
         run: |
           yarn add minio
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
@@ -728,7 +728,7 @@ jobs:
         continue-on-error: false
         run: |
           yarn add minio
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
@@ -784,7 +784,7 @@ jobs:
         continue-on-error: false
         run: |
           yarn add minio
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
@@ -840,7 +840,7 @@ jobs:
         continue-on-error: false
         run: |
           yarn add minio
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
@@ -899,7 +899,7 @@ jobs:
         continue-on-error: false
         run: |
           yarn add minio
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
@@ -959,7 +959,7 @@ jobs:
         run: |
           make test-pkg
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: coverage-cache-pkg
         name: Coverage Cache Pkg
         with:
@@ -995,7 +995,7 @@ jobs:
         run: |
           make test
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: coverage-cache-api
         name: Coverage Cache API
         with:
@@ -1025,7 +1025,7 @@ jobs:
           go-version: ${{ matrix.go-version }}
         id: go
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache
         with:
           path: |
@@ -1046,7 +1046,7 @@ jobs:
 
           make test-integration MINIO_VERSION=$MINIO_VERSION TAG=$TAG;
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: coverage-cache
         name: Coverage Cache
         with:
@@ -1102,7 +1102,7 @@ jobs:
           echo $MINIO_VERSION;
 
           make test-replication MINIO_VERSION=$MINIO_VERSION;
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: coverage-cache-replication
         name: Coverage Cache Replication
         with:
@@ -1140,7 +1140,7 @@ jobs:
           echo $MINIO_VERSION;
 
           make test-sso-integration MINIO_VERSION=$MINIO_VERSION;
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: coverage-cache-sso
         name: Coverage Cache SSO
         with:
@@ -1175,7 +1175,7 @@ jobs:
           repository: wadey/gocovmerge
           path: gocovmerge
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: coverage-cache
         name: Coverage Cache
         with:
@@ -1183,7 +1183,7 @@ jobs:
             ./integration/coverage/
           key: ${{ runner.os }}-coverage-2-${{ github.run_id }}
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: coverage-cache-sso
         name: Coverage Cache SSO
         with:
@@ -1191,7 +1191,7 @@ jobs:
             ./sso-integration/coverage/
           key: ${{ runner.os }}-sso-coverage-2-${{ github.run_id }}
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: coverage-cache-replication
         name: Coverage Cache Replication
         with:
@@ -1199,7 +1199,7 @@ jobs:
             ./replication/coverage/
           key: ${{ runner.os }}-replication-coverage-2-${{ github.run_id }}
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: coverage-cache-api
         name: Coverage Cache API
         with:
@@ -1207,7 +1207,7 @@ jobs:
             ./api/coverage/
           key: ${{ runner.os }}-coverage-api-2-${{ github.run_id }}
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: coverage-cache-pkg
         name: Coverage Cache Pkg
         with:
@@ -1278,7 +1278,7 @@ jobs:
           node-version: ${{ env.NVMRC }}
           cache: "yarn"
           cache-dependency-path: web-app/yarn.lock
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: assets-cache-istanbul-coverage
         name: Assets Cache Istanbul Coverage
         with:
@@ -1317,13 +1317,13 @@ jobs:
         with:
           go-version: ${{ matrix.go-version }}
         id: go
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache Istanbul Coverage
         with:
           path: |
             ./console
           key: ${{ runner.os }}-binary-istanbul-coverage-${{ github.run_id }}
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         id: assets-cache-istanbul-coverage
         name: Assets Cache Istanbul Coverage
         with:
@@ -1506,7 +1506,7 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v5
         name: Console Binary Cache Istanbul Coverage
         with:
           path: |
