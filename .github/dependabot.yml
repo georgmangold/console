@@ -11,6 +11,14 @@ updates:
     schedule:
       interval: "weekly"
       day: "thursday"
+    groups:
+      go-minor-updates:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
 
   # npm
   - package-ecosystem: "npm"
@@ -19,6 +27,27 @@ updates:
       interval: "weekly"
       day: "thursday"
     open-pull-requests-limit: 15
+    groups:
+      react:
+        applies-to: version-updates
+        patterns:
+          - "react"
+          - "@types/react"
+          - "react-dom"
+          - "@types/react-dom"
+        update-types:
+          - "major"
+          - "minor"
+          - "patch"
+      redux:
+        applies-to: version-updates
+        patterns:
+          - "react-redux"
+          - "@reduxjs/toolkit"
+        update-types:
+          - "major"
+          - "minor"
+          - "patch"
 
   # GitHub Actions
   - package-ecosystem: "github-actions"
