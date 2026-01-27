@@ -15596,13 +15596,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-window@npm:^2.2.3":
-  version: 2.2.3
-  resolution: "react-window@npm:2.2.3"
+"react-window@npm:^2.2.5":
+  version: 2.2.5
+  resolution: "react-window@npm:2.2.5"
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
-  checksum: 10c0/7e97381b269560038c4c76c4ae17121d87efb628fce840fe382e73ae0e9816d4b68384a402340b0a08f9e4a47d8bd7328ae8502fd26b0d9399339a20e1c550be
+  checksum: 10c0/73d100253d2aa654b221f23bbd3c0438c865b6d0d6a03080c8417da19fd15bd37ae7aecf638a331f52a2037dc0cb7032400c1e71a7a5f74a4b67856136a66c3d
   languageName: node
   linkType: hard
 
@@ -18858,7 +18858,7 @@ __metadata:
     react-scripts: "npm:5.0.1"
     react-use-websocket: "npm:^4.13.0"
     react-virtualized: "npm:^9.22.6"
-    react-window: "npm:^2.2.3"
+    react-window: "npm:^2.2.5"
     react-window-infinite-loader: "npm:^2.0.0"
     recharts: "npm:2.15.4"
     styled-components: "npm:5.3.11"
