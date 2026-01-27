@@ -61,7 +61,7 @@
   },
   "proxy": "http://localhost:9090/",
   "devDependencies": {
-    "@babel/plugin-transform-private-property-in-object": "^7.27.1",
+    "@babel/plugin-transform-private-property-in-object": "^7.28.6",
     "@babel/runtime": "^7.28.6",
     "@playwright/test": "^1.57.0",
     "@types/jest": "^30.0.0",
