@@ -9,7 +9,7 @@ updates:
   - package-ecosystem: "gomod"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "thursday"
     groups:
       go-minor-updates:
@@ -24,7 +24,7 @@ updates:
   - package-ecosystem: "npm"
     directory: "/web-app/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "thursday"
     open-pull-requests-limit: 15
     groups:
@@ -53,6 +53,6 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
       day: "thursday"
 
