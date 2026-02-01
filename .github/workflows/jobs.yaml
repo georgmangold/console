@@ -21,6 +21,7 @@ concurrency:
 
 env:
   FIREFOX_VERSION: latest
+  TESTCAFE_VERSION: 3.7.4
 
 jobs:
   lint-job:
@@ -342,7 +343,7 @@ jobs:
           firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
-        run: npm install testcafe@3.7.2
+        run: npm install testcafe@${{ env.TESTCAFE_VERSION }}
 
       - name: Run TestCafe Tests
         run: npx testcafe "firefox:headless" web-app/tests/subpath-nginx/ -q --skip-js-errors -c 3
@@ -405,7 +406,7 @@ jobs:
           firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
-        run: npm install testcafe@3.7.2
+        run: npm install testcafe@${{ env.TESTCAFE_VERSION }}
 
       - name: Run TestCafe Tests
         run: npx testcafe "firefox:headless" web-app/tests/permissions-1/ -q --skip-js-errors -c 3
@@ -466,7 +467,7 @@ jobs:
           firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
-        run: npm install testcafe@3.7.2
+        run: npm install testcafe@${{ env.TESTCAFE_VERSION }}
 
       - name: Run TestCafe Tests
         run: npx testcafe "firefox:headless" web-app/tests/permissions-2/ -q --skip-js-errors -c 3
@@ -527,7 +528,7 @@ jobs:
           firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
-        run: npm install testcafe@3.7.2
+        run: npm install testcafe@${{ env.TESTCAFE_VERSION }}
 
       - name: Run TestCafe Tests
         run: npx testcafe "firefox:headless" web-app/tests/permissions-3/ -q --skip-js-errors -c 1
@@ -588,7 +589,7 @@ jobs:
           firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
-        run: npm install testcafe@3.7.2
+        run: npm install testcafe@${{ env.TESTCAFE_VERSION }}
 
       - name: Run TestCafe Tests
         timeout-minutes: 10
@@ -645,7 +646,7 @@ jobs:
           firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
-        run: npm install testcafe@3.7.2
+        run: npm install testcafe@${{ env.TESTCAFE_VERSION }}
 
       - name: Run TestCafe Tests
         timeout-minutes: 5
@@ -702,7 +703,7 @@ jobs:
           firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
-        run: npm install testcafe@3.7.2
+        run: npm install testcafe@${{ env.TESTCAFE_VERSION }}
 
       - name: Run TestCafe Tests
         timeout-minutes: 5
@@ -759,7 +760,7 @@ jobs:
           firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
-        run: npm install testcafe@3.7.2
+        run: npm install testcafe@${{ env.TESTCAFE_VERSION }}
 
       - name: Run TestCafe Tests
         timeout-minutes: 5
@@ -816,7 +817,7 @@ jobs:
           firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
-        run: npm install testcafe@3.7.2
+        run: npm install testcafe@${{ env.TESTCAFE_VERSION }}
 
       - name: Run TestCafe Tests
         timeout-minutes: 5
@@ -873,7 +874,7 @@ jobs:
           firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
-        run: npm install testcafe@3.7.2
+        run: npm install testcafe@${{ env.TESTCAFE_VERSION }}
 
       - name: Run TestCafe Tests
         run: npx testcafe "firefox:headless" web-app/tests/permissions-A/ --skip-js-errors -c 1
@@ -933,7 +934,7 @@ jobs:
           firefox-version: ${{ env.FIREFOX_VERSION }}
 
       - name: Install TestCafe
-        run: npm install testcafe@3.7.2
+        run: npm install testcafe@${{ env.TESTCAFE_VERSION }}
 
       - name: Run TestCafe Tests
         run: npx testcafe "firefox:headless" web-app/tests/permissions-B/ --skip-js-errors -c 3
