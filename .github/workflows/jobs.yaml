@@ -20,7 +20,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  FIREFOX_VERSION: 143.0.3
+  FIREFOX_VERSION: latest
 
 jobs:
   lint-job:
@@ -335,6 +335,7 @@ jobs:
           (CONSOLE_SUBPATH=/console/subpath ./console server ) & (make test-initialize-minio-nginx)
 
       - name: Setup firefox
+        if: false
         id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
@@ -397,6 +398,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Setup firefox
+        if: false
         id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
@@ -457,6 +459,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Setup firefox
+        if: false
         id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
@@ -517,6 +520,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Setup firefox
+        if: false
         id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
@@ -577,6 +581,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Setup firefox
+        if: false
         id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
@@ -633,6 +638,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Setup firefox
+        if: false
         id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
@@ -689,6 +695,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Setup firefox
+        if: false
         id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
@@ -745,6 +752,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Setup firefox
+        if: false
         id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
@@ -801,6 +809,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Setup firefox
+        if: false
         id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
@@ -857,6 +866,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Setup firefox
+        if: false
         id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
@@ -916,6 +926,7 @@ jobs:
           (./console server) & (make initialize-permissions)
 
       - name: Setup firefox
+        if: false
         id: setup-firefox
         uses: browser-actions/setup-firefox@v1
         with:
