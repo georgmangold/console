@@ -79,7 +79,7 @@
     "babel-plugin-istanbul": "^7.0.1",
     "customize-cra": "^1.0.0",
     "genversion": "^3.2.0",
-    "knip": "^5.82.1",
+    "knip": "^5.84.1",
     "minio": "^8.0.6",
     "nyc": "^17.1.0",
     "prettier": "3.8.1",

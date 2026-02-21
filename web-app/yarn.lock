@@ -11537,9 +11537,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"knip@npm:^5.82.1":
-  version: 5.82.1
-  resolution: "knip@npm:5.82.1"
+"knip@npm:^5.84.1":
+  version: 5.84.1
+  resolution: "knip@npm:5.84.1"
   dependencies:
     "@nodelib/fs.walk": "npm:^1.2.3"
     fast-glob: "npm:^3.3.3"
@@ -11559,7 +11559,7 @@ __metadata:
   bin:
     knip: bin/knip.js
     knip-bun: bin/knip-bun.js
-  checksum: 10c0/c3bfe898fe3103bb6a59ee2ba4297f05ea4d2db474571db89ae199ebbd74eafa5061d05b3bc2c75e4ec2322ba7ffee44493c76132d3d8991fae66ba742b9ccb4
+  checksum: 10c0/f4160689df565951be993d851934aa7879362dd9631ac8a4f0129c0fbad17c6bc12e2c0c187e64c42822ea4a98c84eee857147dba2d5744caf822a7e0223cbfd
   languageName: node
   linkType: hard
 
@@ -18641,7 +18641,7 @@ __metadata:
     genversion: "npm:^3.2.0"
     http-status-codes: "npm:^2.3.0"
     kbar: "npm:^0.1.0-beta.48"
-    knip: "npm:^5.82.1"
+    knip: "npm:^5.84.1"
     local-storage-fallback: "npm:^5.0.0"
     lodash: "npm:^4.17.23"
     luxon: "npm:^3.7.2"
