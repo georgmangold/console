@@ -86,7 +86,7 @@
     "react-app-rewire-hot-loader": "^2.0.1",
     "react-app-rewired": "^2.2.1",
     "react-scripts": "5.0.1",
-    "swagger-typescript-api": "13.2.16",
+    "swagger-typescript-api": "13.2.18",
     "testcafe": "3.7.4",
     "typescript": "^5.9.3"
   },
