@@ -48,6 +48,7 @@ import {
 import MenuWrapper from "./Menu/MenuWrapper";
 import LoadingComponent from "../../common/LoadingComponent";
 import ComponentsScreen from "./Common/ComponentsScreen";
+import AddBucketModal from "./Buckets/ListBuckets/AddBucket/AddBucketModal";
 
 const Trace = React.lazy(() => import("./Trace/Trace"));
 const Watch = React.lazy(() => import("./Watch/Watch"));
@@ -161,6 +162,9 @@ const Console = () => {
   );
   const loadingProgress = useSelector(
     (state: AppState) => state.system.loadingProgress,
+  );
+  const createBucketOpen = useSelector(
+    (state: AppState) => state.addBucket.addBucketOpen,
   );
 
   const [openSnackbar, setOpenSnackbar] = useState<boolean>(false);
@@ -421,9 +425,7 @@ const Console = () => {
     },
   ];
 
-  let routes = consoleAdminRoutes;
-
-  const allowedRoutes = routes.filter((route: any) =>
+  const allowedRoutes = consoleAdminRoutes.filter((route: any) =>
     obOnly
       ? route.path.includes("browser")
       : (route.forceDisplay ||
@@ -521,6 +523,7 @@ const Console = () => {
                 sx={{ width: "100%", position: "absolute", top: 0, left: 0 }}
               />
             )}
+            {createBucketOpen && <AddBucketModal />}
             <MainError />
             <Snackbar
               onClose={closeSnackBar}
