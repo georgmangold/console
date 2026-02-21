@@ -63,7 +63,7 @@
   "devDependencies": {
     "@babel/plugin-transform-private-property-in-object": "^7.28.6",
     "@babel/runtime": "^7.28.6",
-    "@playwright/test": "^1.58.1",
+    "@playwright/test": "^1.58.2",
     "@types/jest": "^30.0.0",
     "@types/lodash": "^4.17.23",
     "@types/luxon": "^3.7.1",
