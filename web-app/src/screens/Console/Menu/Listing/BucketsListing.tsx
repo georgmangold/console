@@ -118,7 +118,7 @@ const ListBuckets = () => {
                   maxHeight: sidebarOpen ? "40vh" : "60vh",
                   "div[role=list]": {
                     "&::-webkit-scrollbar": {
-                      width:  sidebarOpen ? "5px" : "2px",
+                      width: sidebarOpen ? "5px" : "2px",
                     },
                     "&::-webkit-scrollbar-thumb": {
                       backgroundColor: get(theme, "boxBackground", "#2781B0"),
@@ -126,7 +126,7 @@ const ListBuckets = () => {
                     "&::-webkit-scrollbar-thumb:hover": {
                       backgroundColor: get(theme, "borderColor", "#fff"),
                       cursor: "all-scroll",
-                    }
+                    },
                   },
                 }}
               >

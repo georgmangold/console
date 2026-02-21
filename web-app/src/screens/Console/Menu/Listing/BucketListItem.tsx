@@ -32,9 +32,9 @@ const BucketListItem = ({
 }: IBucketListItem) => {
   const navigate = useNavigate();
 
-  const path = `/browser/${bucket.name}`
+  const path = `/browser/${bucket.name}`;
   let selected = false;
-  
+
   if (currentPath && path) {
     if (currentPath.endsWith(path)) {
       selected = true;
