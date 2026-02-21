@@ -24,7 +24,7 @@
     "react-router-dom": "6.30.3",
     "react-use-websocket": "^4.13.0",
     "react-virtualized": "^9.22.6",
-    "react-window": "^2.2.6",
+    "react-window": "^2.2.7",
     "react-window-infinite-loader": "^2.0.1",
     "recharts": "2.15.4",
     "styled-components": "5.3.11",
