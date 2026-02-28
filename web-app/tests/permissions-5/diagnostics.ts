@@ -16,12 +16,18 @@
 
 import * as roles from "../utils/roles";
 import * as elements from "../utils/elements";
-import { diagnosticsElement } from "../utils/elements-menu";
+import { diagnosticsElement, toolsElement } from "../utils/elements-menu";
 
 fixture("For user with Diagnostics permissions").page("http://localhost:9090");
 
 test("Diagnostics link exists in Tools page", async (t) => {
-  await t.useRole(roles.diagnostics).expect(diagnosticsElement.exists).ok();
+  await t
+    .useRole(roles.diagnostics)
+    .expect(toolsElement.exists)
+    .ok()
+    .click(toolsElement)
+    .expect(diagnosticsElement.exists)
+    .ok();
 });
 
 test("Diagnostics page can be opened", async (t) => {

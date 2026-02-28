@@ -26,16 +26,18 @@ test.beforeEach(async ({ page }) => {
 });
 
 test("create a new bucket", async ({ page }) => {
-  await page.getByRole("button", { name: "Buckets" }).click();
-  await page.getByRole("button", { name: "Create Bucket" }).click();
+  await page.locator(`#buckets`).click();
+  await page.locator(`#create-bucket`).click();
   await page.getByLabel("Bucket Name*").click();
 
   const bucketName = `new-bucket-${generateUUID()}`;
 
   await page.getByLabel("Bucket Name*").fill(bucketName);
-  await page.getByRole("button", { name: "Create Bucket" }).click();
+  await page.locator(`#create-bucket`).click();
   await page.waitForTimeout(2000);
+  await page.locator(`#buckets`).click();
   await page.locator("#refresh-buckets").click();
+  await page.waitForTimeout(2000);
   await page.getByPlaceholder("Search Buckets").fill(bucketName);
 
   await expect(page.locator(`#manageBucket-${bucketName}`)).toBeTruthy();
@@ -49,8 +51,8 @@ test("create a new bucket", async ({ page }) => {
 });
 
 test("invalid bucket name", async ({ page }) => {
-  await page.getByRole("button", { name: "Buckets" }).click();
-  await page.getByRole("button", { name: "Create Bucket" }).click();
+  await page.locator(`#buckets`).click();
+  await page.locator(`#create-bucket`).click();
   await page.getByLabel("Bucket Name*").click();
   await page.getByLabel("Bucket Name*").fill("invalid name");
   await page.getByRole("button", { name: "View Bucket Naming Rules" }).click();

@@ -1,6 +1,7 @@
 # Playwright Data
 web-app/storage/
 web-app/playwright/.auth/admin.json
+web-app/test-results/
 
 # Report from Playwright
 web-app/playwright-report/

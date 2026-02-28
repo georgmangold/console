@@ -17,7 +17,7 @@
 import { Role, Selector } from "testcafe";
 import { readFileSync } from "fs";
 import { IAM_PAGES } from "../../src/common/SecureComponent/permissions";
-import { inspectElement, monitoringElement } from "../utils/elements-menu";
+import { inspectElement, toolsElement } from "../utils/elements-menu";
 
 const data = readFileSync(__dirname + "/../constants/timestamp.txt", "utf-8");
 const $TIMESTAMP = data.trim();
@@ -91,7 +91,13 @@ test("Inspect page can be opened", async (t) => {
 });
 
 test("Inspect link exists in Menu list", async (t) => {
-  await t.useRole(inspectAllowedRole).expect(inspectElement.exists).ok();
+  await t
+    .useRole(inspectAllowedRole)
+    .expect(toolsElement.exists)
+    .ok()
+    .click(toolsElement)
+    .expect(inspectElement.exists)
+    .ok();
 });
 
 test("Form Input states verification", async (t) => {
@@ -143,9 +149,9 @@ test("Inspect page can NOT be opened", async (t) => {
 
 test("Inspect link should NOT exists in Menu list", async (t) => {
   await t
-    .expect(monitoringElement.exists)
+    .expect(toolsElement.exists)
     .ok()
-    .click(monitoringElement)
+    .click(toolsElement)
     .expect(inspectEl.exists)
     .notOk(
       "Inspect Link should not exist in the menu list as per inspect not allowed policy",

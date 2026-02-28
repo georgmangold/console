@@ -34,6 +34,7 @@ const UserMenu = () => {
         icon={<AddIcon />}
         onClick={() => dispatch(setAddBucketOpen(true))}
         visibleTooltip={!sidebarOpen}
+        id="menu-create-bucket"
       />
       <MenuItem
         group="User"
@@ -63,9 +64,10 @@ const UserMenu = () => {
             name={"Buckets"}
             icon={<MultipleBucketsIcon />}
             visibleTooltip={!sidebarOpen}
+            id="menu-bucket-list-button"
           />
         }
-        id={"menu-bucket-list"}
+        id="menu-bucket-list"
         expanded={expanded}
         onTitleClick={() => setExpanded(!expanded)}
         sx={{
