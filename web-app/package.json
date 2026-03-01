@@ -65,7 +65,7 @@
     "@babel/runtime": "^7.28.6",
     "@playwright/test": "^1.58.2",
     "@types/jest": "^30.0.0",
-    "@types/lodash": "^4.17.23",
+    "@types/lodash": "^4.17.24",
     "@types/luxon": "^3.7.1",
     "@types/node": "24.10.1",
     "@types/react": "19.1.8",
