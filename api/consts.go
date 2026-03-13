@@ -58,6 +58,7 @@ const (
 	ConsoleMaxConcurrentDownloads                = "CONSOLE_MAX_CONCURRENT_DOWNLOADS"
 	ConsoleDevMode                               = "CONSOLE_DEV_MODE"
 	ConsoleBrowserRedirectURL                    = "CONSOLE_BROWSER_REDIRECT_URL"
+	ConsoleUseProxyForSharedURL                  = "CONSOLE_USE_PROXY_FOR_SHARED_URL"
 	LogSearchQueryAuthToken                      = "LOGSEARCH_QUERY_AUTH_TOKEN"
 	SlashSeparator                               = "/"
 	LocalAddress                                 = "127.0.0.1"
