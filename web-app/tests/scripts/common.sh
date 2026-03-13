@@ -32,6 +32,7 @@ create_policies() {
   mc admin policy create minio dashboard-$TIMESTAMP web-app/tests/policies/dashboard.json
   mc admin policy create minio diagnostics-$TIMESTAMP web-app/tests/policies/diagnostics.json
   mc admin policy create minio groups-$TIMESTAMP web-app/tests/policies/groups.json
+  mc admin policy create minio heal-$TIMESTAMP web-app/tests/policies/heal.json
   mc admin policy create minio iampolicies-$TIMESTAMP web-app/tests/policies/iamPolicies.json
   mc admin policy create minio logs-$TIMESTAMP web-app/tests/policies/logs.json
   mc admin policy create minio notificationendpoints-$TIMESTAMP web-app/tests/policies/notificationEndpoints.json
@@ -64,6 +65,7 @@ create_users() {
   mc admin user add minio dashboard-$TIMESTAMP dashboard
   mc admin user add minio diagnostics-$TIMESTAMP diagnostics
   mc admin user add minio groups-$TIMESTAMP groups1234
+  mc admin user add minio heal-$TIMESTAMP heal1234
   mc admin user add minio heal-$TIMESTAMP heal1234
   mc admin user add minio iampolicies-$TIMESTAMP iampolicies
   mc admin user add minio logs-$TIMESTAMP logs1234
@@ -103,6 +105,7 @@ assign_policies() {
   mc admin policy attach minio dashboard-$TIMESTAMP --user dashboard-$TIMESTAMP
   mc admin policy attach minio diagnostics-$TIMESTAMP --user diagnostics-$TIMESTAMP
   mc admin policy attach minio groups-$TIMESTAMP --user groups-$TIMESTAMP
+  mc admin policy attach minio heal-$TIMESTAMP --user heal-$TIMESTAMP
   mc admin policy attach minio heal-$TIMESTAMP --user heal-$TIMESTAMP
   mc admin policy attach minio iampolicies-$TIMESTAMP --user iampolicies-$TIMESTAMP
   mc admin policy attach minio logs-$TIMESTAMP --user logs-$TIMESTAMP
