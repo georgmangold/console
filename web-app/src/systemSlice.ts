@@ -18,6 +18,7 @@ import { snackBarMessage, SRInfoStateType } from "./types";
 import { ErrorResponseHandler, IEmbeddedCustomStyles } from "./common/types";
 import { AppState } from "./store";
 import { isDarkModeOn } from "./utils/stylesUtils";
+import { addBucketAsync } from "./screens/Console/Buckets/ListBuckets/AddBucket/addBucketThunks";
 
 // determine whether we have the sidebar state stored on localstorage
 const initSideBarOpen = localStorage.getItem("sidebarOpen")
@@ -45,6 +46,8 @@ interface SystemState {
   helpTabName: string;
   locationPath: string;
   darkMode: boolean;
+  filterBucketList: string;
+  loadBucketsListing: boolean;
 }
 
 const initialState: SystemState = {
@@ -76,6 +79,8 @@ const initialState: SystemState = {
   helpTabName: "docs",
   locationPath: "",
   darkMode: isDarkModeOn(),
+  filterBucketList: "",
+  loadBucketsListing: true,
 };
 
 const systemSlice = createSlice({
@@ -177,6 +182,17 @@ const systemSlice = createSlice({
     resetSystem: () => {
       return initialState;
     },
+    setFilterBucket: (state, action: PayloadAction<string>) => {
+      state.filterBucketList = action.payload;
+    },
+    setBucketLoadListing: (state, action: PayloadAction<boolean>) => {
+      state.loadBucketsListing = action.payload;
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(addBucketAsync.fulfilled, (state, action) => {
+      state.loadBucketsListing = true;
+    });
   },
 });
 
@@ -201,6 +217,8 @@ export const {
   setHelpTabName,
   setLocationPath,
   setDarkMode,
+  setFilterBucket,
+  setBucketLoadListing,
 } = systemSlice.actions;
 
 export const selDistSet = (state: AppState) => state.system.distributedSetup;

@@ -21,6 +21,7 @@ import { ApiError, ObjectRetentionMode } from "api/consoleApi";
 interface AddBucketState {
   loading: boolean;
   isDirty: boolean;
+  addBucketOpen: boolean;
   invalidFields: string[];
   name: string;
   versioningEnabled: boolean;
@@ -42,6 +43,7 @@ interface AddBucketState {
 const initialState: AddBucketState = {
   loading: false,
   isDirty: false,
+  addBucketOpen: false,
   invalidFields: [],
   name: "",
   versioningEnabled: false,
@@ -66,6 +68,9 @@ const addBucketsSlice = createSlice({
   reducers: {
     setIsDirty: (state, action: PayloadAction<boolean>) => {
       state.isDirty = action.payload;
+    },
+    setAddBucketOpen: (state, action: PayloadAction<boolean>) => {
+      state.addBucketOpen = action.payload;
     },
     setName: (state, action: PayloadAction<string>) => {
       state.name = action.payload;
@@ -176,7 +181,26 @@ const addBucketsSlice = createSlice({
       }
     },
 
-    resetForm: (state) => initialState,
+    resetForm: (state) => {
+      state.loading = false;
+      state.isDirty = false;
+      state.invalidFields = [];
+      state.name = "";
+      state.versioningEnabled = false;
+      state.lockingEnabled = false;
+      state.lockingFieldDisabled = false;
+      state.quotaEnabled = false;
+      state.quotaSize = "1";
+      state.quotaUnit = "Ti";
+      state.retentionEnabled = false;
+      state.retentionMode = ObjectRetentionMode.Compliance;
+      state.retentionUnit = "days";
+      state.retentionValidity = 180;
+      state.navigateTo = "";
+      state.excludeFolders = false;
+      state.excludedPrefixes = "";
+      state.error = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -193,8 +217,8 @@ const addBucketsSlice = createSlice({
         state.error = null;
         if (action.payload) {
           state.navigateTo = action.payload.data.bucketName
-            ? "/buckets"
-            : `/buckets/${action.payload.data.bucketName}/admin`;
+            ? `/browser/${action.payload.data.bucketName}`
+            : `/browser`;
         }
       });
   },
@@ -202,6 +226,7 @@ const addBucketsSlice = createSlice({
 
 export const {
   setName,
+  setAddBucketOpen,
   setIsDirty,
   setVersioning,
   setEnableObjectLocking,

@@ -15,7 +15,7 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import { expect, Page } from "@playwright/test";
-import { test as baseTest } from "./fixtures/baseFixture";
+import { test as baseTest, generateUUID } from "./fixtures/baseFixture";
 import { minioadminFile } from "./consts";
 import { BucketsListPage } from "./pom/BucketsListPage";
 import { CreateBucketPage } from "./pom/CreateBucketPage";
@@ -50,8 +50,8 @@ const test = baseTest.extend<LifeCycleObjectVersionFx>({
 
 test.use({ storageState: minioadminFile });
 
-const versionedBucketName = "versioned-bucket";
-const nonVersionedBucketName = "non-versioned-bucket";
+const versionedBucketName = `versioned-bucket-${generateUUID()}`;
+const nonVersionedBucketName = `non-versioned-bucket-${generateUUID()}`;
 
 test.describe("Add Lifecycle Rule Modal in bucket settings tests for object version ", () => {
   test("Test if Object Version selector is present in Lifecycle rule modal", async ({
@@ -62,6 +62,7 @@ test.describe("Add Lifecycle Rule Modal in bucket settings tests for object vers
   }) => {
     await test.step("Create Versioned Bucket", async () => {
       await createBucketPage.createVersionedBucket(versionedBucketName);
+      await page.locator(`#buckets`).click();
       await bucketListPage.clickOnBucketRow(versionedBucketName);
       bucketSummaryPage = bucketSummaryPage(versionedBucketName);
       await bucketSummaryPage.clickOnTab("lifecycle"); //Tab Text is used.
@@ -90,6 +91,7 @@ test.describe("Add Lifecycle Rule Modal in bucket settings tests for object vers
   }) => {
     await test.step("Create NON Versioned Bucket and navigate to lifecycle settings in summary page", async () => {
       await createBucketPage.createBucket(nonVersionedBucketName);
+      await page.locator(`#buckets`).click();
       await bucketListPage.clickOnBucketRow(nonVersionedBucketName);
       bucketSummaryPage = bucketSummaryPage(versionedBucketName);
       await bucketSummaryPage.clickOnTab("lifecycle");

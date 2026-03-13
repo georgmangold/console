@@ -17,7 +17,10 @@
 import React, { Fragment } from "react";
 import { ConfirmDeleteIcon } from "mds";
 import { ErrorResponseHandler } from "../../../../common/types";
-import { setErrorSnackMessage } from "../../../../systemSlice";
+import {
+  setBucketLoadListing,
+  setErrorSnackMessage,
+} from "../../../../systemSlice";
 import { useAppDispatch } from "../../../../store";
 import useApi from "../../Common/Hooks/useApi";
 import ConfirmDialog from "../../Common/ModalWrapper/ConfirmDialog";
@@ -34,7 +37,11 @@ const DeleteBucket = ({
   selectedBucket,
 }: IDeleteBucketProps) => {
   const dispatch = useAppDispatch();
-  const onDelSuccess = () => closeDeleteModalAndRefresh(true);
+  const onDelSuccess = () => {
+    closeDeleteModalAndRefresh(true);
+    // Update BucketListing in Menu
+    dispatch(setBucketLoadListing(true));
+  };
   const onDelError = (err: ErrorResponseHandler) =>
     dispatch(setErrorSnackMessage(err));
   const onClose = () => closeDeleteModalAndRefresh(false);

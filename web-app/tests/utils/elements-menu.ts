@@ -36,8 +36,11 @@ export const logoutItem = getMenuElement("sign-out");
 //----------------------------------------------------
 // Specific sidebar elements
 //----------------------------------------------------
-export const monitoringElement = getMenuElement("tools");
-export const monitoringChildren = getSubmenuBlock("tools");
+export const monitoringElement = getMenuElement("monitoring");
+export const monitoringChildren = getSubmenuBlock("monitoring");
+
+export const toolsElement = getMenuElement("tools");
+export const toolsChildren = getSubmenuBlock("tools");
 
 export const dashboardElement = monitoringChildren
   .find("button")
@@ -77,8 +80,14 @@ export const notificationEndpointsElement = getMenuElement("lambda");
 
 export const tiersElement = getMenuElement("tiers");
 
-export const diagnosticsElement = getMenuElement("diagnostics");
-export const performanceElement = getMenuElement("performance");
-export const inspectElement = getMenuElement("inspectObjects");
+export const diagnosticsElement = toolsChildren
+  .find("button")
+  .withAttribute("id", "diagnostics");
+export const performanceElement = toolsChildren
+  .find("button")
+  .withAttribute("id", "performance");
+export const inspectElement = toolsChildren
+  .find("button")
+  .withAttribute("id", "inspectObjects");
 
-export const licenseElement = getMenuElement("license");
+export const licenseElement = getMenuElement("menu-license");
