@@ -64,6 +64,7 @@ create_users() {
   mc admin user add minio diagnostics-$TIMESTAMP diagnostics
   mc admin user add minio groups-$TIMESTAMP groups1234
   mc admin user add minio heal-$TIMESTAMP heal1234
+  mc admin user add minio heal-$TIMESTAMP heal1234
   mc admin user add minio iampolicies-$TIMESTAMP iampolicies
   mc admin user add minio logs-$TIMESTAMP logs1234
   mc admin user add minio notificationendpoints-$TIMESTAMP notificationendpoints
@@ -102,6 +103,7 @@ assign_policies() {
   mc admin policy attach minio dashboard-$TIMESTAMP --user dashboard-$TIMESTAMP
   mc admin policy attach minio diagnostics-$TIMESTAMP --user diagnostics-$TIMESTAMP
   mc admin policy attach minio groups-$TIMESTAMP --user groups-$TIMESTAMP
+  mc admin policy attach minio heal-$TIMESTAMP --user heal-$TIMESTAMP
   mc admin policy attach minio heal-$TIMESTAMP --user heal-$TIMESTAMP
   mc admin policy attach minio iampolicies-$TIMESTAMP --user iampolicies-$TIMESTAMP
   mc admin policy attach minio logs-$TIMESTAMP --user logs-$TIMESTAMP
