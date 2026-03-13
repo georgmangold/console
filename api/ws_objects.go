@@ -67,7 +67,12 @@ func (wsc *wsMinioClient) objectManager(session *models.Principal) {
 
 			mType, message, err := wsc.conn.readMessage()
 			if err != nil {
-				LogInfo("Error while reading objectManager message: %s", err)
+				// Connection closed normally - check if it's an expected close
+				if websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseNormalClosure) {
+					// Only log actual unexpected errors
+					LogInfo("Unexpected error while reading objectManager message: %s", err)
+				}
+				// Expected close - exit gracefully without logging
 				return
 			}
 
