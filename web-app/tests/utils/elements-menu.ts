@@ -90,4 +90,4 @@ export const inspectElement = toolsChildren
   .find("button")
   .withAttribute("id", "inspectObjects");
 
-export const licenseElement = getMenuElement("license");
+export const licenseElement = getMenuElement("menu-license");

@@ -150,9 +150,6 @@ test("Inspect page can NOT be opened", async (t) => {
 test("Inspect link should NOT exists in Menu list", async (t) => {
   await t
     .expect(toolsElement.exists)
-    .ok()
-    .click(toolsElement)
-    .expect(inspectEl.exists)
     .notOk(
       "Inspect Link should not exist in the menu list as per inspect not allowed policy",
     );

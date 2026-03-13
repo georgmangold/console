@@ -78,6 +78,7 @@ const MenuWrapper = () => {
             icon={<DocumentationIcon />}
             path={"https://docs.min.io/community/minio-object-store/index.html"}
             visibleTooltip={!sidebarOpen}
+            id="menu-documentation"
           />
           <MenuItem
             name={"License"}
@@ -85,6 +86,7 @@ const MenuWrapper = () => {
             path={IAM_PAGES.LICENSE}
             onClick={() => navigate(IAM_PAGES.LICENSE)}
             visibleTooltip={!sidebarOpen}
+            id="menu-license"
           />
         </Box>
       }
