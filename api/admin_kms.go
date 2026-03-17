@@ -55,7 +55,7 @@ func registerKMSStatusHandlers(api *operations.ConsoleAPI) {
 		if err != nil {
 			return kmsAPI.NewKMSAPIsDefault(err.Code).WithPayload(err.APIError)
 		}
-		return kmsAPI.NewKMSAPIsOK().WithPayload(resp)
+		return kmsAPI.NewKMSApisOK().WithPayload(resp)
 	})
 
 	api.KmsKMSVersionHandler = kmsAPI.KMSVersionHandlerFunc(func(params kmsAPI.KMSVersionParams, session *models.Principal) middleware.Responder {

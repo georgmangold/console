@@ -149,10 +149,9 @@ jobs:
           yarn install --immutable
       - name: Install go-swagger
         run: |
-          go install github.com/go-swagger/go-swagger/cmd/swagger@latest
-          swagger version
+          go tool swagger version
       - name: Validate swagger.yml
-        run: swagger validate ./swagger.yml
+        run: go tool swagger validate ./swagger.yml
       - name: Run Swagger Codegen
         run: make swagger-gen
 
