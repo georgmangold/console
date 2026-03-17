@@ -39,8 +39,12 @@ import {
 } from "../../../common/SecureComponent/permissions";
 import SearchBox from "../Common/SearchBox";
 import hasPermission from "../../../common/SecureComponent/accessControl";
-import { setErrorSnackMessage, setHelpName } from "../../../systemSlice";
-import { useAppDispatch } from "../../../store";
+import {
+  setErrorSnackMessage,
+  setFilterBucket,
+  setHelpName,
+} from "../../../systemSlice";
+import { AppState, useAppDispatch } from "../../../store";
 import { useSelector } from "react-redux";
 import { selFeatures } from "../consoleSlice";
 import AutoColorIcon from "../Common/Components/AutoColorIcon";
@@ -52,6 +56,7 @@ import { api } from "../../../api";
 import { errorToHandler } from "../../../api/errors";
 import HelpMenu from "../HelpMenu";
 import { usageClarifyingContent } from "../Dashboard/BasicDashboard/ReportedUsage";
+import { setAddBucketOpen } from "screens/Console/Buckets/ListBuckets/AddBucket/addBucketsSlice";
 
 const OBListBuckets = () => {
   const dispatch = useAppDispatch();
@@ -60,7 +65,10 @@ const OBListBuckets = () => {
   const [records, setRecords] = useState<Bucket[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [clickOverride, setClickOverride] = useState<boolean>(false);
-  const [filterBuckets, setFilterBuckets] = useState<string>("");
+
+  const filterBuckets = useSelector(
+    (state: AppState) => state.system.filterBucketList,
+  );
 
   const features = useSelector(selFeatures);
   const obOnly = !!features?.includes("object-browser-only");
@@ -130,7 +138,9 @@ const OBListBuckets = () => {
           )}
           {hasBuckets && (
             <SearchBox
-              onChange={setFilterBuckets}
+              onChange={(value) => {
+                dispatch(setFilterBucket(value));
+              }}
               placeholder="Filter Buckets"
               value={filterBuckets}
               sx={{
@@ -314,7 +324,7 @@ const OBListBuckets = () => {
                           To get started,&nbsp;
                           <ActionLink
                             onClick={() => {
-                              navigate(IAM_PAGES.ADD_BUCKETS);
+                              dispatch(setAddBucketOpen(true));
                             }}
                           >
                             Create a Bucket.

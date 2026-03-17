@@ -19,13 +19,16 @@ import * as elements from "../utils/elements-menu";
 import {
   bucketsElement,
   dashboardElement,
+  diagnosticsElement,
   groupsElement,
   iamPoliciesElement,
   identityElement,
   monitoringElement,
   notificationEndpointsElement,
+  performanceElement,
   serviceAcctsElement,
   tiersElement,
+  toolsElement,
   usersElement,
 } from "../utils/elements-menu";
 
@@ -60,9 +63,13 @@ test("All sidebar items exist", async (t) => {
     .ok()
     .expect(tiersElement.exists)
     .ok()
-    .expect(elements.diagnosticsElement.exists)
+    .click(monitoringElement)
+    .expect(toolsElement.exists)
     .ok()
-    .expect(elements.performanceElement.exists)
+    .click(toolsElement)
+    .expect(diagnosticsElement.exists)
+    .ok()
+    .expect(performanceElement.exists)
     .ok()
     .expect(licenseExists)
     .ok();

@@ -16,7 +16,6 @@ remove_users() {
   mc admin user remove minio dashboard-$TIMESTAMP
   mc admin user remove minio diagnostics-$TIMESTAMP
   mc admin user remove minio groups-$TIMESTAMP
-  mc admin user remove minio heal-$TIMESTAMP
   mc admin user remove minio iampolicies-$TIMESTAMP
   mc admin user remove minio logs-$TIMESTAMP
   mc admin user remove minio notificationendpoints-$TIMESTAMP
@@ -44,7 +43,6 @@ remove_policies() {
   mc admin policy remove minio dashboard-$TIMESTAMP
   mc admin policy remove minio diagnostics-$TIMESTAMP
   mc admin policy remove minio groups-$TIMESTAMP
-  mc admin policy remove minio heal-$TIMESTAMP
   mc admin policy remove minio iampolicies-$TIMESTAMP
   mc admin policy remove minio logs-$TIMESTAMP
   mc admin policy remove minio notificationendpoints-$TIMESTAMP
