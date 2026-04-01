@@ -177,12 +177,6 @@ jobs:
         run: |
           echo "Install dependencies"
           cd $GITHUB_WORKSPACE/web-app
-          yarn add -D playwright
-          yarn add -D @playwright/test
-          yarn add -D babel-plugin-istanbul
-          yarn add -D nyc
-          yarn add -D react-app-rewired
-          yarn add -D create-react-app
           yarn init -y
           echo "yarn install"
           yarn install

@@ -103,7 +103,8 @@ const HealthInfo = () => {
   useEffect(() => {
     if (
       serverDiagnosticStatus === DiagStatSuccess &&
-      message !== ({} as HealthInfoMessage)
+      message &&
+      Object.keys(message).length > 0
     ) {
       // Allow download of diagnostics file only when
       // it succeded fetching all the results and info is not empty.

@@ -608,7 +608,6 @@
           "img": "/minio-logo.svg",
           "title": "What is MinIO Healing?",
           "url": "https://docs.min.io/community/minio-object-store/operations/concepts.html#minio-automatically-heals-corrupt-or-missing-data-on-the-fly",
-          "url": "",
           "body": "Healing is MinIO\u2019s ability to restore data after some event causes data loss. Data loss can come from bit rot, drive loss, or node loss."
         },
         {

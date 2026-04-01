@@ -86,7 +86,7 @@ const ProtectedRoute = ({ Component }: ProtectedRouteProps) => {
     },
     (err: ErrorResponseHandler) => {
       // we will fail this call silently, but show it on the console
-      console.error(`Error loading site replication status`, err);
+      // console.error(`Error loading site replication status`, err);
     },
   );
 
