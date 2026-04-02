@@ -50,6 +50,6 @@ export default defineConfig({
   },
   legacy: {
     // needed by "react-use-websocket" in trace
-    inconsistentCjsInterop: true
-  }
+    inconsistentCjsInterop: true,
+  },
 });
