@@ -177,6 +177,9 @@ jobs:
         run: |
           echo "Install dependencies"
           cd $GITHUB_WORKSPACE/web-app
+          yarn add -D playwright
+          yarn add -D @playwright/test
+          yarn add -D nyc
           yarn init -y
           echo "yarn install"
           yarn install
@@ -199,6 +202,8 @@ jobs:
         run: |
           echo "Run tests under playwright folder only"
           cd $GITHUB_WORKSPACE/web-app
+          yarn remove playwright
+          yarn add --dev @playwright/test
           echo "npx playwright test"
           npx playwright test # To run the tests
           echo "npx nyc report"

@@ -1511,6 +1511,7 @@ jobs:
           echo "Install dependencies"
           cd $GITHUB_WORKSPACE/web-app
           yarn init -y
+          yarn add -D playwright nyc @playwright/test
           echo "yarn install"
           yarn install --no-immutable
 
@@ -1532,6 +1533,8 @@ jobs:
         run: |
           echo "Run tests under playwright folder only"
           cd $GITHUB_WORKSPACE/web-app
+          yarn remove playwright
+          yarn add --dev @playwright/test
           echo "npx playwright test"
           npx playwright test # To run the tests
           echo "npx nyc report"
