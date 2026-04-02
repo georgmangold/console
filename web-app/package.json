@@ -35,8 +35,7 @@
     "start": "vite",
     "build": "npx genversion --esm --semi --double src/version.tsx && tsc && vite build",
     "serve": "vite preview",
-    "yarn": "VITE_COVERAGE=true vite build --mode development --sourcemap true",
-    "test": "vitest",
+    "buildistanbulcoverage": "VITE_COVERAGE=true vite build --mode development --sourcemap true",
     "playwright": "VITE_COVERAGE=true vite",
     "find-deadcode": "knip",
     "format": "prettier . --write --log-level warn"
