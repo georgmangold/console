@@ -81,10 +81,9 @@
     "swagger-typescript-api": "13.2.18",
     "testcafe": "3.7.4",
     "typescript": "^5.9.3",
-    "vite": "^8.0.3",
-    "vite-plugin-html": "^3.2.2",
+    "vite": "^8.0.5",
     "vite-plugin-istanbul": "^8.0.0",
-    "vite-plugin-static-copy": "^4.0.0"
+    "vite-plugin-static-copy": "^4.0.1"
   },
   "resolutions": {
     "yaml": "^2.4.2",

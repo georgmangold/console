@@ -584,8 +584,8 @@ func replaceBaseInIndex(indexPageBytes []byte, basePath string) []byte {
 			return indexPageBytes
 		}
 		indexPageStr := string(indexPageBytes)
-		newBase := fmt.Sprintf("<base href=\"%s\"/>", basePath)
-		indexPageStr = strings.Replace(indexPageStr, "<base href=\"/\"/>", newBase, 1)
+		newBase := fmt.Sprintf("<base href=\"%s\" />", basePath)
+		indexPageStr = strings.Replace(indexPageStr, "<base href=\"/\" />", newBase, 1)
 		indexPageBytes = []byte(indexPageStr)
 
 	}
