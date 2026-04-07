@@ -3,17 +3,10 @@ import react from "@vitejs/plugin-react";
 import istanbul from "vite-plugin-istanbul";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
-// https://vitejs.dev/config/
+// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
-    process.env.VITE_COVERAGE === "true"
-      ? istanbul({
-          requireEnv: true,
-          checkProd: true,
-          forceBuildInstrument: true,
-        })
-      : undefined,
     viteStaticCopy({
       targets: [
         {
@@ -23,14 +16,27 @@ export default defineConfig({
         },
       ],
     }),
+    process.env.VITE_COVERAGE === "true"
+      ? istanbul({
+          requireEnv: true,
+          checkProd: true,
+          forceBuildInstrument: true,
+        })
+      : undefined,
   ],
-  resolve: {
-    tsconfigPaths: true,
-  },
   base: "./",
   build: {
     outDir: "build",
     sourcemap: false,
+    chunkSizeWarningLimit: 2000, //use npx vite-bundle-visualizer
+    rollupOptions: {
+      checks: {
+        pluginTimings: process.env.VITE_COVERAGE === "true" ? false : true,
+      },
+    },
+  },
+  resolve: {
+    tsconfigPaths: true,
   },
   server: {
     port: 5005,
@@ -44,7 +50,7 @@ export default defineConfig({
     },
   },
   legacy: {
-    // needed by "react-use-websocket" in trace
+    // still needed by "react-use-websocket" in trace
     inconsistentCjsInterop: true,
   },
 });

@@ -33,8 +33,10 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "npx genversion --esm --semi --double src/version.tsx && tsc && vite build",
-    "serve": "vite preview",
+    "build": "genversion --esm --semi --double src/version.tsx && tsc && vite build",
+    "preview": "vite preview",
+    "vitebuild": "vite build",
+    "typecheck": "tsc",
     "buildistanbulcoverage": "VITE_COVERAGE=true vite build --mode development --sourcemap true",
     "playwright": "VITE_COVERAGE=true vite",
     "find-deadcode": "knip",
