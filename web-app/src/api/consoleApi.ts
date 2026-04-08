@@ -2079,7 +2079,7 @@ export class Api<
       objectList: SelectedUsers,
       params: RequestParams = {},
     ) =>
-      this.request<File, ApiError>({
+      this.request<Blob, ApiError>({
         path: `/buckets/${encodeURIComponent(bucketName)}/objects/download-multiple`,
         method: "POST",
         body: objectList,
@@ -2109,7 +2109,7 @@ export class Api<
       },
       params: RequestParams = {},
     ) =>
-      this.request<File, ApiError>({
+      this.request<Blob, ApiError>({
         path: `/buckets/${encodeURIComponent(bucketName)}/objects/download`,
         method: "GET",
         query: query,
@@ -3988,7 +3988,7 @@ export class Api<
      * @secure
      */
     profilingStop: (params: RequestParams = {}) =>
-      this.request<File, ApiError>({
+      this.request<Blob, ApiError>({
         path: `/profiling/stop`,
         method: "POST",
         secure: true,
@@ -4371,7 +4371,7 @@ export class Api<
       },
       params: RequestParams = {},
     ) =>
-      this.request<File, ApiError>({
+      this.request<Blob, ApiError>({
         path: `/admin/inspect`,
         method: "GET",
         query: query,
@@ -4825,7 +4825,7 @@ export class Api<
      * @request GET:/download-shared-object/{url}
      */
     downloadSharedObject: (url: string, params: RequestParams = {}) =>
-      this.request<File, ApiError>({
+      this.request<Blob, ApiError>({
         path: `/download-shared-object/${encodeURIComponent(url)}`,
         method: "GET",
         ...params,
