@@ -5773,9 +5773,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"knip@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "knip@npm:6.2.0"
+"knip@npm:^6.3.1":
+  version: 6.3.1
+  resolution: "knip@npm:6.3.1"
   dependencies:
     "@nodelib/fs.walk": "npm:^1.2.3"
     fast-glob: "npm:^3.3.3"
@@ -5795,7 +5795,7 @@ __metadata:
   bin:
     knip: bin/knip.js
     knip-bun: bin/knip-bun.js
-  checksum: 10c0/8745eed6d1f348e9a96a7dcea7197c2212833cb3d844d6daf9457cdb2201126310637aa5b5e16e796f047a23801b61edda133a93267e81d590551108e13523a4
+  checksum: 10c0/a338655545181ef5d21b8f58584134e6972d9bb146ab9d36a171dd527429965abf200b30c941c8d5c8e40ccaf05826b3487bef7679b1afa5f977d4ab21be7296
   languageName: node
   linkType: hard
 
@@ -10065,7 +10065,7 @@ __metadata:
     genversion: "npm:^3.2.0"
     http-status-codes: "npm:^2.3.0"
     kbar: "npm:^0.1.0-beta.48"
-    knip: "npm:^6.2.0"
+    knip: "npm:^6.3.1"
     lodash: "npm:^4.18.1"
     luxon: "npm:^3.7.2"
     mds: "https://github.com/georgmangold/mds.git#v1.1.5.9"
