@@ -37,6 +37,7 @@
     "preview": "vite preview",
     "vitebuild": "vite build",
     "typecheck": "tsc",
+    "tscwatch": "tsc --watch",
     "buildistanbulcoverage": "VITE_COVERAGE=true vite build --mode development --sourcemap true",
     "playwright": "VITE_COVERAGE=true vite",
     "find-deadcode": "knip",
