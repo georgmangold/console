@@ -56,9 +56,11 @@ export const store = configureStore({
     getDefaultMiddleware().concat(objectBrowserWSMiddleware(objectsWS)),
 });
 
-if (process.env.NODE_ENV !== "production" && module.hot) {
-  module.hot.accept(() => {
-    store.replaceReducer(rootReducer);
+if (process.env.NODE_ENV !== "production" && import.meta.hot) {
+  import.meta.hot.accept((newModule) => {
+    if (newModule) {
+      store.replaceReducer(newModule.rootReducer);
+    }
   });
 }
 

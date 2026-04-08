@@ -14,7 +14,6 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import storage from "local-storage-fallback";
 import { IBytesCalc } from "./types";
 
 import get from "lodash/get";
@@ -56,8 +55,8 @@ export const deleteCookie = (name: string) => {
 };
 
 export const clearSession = () => {
-  storage.removeItem("token");
-  storage.removeItem("auth-state");
+  localStorage.removeItem("token");
+  localStorage.removeItem("auth-state");
   deleteCookie("token");
   deleteCookie("idp-refresh-token");
 };

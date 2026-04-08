@@ -35,6 +35,7 @@ import { setHelpTabName } from "../../systemSlice";
 import { DocItem } from "./HelpMenu.types";
 import HelpItem from "./HelpItem";
 import MoreLink from "../../common/MoreLink";
+import helpTopicsJSON from "../Console/helpTopics.json";
 
 const HelpMenuContainer = styled.div(({ theme }) => ({
   backgroundColor: get(theme, "bgColor", "#FFF"),
@@ -64,7 +65,7 @@ const HelpMenuContainer = styled.div(({ theme }) => ({
 }));
 
 const HelpMenu = () => {
-  const helpTopics = require("../Console/helpTopics.json");
+  const helpTopics = helpTopicsJSON as Record<string, any>;
 
   const [helpItems, setHelpItems] = useState<DocItem[]>([]);
   const [headerDocs, setHeaderDocs] = useState<string | null>(null);

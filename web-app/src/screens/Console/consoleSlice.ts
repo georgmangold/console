@@ -14,7 +14,7 @@
 // You should have received a copy of the GNU Affero General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { SessionResponse } from "../../api/consoleApi";
 import { AppState } from "../../store";
 import { fetchSession } from "../../screens/LoginPage/sessionThunk";
@@ -61,7 +61,10 @@ const consoleSlice = createSlice({
 export const { saveSessionResponse, resetSession, setSessionLoadingState } =
   consoleSlice.actions;
 export const selSession = (state: AppState) => state.console.session;
-export const selFeatures = (state: AppState) =>
-  state.console.session ? state.console.session.features : [];
+
+export const selFeatures = createSelector(
+  (state: AppState) => state.console.session?.features,
+  (features) => features ?? [],
+);
 
 export default consoleSlice.reducer;

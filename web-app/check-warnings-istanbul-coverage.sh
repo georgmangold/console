@@ -13,7 +13,7 @@ try() { "$@" &> yarn.log || die "cannot $*"; }
 rm -f yarn.log
 try yarn buildistanbulcoverage
 
-if cat yarn.log | grep "Compiled with warnings"; then
+if cat yarn.log | grep "Warning"; then
   echo "There are warnings in the code"
   exit 1
 fi

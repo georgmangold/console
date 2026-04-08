@@ -1067,6 +1067,8 @@ jobs:
 
   react-tests:
     name: React Tests
+    # there are no react tests for vitest or yest
+    if: false
     needs:
       - lint-job
       - ui-assets
@@ -1081,8 +1083,7 @@ jobs:
         run: yarn install --immutable
       - name: Run tests
         working-directory: ./web-app
-        run: yarn test --passWithNoTests
-
+        run: yarn test
   replication:
     name: Site Replication Test
     needs:
@@ -1510,7 +1511,7 @@ jobs:
           echo "Install dependencies"
           cd $GITHUB_WORKSPACE/web-app
           yarn init -y
-          yarn add -D playwright babel-plugin-istanbul nyc react-app-rewired create-react-app @playwright/test
+          yarn add -D playwright nyc @playwright/test
           echo "yarn install"
           yarn install --no-immutable
 

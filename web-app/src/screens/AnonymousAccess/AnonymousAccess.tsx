@@ -22,10 +22,15 @@ import { resetSession } from "../Console/consoleSlice";
 import { useAppDispatch } from "../../store";
 import { resetSystem } from "../../systemSlice";
 import { getLogoApplicationVariant, getLogoVar } from "../../config";
-import ObjectBrowser from "../Console/ObjectBrowser/ObjectBrowser";
 import LoadingComponent from "../../common/LoadingComponent";
-import ObjectManager from "../Console/Common/ObjectManager/ObjectManager";
 import ObjectManagerButton from "../Console/Common/ObjectManager/ObjectManagerButton";
+
+const ObjectBrowser = React.lazy(
+  () => import("../Console/ObjectBrowser/ObjectBrowser"),
+);
+const ObjectManager = React.lazy(
+  () => import("../Console/Common/ObjectManager/ObjectManager"),
+);
 
 const AnonymousAccess = () => {
   const dispatch = useAppDispatch();
