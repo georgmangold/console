@@ -89,18 +89,19 @@
     "vite-plugin-static-copy": "^4.0.1"
   },
   "resolutions": {
-    "yaml": "^2.4.2",
-    "fast-xml-parser": "^5.3.4",
-    "semver": "^7.5.2",
-    "ws": "^8.17.1",
+    "yaml": "^2.8.3",
+    "fast-xml-parser": "^5.5.11",
+    "semver": "^7.7.4",
+    "ws": "^8.20.0",
     "jspdf": "^4.2.1",
-    "form-data": "^4.0.4",
-    "qs": "^6.14.2",
+    "form-data": "^4.0.5",
+    "qs": "^6.15.0",
     "js-yaml": "^4.1.1",
-    "tmp": "^0.2.4",
+    "tmp": "^0.2.5",
     "glob": "^10.5.0",
     "picomatch": "^4.0.4",
-    "lodash": "^4.18.1"
+    "lodash": "^4.18.1",
+    "minimatch": "^10.2.5"
   },
   "packageManager": "yarn@4.13.0"
 }
