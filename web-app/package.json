@@ -66,7 +66,7 @@
     "@playwright/test": "^1.59.1",
     "@types/lodash": "^4.17.24",
     "@types/luxon": "^3.7.1",
-    "@types/node": "24.10.1",
+    "@types/node": "25.4.0",
     "@types/react": "19.1.8",
     "@types/react-copy-to-clipboard": "^5.0.7",
     "@types/react-dom": "18.3.7",

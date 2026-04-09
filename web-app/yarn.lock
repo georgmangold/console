@@ -2526,7 +2526,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:24.10.1":
+"@types/node@npm:*":
   version: 24.10.1
   resolution: "@types/node@npm:24.10.1"
   dependencies:
@@ -2541,6 +2541,15 @@ __metadata:
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 10c0/06a8c304b5f7f190d4497807dc67ad09ee7b14ea2996bfdc823553c624698d8cab1ef9d16f8b764f20cb9eb11caa0e832787741e9ef70e1c89d620797ab28436
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:25.4.0":
+  version: 25.4.0
+  resolution: "@types/node@npm:25.4.0"
+  dependencies:
+    undici-types: "npm:~7.18.0"
+  checksum: 10c0/da81e8b0a3a57964b1b5f85d134bfefc1b923fd67ed41756842348a049d7915b72e8773f5598d6929b9cb8119c2427993c55d364fd93bd572a3450e58b98a60e
   languageName: node
   linkType: hard
 
@@ -9816,6 +9825,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:~7.18.0":
+  version: 7.18.2
+  resolution: "undici-types@npm:7.18.2"
+  checksum: 10c0/85a79189113a238959d7a647368e4f7c5559c3a404ebdb8fc4488145ce9426fcd82252a844a302798dfc0e37e6fb178ff481ed03bc4caf634c5757d9ef43521d
+  languageName: node
+  linkType: hard
+
 "unicode-canonical-property-names-ecmascript@npm:^2.0.0":
   version: 2.0.1
   resolution: "unicode-canonical-property-names-ecmascript@npm:2.0.1"
@@ -10197,7 +10213,7 @@ __metadata:
     "@reduxjs/toolkit": "npm:^1.9.7"
     "@types/lodash": "npm:^4.17.24"
     "@types/luxon": "npm:^3.7.1"
-    "@types/node": "npm:24.10.1"
+    "@types/node": "npm:25.4.0"
     "@types/react": "npm:19.1.8"
     "@types/react-copy-to-clipboard": "npm:^5.0.7"
     "@types/react-dom": "npm:18.3.7"
