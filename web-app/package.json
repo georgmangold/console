@@ -83,7 +83,7 @@
     "prettier": "3.8.1",
     "swagger-typescript-api": "13.6.7",
     "testcafe": "3.7.4",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.2",
     "vite": "^8.0.5",
     "vite-plugin-istanbul": "^8.0.0",
     "vite-plugin-static-copy": "^4.0.1"
