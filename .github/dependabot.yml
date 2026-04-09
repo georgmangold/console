@@ -7,21 +7,34 @@ version: 2
 updates:
   # GO
   - package-ecosystem: "gomod"
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
+      semver-minor-days: 7
+      semver-patch-days: 7
     directory: "/"
     schedule:
       interval: "monthly"
       day: "thursday"
+    open-pull-requests-limit: 10
     groups:
       go-minor-updates:
         applies-to: version-updates
         patterns:
           - "*"
+        exclude-patterns:
+          - github.com/minio/*
         update-types:
           - "minor"
           - "patch"
 
   # npm
   - package-ecosystem: "npm"
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
+      semver-minor-days: 7
+      semver-patch-days: 7
     directory: "/web-app/"
     schedule:
       interval: "monthly"
@@ -48,11 +61,32 @@ updates:
           - "major"
           - "minor"
           - "patch"
+      npm-minor-updates:
+        applies-to: version-updates
+        patterns:
+          - "*"
+        exclude-patterns:
+          - "react"
+          - "@types/react"
+          - "react-dom"
+          - "@types/react-dom"
+          - "react-redux"
+          - "@reduxjs/toolkit"
+          - "react-router"
+          - "react-router-dom"
+        update-types:
+          - "minor"
+          - "patch"
 
   # GitHub Actions
   - package-ecosystem: "github-actions"
+    open-pull-requests-limit: 10
+    cooldown:
+      default-days: 7
+      semver-major-days: 14
+      semver-minor-days: 7
+      semver-patch-days: 7
     directory: "/"
     schedule:
       interval: "monthly"
       day: "thursday"
-
