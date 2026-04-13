@@ -23,7 +23,7 @@ require (
 	github.com/jessevdk/go-flags v1.6.1
 	github.com/klauspost/compress v1.18.5
 	github.com/minio/cli v1.24.2
-	github.com/minio/highwayhash v1.0.3
+	github.com/minio/highwayhash v1.0.4
 	github.com/minio/kes v0.24.0
 	github.com/minio/madmin-go/v3 v3.0.110
 	github.com/minio/mc v0.0.0-20251106162529-77f82e18b540
