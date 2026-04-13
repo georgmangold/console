@@ -1063,9 +1063,9 @@ func Test_shareObject(t *testing.T) {
 			expected:  "http://proxy-url.com:9012/console/subpath/api/v1/download-shared-object/aHR0cDovL3NvbWV1cmw",
 		},
 		{
-			test: "returns directly url with share link if use proxy for shared url env variable is off",
+			test: "returns minio server url directly with share link if CONSOLE_SHARE_MINIO_URL env variable is on",
 			setEnvVars: func() {
-				t.Setenv(ConsoleUseProxyForSharedURL, "off")
+				t.Setenv(ConsoleShareMinIOURL, "on")
 			},
 			args: args{
 				r: &http.Request{

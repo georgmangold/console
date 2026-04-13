@@ -1032,7 +1032,7 @@ func getShareObjectURL(ctx context.Context, client MCClient, r *http.Request, ve
 		return nil, pErr.Cause
 	}
 
-	if !getConsoleUseProxyForSharedURL() {
+	if getConsoleShareMinIOURL() {
 		return &minioURL, nil
 	}
 

@@ -310,8 +310,8 @@ func getConsoleBrowserRedirectURL() string {
 	return env.Get(ConsoleBrowserRedirectURL, "")
 }
 
-func getConsoleUseProxyForSharedURL() bool {
-	return strings.ToLower(env.Get(ConsoleUseProxyForSharedURL, "on")) == "on"
+func getConsoleShareMinIOURL() bool {
+	return strings.ToLower(env.Get(ConsoleShareMinIOURL, "off")) == "on"
 }
 
 func BuildOpenIDConsoleConfig() oauth2.OpenIDPCfg {
