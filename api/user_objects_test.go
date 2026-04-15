@@ -918,6 +918,7 @@ func Test_shareObject(t *testing.T) {
 		r         *http.Request
 		versionID string
 		expires   string
+		toogleURL bool
 		shareFunc func(ctx context.Context, versionID string, expires time.Duration) (string, *probe.Error)
 	}
 	tests := []struct {
@@ -936,6 +937,7 @@ func Test_shareObject(t *testing.T) {
 				},
 				versionID: "2121434",
 				expires:   "30s",
+				toogleURL: false,
 				shareFunc: func(_ context.Context, _ string, _ time.Duration) (string, *probe.Error) {
 					return "http://someurl", nil
 				},
@@ -953,6 +955,7 @@ func Test_shareObject(t *testing.T) {
 				},
 				versionID: "2121434",
 				expires:   "30s",
+				toogleURL: false,
 				shareFunc: func(_ context.Context, _ string, _ time.Duration) (string, *probe.Error) {
 					return "http://someurl", nil
 				},
@@ -970,6 +973,7 @@ func Test_shareObject(t *testing.T) {
 				},
 				versionID: "2121434",
 				expires:   "invalid",
+				toogleURL: false,
 				shareFunc: func(_ context.Context, _ string, _ time.Duration) (string, *probe.Error) {
 					return "http://someurl", nil
 				},
@@ -985,6 +989,7 @@ func Test_shareObject(t *testing.T) {
 				},
 				versionID: "2121434",
 				expires:   "",
+				toogleURL: false,
 				shareFunc: func(_ context.Context, _ string, _ time.Duration) (string, *probe.Error) {
 					return "http://someurl", nil
 				},
@@ -1001,6 +1006,7 @@ func Test_shareObject(t *testing.T) {
 				},
 				versionID: "2121434",
 				expires:   "3h",
+				toogleURL: false,
 				shareFunc: func(_ context.Context, _ string, _ time.Duration) (string, *probe.Error) {
 					return "", probe.NewError(errors.New("probe error"))
 				},
@@ -1016,6 +1022,7 @@ func Test_shareObject(t *testing.T) {
 				},
 				versionID: "2121434",
 				expires:   "3h",
+				toogleURL: false,
 				shareFunc: func(_ context.Context, _ string, _ time.Duration) (string, *probe.Error) {
 					// https://127.0.0.1:9000/cestest/Audio%20icon.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256 using StdEncoding adds an extra `/` making it not url safe
 					return "https://127.0.0.1:9000/cestest/Audio%20icon.svg?X-Amz-Algorithm=AWS4-HMAC-SHA256", nil
@@ -1036,6 +1043,7 @@ func Test_shareObject(t *testing.T) {
 				},
 				versionID: "2121434",
 				expires:   "30s",
+				toogleURL: false,
 				shareFunc: func(_ context.Context, _ string, _ time.Duration) (string, *probe.Error) {
 					return "http://someurl", nil
 				},
@@ -1055,6 +1063,7 @@ func Test_shareObject(t *testing.T) {
 				},
 				versionID: "2121434",
 				expires:   "30s",
+				toogleURL: false,
 				shareFunc: func(_ context.Context, _ string, _ time.Duration) (string, *probe.Error) {
 					return "http://someurl", nil
 				},
@@ -1074,6 +1083,7 @@ func Test_shareObject(t *testing.T) {
 				},
 				versionID: "2121434",
 				expires:   "30s",
+				toogleURL: false,
 				shareFunc: func(_ context.Context, _ string, _ time.Duration) (string, *probe.Error) {
 					return "http://someurl", nil
 				},
@@ -1089,7 +1099,7 @@ func Test_shareObject(t *testing.T) {
 			if tt.setEnvVars != nil {
 				tt.setEnvVars()
 			}
-			url, err := getShareObjectURL(ctx, client, tt.args.r, tt.args.versionID, tt.args.expires)
+			url, err := getShareObjectURL(ctx, client, tt.args.r, tt.args.versionID, tt.args.expires, tt.args.toogleURL)
 			if tt.wantError != nil {
 				if (err == nil) != (tt.wantError == nil) || (err != nil && tt.wantError != nil && err.Error() != tt.wantError.Error()) {
 					t.Errorf("getShareObjectURL() error: `%s`, wantErr: `%s`", err, tt.wantError)

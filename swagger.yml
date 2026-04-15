@@ -531,6 +531,10 @@ paths:
           in: query
           required: false
           type: string
+        - name: toggle_url
+          in: query
+          required: false
+          type: boolean
       responses:
         200:
           description: A successful response.

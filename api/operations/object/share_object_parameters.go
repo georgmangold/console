@@ -25,6 +25,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/runtime/middleware"
 	"github.com/go-openapi/strfmt"
+	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
@@ -62,6 +63,11 @@ type ShareObjectParams struct {
 	Prefix string
 
 	/*
+	  In: query
+	*/
+	ToggleURL *bool
+
+	/*
 	  Required: true
 	  In: query
 	*/
@@ -90,6 +96,11 @@ func (o *ShareObjectParams) BindRequest(r *http.Request, route *middleware.Match
 
 	qPrefix, qhkPrefix, _ := qs.GetOK("prefix")
 	if err := o.bindPrefix(qPrefix, qhkPrefix, route.Formats); err != nil {
+		res = append(res, err)
+	}
+
+	qToggleURL, qhkToggleURL, _ := qs.GetOK("toggle_url")
+	if err := o.bindToggleURL(qToggleURL, qhkToggleURL, route.Formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -152,6 +163,29 @@ func (o *ShareObjectParams) bindPrefix(rawData []string, hasKey bool, formats st
 		return err
 	}
 	o.Prefix = raw
+
+	return nil
+}
+
+// bindToggleURL binds and validates parameter ToggleURL from query.
+func (o *ShareObjectParams) bindToggleURL(rawData []string, hasKey bool, formats strfmt.Registry) error {
+	var raw string
+	if len(rawData) > 0 {
+		raw = rawData[len(rawData)-1]
+	}
+
+	// Required: false
+	// AllowEmptyValue: false
+
+	if raw == "" { // empty values pass all other validations
+		return nil
+	}
+
+	value, err := swag.ConvertBool(raw)
+	if err != nil {
+		return errors.InvalidType("toggle_url", "query", "bool", raw)
+	}
+	o.ToggleURL = &value
 
 	return nil
 }

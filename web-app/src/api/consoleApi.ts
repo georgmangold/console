@@ -2132,6 +2132,7 @@ export class Api<
         prefix: string;
         version_id: string;
         expires?: string;
+        toggle_url?: boolean;
       },
       params: RequestParams = {},
     ) =>

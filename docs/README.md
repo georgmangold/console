@@ -13,6 +13,9 @@ More documentation to read
     - [Frontend Web App](../web-app/README.md)
     - [CONTRIBUTING](../CONTRIBUTING.md)
 
+### Share Option
+With the enenvironment variable `CONSOLE_SHARE_MINIO_URL=on` can change the default from Console URL to MinIO Server URL in case Console endpoint is not exposed. There is a toggle in GUI to change between the two.
+
 ## FAQ
 
 ### How do I log in?
