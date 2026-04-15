@@ -1010,7 +1010,11 @@ func getShareObjectResponse(session *models.Principal, params objectApi.ShareObj
 	if params.Expires != nil {
 		expireDuration = *params.Expires
 	}
-	url, err := getShareObjectURL(ctx, mcClient, params.HTTPRequest, params.VersionID, expireDuration)
+	toogleURL := false
+	if params.ToggleURL != nil {
+		toogleURL = *params.ToggleURL
+	}
+	url, err := getShareObjectURL(ctx, mcClient, params.HTTPRequest, params.VersionID, expireDuration, toogleURL)
 	if err != nil {
 		return nil, ErrorWithContext(ctx, err)
 	}
@@ -1018,7 +1022,7 @@ func getShareObjectResponse(session *models.Principal, params objectApi.ShareObj
 	return url, nil
 }
 
-func getShareObjectURL(ctx context.Context, client MCClient, r *http.Request, versionID string, duration string) (*string, error) {
+func getShareObjectURL(ctx context.Context, client MCClient, r *http.Request, versionID string, duration string, toogleURL bool) (*string, error) {
 	// default duration 7d if not defined
 	if strings.TrimSpace(duration) == "" {
 		duration = "168h"
@@ -1030,6 +1034,16 @@ func getShareObjectURL(ctx context.Context, client MCClient, r *http.Request, ve
 	minioURL, pErr := client.shareDownload(ctx, versionID, expiresDuration)
 	if pErr != nil {
 		return nil, pErr.Cause
+	}
+
+	shareMinIOURL := getConsoleShareMinIOURL()
+
+	if toogleURL {
+		shareMinIOURL = !shareMinIOURL
+	}
+
+	if shareMinIOURL {
+		return &minioURL, nil
 	}
 
 	requestURL := getRequestURLWithScheme(r)

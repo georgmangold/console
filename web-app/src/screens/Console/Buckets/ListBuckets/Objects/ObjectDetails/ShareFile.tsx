@@ -24,6 +24,7 @@ import {
   Grid,
   ProgressBar,
   Tooltip,
+  Switch,
 } from "mds";
 import CopyToClipboard from "react-copy-to-clipboard";
 import ModalWrapper from "../../../../Common/ModalWrapper/ModalWrapper";
@@ -64,6 +65,7 @@ const ShareFile = ({
   const [selectedDate, setSelectedDate] = useState<string>("");
   const [dateValid, setDateValid] = useState<boolean>(true);
   const [versionID, setVersionID] = useState<string>("null");
+  const [toggleURL, setToggleURL] = useState<boolean>(false);
 
   const debouncedDateChange = debounce((newDate: string, isValid: boolean) => {
     setDateValid(isValid);
@@ -137,6 +139,7 @@ const ShareFile = ({
             prefix: dataObject.name || "",
             version_id: versionID,
             expires: selectedDate !== "" ? `${diffDate}s` : "",
+            toggle_url: toggleURL,
           })
           .then((res) => {
             setShareURL(res.data);
@@ -159,6 +162,7 @@ const ShareFile = ({
     distributedSetup,
     isLoadingVersion,
     versionID,
+    toggleURL,
   ]);
 
   return (
@@ -250,6 +254,17 @@ const ShareFile = ({
               >
                 {shareURL}
               </ReadBox>
+              <Switch
+                sx={{
+                  marginTop: 20,
+                }}
+                tooltip="Toggle Share URL between Console and MinIO Server URL. Change default with CONSOLE_SHARE_MINIO_URL environment variable"
+                id="switch_toggle_url"
+                label="Toogle Share URL"
+                onChange={(e) => {
+                  setToggleURL(e.target.checked);
+                }}
+              />
             </Grid>
           </Fragment>
         )}

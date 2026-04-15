@@ -1988,6 +1988,11 @@ func init() {
             "type": "string",
             "name": "expires",
             "in": "query"
+          },
+          {
+            "type": "boolean",
+            "name": "toggle_url",
+            "in": "query"
           }
         ],
         "responses": {
@@ -10355,6 +10360,11 @@ func init() {
           {
             "type": "string",
             "name": "expires",
+            "in": "query"
+          },
+          {
+            "type": "boolean",
+            "name": "toggle_url",
             "in": "query"
           }
         ],
