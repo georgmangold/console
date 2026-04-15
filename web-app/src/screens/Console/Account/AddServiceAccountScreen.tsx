@@ -91,7 +91,7 @@ const AddServiceAccount = () => {
           setNewServiceAccount({
             accessKey: res.data.accessKey || "",
             secretKey: res.data.secretKey || "",
-            url: res.url || "",
+            url: res.data.url || "",
           });
         })
 
