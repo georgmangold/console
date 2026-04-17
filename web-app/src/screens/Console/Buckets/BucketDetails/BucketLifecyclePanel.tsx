@@ -28,6 +28,7 @@ import {
 } from "mds";
 import { useSelector } from "react-redux";
 import { api } from "api";
+import { errorToHandler } from "api/errors";
 import { ObjectBucketLifecycle } from "api/consoleApi";
 import { LifeCycleItem } from "../types";
 import {
@@ -45,6 +46,9 @@ import AddLifecycleModal from "./AddLifecycleModal";
 import TooltipWrapper from "../../Common/TooltipWrapper/TooltipWrapper";
 
 const BucketLifecyclePanel = () => {
+  const lifecycleNotConfiguredMessage =
+    "error bucket life cycle configuration not found";
+
   const loadingBucket = useSelector(selBucketDetailsLoading);
   const params = useParams();
 
@@ -90,7 +94,12 @@ const BucketLifecyclePanel = () => {
             setLoadingLifecycle(false);
           })
           .catch((err) => {
-            console.error(err.error);
+            const apiError = errorToHandler(err.error);
+            const isLifecycleNotConfigured =
+              apiError.detailedError === lifecycleNotConfiguredMessage;
+            if (!isLifecycleNotConfigured) {
+              console.error(err.error);
+            }
             setLifecycleRecords([]);
             setLoadingLifecycle(false);
           });

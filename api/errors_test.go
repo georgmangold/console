@@ -157,3 +157,43 @@ func TestErrorWithContext(t *testing.T) {
 		})
 	}
 }
+
+func TestShouldLogError(t *testing.T) {
+	tests := []struct {
+		name string
+		err  error
+		want bool
+	}{
+		{
+			name: "skip direct SSE not configured",
+			err:  ErrSSENotConfigured,
+			want: false,
+		},
+		{
+			name: "skip wrapped SSE not configured",
+			err:  fmt.Errorf("wrapped: %w", ErrSSENotConfigured),
+			want: false,
+		},
+		{
+			name: "skip direct lifecycle not configured",
+			err:  ErrBucketLifeCycleNotConfigured,
+			want: false,
+		},
+		{
+			name: "skip wrapped lifecycle not configured",
+			err:  fmt.Errorf("wrapped: %w", ErrBucketLifeCycleNotConfigured),
+			want: false,
+		},
+		{
+			name: "log other errors",
+			err:  ErrDefault,
+			want: true,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			assert.Equal(t, tt.want, shouldLogError(tt.err))
+		})
+	}
+}

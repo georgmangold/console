@@ -80,6 +80,10 @@ type CodedAPIError struct {
 	APIError *models.APIError
 }
 
+func shouldLogError(err error) bool {
+	return !errors.Is(err, ErrSSENotConfigured) && !errors.Is(err, ErrBucketLifeCycleNotConfigured)
+}
+
 // ErrorWithContext :
 func ErrorWithContext(ctx context.Context, err ...interface{}) *CodedAPIError {
 	errorCode := 500
@@ -258,8 +262,10 @@ func ErrorWithContext(ctx context.Context, err ...interface{}) *CodedAPIError {
 				errorMessage = "Bucket already exists"
 			}
 
-			LogError("ErrorWithContext:%v", err...)
-			LogIf(ctx, err1, err...)
+			if shouldLogError(err1) {
+				LogError("ErrorWithContext:%v", err...)
+				LogIf(ctx, err1, err...)
+			}
 		}
 
 		if len(err) > 1 && err[1] != nil {
