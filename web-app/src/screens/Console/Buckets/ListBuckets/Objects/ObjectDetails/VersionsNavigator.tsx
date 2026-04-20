@@ -324,6 +324,8 @@ const VersionsNavigator = ({
     );
   };
 
+  const hasVersionID = !!actualInfo?.version_id;
+
   return (
     <Fragment>
       {shareFileModalOpen && actualInfo && (
@@ -542,7 +544,7 @@ const VersionsNavigator = ({
                 },
               }}
             >
-              {actualInfo.version_id && actualInfo.version_id !== "null" && (
+              {hasVersionID && (
                 // @ts-ignore
                 <List
                   style={{

@@ -366,6 +366,9 @@ const ObjectDetailPanel = ({
     [IAM_SCOPES.S3_DELETE_OBJECT, IAM_SCOPES.S3_DELETE_ACTIONS],
   );
 
+  const isVersioningEnabled = versioningInfo?.status === "Enabled";
+  const hasVersions = versions.length > 1 || !!actualInfo.version_id;
+
   let objectType: AllowedPreviews = previewObjectType(metaData, currentItem);
 
   const multiActionButtons = [
@@ -509,10 +512,10 @@ const ObjectDetailPanel = ({
       icon: <VersionsIcon />,
       disabled:
         !distributedSetup ||
-        !(actualInfo.version_id && actualInfo.version_id !== "null") ||
-        !canChangeVersioning,
+        !canChangeVersioning ||
+        (!isVersioningEnabled && !hasVersions),
       tooltip: canChangeVersioning
-        ? actualInfo.version_id && actualInfo.version_id !== "null"
+        ? isVersioningEnabled || hasVersions
           ? "Display Versions for this file"
           : ""
         : permissionTooltipHelper(
@@ -721,8 +724,7 @@ const ObjectDetailPanel = ({
             <br />
             {niceBytes(`${actualInfo.size || "0"}`)}
           </Box>
-          {actualInfo.version_id &&
-            actualInfo.version_id !== "null" &&
+          {hasVersions &&
             selectedVersion === "" && (
               <Box className={"detailContainer"}>
                 <strong>Versions:</strong>
@@ -787,7 +789,7 @@ const ObjectDetailPanel = ({
                 <strong>Retention Policy:</strong>
                 <br />
                 <span className={"capitalizeFirst"}>
-                  {actualInfo.version_id && actualInfo.version_id !== "null" ? (
+                  {hasVersions ? (
                     <Fragment>
                       {actualInfo.retention_mode
                         ? actualInfo.retention_mode.toLowerCase()
