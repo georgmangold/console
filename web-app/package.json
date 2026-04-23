@@ -90,7 +90,7 @@
   },
   "resolutions": {
     "yaml": "^2.8.3",
-    "fast-xml-parser": "^5.5.11",
+    "fast-xml-parser": "^5.7.1",
     "semver": "^7.7.4",
     "ws": "^8.20.0",
     "jspdf": "^4.2.1",
