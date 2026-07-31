@@ -81,7 +81,7 @@
     "nyc": "^18.0.0",
     "playwright": "^1.59.1",
     "prettier": "3.8.1",
-    "swagger-typescript-api": "13.6.7",
+    "swagger-typescript-api": "13.12.2",
     "testcafe": "3.7.4",
     "typescript": "^6.0.2",
     "vite": "^8.0.5",
